@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-Widget BottomBar (){
+//typedef ValueChanged<T> = void Function(T value);//定义函数样式
+Widget BottomBar (int changeIndex,ValueChanged<int> tapAction){
 
   return BottomNavigationBar(items: [
 
@@ -10,5 +11,7 @@ Widget BottomBar (){
     BottomNavigationBarItem(icon: Icon(Icons.call_missed_outgoing),title: Text("Out")),
   ],
     type: BottomNavigationBarType.fixed,//当数量达到4时类型会变化，需设置
+    currentIndex: changeIndex,
+    onTap: tapAction,
   );
 }
