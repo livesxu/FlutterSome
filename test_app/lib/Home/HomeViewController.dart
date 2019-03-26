@@ -16,7 +16,6 @@ class HomeViewController extends StatefulWidget {
 
 class HomeViewControllerState extends State<HomeViewController> {
 
-  int _bottomNaviIndex = 0;
   @override
 
   Widget build(BuildContext context) {
@@ -29,13 +28,7 @@ class HomeViewControllerState extends State<HomeViewController> {
 
       endDrawer: HomeEndDrawer(),
 
-      bottomNavigationBar: BottomBar(_bottomNaviIndex,(int index){
-
-        setState(() {
-
-          _bottomNaviIndex = index;
-        });
-      }),
+      bottomNavigationBar: BottomBarClass(),
     ));
   }
 }
