@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/Home/BasicTextDemo.dart';
 import 'package:test_app/Home/BasicLayout.dart';
+import 'package:test_app/Home/ViewDemo.dart';
 
 Widget HomeTabContents (){
 
@@ -8,7 +9,7 @@ Widget HomeTabContents (){
 //    Center(child: Text("New"),),
     BasicTextDemo(),
     LayoutDemo(),
-    Center(child: Text("Pin"),),
+    ViewDemo(),
   ]);
 }
 
@@ -18,6 +19,5 @@ PreferredSizeWidget TabBarTitles (){
     Row(children: <Widget>[Text("New"),IconButton(icon: Icon(Icons.fiber_new), onPressed: null)],),
     Row(children: <Widget>[Text("Dvr",),IconButton(icon: Icon(Icons.fiber_dvr), onPressed: null)],),
     Row(children: <Widget>[Text("Pin"),IconButton(icon: Icon(Icons.fiber_pin), onPressed: null),],),
-
   ]);
 }
