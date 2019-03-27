@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/Home/BasicTextDemo.dart';
+import 'package:test_app/Home/BasicLayout.dart';
 
 Widget HomeTabContents (){
 
   return TabBarView(children: <Widget>[
 //    Center(child: Text("New"),),
     BasicTextDemo(),
-    Center(child: Text("Dvr"),),
+    LayoutDemo(),
     Center(child: Text("Pin"),),
   ]);
 }
