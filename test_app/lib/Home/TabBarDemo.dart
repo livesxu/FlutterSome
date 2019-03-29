@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:test_app/Home/BasicTextDemo.dart';
 import 'package:test_app/Home/BasicLayout.dart';
 import 'package:test_app/Home/ViewDemo.dart';
+import 'package:test_app/Home/SliverDemo.dart';
 
 Widget HomeTabContents (){
 
@@ -9,7 +10,8 @@ Widget HomeTabContents (){
 //    Center(child: Text("New"),),
     BasicTextDemo(),
     LayoutDemo(),
-    ViewDemo(),
+    SliverDemo(),
+//    ViewDemo(),
   ]);
 }
 
