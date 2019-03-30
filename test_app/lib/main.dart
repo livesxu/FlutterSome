@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/Home/HomeViewController.dart';
+import 'package:test_app/Home/HomeSubViewController.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,7 +22,12 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.purple,
       ),
-      home: HomeViewController(),
+//      home: HomeViewController(),
+      initialRoute: "/",//初始页面
+      routes: {
+        "/":(context) => HomeViewController(),//路由映射
+        "/routerNameToNext":(context) => HomeSubHomeViewController(title: "RouterNameToNext",)
+      },
     );
   }
 }

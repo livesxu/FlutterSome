@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/Home/HomeSubViewController.dart';
 
 class BasicTextDemo extends StatelessWidget {
 
@@ -48,7 +49,11 @@ class BasicTextDemo extends StatelessWidget {
 //        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Container(
-            child: Icon(Icons.call,color: Colors.white,),
+            child: IconButton(icon: Icon(Icons.call,color: Colors.white,), onPressed: (){
+              //跳转下一个页面
+//              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => HomeSubHomeViewController(title:"NextVC")));
+            Navigator.pushNamed(context, "/routerNameToNext");
+            }),
 //            color: Color.fromRGBO(3, 53, 255, 1),
             padding: EdgeInsets.all(10),//内边距
             margin: EdgeInsets.all(50),//外边距

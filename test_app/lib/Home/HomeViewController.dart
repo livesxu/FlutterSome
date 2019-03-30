@@ -4,6 +4,7 @@ import 'package:test_app/Home/DrawerDemo.dart';
 import 'package:test_app/Home/TabBarDemo.dart';
 import 'package:test_app/Home/AppBarDemo.dart';
 import 'package:test_app/Home/BottomNaviBarDemo.dart';
+import 'package:test_app/Home/HomeSubViewController.dart';
 
 class HomeViewController extends StatefulWidget {
 

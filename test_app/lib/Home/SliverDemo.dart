@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/Home/Person.dart';
+import 'package:test_app/Home/HomeSubViewController.dart';
 
 class SliverDemo extends StatelessWidget {
 
@@ -56,12 +57,26 @@ class SliverTwo extends StatelessWidget {
 
   Widget SliverTwoBuilder (BuildContext context,int index) {
 
-    return Padding(padding: EdgeInsets.only(bottom: 10),
-      child: ClipRRect(//圆角
-        borderRadius: BorderRadius.circular(20),
-        child: Container(child: Image.network(Persons[index].body,fit: BoxFit.cover),),
-      ),
-    );
+    return Stack(children: <Widget>[
+      Padding(padding: EdgeInsets.only(bottom: 10),
+    child: ClipRRect(//圆角
+    borderRadius: BorderRadius.circular(20),
+    child: Container(child: Image.network(Persons[index].body,fit: BoxFit.cover),),
+    ),
+    ),
+      Positioned.fill(child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+//          splashColor: Colors.white,
+//          highlightColor: Colors.white,
+//          radius: 100,
+          onTap: (){
+//            Navigator.pushNamed(context, "/routerNameToNext");
+            Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => HomeSubHomeViewController(title: Persons[index].title,)));
+          },
+        ),
+      ))
+    ],);
   }
 
   @override
