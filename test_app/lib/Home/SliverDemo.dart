@@ -31,7 +31,9 @@ class SliverOne extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
-          SliverSafeArea(minimum: EdgeInsets.all(10),sliver:
+//          SliverPadding//用来设置边距
+          SliverSafeArea(minimum: EdgeInsets.all(10),//可设置边距
+              sliver:
           SliverGrid(
               delegate: SliverChildBuilderDelegate(
                 SliverOneBuilder,
@@ -55,11 +57,9 @@ class SliverTwo extends StatelessWidget {
   Widget SliverTwoBuilder (BuildContext context,int index) {
 
     return Padding(padding: EdgeInsets.only(bottom: 10),
-      child: Material(
+      child: ClipRRect(//圆角
         borderRadius: BorderRadius.circular(20),
-        elevation: 6,
-        shadowColor: Colors.cyan,
-        child: Container(child: Image.network(Persons[index].body,fit: BoxFit.cover),),//为何非圆角？？
+        child: Container(child: Image.network(Persons[index].body,fit: BoxFit.cover),),
       ),
     );
   }
@@ -70,6 +70,10 @@ class SliverTwo extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
+          SliverAppBar(
+            pinned: true,//在页面上不消失
+//            floating: true,//跟随滚动出现（立刻）
+            title: Text("Sliver Title"),expandedHeight: 100,flexibleSpace: Positioned(child: Icon(Icons.title),bottom: 10,left: 10,),),
           SliverSafeArea(minimum: EdgeInsets.all(10),sliver:
           SliverList(
               delegate: SliverChildBuilderDelegate(
