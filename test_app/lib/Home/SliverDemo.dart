@@ -76,6 +76,7 @@ class SliverTwo extends StatelessWidget {
 //            title: Text("Sliver Title"),
             expandedHeight: 100,
             flexibleSpace:FlexibleSpaceBar(title: Text("ppLine Show".toUpperCase()),background: Image.network(Persons[1].body,fit: BoxFit.cover,),),
+//          flexibleSpace: FlexibleSpaceBarSettings(maxExtent: 100,minExtent:0,currentExtent: 100,toolbarOpacity: .3,child: FlexibleSpaceBar(centerTitle: true,title: Text("ppLine Show".toUpperCase()),background: Image.network(Persons[0].body,fit: BoxFit.cover,),),),
           ),
           SliverSafeArea(minimum: EdgeInsets.all(10),sliver:
           SliverList(
