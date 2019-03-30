@@ -73,7 +73,10 @@ class SliverTwo extends StatelessWidget {
           SliverAppBar(
             pinned: true,//在页面上不消失
 //            floating: true,//跟随滚动出现（立刻）
-            title: Text("Sliver Title"),expandedHeight: 100,flexibleSpace: Positioned(child: Icon(Icons.title),bottom: 10,left: 10,),),
+//            title: Text("Sliver Title"),
+            expandedHeight: 100,
+            flexibleSpace:FlexibleSpaceBar(title: Text("ppLine Show".toUpperCase()),background: Image.network(Persons[1].body,fit: BoxFit.cover,),),
+          ),
           SliverSafeArea(minimum: EdgeInsets.all(10),sliver:
           SliverList(
               delegate: SliverChildBuilderDelegate(
