@@ -72,7 +72,7 @@ class SliverTwo extends StatelessWidget {
 //          radius: 100,
           onTap: (){
 //            Navigator.pushNamed(context, "/routerNameToNext");
-            Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => HomeSubHomeViewController(title: Persons[index].title,)));
+            Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => HomeSubHomeViewController(person: Persons[index],)));
           },
         ),
       ))
