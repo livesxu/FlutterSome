@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/Home/HomeViewController.dart';
 import 'package:test_app/Home/HomeSubViewController.dart';
+import 'package:test_app/Mine/MineViewController.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
 //      home: HomeViewController(),
       initialRoute: "/",//初始页面
       routes: {
-        "/":(context) => HomeViewController(),//路由映射
+        "/":(context) => MineViewController(),//路由映射
         "/routerNameToNext":(context) => HomeSubHomeViewController(title: "RouterNameToNext",)
       },
     );
