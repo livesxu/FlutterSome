@@ -6,9 +6,89 @@ class TextFieldDemo extends StatefulWidget {
 
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return TextFieldDemoState();
+    return TextFieldFirstState();
   }
 }
+
+class TextFieldFirstState extends State<TextFieldDemo> {
+
+  final formKey = GlobalKey<FormState>();
+
+  String name,password;
+
+  String _validatorName (String value) {
+
+    if (value.isEmpty) {
+
+      return "Username is required.";
+    }
+    return null;
+  }
+
+  void _submitAction () {
+
+    formKey.currentState.save();
+    formKey.currentState.validate();
+
+    print("user:$name,password:$password");
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Form(
+      key: formKey,
+      child: Padding(
+        padding: EdgeInsets.only(left: 8,right: 8),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            TextFormField(
+              decoration: InputDecoration(
+                labelText: "Username",
+                helperText: "提示信息",//提示信息示例
+              ),
+              validator: _validatorName,
+              onSaved: (String value){
+
+                name = value;
+              },
+            ),
+            TextFormField(
+              obscureText: true,
+              decoration: InputDecoration(
+                labelText: "Password",
+
+              ),
+              onSaved: (String value){
+
+                password = value;
+              },
+            ),
+            SizedBox(height: 20,),
+            Container(
+              width: double.infinity,//设置宽度与外部一样长
+              child:RaisedButton(
+                elevation: 0.0,
+                color: Colors.red,//按钮背景颜色(必须设置onPressed值，否则展示disabledColor)
+                disabledColor:Colors.green,
+                onPressed: _submitAction,
+                child: Text("Register",style: TextStyle(color: Colors.white),),
+              ),
+            ),
+
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+
 
 class TextFieldDemoState extends State<TextFieldDemo> {
 
