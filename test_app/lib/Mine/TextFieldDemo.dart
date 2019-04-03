@@ -50,6 +50,7 @@ class TextFieldFirstState extends State<TextFieldDemo> {
                 helperText: "提示信息",//提示信息示例
               ),
               validator: _validatorName,
+              autovalidate: true,
               onSaved: (String value){
 
                 name = value;
