@@ -16,6 +16,7 @@ class ComponentsDemo extends StatelessWidget {
         ListItem(title:"FirstItem",page: NextPage(),)
         ],
       ),
+      floatingActionButton: TwoFloatingAction(),
     );
   }
 }
@@ -55,6 +56,41 @@ class NextPage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Next's title"),
       ),
+    );
+  }
+}
+
+class ThisFloatingAction extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return FloatingActionButton(
+      onPressed: (){},
+//      elevation: 0.0,
+      backgroundColor: Colors.red,
+      child: Icon(Icons.add),
+      shape: BeveledRectangleBorder(//斜边形
+        borderRadius: BorderRadius.circular(30),
+      ),
+    );
+  }
+}
+
+class TwoFloatingAction extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return FloatingActionButton.extended(
+      onPressed: (){},
+//      elevation: 0.0,
+      backgroundColor: Colors.red,
+      icon: Icon(Icons.add),
+      label: Text("test"),
+//      shape: BeveledRectangleBorder(//斜边形
+//        borderRadius: BorderRadius.circular(30),
+//      ),
     );
   }
 }
