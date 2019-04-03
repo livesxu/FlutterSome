@@ -31,6 +31,11 @@ class TextFieldFirstState extends State<TextFieldDemo> {
     formKey.currentState.validate();
 
     print("user:$name,password:$password");
+
+    //底部提示
+    Scaffold.of(context).showSnackBar(
+      SnackBar(content: Text("Snack"))
+    );
   }
 
   @override
