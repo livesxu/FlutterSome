@@ -15,6 +15,7 @@ class ComponentsDemo extends StatelessWidget {
 
          ListItem(title:"FirstItem",page: NextPage(),),
          ListItem(title:"NextDemo",page: NextDemo(),),
+         ListItem(title:"ThirdDemo",page: ThirdDemo(),),
         ],
       ),
       floatingActionButton: ThisFloatingAction(),
@@ -25,6 +26,32 @@ class ComponentsDemo extends StatelessWidget {
                  height: 40,
               ),
         shape: CircularNotchedRectangle(),//中间缺圆
+      ),
+    );
+  }
+}
+
+class ThirdDemo extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("ThirdDemo"),
+      ),
+      body: Theme(//将主体放在主题里面可以局部替换主题
+          data: ThemeData(
+            buttonColor: Colors.blue,
+            buttonTheme: ButtonThemeData(
+              textTheme: ButtonTextTheme.primary,
+//              shape: BeveledRectangleBorder(//斜面
+//                borderRadius: BorderRadius.circular(10)
+//              )
+              shape: StadiumBorder()//体育场样式border
+            )
+          ),
+          child: RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.print), label: Text("Print")),
       ),
     );
   }
