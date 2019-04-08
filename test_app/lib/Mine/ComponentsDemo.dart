@@ -70,7 +70,14 @@ class NextDemo extends StatelessWidget {
 //    body: FlatButton.icon(onPressed: (){}, icon: Icon(Icons.build), label: Text("Build")),
 //    body: RaisedButton(onPressed: (){},child: Text("button"),color: Colors.green,),//默认有背景,默认填充主题里面buttonColor
 //      body: RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.print), label: Text("Print")),
-      body: OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.print), label: Text("Print"),borderSide: BorderSide(color: Colors.red),),
+//      body: Container(width: 150,child: OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.print), label: Text("Print"),borderSide: BorderSide(color: Colors.red),),),
+        body:Row(
+
+          children: <Widget>[
+            Expanded(child: OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.print), label: Text("Print"),borderSide: BorderSide(color: Colors.red),),),
+            Expanded(flex: 2,child: OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.person), label: Text("Person"),borderSide: BorderSide(color: Colors.red),),)
+          ],
+        )
     );
   }
 }
