@@ -16,7 +16,15 @@ class ComponentsDemo extends StatelessWidget {
         ListItem(title:"FirstItem",page: NextPage(),)
         ],
       ),
-      floatingActionButton: TwoFloatingAction(),
+      floatingActionButton: ThisFloatingAction(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,//与底部bar重合居中位置
+
+      bottomNavigationBar: BottomAppBar(//添加底部bar
+        child: Container(
+                 height: 40,
+              ),
+        shape: CircularNotchedRectangle(),//中间缺圆
+      ),
     );
   }
 }
@@ -67,7 +75,7 @@ class ThisFloatingAction extends StatelessWidget {
     // TODO: implement build
     return FloatingActionButton(
       onPressed: (){},
-//      elevation: 0.0,
+      elevation: 0.0,
       backgroundColor: Colors.red,
       child: Icon(Icons.add),
       shape: BeveledRectangleBorder(//斜边形
