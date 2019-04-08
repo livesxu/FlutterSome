@@ -40,7 +40,9 @@ class NextDemo extends StatelessWidget {
         title: Text("NextDemo"),
       ),
 //      body: FlatButton(onPressed: (){}, child: Text("button"),splashColor: Colors.red,),
-    body: FlatButton.icon(onPressed: (){}, icon: Icon(Icons.build), label: Text("Build")),
+//    body: FlatButton.icon(onPressed: (){}, icon: Icon(Icons.build), label: Text("Build")),
+//    body: RaisedButton(onPressed: (){},child: Text("button"),color: Colors.green,),//默认有背景,默认填充主题里面buttonColor
+      body: RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.print), label: Text("Print")),
     );
   }
 }
