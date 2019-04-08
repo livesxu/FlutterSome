@@ -13,7 +13,8 @@ class ComponentsDemo extends StatelessWidget {
       body: ListView(
         children: <Widget>[
 
-        ListItem(title:"FirstItem",page: NextPage(),)
+         ListItem(title:"FirstItem",page: NextPage(),),
+         ListItem(title:"NextDemo",page: NextDemo(),),
         ],
       ),
       floatingActionButton: ThisFloatingAction(),
@@ -25,6 +26,21 @@ class ComponentsDemo extends StatelessWidget {
               ),
         shape: CircularNotchedRectangle(),//中间缺圆
       ),
+    );
+  }
+}
+
+class NextDemo extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("NextDemo"),
+      ),
+//      body: FlatButton(onPressed: (){}, child: Text("button"),splashColor: Colors.red,),
+    body: FlatButton.icon(onPressed: (){}, icon: Icon(Icons.build), label: Text("Build")),
     );
   }
 }
@@ -53,7 +69,6 @@ class ListItem extends StatelessWidget {
     );
   }
 }
-
 
 class NextPage extends StatelessWidget {
 
