@@ -71,13 +71,25 @@ class NextDemo extends StatelessWidget {
 //    body: RaisedButton(onPressed: (){},child: Text("button"),color: Colors.green,),//默认有背景,默认填充主题里面buttonColor
 //      body: RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.print), label: Text("Print")),
 //      body: Container(width: 150,child: OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.print), label: Text("Print"),borderSide: BorderSide(color: Colors.red),),),
-        body:Row(
+//        body:Row(
+//
+//          children: <Widget>[
+//            Expanded(child: OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.print), label: Text("Print"),borderSide: BorderSide(color: Colors.red),),),
+//            Expanded(flex: 2,child: OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.person), label: Text("Person"),borderSide: BorderSide(color: Colors.red),),)
+//          ],
+//        )
+      body: Theme(
+          data: ThemeData(buttonTheme: ButtonThemeData(
+            padding: EdgeInsets.symmetric(horizontal: 0),
+          )),
+          child: ButtonBar(children: <Widget>[
 
-          children: <Widget>[
-            Expanded(child: OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.print), label: Text("Print"),borderSide: BorderSide(color: Colors.red),),),
-            Expanded(flex: 2,child: OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.person), label: Text("Person"),borderSide: BorderSide(color: Colors.red),),)
-          ],
-        )
+            OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.print), label: Text("Print"),),
+            OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.person), label: Text("Person"),),
+            OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.person), label: Text("Person"),),
+
+          ],),
+      )
     );
   }
 }
