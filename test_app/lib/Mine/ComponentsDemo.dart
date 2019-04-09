@@ -78,18 +78,24 @@ class NextDemo extends StatelessWidget {
 //            Expanded(flex: 2,child: OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.person), label: Text("Person"),borderSide: BorderSide(color: Colors.red),),)
 //          ],
 //        )
-      body: Theme(
-          data: ThemeData(buttonTheme: ButtonThemeData(
-            padding: EdgeInsets.symmetric(horizontal: 0),
-          )),
-          child: ButtonBar(children: <Widget>[
-
-            OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.print), label: Text("Print"),),
-            OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.person), label: Text("Person"),),
-            OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.person), label: Text("Person"),),
-
-          ],),
-      )
+//      body: Theme(
+//          data: ThemeData(buttonTheme: ButtonThemeData(
+//            padding: EdgeInsets.symmetric(horizontal: 0),
+//          )),
+//          child: ButtonBar(children: <Widget>[
+//
+//            OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.print), label: Text("Print"),),
+//            OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.person), label: Text("Person"),),
+//            OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.person), label: Text("Person"),),
+//
+//          ],),
+//      )
+        body: PopupMenuButton(itemBuilder: (BuildContext context) => [
+          PopupMenuItem(child: Text("First"),value: "First",),//child显示内容，value表示值
+          PopupMenuItem(child: Text("Second"),value: "Second",),
+        ], onSelected: (value){
+          print(value);
+        },),
     );
   }
 }
