@@ -15,10 +15,46 @@ class CheckBoxDemoState extends State<CheckBoxDemo> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return RadioDemoExample();
+    return SwitchDemoExample();
   }
 }
 
+class SwitchDemoExample extends StatefulWidget {
+
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return SwitchDemoExampleState();
+  }
+}
+
+class SwitchDemoExampleState extends State<SwitchDemoExample> {
+
+  bool isSwitch = false;
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(title: Text("SwitchDemo"),),
+//      body: Switch(value: isSwitch, onChanged: (value){
+//
+//        setState(() {
+//          isSwitch = value;
+//        });
+//      }),
+      body: SwitchListTile(value: isSwitch, onChanged: (value){
+        
+        setState(() {
+          isSwitch = value;
+        });
+      }),
+    );
+  }
+}
+
+
+
+//单选框 - 互斥
 class RadioDemoExample extends StatefulWidget {
 
   @override
@@ -29,7 +65,6 @@ class RadioDemoExample extends StatefulWidget {
   }
 }
 
-//单选框 - 互斥
 class RadioDemoExampleState extends State<RadioDemoExample> {
 
   int groupValue;//选定的那个值，当与value值相同时选中效果
