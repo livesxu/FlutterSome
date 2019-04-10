@@ -15,10 +15,44 @@ class CheckBoxDemoState extends State<CheckBoxDemo> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return SwitchDemoExample();
+    return SliderDemoExample();
   }
 }
 
+class SliderDemoExample extends StatefulWidget {
+
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return SliderDemoExampleState();
+  }
+}
+
+class SliderDemoExampleState extends State<SliderDemoExample> {
+
+  double sliderNumber = 0.0;
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(title: Text("SliderDemo"),),
+      body: Slider(
+          value: sliderNumber,
+          label: "$sliderNumber",//弹出label显示值
+          divisions: 10, //分割份数
+          onChanged: (value){
+
+            setState(() {
+              sliderNumber = value;
+            }
+        );
+      }),
+    );
+  }
+}
+
+//Switch
 class SwitchDemoExample extends StatefulWidget {
 
   @override
