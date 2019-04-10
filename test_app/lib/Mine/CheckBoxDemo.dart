@@ -37,18 +37,30 @@ class CheckDemoExampleState extends State<CheckDemoExample> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(title: Text("checkBoxDemo"),),
-      body: Checkbox(
+//      body: Checkbox(
+//          value: ischeck,
+//          checkColor: Colors.blue,
+//          activeColor: Colors.red,
+//          onChanged: (value){
+//
+//            setState(() {
+//
+//              ischeck = value;
+//            });
+//          }
+//      ),
+      body: CheckboxListTile(
           value: ischeck,
-          checkColor: Colors.blue,
-          activeColor: Colors.red,
+          title: Text("I am title"),
+          subtitle: Text("i am subtitle"),
+          controlAffinity: ListTileControlAffinity.leading,//排布样式
+          secondary: Icon(Icons.fiber_smart_record),//可以添加一个小图标
+          selected: ischeck,//title,subtitle和小图标是否使用激活状态的颜色
           onChanged: (value){
-
-            setState(() {
-
-              ischeck = value;
-            });
-          }
-      ),
+          setState(() {
+            ischeck = value;
+        });
+      }),
     );;
   }
 }
