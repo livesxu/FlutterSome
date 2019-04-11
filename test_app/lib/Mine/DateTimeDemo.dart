@@ -31,8 +31,8 @@ class DateTimeDemoState extends State<DateTimeDemo> {
       time = timeSelected;
     });
   }
-
-  _timeSelectAction () async {
+  //未来某个时间点返回 - Future标记
+  Future<void> _timeSelectAction () async {
 
     TimeOfDay timeSelected = await showTimePicker(context: context, initialTime: dayTime);
 
