@@ -14,6 +14,8 @@ class DateTimeDemoState extends State<DateTimeDemo> {
   
   DateTime time = DateTime.now();
 
+  TimeOfDay dayTime = TimeOfDay.now();
+
   _dateSelectAction () async {
 
     DateTime timeSelected = await showDatePicker(
@@ -30,6 +32,17 @@ class DateTimeDemoState extends State<DateTimeDemo> {
     });
   }
 
+  _timeSelectAction () async {
+
+    TimeOfDay timeSelected = await showTimePicker(context: context, initialTime: dayTime);
+
+    if (timeSelected == null) return;
+
+    setState(() {
+      dayTime = timeSelected;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -42,6 +55,13 @@ class DateTimeDemoState extends State<DateTimeDemo> {
             Icon(Icons.arrow_drop_down),
           ],),
           onTap: _dateSelectAction,
+        ),
+        InkWell(
+          child: Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+            Text(dayTime.format(context)),
+            Icon(Icons.arrow_drop_down),
+          ],),
+          onTap: _timeSelectAction,
         )
       ],
       ),
