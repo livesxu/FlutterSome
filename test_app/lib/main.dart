@@ -5,6 +5,7 @@ import 'package:test_app/Mine/MineViewController.dart';
 import 'package:test_app/Mine/ComponentsDemo.dart';
 import 'package:test_app/Mine/CheckBoxDemo.dart';
 import 'package:test_app/Mine/DateTimeDemo.dart';
+import 'package:test_app/Mine/DialogDemo.dart';
 
 void main() => runApp(MyApp());
 
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.purple,
       ),
 //      home: HomeViewController(),
-      initialRoute: "/dateTime",//初始页面
+      initialRoute: "/dialog",//初始页面
       routes: {
         "/":(context) => HomeViewController(),//路由映射
         "/routerNameToNext":(context) => HomeSubHomeViewController(title: "RouterNameToNext",),
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         "/components":(context) => ComponentsDemo(),
         "/checkBox":(context) => CheckBoxDemo(),
         "/dateTime":(context) => DateTimeDemo(),
+        "/dialog":(context) => DialogDemo(),
       },
     );
   }
