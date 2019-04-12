@@ -16,7 +16,7 @@ class DialogDemoState extends State<DialogDemo> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(title: Text("DialogDemo"),),
-      body: SimpleDialogDemoExample(),
+      body: BottomSheetExample(),
     );
   }
 }
@@ -110,5 +110,37 @@ class AlertDialogDemoExampleState extends State<AlertDialogDemoExample> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return RaisedButton.icon(onPressed: _dialogAction, icon: Icon(Icons.local_grocery_store), label: Text(isChoose));
+  }
+}
+
+
+//bottomSheet -
+class BottomSheetExample extends StatefulWidget {
+
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return BottomSheetExampleState();
+  }
+}
+
+class BottomSheetExampleState extends State<BottomSheetExample> {
+
+  final bodyKey = GlobalKey<ScaffoldState>();
+
+  String isChoose = "AlertDialog";
+
+  _bottomSheetAction (){
+
+    bodyKey.currentState.showBottomSheet((BuildContext context){
+
+      return Container(height: 100,color: Colors.blue,child: Row(crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[Text("123")],),);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(key: bodyKey, body: RaisedButton.icon(onPressed: _bottomSheetAction, icon: Icon(Icons.local_grocery_store), label: Text(isChoose)),);
   }
 }
