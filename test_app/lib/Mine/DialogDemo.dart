@@ -149,12 +149,18 @@ class BottomSheetExampleState extends State<BottomSheetExample> {
   }
 
   //3.弹出底部 - 有遮挡
-  _bottomModelSheetAction (){
+  _bottomModelSheetAction () async {
 
-    showModalBottomSheet(context: context, builder: (BuildContext context){
+    final option = await showModalBottomSheet(context: context, builder: (BuildContext context){
 
-      return Container(height: 100,color: Colors.blue,child: Row(crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[Text("456")],),);
+      return Container(color: Colors.blue,child: Column(children: <Widget>[
+        ListTile(onTap: (){Navigator.of(context).pop("a");},title: Text("optionA"),),
+        ListTile(onTap: (){Navigator.of(context).pop("b");},title: Text("optionB"),),
+        ListTile(onTap: (){Navigator.of(context).pop("c");},title: Text("optionC"),),
+        ListTile(onTap: (){Navigator.of(context).pop("d");},title: Text("optionD"),),],),);
     });
+
+    print(option);
   }
   
 
