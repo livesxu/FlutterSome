@@ -16,7 +16,7 @@ class DialogDemoState extends State<DialogDemo> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(title: Text("DialogDemo"),),
-      body: AlertDialogDemoExample(),
+      body: SimpleDialogDemoExample(),
     );
   }
 }
@@ -33,21 +33,28 @@ class SimpleDialogDemoExample extends StatefulWidget {
 
 class SimpleDialogDemoExampleState extends State<SimpleDialogDemoExample> {
 
-  _dialogAction () {
+  String tt;
 
-    showDialog(context: context,builder: (BuildContext context) {
+  _dialogAction () async {
+
+    final option = await showDialog(context: context,builder: (BuildContext context) {
 
       return SimpleDialog(
         title: Text("Dialog"),
         children: <Widget>[
           SizedBox(height: 20,),
-          SimpleDialogOption(onPressed: (){Navigator.of(context).pop();},child: Text("optionA"),),
-          SimpleDialogOption(onPressed: (){},child: Text("optionB"),),
-          SimpleDialogOption(onPressed: (){},child: Text("optionC"),),
-          SimpleDialogOption(onPressed: (){},child: Text("optionD"),),
+          SimpleDialogOption(onPressed: (){Navigator.of(context).pop("a");},child: Text("optionA"),),
+          SimpleDialogOption(onPressed: (){Navigator.of(context).pop("b");},child: Text("optionB"),),
+          SimpleDialogOption(onPressed: (){Navigator.of(context).pop("c");},child: Text("optionC"),),
+          SimpleDialogOption(onPressed: (){Navigator.of(context).pop("d");},child: Text("optionD"),),
         ],
       );
     });
+
+    if (option == null) return;
+
+    print(option);
+
   }
 
   @override
