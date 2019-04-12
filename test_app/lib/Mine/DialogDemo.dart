@@ -16,7 +16,7 @@ class DialogDemoState extends State<DialogDemo> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(title: Text("DialogDemo"),),
-      body: SnackBarExample(),
+      body: ExpansionPanelExample(),
     );
   }
 }
@@ -210,5 +210,31 @@ class SnackBarExampleState extends State<SnackBarExample> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(key: bodyKey, body: RaisedButton.icon(onPressed: _snackBar2Action, icon: Icon(Icons.local_grocery_store), label: Text(isChoose)),);
+  }
+}
+
+
+
+//snackBar -
+class ExpansionPanelExample extends StatefulWidget {
+
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return ExpansionPanelExampleState();
+  }
+}
+
+class ExpansionPanelExampleState extends State<ExpansionPanelExample> {
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Column(
+      children: <Widget>[
+    ExpansionPanelList(children: [
+    ExpansionPanel(headerBuilder: (BuildContext context,bool isExpand){return Container(child: Text("title"),);}, body: Container(child: Text("123"),)),
+    ],),]
+    );
   }
 }
