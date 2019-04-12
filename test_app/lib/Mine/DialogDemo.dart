@@ -130,6 +130,7 @@ class BottomSheetExampleState extends State<BottomSheetExample> {
 
   String isChoose = "AlertDialog";
 
+  //1.弹出底部 - 无遮挡，可继续操作页面 -使用方式bodyKey.currentState.showBottomSheet
   _bottomSheetAction (){
 
     bodyKey.currentState.showBottomSheet((BuildContext context){
@@ -137,10 +138,29 @@ class BottomSheetExampleState extends State<BottomSheetExample> {
       return Container(height: 100,color: Colors.blue,child: Row(crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[Text("123")],),);
     });
   }
+  
+  //2.弹出底部 - 无遮挡，可继续操作页面 - showBottomSheet
+  _bottom2SheetAction (){
+    
+    showBottomSheet(context: context, builder: (BuildContext context){
+
+      return Container(height: 100,color: Colors.blue,child: Row(crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[Text("456")],),);
+    });
+  }
+
+  //3.弹出底部 - 有遮挡
+  _bottomModelSheetAction (){
+
+    showModalBottomSheet(context: context, builder: (BuildContext context){
+
+      return Container(height: 100,color: Colors.blue,child: Row(crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[Text("456")],),);
+    });
+  }
+  
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Scaffold(key: bodyKey, body: RaisedButton.icon(onPressed: _bottomSheetAction, icon: Icon(Icons.local_grocery_store), label: Text(isChoose)),);
+    return Scaffold(key: bodyKey, body: RaisedButton.icon(onPressed: _bottomModelSheetAction, icon: Icon(Icons.local_grocery_store), label: Text(isChoose)),);
   }
 }
