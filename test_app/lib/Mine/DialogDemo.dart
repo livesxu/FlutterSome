@@ -16,7 +16,7 @@ class DialogDemoState extends State<DialogDemo> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(title: Text("DialogDemo"),),
-      body: BottomSheetExample(),
+      body: SnackBarExample(),
     );
   }
 }
@@ -168,5 +168,47 @@ class BottomSheetExampleState extends State<BottomSheetExample> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(key: bodyKey, body: RaisedButton.icon(onPressed: _bottomModelSheetAction, icon: Icon(Icons.local_grocery_store), label: Text(isChoose)),);
+  }
+}
+
+
+//snackBar -
+class SnackBarExample extends StatefulWidget {
+
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return SnackBarExampleState();
+  }
+}
+
+class SnackBarExampleState extends State<SnackBarExample> {
+
+  final bodyKey = GlobalKey<ScaffoldState>();
+
+  String isChoose = "AlertDialog";
+
+  //1.弹出底部操作提示栏 -使用方式bodyKey.currentState.showSnackBar
+  _snackBarAction (){
+
+    bodyKey.currentState.showSnackBar(
+
+      SnackBar(content: Text("123"),action: SnackBarAction(label: "OK", onPressed: (){}),)
+    );
+  }
+
+  //2.弹出底部操作提示栏 -使用方式Scaffold.of(context).showSnackBar
+  _snackBar2Action (){
+
+    Scaffold.of(context).showSnackBar(
+
+        SnackBar(content: Text("456"),action: SnackBarAction(label: "OK", onPressed: (){}),)
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(key: bodyKey, body: RaisedButton.icon(onPressed: _snackBar2Action, icon: Icon(Icons.local_grocery_store), label: Text(isChoose)),);
   }
 }
