@@ -227,24 +227,54 @@ class ExpansionPanelExample extends StatefulWidget {
 
 class ExpansionPanelExampleState extends State<ExpansionPanelExample> {
 
-  bool isExpandedStand = false;
+  List<ExpansionPanelItem> itemDatas;
+
+  @override
+  void initState() {
+    super.initState();
+
+    itemDatas = [
+
+      ExpansionPanelItem(headerText: "A",body:Container(child: Text("1"),),isExpanded: false),
+      ExpansionPanelItem(headerText: "B",body:Container(child: Text("2"),),isExpanded: false),
+      ExpansionPanelItem(headerText: "C",body:Container(child: Text("3"),),isExpanded: false),
+      ExpansionPanelItem(headerText: "D",body:Container(child: Text("4"),),isExpanded: false),
+      ExpansionPanelItem(headerText: "E",body:Container(child: Text("5"),),isExpanded: false),
+
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Column(
       children: <Widget>[
-    ExpansionPanelList(children: [
-    ExpansionPanel(isExpanded: isExpandedStand, headerBuilder: (BuildContext context,bool isExpand){return Container(child: Text("title"),);}, body: Container(child: Text("123"),)),
-    ],
-      expansionCallback: (int index,bool isExpanded){
+    ExpansionPanelList(children: itemDatas.map((ExpansionPanelItem item){
 
-        setState(() {
+      return ExpansionPanel(headerBuilder: (BuildContext context,bool isExpand){return Container(child: Text(item.headerText),);}, body: item.body,isExpanded: item.isExpanded);
 
-          isExpandedStand = !isExpanded;
-        });
-      },
-    ),]
+    }).toList(),expansionCallback: (int index,bool isExpanded){
+
+      setState(() {
+
+        itemDatas[index].isExpanded = !isExpanded;
+      });
+    },)],
     );
   }
+}
+
+class ExpansionPanelItem  {
+
+  final String headerText;
+  final Widget body;
+
+  bool isExpanded;
+
+  ExpansionPanelItem({
+    this.headerText,
+    this.body,
+    this.isExpanded,
+  });
+
 }
