@@ -227,14 +227,24 @@ class ExpansionPanelExample extends StatefulWidget {
 
 class ExpansionPanelExampleState extends State<ExpansionPanelExample> {
 
+  bool isExpandedStand = false;
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Column(
       children: <Widget>[
     ExpansionPanelList(children: [
-    ExpansionPanel(headerBuilder: (BuildContext context,bool isExpand){return Container(child: Text("title"),);}, body: Container(child: Text("123"),)),
-    ],),]
+    ExpansionPanel(isExpanded: isExpandedStand, headerBuilder: (BuildContext context,bool isExpand){return Container(child: Text("title"),);}, body: Container(child: Text("123"),)),
+    ],
+      expansionCallback: (int index,bool isExpanded){
+
+        setState(() {
+
+          isExpandedStand = !isExpanded;
+        });
+      },
+    ),]
     );
   }
 }
