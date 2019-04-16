@@ -17,7 +17,7 @@ class DataTableDemoState extends State<DataTableDemo> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(title: Text("DataTableDemo"),),
-      body: DataTableExample(),
+      body: PaginatedDataTableExample(),
     );
   }
 }
@@ -55,4 +55,64 @@ class DataTableExampleState extends State<DataTableExample> {
           )
       );
   }
+}
+
+
+class PaginatedDataTableExample extends StatefulWidget {
+
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return PaginatedDataTableExampleState();
+  }
+}
+
+class PaginatedDataTableExampleState extends State<PaginatedDataTableExample> {
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+        child: ListView(
+          children: <Widget>[
+            PaginatedDataTable(
+              header: Text("Header"),
+                columns: [
+//                DataColumn(label: Container(width: 100,child: Text("Id"),)),//设置宽度eg
+                DataColumn(label: Text("Id")),
+                DataColumn(label: Text("Title")),
+                DataColumn(label: Text("Image")),
+            ],source: DataTableSourceUsedExample())
+          ],
+        )
+    );
+  }
+}
+
+class DataTableSourceUsedExample extends DataTableSource {
+
+  @override
+  DataRow getRow(int index) {
+
+    final Person person = Persons[index];
+
+    return DataRow(selected:false,onSelectChanged: (bool){},cells: [
+      DataCell(Text(person.id)),
+      DataCell(Text(person.title)),
+      DataCell(Image.network(person.body)),
+    ]);
+  }
+
+  @override
+  // TODO: implement rowCount
+  int get rowCount => Persons.length;
+
+  @override
+  // TODO: implement isRowCountApproximate
+  bool get isRowCountApproximate => false;
+
+  @override
+  // TODO: implement selectedRowCount
+  int get selectedRowCount => 0;
+
 }
