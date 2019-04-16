@@ -45,7 +45,7 @@ class DataTableExampleState extends State<DataTableExample> {
                 DataColumn(label: Text("Title")),
                 DataColumn(label: Text("Image")),
               ], rows:Persons.map((Person person){
-                return DataRow(cells: [
+                return DataRow(selected:false,onSelectChanged: (bool){},cells: [
                   DataCell(Text(person.id)),
                   DataCell(Text(person.title)),
                   DataCell(Image.network(person.body)),
