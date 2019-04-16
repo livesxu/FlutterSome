@@ -8,6 +8,7 @@ import 'package:test_app/Mine/DateTimeDemo.dart';
 import 'package:test_app/Mine/DialogDemo.dart';
 import 'package:test_app/Mine/ChipDemo.dart';
 import 'package:test_app/Mine/DataTableDemo.dart';
+import 'package:test_app/Mine/CardDemo.dart';
 
 void main() => runApp(MyApp());
 
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.purple,
       ),
 //      home: HomeViewController(),
-      initialRoute: "/dataTable",//初始页面
+      initialRoute: "/card",//初始页面
       routes: {
         "/":(context) => HomeViewController(),//路由映射
         "/routerNameToNext":(context) => HomeSubHomeViewController(title: "RouterNameToNext",),
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
         "/dialog":(context) => DialogDemo(),
         "/chip":(context) => ChipDemo(),
         "/dataTable":(context) => DataTableDemo(),
+        "/card":(context) => CardDemo(),
       },
     );
   }
