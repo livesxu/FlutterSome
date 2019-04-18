@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scoped_model/scoped_model.dart';
 
 class StateDemo extends StatefulWidget {
 
@@ -20,18 +21,19 @@ class StateDemoState extends State<StateDemo> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return InheritedProvider(
-      count: _count,
-      callback: _pressedAction,
+    return ScopedModel(
+      model: ScopedModelExample(),
       child: Scaffold(
         appBar: AppBar(title: Text("StateDemo"),),
         body: Center(
           child: CustomChipItemWrapper(),
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: _pressedAction,
-          child: Icon(Icons.add),
-        ),
+        floatingActionButton: ScopedModelDescendant(rebuildOnChange: false,builder: (context,_,ScopedModelExample model){
+          return FloatingActionButton(
+            onPressed: model.increaseCount,
+            child: Icon(Icons.add),
+          );
+        })
       ),
     );
   }
@@ -87,9 +89,11 @@ class CustomChipItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return ActionChip(
-      label: Text("${InheritedProvider.of(context).count}"),
-      onPressed: InheritedProvider.of(context).callback,
+    return ScopedModelDescendant(
+        builder: (context,_,ScopedModelExample model) => ActionChip(
+          label: Text("${model.count}"),
+          onPressed: model.increaseCount,
+        )
     );
   }
 }
@@ -101,5 +105,18 @@ class CustomChipItemWrapper extends StatelessWidget {
     // TODO: implement build
     return CustomChipItem();
   }
+}
+
+class ScopedModelExample extends Model {
+
+  int _count = 0;
+  int get count => _count;
+
+  void increaseCount(){
+
+    _count += 1;
+    notifyListeners();
+  }
+
 }
 
