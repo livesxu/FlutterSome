@@ -35,6 +35,9 @@ class StreamDemoExampleState extends State<StreamDemoExample> {
 
   StreamSubscription _streamSubscripthon;
   StreamController<String> _streamController;
+  StreamSink<String> _sink;
+
+  String _data = "...";
 
   @override
   void dispose() {
@@ -49,9 +52,13 @@ class StreamDemoExampleState extends State<StreamDemoExample> {
     
 //    Stream<String> _streamDemo = Stream.fromFuture(delayData());
 
-    _streamController = StreamController<String>();
+    _streamController = StreamController.broadcast();
+
+    _sink = _streamController.sink;
 
     _streamSubscripthon = _streamController.stream.listen(onDataAction,onError: onErrorAction,onDone: onDoneAction,cancelOnError: false,);
+
+    _streamController.stream.listen(onDataTwoAction,onError: onErrorAction,onDone: onDoneAction,cancelOnError: false,);
   }
   
   Future<String> delayData () async {
@@ -67,13 +74,22 @@ class StreamDemoExampleState extends State<StreamDemoExample> {
 
     String data = await delayData();
 
-    _streamController.add(data);
-
+//    _streamController.add(data);
+    _sink.add(data);
   }
 
   void onDataAction (String string){
 
+    setState(() {
+      _data = string;
+    });
     print(string);
+  }
+
+  void onDataTwoAction (String string){
+
+
+    print("twoAction:$string");
   }
 
   void onErrorAction (error) {
@@ -92,12 +108,17 @@ class StreamDemoExampleState extends State<StreamDemoExample> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Center(
-      child: Row(mainAxisAlignment: MainAxisAlignment.center,children: <Widget>[
-        RaisedButton(onPressed: (){addData();}, child: Text("add")),//添加
-        RaisedButton(onPressed: (){_streamSubscripthon.pause();print("pause");}, child: Text("pause")),//暂停
-        RaisedButton(onPressed: (){_streamSubscripthon.resume();print("resume");}, child: Text("resume")),//恢复
-        RaisedButton(onPressed: (){_streamSubscripthon.cancel();print("cancel");}, child: Text("cancel")),//取消
-      ],),
+      child: Column(
+        children: <Widget>[
+          Text(_data),
+          Row(mainAxisAlignment: MainAxisAlignment.center,children: <Widget>[
+            RaisedButton(onPressed: (){addData();}, child: Text("add")),//添加
+            RaisedButton(onPressed: (){_streamSubscripthon.pause();print("pause");}, child: Text("pause")),//暂停
+            RaisedButton(onPressed: (){_streamSubscripthon.resume();print("resume");}, child: Text("resume")),//恢复
+            RaisedButton(onPressed: (){_streamSubscripthon.cancel();print("cancel");}, child: Text("cancel")),//取消
+          ],),
+        ],
+      )
     );
   }
 }
