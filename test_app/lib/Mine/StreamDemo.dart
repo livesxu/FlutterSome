@@ -110,7 +110,13 @@ class StreamDemoExampleState extends State<StreamDemoExample> {
     return Center(
       child: Column(
         children: <Widget>[
-          Text(_data),
+          StreamBuilder(
+            stream: _streamController.stream,
+              initialData: "...",//初始数据
+              builder: (BuildContext context,snapshot){
+                return Text("${snapshot.data}");
+              }
+          ),
           Row(mainAxisAlignment: MainAxisAlignment.center,children: <Widget>[
             RaisedButton(onPressed: (){addData();}, child: Text("add")),//添加
             RaisedButton(onPressed: (){_streamSubscripthon.pause();print("pause");}, child: Text("pause")),//暂停
