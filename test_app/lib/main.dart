@@ -11,6 +11,7 @@ import 'package:test_app/Mine/DataTableDemo.dart';
 import 'package:test_app/Mine/CardDemo.dart';
 import 'package:test_app/Mine/StepDemo.dart';
 import 'package:test_app/Mine/StateDemo.dart';
+import 'package:test_app/Mine/StreamDemo.dart';
 
 void main() => runApp(MyApp());
 
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.purple,
       ),
 //      home: HomeViewController(),
-      initialRoute: "/stateDemo",//初始页面
+      initialRoute: "/stream",//初始页面
       routes: {
         "/":(context) => HomeViewController(),//路由映射
         "/routerNameToNext":(context) => HomeSubHomeViewController(title: "RouterNameToNext",),
@@ -47,6 +48,7 @@ class MyApp extends StatelessWidget {
         "/card":(context) => CardDemo(),
         "/step":(context) => StepDemo(),
         "/stateDemo":(context) => StateDemo(),
+        "/stream":(context) => StreamDemo(),
       },
     );
   }
