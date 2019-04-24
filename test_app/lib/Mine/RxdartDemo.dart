@@ -60,17 +60,18 @@ class RxdartDemoExampleState extends State<RxdartDemoExample> {
 //    _subject = PublishSubject<String>();//遵循监听，先听，再发才可收到
 //    _subject = BehaviorSubject<String>();//把最后一次添加的数据监听返回
     _subject = ReplaySubject<String>(maxSize: 2);//把添加的所有内容都监听返回,maxSize可设置返回最大接受数据个数，类 栈 从后往前
+//
+//    _subject.add("hello ~");
+//    _subject.add("hola ~");
+//    _subject.add("hi ~");
+//
+    _subject
+//        .map((data) => "mapAddSomeThing$data")//通道数据转换操作
+//        .where((String data) => data.contains("submit"))//通道数据过滤
+        .debounce(Duration(seconds: 1))//通道数据间隔，比如设置1秒，那么只有1秒没有触发值改变时通过，否则过滤（过滤太过频繁的改变）
+        .listen((data) => print("listen:$data"));
 
-    _subject.add("hello ~");
-    _subject.add("hola ~");
-    _subject.add("hi ~");
-
-    _subject.listen((data) => print("listen 1:$data"));
-
-    _subject.listen((data) => print("listen 2:${data.toUpperCase()}"));
-
-
-
+//    _subject.listen((data) => print("listen 2:${data.toUpperCase()}"));
 
   }
 
@@ -119,15 +120,18 @@ class RxdartDemoExampleState extends State<RxdartDemoExample> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Center(
-        child: Column(
-          children: <Widget>[
-            Row(mainAxisAlignment: MainAxisAlignment.center,children: <Widget>[
-              RaisedButton(onPressed: (){addData();}, child: Text("add")),//添加
-              RaisedButton(onPressed: (){}, child: Text("pause")),//暂停
-              RaisedButton(onPressed: (){}, child: Text("resume")),//恢复
-              RaisedButton(onPressed: (){}, child: Text("cancel")),//取消
-            ],),
-          ],
+        child: TextField(
+          onChanged: (value){
+            _subject.add("change:$value");
+          },
+          onSubmitted: (value){
+            _subject.add("submit:$value");
+          },
+          decoration: InputDecoration(
+              labelText: "iphone",
+              icon: Icon(Icons.input),
+              hintText: "请输入手机号"
+          ),
         )
     );
   }
