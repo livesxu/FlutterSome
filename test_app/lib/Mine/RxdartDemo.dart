@@ -34,16 +34,14 @@ class RxdartDemoExample extends StatefulWidget {
 
 class RxdartDemoExampleState extends State<RxdartDemoExample> {
 
-  StreamSubscription _streamSubscripthon;
-  StreamController<String> _streamController;
-  StreamSink<String> _sink;
+  ReplaySubject<String> _subject;
 
   String _data = "...";
 
   @override
   void dispose() {
 
-    _streamController.close();//关闭
+    _subject.close();
     super.dispose();
   }
 
@@ -59,7 +57,20 @@ class RxdartDemoExampleState extends State<RxdartDemoExample> {
 //    Observable.periodic(Duration(seconds: 3),(int x) => x.toString());//周期执行
 
 //    _observable.listen(print);
-    
+//    _subject = PublishSubject<String>();//遵循监听，先听，再发才可收到
+//    _subject = BehaviorSubject<String>();//把最后一次添加的数据监听返回
+    _subject = ReplaySubject<String>(maxSize: 2);//把添加的所有内容都监听返回,maxSize可设置返回最大接受数据个数，类 栈 从后往前
+
+    _subject.add("hello ~");
+    _subject.add("hola ~");
+    _subject.add("hi ~");
+
+    _subject.listen((data) => print("listen 1:$data"));
+
+    _subject.listen((data) => print("listen 2:${data.toUpperCase()}"));
+
+
+
 
   }
 
@@ -76,8 +87,6 @@ class RxdartDemoExampleState extends State<RxdartDemoExample> {
 
     String data = await delayData();
 
-//    _streamController.add(data);
-    _sink.add(data);
   }
 
   void onDataAction (String string){
@@ -112,18 +121,11 @@ class RxdartDemoExampleState extends State<RxdartDemoExample> {
     return Center(
         child: Column(
           children: <Widget>[
-            StreamBuilder(
-                stream: _streamController.stream,
-                initialData: "...",//初始数据
-                builder: (BuildContext context,snapshot){
-                  return Text("${snapshot.data}");
-                }
-            ),
             Row(mainAxisAlignment: MainAxisAlignment.center,children: <Widget>[
               RaisedButton(onPressed: (){addData();}, child: Text("add")),//添加
-              RaisedButton(onPressed: (){_streamSubscripthon.pause();print("pause");}, child: Text("pause")),//暂停
-              RaisedButton(onPressed: (){_streamSubscripthon.resume();print("resume");}, child: Text("resume")),//恢复
-              RaisedButton(onPressed: (){_streamSubscripthon.cancel();print("cancel");}, child: Text("cancel")),//取消
+              RaisedButton(onPressed: (){}, child: Text("pause")),//暂停
+              RaisedButton(onPressed: (){}, child: Text("resume")),//恢复
+              RaisedButton(onPressed: (){}, child: Text("cancel")),//取消
             ],),
           ],
         )
