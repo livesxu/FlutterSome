@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'package:scoped_model/scoped_model.dart';
 
 class BLocDemo extends StatefulWidget {
 
@@ -15,8 +16,8 @@ class BLocDemoState extends State<BLocDemo> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return InheritedBloc(
-      bloc: BlocExample(),
+    return ScopedModel(
+      model: ScopedModelBloc(bloc: BlocExample()),
       child:  Scaffold(
         appBar: AppBar(title: Text("BLocDemo"),),
         body: BLocDemoExample(),
@@ -41,46 +42,62 @@ class BLocDemoExampleState extends State<BLocDemoExample> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return StreamBuilder(
-        initialData: 0,
-        stream: InheritedBloc.of(context).bloc.stream,
-        builder: (BuildContext context,snapshot) {
+    return ScopedModelDescendant(rebuildOnChange: false, builder: (BuildContext context,_,ScopedModelBloc model){
 
-          return Scaffold(
-            body: ActionChip(label: Text("${snapshot.data}"), onPressed: (){
+      return StreamBuilder(
+          initialData: 0,
+          stream: model.bloc.stream,
+          builder: (BuildContext context,snapshot) {
 
-              InheritedBloc.of(context).bloc.conter.add(1);
-            }),
-            floatingActionButton: FloatingActionButton(onPressed: (){
+            return Scaffold(
+              body: ActionChip(label: Text("${snapshot.data}"), onPressed: (){
 
-              InheritedBloc.of(context).bloc.conter.add(1);
-            },child: Icon(Icons.add),),
-          );
-        }
-    );
+                model.bloc.conter.add(1);
+              }),
+              floatingActionButton: FloatingActionButton(onPressed: (){
+
+                model.bloc.conter.add(1);
+              },child: Icon(Icons.add),),
+            );
+          }
+      );
+    });
   }
 }
 
-class InheritedBloc extends InheritedWidget {
+//class InheritedBloc extends InheritedWidget {
+//
+//  final Widget child;
+//  final BlocExample bloc;
+//
+//  InheritedBloc({
+//    this.child,
+//    this.bloc,
+//  }):super(child:child);
+//
+//   static InheritedBloc of(BuildContext context) {
+//     return context.inheritFromWidgetOfExactType(InheritedBloc) as InheritedBloc;
+//   }
+//
+//   @override
+//   bool updateShouldNotify(InheritedWidget oldWidget) {
+//    // TODO: implement updateShouldNotify
+//    return true;
+//  }
+//}
 
-  final Widget child;
+//将共享从InheritedWidget更换为scoped_model
+
+class ScopedModelBloc extends Model {
+
   final BlocExample bloc;
 
-  InheritedBloc({
-    this.child,
+  ScopedModelBloc({
     this.bloc,
-  }):super(child:child);
 
-   static InheritedBloc of(BuildContext context) {
-     return context.inheritFromWidgetOfExactType(InheritedBloc) as InheritedBloc;
-   }
-
-   @override
-   bool updateShouldNotify(InheritedWidget oldWidget) {
-    // TODO: implement updateShouldNotify
-    return true;
-  }
+ });
 }
+
 
 class BlocExample{
 
