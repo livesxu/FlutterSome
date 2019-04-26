@@ -14,6 +14,7 @@ import 'package:test_app/Mine/StateDemo.dart';
 import 'package:test_app/Mine/StreamDemo.dart';
 import 'package:test_app/Mine/RxdartDemo.dart';
 import 'package:test_app/Mine/BLoCDemo.dart';
+import 'package:test_app/Mine/HttpDemo.dart';
 
 void main() => runApp(MyApp());
 
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.purple,
       ),
 //      home: HomeViewController(),
-      initialRoute: "/bloc",//初始页面
+      initialRoute: "/http",//初始页面
       routes: {
         "/":(context) => HomeViewController(),//路由映射
         "/routerNameToNext":(context) => HomeSubHomeViewController(title: "RouterNameToNext",),
@@ -53,6 +54,7 @@ class MyApp extends StatelessWidget {
         "/stream":(context) => StreamDemo(),
         "/rxdart":(context) => RxdartDemo(),
         "/bloc":(context) => BLocDemo(),
+        "/http":(context) => HttpDemo(),
       },
     );
   }
