@@ -43,7 +43,7 @@ class HttpDemoExampleState extends State<HttpDemoExample> {
 //    loadDatas();
   }
 
-  Future<List<Post>> loadDatas() async {
+  Future<List<PostChildTest>> loadDatas() async {
     final response =
         await http.get("https://resources.ninghao.net/demo/posts.json");
     //response.statusCode //接口状态码
@@ -54,7 +54,7 @@ class HttpDemoExampleState extends State<HttpDemoExample> {
 
     final List postsBody = posts["posts"];
 
-    final List<Post> postInfos = postsBody.map((item) => Post.fromJson(item)).toList();
+    final List<PostChildTest> postInfos = postsBody.map((item) => PostChildTest.fromJson(item)).toList();
     
 //    Post first = postInfos[0];
 //    print(json.encode(first));//encode会自动执行Post 里面的toJson
@@ -89,7 +89,7 @@ class HttpDemoExampleState extends State<HttpDemoExample> {
 //          }
           if (snapshot.connectionState == ConnectionState.waiting) return Container(child: Text("Loading..."),);
 
-          List<Post> postInfos = snapshot.data;
+          List<PostChildTest> postInfos = snapshot.data;
 
           return ListView(children: postInfos.map(
                   (post) => Container(
@@ -148,4 +148,9 @@ class Post {
     "description":description,
     "imageUrl":imageUrl,
   };
+}
+
+class PostChildTest extends Post {
+
+  PostChildTest.fromJson(Map json):super.fromJson(json);
 }
