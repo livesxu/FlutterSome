@@ -15,8 +15,11 @@ class MainTabBarState extends State<MainTabBar> {
     return new Scaffold(
       appBar: new GradientAppBar(
         title: new Text('ReadNeed'),
-        shadowColor: Colors.blue,
-        gradient: LinearGradient(colors: [Colors.red[50],Colors.red[800]],begin: Alignment.topLeft,end: Alignment.bottomRight),
+        shadowColor: Theme.of(context).primaryColor,
+        gradient: RadialGradient(//更改为圆扩散
+            colors: [Theme.of(context).primaryColorLight,Theme.of(context).primaryColorDark],
+            center: Alignment.topLeft,
+            radius: 4),
       ),
       bottomNavigationBar: _bottomTabBar(_currentIndex),
       floatingActionButton: _bottomBook(_currentIndex == 1),
