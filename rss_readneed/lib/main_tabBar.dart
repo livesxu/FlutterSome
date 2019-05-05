@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rss_readneed/main_tabBar.dart';
+import 'package:rss_readneed/appbar_gradient.dart';
 
 class MainTabBar extends StatefulWidget {
   @override
@@ -7,15 +7,19 @@ class MainTabBar extends StatefulWidget {
 }
 
 class MainTabBarState extends State<MainTabBar> {
+
+  int _currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(
+      appBar: new GradientAppBar(
         title: new Text('ReadNeed'),
-        elevation: 2.0,
+        shadowColor: Colors.blue,
+        gradient: LinearGradient(colors: [Colors.red[50],Colors.red[800]],begin: Alignment.topLeft,end: Alignment.bottomRight),
       ),
-      bottomNavigationBar: _bottomTabBar(0),
-      floatingActionButton: _bottomBook(false),
+      bottomNavigationBar: _bottomTabBar(_currentIndex),
+      floatingActionButton: _bottomBook(_currentIndex == 1),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
@@ -26,21 +30,31 @@ class MainTabBarState extends State<MainTabBar> {
     return BottomNavigationBar(
         currentIndex: selectedIndex,
         onTap: (int index){
-
+          setState(() {
+            _currentIndex = index;
+          });
         },
         items: [
           BottomNavigationBarItem(
               icon: SizedBox.fromSize(
                 size: Size(30, 30),
                 child: Image.asset("images_assets/zhifeiji.png",
-                  color: Theme.of(context).primaryColor,
+                  color: _currentIndex == 0 ? Theme.of(context).primaryColor : Colors.grey[400],
                   colorBlendMode: BlendMode.srcIn,
                 ),
               ),
               title: Text("推荐")
           ),
           BottomNavigationBarItem(icon: SizedBox(width: 30,height: 30,), title: Text("阅必读")),
-          BottomNavigationBarItem(icon: SizedBox.fromSize(size: Size(30, 30),child: Image.asset("images_assets/ren.png"),),title: Text("我的")),
+          BottomNavigationBarItem(
+              icon: SizedBox.fromSize(
+                size: Size(30, 30),
+                child: Image.asset("images_assets/ren.png",
+                  color: _currentIndex == 2 ? Theme.of(context).primaryColor : Colors.grey[400],
+                  colorBlendMode: BlendMode.srcIn,
+                ),
+              ),
+              title: Text("我的")),
         ]
     );
   }
@@ -51,7 +65,11 @@ class MainTabBarState extends State<MainTabBar> {
     return FloatingActionButton(
       backgroundColor: Colors.white,
       elevation: 4.0,
-      onPressed: (){},
+      onPressed: (){
+        setState(() {
+          _currentIndex = 1;
+        });
+      },
       child: Center(
         child: SizedBox(
           width: 36,
