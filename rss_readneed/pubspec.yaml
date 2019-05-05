@@ -31,6 +31,14 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
 
+#添加资源 ->
+  assets:
+  - images_assets/book104.png
+  - images_assets/book116.png
+  - images_assets/icon.png
+  - images_assets/zhifeiji.png
+  - images_assets/ren.png
+
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
