@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:rss_readneed/appbar_gradient.dart';
 
+import 'package:rss_readneed/rss_recommend/rss_recommend.dart';
+import 'package:rss_readneed/rss_collect/rss_collect.dart';
+import 'package:rss_readneed/rss_setting/rss_setting.dart';
+
 class MainTabBar extends StatefulWidget {
   @override
   MainTabBarState createState() => new MainTabBarState();
@@ -8,7 +12,24 @@ class MainTabBar extends StatefulWidget {
 
 class MainTabBarState extends State<MainTabBar> {
 
-  int _currentIndex = 0;
+  static int _currentIndex = 0;
+
+  static PageController pageController = PageController(initialPage: _currentIndex);
+
+  static TabController tabController = TabController(length: 3, vsync: ScrollableState());
+
+  PageView _pageView;
+
+  TabBarView _tabBarView;
+
+  //命中
+  void selectedIndex (int index) {
+
+    setState(() {
+
+      _currentIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +45,10 @@ class MainTabBarState extends State<MainTabBar> {
       bottomNavigationBar: _bottomTabBar(_currentIndex),
       floatingActionButton: _bottomBook(_currentIndex == 1),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      body:_tabBarView,
     );
   }
+
 
   //底部栏
   BottomNavigationBar _bottomTabBar (int selectedIndex) {
@@ -35,6 +58,17 @@ class MainTabBarState extends State<MainTabBar> {
         onTap: (int index){
           setState(() {
             _currentIndex = index;
+
+            if (_pageView != null) {
+
+              pageController.jumpToPage(_currentIndex);
+            }
+
+            if (_tabBarView != null) {
+
+              
+            }
+
           });
         },
         items: [
@@ -71,6 +105,10 @@ class MainTabBarState extends State<MainTabBar> {
       onPressed: (){
         setState(() {
           _currentIndex = 1;
+          if (_pageView != null) {
+
+            pageController.jumpToPage(_currentIndex);
+          }
         });
       },
       child: Center(
@@ -89,8 +127,28 @@ class MainTabBarState extends State<MainTabBar> {
   
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
+
+    //使用pageView实现
+//    _pageView = PageView(
+//      children: <Widget>[
+//        Recommend(),
+//        Collect(),
+//        Setting(),
+//      ],
+//      controller: pageController,
+//      onPageChanged: selectedIndex,
+//    );
+
+    //使用tabBarView实现
+    _tabBarView = TabBarView(
+        children: <Widget>[
+          Recommend(),
+          Collect(),
+          Setting(),
+        ],
+        controller: tabController,
+    );
   }
 
   @override
