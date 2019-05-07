@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rss_readneed/main_tabBar.dart';
 
+import 'package:rss_readneed/rss_channel/rss_channel.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -17,10 +19,12 @@ class MyApp extends StatelessWidget {
 //        primaryColorDark:mainColor,
       ),
       home: MainTabBar(),
+      routes: {},
     );
   }
 }
 
+//自定义 MaterialColor
 const int _mainColorPrimaryValue = 0xFFED9C3C;
 
 const MaterialColor mainColor = MaterialColor(

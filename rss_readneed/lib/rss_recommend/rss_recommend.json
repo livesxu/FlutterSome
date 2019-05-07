@@ -1,0 +1,330 @@
+[{
+    "rssChannelDicData" :     {
+        "descriptionMap" : "content:encoded",
+        "image" : "",
+        "link" : "link",
+        "pubDate" : "pubDate",
+        "title" : "title"
+    },
+    "rssDatasPath" : "channel.item",
+    "rssDesc" : "",
+    "rssImg" : "",
+    "rssStatus" : "",
+    "rsstitle" : "FOTOMEN",
+    "rssUrl" : "Https://fotomen.cn/feed/"
+},
+{
+    "rssChannelDicData" :     {
+        "descriptionMap" : "description",
+        "image" : "",
+        "link" : "link",
+        "pubDate" : "pubDate",
+        "title" : "title"
+    },
+    "rssDatasPath" : "channel.item",
+    "rssDesc" : "",
+    "rssImg" : "",
+    "rssStatus" : "",
+    "rsstitle" : "知乎每日精选",
+    "rssUrl" : "Http://www.zhihu.com/rss"
+},
+{
+    "rssChannelDicData" :     {
+        "descriptionMap" : "description",
+        "image" : "",
+        "link" : "link_3g",
+        "pubDate" : "pubDate",
+        "title" : "title"
+    },
+    "rssDatasPath" : "channel.item",
+    "rssDesc" : "",
+    "rssImg" : "",
+    "rssStatus" : "",
+    "rsstitle" : "36氪",
+    "rssUrl" : "Http://www.36kr.com/feed"
+},
+{
+    "rssChannelDicData" :     {
+        "descriptionMap" : "description",
+        "image" : "",
+        "link" : "link",
+        "pubDate" : "pubDate",
+        "title" : "title"
+    },
+    "rssDatasPath" : "channel.item",
+    "rssDesc" : "",
+    "rssImg" : "",
+    "rssStatus" : "",
+    "rsstitle" : "FT中文网_英国《金融时报》(Financial Times)",
+    "rssUrl" : "Http://www.ftchinese.com/rss/feed"
+},
+{
+    "rssChannelDicData" :     {
+        "descriptionMap" : "description",
+        "image" : "",
+        "link" : "link",
+        "pubDate" : "pubDate",
+        "title" : "title"
+    },
+    "rssDatasPath" : "channel.item",
+    "rssDesc" : "",
+    "rssImg" : "",
+    "rssStatus" : "",
+    "rsstitle" : "cnBeta.COM",
+    "rssUrl" : "Http://www.cnbeta.com/backend.php"
+},
+{
+    "rssChannelDicData" :     {
+        "descriptionMap" : "description",
+        "image" : "",
+        "link" : "link",
+        "pubDate" : "pubDate",
+        "title" : "title"
+    },
+    "rssDatasPath" : "channel.item",
+    "rssDesc" : "",
+    "rssImg" : "",
+    "rssStatus" : "",
+    "rsstitle" : "数字尾巴",
+    "rssUrl" : "Http://www.dgtle.com/rss/dgtle.xml"
+},
+{
+    "rssChannelDicData" :     {
+        "descriptionMap" : "content.__text",
+        "image" : "",
+        "link" : "link._href",
+        "pubDate" : "updated",
+        "title" : "title"
+    },
+    "rssDatasPath" : "entry",
+    "rssDesc" : "",
+    "rssImg" : "",
+    "rssStatus" : "",
+    "rsstitle" : "V2EX",
+    "rssUrl" : "Http://www.v2ex.com/index.xml"
+},
+{
+    "rssChannelDicData" :     {
+        "descriptionMap" : "description",
+        "image" : "",
+        "link" : "link",
+        "pubDate" : "pubDate",
+        "title" : "title"
+    },
+    "rssDatasPath" : "channel.item",
+    "rssDesc" : "",
+    "rssImg" : "",
+    "rssStatus" : "",
+    "rsstitle" : "Engadget 中文版 RSS Feed",
+    "rssUrl" : "Http://cn.engadget.com/rss.xml"
+},
+{
+    "rssChannelDicData" :     {
+        "descriptionMap" : "description",
+        "image" : "",
+        "link" : "link",
+        "pubDate" : "pubDate",
+        "title" : "title"
+    },
+    "rssDatasPath" : "channel.item",
+    "rssDesc" : "",
+    "rssImg" : "",
+    "rssStatus" : "",
+    "rsstitle" : "极客公园",
+    "rssUrl" : "Http://www.geekpark.net/rss"
+},
+{
+    "rssChannelDicData" :     {
+        "descriptionMap" : "content:encoded",
+        "image" : "",
+        "link" : "link",
+        "pubDate" : "pubDate",
+        "title" : "title"
+    },
+    "rssDatasPath" : "channel.item",
+    "rssDesc" : "",
+    "rssImg" : "",
+    "rssStatus" : "",
+    "rsstitle" : "科学松鼠会",
+    "rssUrl" : "Http://songshuhui.net/feed"
+},
+{
+    "rssChannelDicData" :     {
+        "descriptionMap" : "content:encoded",
+        "image" : "",
+        "link" : "link",
+        "pubDate" : "pubDate",
+        "title" : "title"
+    },
+    "rssDatasPath" : "channel.item",
+    "rssDesc" : "",
+    "rssImg" : "",
+    "rssStatus" : "",
+    "rsstitle" : "PanSci 泛科學",
+    "rssUrl" : "Http://pansci.tw/feed"
+},
+{
+    "rssChannelDicData" :     {
+        "descriptionMap" : "content.__text",
+        "image" : "",
+        "link" : "link._href",
+        "pubDate" : "updated",
+        "title" : "title"
+    },
+    "rssDatasPath" : "entry",
+    "rssDesc" : "",
+    "rssImg" : "",
+    "rssStatus" : "",
+    "rsstitle" : "褪墨・时间管理，个人提升，生活健康与习惯",
+    "rssUrl" : "Http://feed.mifengtd.cn"
+},
+{
+    "rssChannelDicData" :     {
+        "descriptionMap" : "content:encoded",
+        "image" : "focus_pic",
+        "link" : "link",
+        "pubDate" : "pubDate",
+        "title" : "title"
+    },
+    "rssDatasPath" : "channel.item",
+    "rssDesc" : "",
+    "rssImg" : "",
+    "rssStatus" : "",
+    "rsstitle" : "什么值得买",
+    "rssUrl" : "Http://feed.smzdm.com/"
+},
+{
+    "rssChannelDicData" :     {
+        "descriptionMap" : "content:encoded",
+        "image" : "",
+        "link" : "link",
+        "pubDate" : "pubDate",
+        "title" : "title"
+    },
+    "rssDatasPath" : "channel.item",
+    "rssDesc" : "",
+    "rssImg" : "",
+    "rssStatus" : "",
+    "rsstitle" : "爱…稀奇~{新鲜:科技:创意:有趣}",
+    "rssUrl" : "Http://www.ixiqi.com/feed"
+},
+{
+    "rssChannelDicData" :     {
+        "descriptionMap" : "description",
+        "image" : "",
+        "link" : "link",
+        "pubDate" : "pubDate",
+        "title" : "title"
+    },
+    "rssDatasPath" : "channel.item",
+    "rssDesc" : "",
+    "rssImg" : "",
+    "rssStatus" : "",
+    "rsstitle" : "《意林》杂志的BLOG",
+    "rssUrl" : "Http://blog.sina.com.cn/rss/yilinzazhi.xml"
+},
+{
+    "rssChannelDicData" :     {
+        "descriptionMap" : "description",
+        "image" : "",
+        "link" : "link",
+        "pubDate" : "pubDate",
+        "title" : "title"
+    },
+    "rssDatasPath" : "channel.item",
+    "rssDesc" : "",
+    "rssImg" : "",
+    "rssStatus" : "",
+    "rsstitle" : "《读者·原创版》",
+    "rssUrl" : "Http://blog.sina.com.cn/rss/1196045711.xml"
+},
+{
+    "rssChannelDicData" :     {
+        "descriptionMap" : "content:encoded",
+        "image" : "",
+        "link" : "link",
+        "pubDate" : "pubDate",
+        "title" : "title"
+    },
+    "rssDatasPath" : "channel.item",
+    "rssDesc" : "",
+    "rssImg" : "",
+    "rssStatus" : "",
+    "rsstitle" : "优设-UISDC",
+    "rssUrl" : "Http://www.uisdc.com/feed"
+},
+{
+    "rssChannelDicData" :     {
+        "descriptionMap" : "description",
+        "image" : "",
+        "link" : "link",
+        "pubDate" : "pubDate",
+        "title" : "title"
+    },
+    "rssDatasPath" : "channel.item",
+    "rssDesc" : "",
+    "rssImg" : "",
+    "rssStatus" : "",
+    "rsstitle" : "people_游戏频道",
+    "rssUrl" : "Http://www.people.com.cn/rss/game.xml"
+},
+{
+    "rssChannelDicData" :     {
+        "descriptionMap" : "description",
+        "image" : "",
+        "link" : "link",
+        "pubDate" : "pubDate",
+        "title" : "title"
+    },
+    "rssDatasPath" : "channel.item",
+    "rssDesc" : "",
+    "rssImg" : "",
+    "rssStatus" : "",
+    "rsstitle" : "people_时政频道",
+    "rssUrl" : "Http://www.people.com.cn/rss/politics.xml"
+},
+{
+    "rssChannelDicData" :     {
+        "descriptionMap" : "description",
+        "image" : "",
+        "link" : "link",
+        "pubDate" : "pubDate",
+        "title" : "title"
+    },
+    "rssDatasPath" : "channel.item",
+    "rssDesc" : "",
+    "rssImg" : "",
+    "rssStatus" : "",
+    "rsstitle" : "people_国际频道",
+    "rssUrl" : "Http://www.people.com.cn/rss/world.xml"
+},
+{
+    "rssChannelDicData" :     {
+        "descriptionMap" : "description",
+        "image" : "",
+        "link" : "link",
+        "pubDate" : "pubDate",
+        "title" : "title"
+    },
+    "rssDatasPath" : "channel.item",
+    "rssDesc" : "",
+    "rssImg" : "",
+    "rssStatus" : "",
+    "rsstitle" : "people_财经频道",
+    "rssUrl" : "Http://www.people.com.cn/rss/finance.xml"
+},
+{
+    "rssChannelDicData" :     {
+        "descriptionMap" : "description",
+        "image" : "",
+        "link" : "link",
+        "pubDate" : "pubDate",
+        "title" : "title"
+    },
+    "rssDatasPath" : "channel.item",
+    "rssDesc" : "",
+    "rssImg" : "",
+    "rssStatus" : "",
+    "rsstitle" : "people_体育频道",
+    "rssUrl" : "Http://www.people.com.cn/rss/sports.xml"
+}]
