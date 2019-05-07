@@ -66,7 +66,7 @@ class MainTabBarState extends State<MainTabBar> {
 
             if (_tabBarView != null) {
 
-              
+              tabController.animateTo(_currentIndex);
             }
 
           });
@@ -109,6 +109,10 @@ class MainTabBarState extends State<MainTabBar> {
 
             pageController.jumpToPage(_currentIndex);
           }
+          if (_tabBarView != null) {
+
+            tabController.animateTo(_currentIndex);
+          }
         });
       },
       child: Center(
@@ -149,12 +153,23 @@ class MainTabBarState extends State<MainTabBar> {
         ],
         controller: tabController,
     );
+    tabController.addListener((){
+
+      setState(() {
+
+        _currentIndex = tabController.index;
+
+      });
+    });
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
+
+    //销毁
+    pageController.dispose();
+    tabController.dispose();
   }
 
   @override
