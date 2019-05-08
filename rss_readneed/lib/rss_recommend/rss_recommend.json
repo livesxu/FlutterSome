@@ -1,10 +1,10 @@
 [{
     "rssChannelDicData" :     {
-        "descriptionMap" : "content:encoded",
+        "descriptionMap" : "content:encoded.__cdata",
         "image" : "",
-        "link" : "link",
-        "pubDate" : "pubDate",
-        "title" : "title"
+        "link" : "link.$",
+        "pubDate" : "pubDate.$",
+        "title" : "title.$"
     },
     "rssDatasPath" : "channel.item",
     "rssDesc" : "",
@@ -30,11 +30,11 @@
 },
 {
     "rssChannelDicData" :     {
-        "descriptionMap" : "description",
+        "descriptionMap" : "description.__cdata",
         "image" : "",
-        "link" : "link_3g",
+        "link" : "link_3g.$",
         "pubDate" : "pubDate",
-        "title" : "title"
+        "title" : "title.__cdata"
     },
     "rssDatasPath" : "channel.item",
     "rssDesc" : "",
@@ -45,11 +45,11 @@
 },
 {
     "rssChannelDicData" :     {
-        "descriptionMap" : "description",
+        "descriptionMap" : "description.__cdata",
         "image" : "",
-        "link" : "link",
-        "pubDate" : "pubDate",
-        "title" : "title"
+        "link" : "link.$",
+        "pubDate" : "pubDate.$",
+        "title" : "title.__cdata"
     },
     "rssDatasPath" : "channel.item",
     "rssDesc" : "",
@@ -60,11 +60,11 @@
 },
 {
     "rssChannelDicData" :     {
-        "descriptionMap" : "description",
+        "descriptionMap" : "description.__cdata",
         "image" : "",
-        "link" : "link",
-        "pubDate" : "pubDate",
-        "title" : "title"
+        "link" : "link.$",
+        "pubDate" : "pubDate.$",
+        "title" : "title.$"
     },
     "rssDatasPath" : "channel.item",
     "rssDesc" : "",
@@ -75,11 +75,11 @@
 },
 {
     "rssChannelDicData" :     {
-        "descriptionMap" : "description",
+        "descriptionMap" : "description.__cdata",
         "image" : "",
         "link" : "link",
         "pubDate" : "pubDate",
-        "title" : "title"
+        "title" : "title.$"
     },
     "rssDatasPath" : "channel.item",
     "rssDesc" : "",
@@ -105,11 +105,11 @@
 },
 {
     "rssChannelDicData" :     {
-        "descriptionMap" : "description",
+        "descriptionMap" : "description.__cdata",
         "image" : "",
-        "link" : "link",
+        "link" : "link.$",
         "pubDate" : "pubDate",
-        "title" : "title"
+        "title" : "title.__cdata"
     },
     "rssDatasPath" : "channel.item",
     "rssDesc" : "",
@@ -135,11 +135,11 @@
 },
 {
     "rssChannelDicData" :     {
-        "descriptionMap" : "content:encoded",
+        "descriptionMap" : "content:encoded.__cdata",
         "image" : "",
-        "link" : "link",
-        "pubDate" : "pubDate",
-        "title" : "title"
+        "link" : "link.$",
+        "pubDate" : "pubDate.$",
+        "title" : "title.$"
     },
     "rssDatasPath" : "channel.item",
     "rssDesc" : "",
@@ -165,26 +165,11 @@
 },
 {
     "rssChannelDicData" :     {
-        "descriptionMap" : "content.__text",
-        "image" : "",
-        "link" : "link._href",
-        "pubDate" : "updated",
-        "title" : "title"
-    },
-    "rssDatasPath" : "entry",
-    "rssDesc" : "",
-    "rssImg" : "",
-    "rssStatus" : "",
-    "rsstitle" : "褪墨・时间管理，个人提升，生活健康与习惯",
-    "rssUrl" : "Http://feed.mifengtd.cn"
-},
-{
-    "rssChannelDicData" :     {
-        "descriptionMap" : "content:encoded",
-        "image" : "focus_pic",
-        "link" : "link",
-        "pubDate" : "pubDate",
-        "title" : "title"
+        "descriptionMap" : "description.__cdata",
+        "image" : "focus_pic.__cdata",
+        "link" : "link.__cdata",
+        "pubDate" : "pubDate.__cdata",
+        "title" : "title.__cdata"
     },
     "rssDatasPath" : "channel.item",
     "rssDesc" : "",
@@ -195,11 +180,11 @@
 },
 {
     "rssChannelDicData" :     {
-        "descriptionMap" : "content:encoded",
+        "descriptionMap" : "description.__cdata",
         "image" : "",
-        "link" : "link",
-        "pubDate" : "pubDate",
-        "title" : "title"
+        "link" : "link.$",
+        "pubDate" : "pubDate.$",
+        "title" : "title.$"
     },
     "rssDatasPath" : "channel.item",
     "rssDesc" : "",
@@ -210,11 +195,11 @@
 },
 {
     "rssChannelDicData" :     {
-        "descriptionMap" : "description",
+        "descriptionMap" : "description.__cdata",
         "image" : "",
-        "link" : "link",
+        "link" : "link.$",
         "pubDate" : "pubDate",
-        "title" : "title"
+        "title" : "title.$"
     },
     "rssDatasPath" : "channel.item",
     "rssDesc" : "",
@@ -225,11 +210,11 @@
 },
 {
     "rssChannelDicData" :     {
-        "descriptionMap" : "description",
+        "descriptionMap" : "description.__cdata",
         "image" : "",
-        "link" : "link",
+        "link" : "link.$",
         "pubDate" : "pubDate",
-        "title" : "title"
+        "title" : "title.$"
     },
     "rssDatasPath" : "channel.item",
     "rssDesc" : "",
@@ -240,11 +225,11 @@
 },
 {
     "rssChannelDicData" :     {
-        "descriptionMap" : "content:encoded",
+        "descriptionMap" : "description.__cdata",
         "image" : "",
-        "link" : "link",
-        "pubDate" : "pubDate",
-        "title" : "title"
+        "link" : "link.$",
+        "pubDate" : "pubDate.$",
+        "title" : "title.$"
     },
     "rssDatasPath" : "channel.item",
     "rssDesc" : "",
@@ -252,79 +237,5 @@
     "rssStatus" : "",
     "rsstitle" : "优设-UISDC",
     "rssUrl" : "Http://www.uisdc.com/feed"
-},
-{
-    "rssChannelDicData" :     {
-        "descriptionMap" : "description",
-        "image" : "",
-        "link" : "link",
-        "pubDate" : "pubDate",
-        "title" : "title"
-    },
-    "rssDatasPath" : "channel.item",
-    "rssDesc" : "",
-    "rssImg" : "",
-    "rssStatus" : "",
-    "rsstitle" : "people_游戏频道",
-    "rssUrl" : "Http://www.people.com.cn/rss/game.xml"
-},
-{
-    "rssChannelDicData" :     {
-        "descriptionMap" : "description",
-        "image" : "",
-        "link" : "link",
-        "pubDate" : "pubDate",
-        "title" : "title"
-    },
-    "rssDatasPath" : "channel.item",
-    "rssDesc" : "",
-    "rssImg" : "",
-    "rssStatus" : "",
-    "rsstitle" : "people_时政频道",
-    "rssUrl" : "Http://www.people.com.cn/rss/politics.xml"
-},
-{
-    "rssChannelDicData" :     {
-        "descriptionMap" : "description",
-        "image" : "",
-        "link" : "link",
-        "pubDate" : "pubDate",
-        "title" : "title"
-    },
-    "rssDatasPath" : "channel.item",
-    "rssDesc" : "",
-    "rssImg" : "",
-    "rssStatus" : "",
-    "rsstitle" : "people_国际频道",
-    "rssUrl" : "Http://www.people.com.cn/rss/world.xml"
-},
-{
-    "rssChannelDicData" :     {
-        "descriptionMap" : "description",
-        "image" : "",
-        "link" : "link",
-        "pubDate" : "pubDate",
-        "title" : "title"
-    },
-    "rssDatasPath" : "channel.item",
-    "rssDesc" : "",
-    "rssImg" : "",
-    "rssStatus" : "",
-    "rsstitle" : "people_财经频道",
-    "rssUrl" : "Http://www.people.com.cn/rss/finance.xml"
-},
-{
-    "rssChannelDicData" :     {
-        "descriptionMap" : "description",
-        "image" : "",
-        "link" : "link",
-        "pubDate" : "pubDate",
-        "title" : "title"
-    },
-    "rssDatasPath" : "channel.item",
-    "rssDesc" : "",
-    "rssImg" : "",
-    "rssStatus" : "",
-    "rsstitle" : "people_体育频道",
-    "rssUrl" : "Http://www.people.com.cn/rss/sports.xml"
-}]
+}
+]

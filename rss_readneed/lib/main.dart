@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rss_readneed/main_tabBar.dart';
 
-import 'package:rss_readneed/rss_channel/rss_channel.dart';
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {

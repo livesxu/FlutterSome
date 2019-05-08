@@ -5,6 +5,8 @@ import 'package:http/http.dart' as http;
 import 'package:xml2json/xml2json.dart';
 import 'dart:convert';
 
+import 'package:rss_readneed/rss_channel/rss_web.dart';
+
 class Channel extends StatefulWidget {
 
   final RecommendModel model;
@@ -39,12 +41,12 @@ class ChannelState extends State<Channel> {
     Map mapDatas = json.decode(jsonString);
 
     Iterable mapKeys = mapDatas.keys;
-
+    //当只有一个元素时假定xml2json时将最外层包了一层
     if (mapKeys.length == 1) {
 
       mapDatas = mapDatas[mapKeys.first];
     }
-    //
+    //如果没有则取默认channel.item
     String rssPath = widget.model.rssDatasPath ?? "channel.item";
 
     List<String> rssPathArray = rssPath.split(".");
@@ -66,6 +68,18 @@ class ChannelState extends State<Channel> {
       }
     }
 
+    //channel 没有内容集合
+    if (datasArray.length == 0) {
+
+      //弹出底部操作提示栏 -使用方式Scaffold.of(context).showSnackBar
+      Scaffold.of(context).showSnackBar(
+
+          SnackBar(content: Text("无内容数据集合,请核查"),action: SnackBarAction(label: "OK", onPressed: (){}),)
+      );
+
+      return ;
+    }
+
     //channel 没有映射关系 return
     if (widget.model.rssChannelDicData == null) {
 
@@ -78,40 +92,44 @@ class ChannelState extends State<Channel> {
       return ;
     }
     //取映射关系
-    Map dic1;
-    Map dic2;
-
     String channelDicString = json.encode(widget.model.rssChannelDicData);
 
     Map channelDic = json.decode(channelDicString);
 
-    for (String keyString in channelDic.keys) {
+    String descriptionMapValue = channelDic["descriptionMap"];
+    List<String> descriptionMapList = descriptionMapValue.contains(".") ? descriptionMapValue.split(".") : null;
 
-      String valueString = channelDic[keyString];
-      if (valueString.contains(".")) {
+    String imageValue = channelDic["image"];
+    List<String> imageList = imageValue.contains(".") ? imageValue.split(".") : null;
 
-        List<String> valueArray = valueString.split(".");
+    String linkValue = channelDic["link"];
+    List<String> linkList = linkValue.contains(".") ? linkValue.split(".") : null;
 
-        dic2.addAll({keyString:valueArray});
-      } else {
+    String pubDateValue = channelDic["pubDate"];
+    List<String> pubDateList = pubDateValue.contains(".") ? pubDateValue.split(".") : null;
 
-        if (valueString != null && valueString.length != 0) {
+    String titleValue = channelDic["title"];
+    List<String> titleList = titleValue.contains(".") ? titleValue.split(".") : null;
 
-          dic1.addAll({keyString:valueString});
-        }
-      }
-    }
 
-    _data = datasArray.map((value){
+    List<ShowChannelModel> datas = datasArray.map((value){
 
-      dic2
+      print(value);
 
       return ShowChannelModel(
-        descriptionMap: dic2.keys.contains("descriptionMap") ? value[(dic2["descriptionMap"])] : value[dic1["descriptionMap"]],
-
+        descriptionMap: descriptionMapList != null ? value[descriptionMapList[0]][descriptionMapList[1]].toString() : value[descriptionMapValue].toString(),
+        image: imageList != null ? value[imageList[0]][imageList[1]].toString() : value[imageValue].toString(),
+        link: linkList != null ? value[linkList[0]][linkList[1]].toString() : value[linkValue].toString(),
+        pubDate: pubDateList != null ? value[pubDateList[0]][pubDateList[1]].toString() : value[pubDateValue].toString(),
+        title: titleList != null ? value[titleList[0]][titleList[1]].toString() : value[titleValue].toString(),
       );
 
     }).toList();
+
+    setState(() {
+
+      _data = datas;
+    });
 
   }
 
@@ -121,6 +139,20 @@ class ChannelState extends State<Channel> {
       appBar: new AppBar(
         title: new Text(widget.model.rsstitle),
       ),
+      body: ListView(children: _data.map((ShowChannelModel model){
+        return ListTile(
+          title: Text(model.title),
+          onTap: (){
+
+            print(model.link);
+            //跳转web
+            Navigator.of(context).push(MaterialPageRoute(builder: (_){
+
+              return WebView(urlString: model.link,);
+            }));
+          },
+        );
+      }).toList(),),
     );
   }
   @override
