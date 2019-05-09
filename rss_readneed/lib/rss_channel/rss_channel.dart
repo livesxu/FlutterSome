@@ -7,6 +7,9 @@ import 'dart:convert';
 
 import 'package:rss_readneed/rss_channel/rss_web.dart';
 
+import 'package:loading/loading.dart';
+import 'package:loading/indicator/ball_spin_fade_loader_indicator.dart';
+
 class Channel extends StatefulWidget {
 
   final RecommendModel model;
@@ -24,8 +27,10 @@ class ChannelState extends State<Channel> {
 
   List<ShowChannelModel> _data = [];
 
+  bool _isLoading = true;
+
   //布局数据
-  layoutDatas () async {
+  Future<bool> layoutDatas () async {
 
     http.Response response = await http.get(widget.model.rssUrl);
 
@@ -77,7 +82,7 @@ class ChannelState extends State<Channel> {
           SnackBar(content: Text("无内容数据集合,请核查"),action: SnackBarAction(label: "OK", onPressed: (){}),)
       );
 
-      return ;
+      return false;
     }
 
     //channel 没有映射关系 return
@@ -89,7 +94,7 @@ class ChannelState extends State<Channel> {
           SnackBar(content: Text("内容数据映射错误,请核查"),action: SnackBarAction(label: "OK", onPressed: (){}),)
       );
 
-      return ;
+      return false;
     }
     //取映射关系
     String channelDicString = json.encode(widget.model.rssChannelDicData);
@@ -126,11 +131,32 @@ class ChannelState extends State<Channel> {
 
     }).toList();
 
-    setState(() {
+    _data = datas;
 
-      _data = datas;
-    });
+    return true;
+  }
 
+  Widget _loadingView () {
+
+    return Center(child: Loading(indicator: BallSpinFadeLoaderIndicator()),);
+  }
+
+  Widget _layoutViews () {
+
+    return ListView(children: _data.map((ShowChannelModel model){
+      return ListTile(
+        title: Text(model.title),
+        onTap: (){
+
+          print(model.link);
+          //跳转web
+          Navigator.of(context).push(MaterialPageRoute(builder: (_){
+
+            return WebView(urlString: model.link,urlTitle: model.title,);
+          }));
+        },
+      );
+    }).toList(),);
   }
 
   @override
@@ -139,27 +165,25 @@ class ChannelState extends State<Channel> {
       appBar: new AppBar(
         title: new Text(widget.model.rsstitle),
       ),
-      body: ListView(children: _data.map((ShowChannelModel model){
-        return ListTile(
-          title: Text(model.title),
-          onTap: (){
-
-            print(model.link);
-            //跳转web
-            Navigator.of(context).push(MaterialPageRoute(builder: (_){
-
-              return WebView(urlString: model.link,);
-            }));
-          },
-        );
-      }).toList(),),
+      body: _isLoading ? _loadingView() : _layoutViews(),
     );
   }
   @override
   void initState() {
     super.initState();
 
-    layoutDatas();
+    Future<bool> isFutureDatas = layoutDatas();
+
+    if (isFutureDatas != null) {
+
+      isFutureDatas.then((bool isGetDatas){
+
+        setState(() {
+          _isLoading = false;
+        });
+
+      });
+    }
   }
 
   @override
