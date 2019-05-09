@@ -15,21 +15,6 @@
 },
 {
     "rssChannelDicData" :     {
-        "descriptionMap" : "description",
-        "image" : "",
-        "link" : "link",
-        "pubDate" : "pubDate",
-        "title" : "title"
-    },
-    "rssDatasPath" : "channel.item",
-    "rssDesc" : "",
-    "rssImg" : "",
-    "rssStatus" : "",
-    "rsstitle" : "知乎每日精选",
-    "rssUrl" : "Http://www.zhihu.com/rss"
-},
-{
-    "rssChannelDicData" :     {
         "descriptionMap" : "description.__cdata",
         "image" : "",
         "link" : "link_3g.$",

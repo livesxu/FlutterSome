@@ -119,11 +119,32 @@ class ChannelState extends State<Channel> {
 
     List<ShowChannelModel> datas = datasArray.map((value){
 
-      print(value);
+//      print(value);
+
+      String imageShowTemp = imageList != null ? value[imageList[0]][imageList[1]].toString() : value[imageValue].toString();
+
+      //如果没有图片,去内容中的第一张图示例展示
+      if (imageShowTemp == null || imageShowTemp.length == 0 || imageShowTemp == "null") {
+
+        RegExp exp = RegExp(r'http([^;\">]*?(jpg|jpeg|gif|png))');
+        Iterable<Match> matches = exp.allMatches(value.toString());
+
+        if (matches.length > 0) {
+
+          Match m = matches.first;
+          String match = m.group(0);
+
+          imageShowTemp = match;
+
+        } else {
+
+          imageShowTemp = null;
+        }
+      }
 
       return ShowChannelModel(
         descriptionMap: descriptionMapList != null ? value[descriptionMapList[0]][descriptionMapList[1]].toString() : value[descriptionMapValue].toString(),
-        image: imageList != null ? value[imageList[0]][imageList[1]].toString() : value[imageValue].toString(),
+        image: imageShowTemp,
         link: linkList != null ? value[linkList[0]][linkList[1]].toString() : value[linkValue].toString(),
         pubDate: pubDateList != null ? value[pubDateList[0]][pubDateList[1]].toString() : value[pubDateValue].toString(),
         title: titleList != null ? value[titleList[0]][titleList[1]].toString() : value[titleValue].toString(),
@@ -144,17 +165,33 @@ class ChannelState extends State<Channel> {
   Widget _layoutViews () {
 
     return ListView(children: _data.map((ShowChannelModel model){
-      return ListTile(
-        title: Text(model.title),
-        onTap: (){
+      return Container(
+        padding: EdgeInsets.all(8),
+        child: InkWell(
+          child: Card(
+            child: Column(
+              children: <Widget>[
+                ClipRRect(
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(4),topRight: Radius.circular(4)),
+                  child: Image.network(model.image,),
+                ),
+                ListTile(
+                  title: Text(model.title),
+                  subtitle: Text(model.pubDate),
+                )
+              ],
+            ),
+          ),
+          onTap: (){
 
-          print(model.link);
-          //跳转web
-          Navigator.of(context).push(MaterialPageRoute(builder: (_){
+            print(model.link);
+            //跳转web
+            Navigator.of(context).push(MaterialPageRoute(builder: (_){
 
-            return WebView(urlString: model.link,urlTitle: model.title,);
-          }));
-        },
+              return WebView(urlString: model.link,urlTitle: model.title,);
+            }));
+          },
+        )
       );
     }).toList(),);
   }
