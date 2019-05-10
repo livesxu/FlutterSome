@@ -18,7 +18,7 @@
         "descriptionMap" : "description.__cdata",
         "image" : "",
         "link" : "link_3g.$",
-        "pubDate" : "pubDate",
+        "pubDate" : "pubDate.__cdata",
         "title" : "title.__cdata"
     },
     "rssDatasPath" : "channel.item",
@@ -62,8 +62,8 @@
     "rssChannelDicData" :     {
         "descriptionMap" : "description.__cdata",
         "image" : "",
-        "link" : "link",
-        "pubDate" : "pubDate",
+        "link" : "link.$",
+        "pubDate" : "pubDate.$",
         "title" : "title.$"
     },
     "rssDatasPath" : "channel.item",
@@ -75,48 +75,18 @@
 },
 {
     "rssChannelDicData" :     {
-        "descriptionMap" : "content.__text",
-        "image" : "",
-        "link" : "link._href",
-        "pubDate" : "updated",
-        "title" : "title"
-    },
-    "rssDatasPath" : "entry",
-    "rssDesc" : "",
-    "rssImg" : "",
-    "rssStatus" : "",
-    "rsstitle" : "V2EX",
-    "rssUrl" : "Http://www.v2ex.com/index.xml"
-},
-{
-    "rssChannelDicData" :     {
         "descriptionMap" : "description.__cdata",
         "image" : "",
         "link" : "link.$",
-        "pubDate" : "pubDate",
+        "pubDate" : "pubDate.$",
         "title" : "title.__cdata"
     },
     "rssDatasPath" : "channel.item",
     "rssDesc" : "",
     "rssImg" : "",
     "rssStatus" : "",
-    "rsstitle" : "Engadget 中文版 RSS Feed",
+    "rsstitle" : "Engadget 中文版",
     "rssUrl" : "Http://cn.engadget.com/rss.xml"
-},
-{
-    "rssChannelDicData" :     {
-        "descriptionMap" : "description",
-        "image" : "",
-        "link" : "link",
-        "pubDate" : "pubDate",
-        "title" : "title"
-    },
-    "rssDatasPath" : "channel.item",
-    "rssDesc" : "",
-    "rssImg" : "",
-    "rssStatus" : "",
-    "rsstitle" : "极客公园",
-    "rssUrl" : "Http://www.geekpark.net/rss"
 },
 {
     "rssChannelDicData" :     {
@@ -135,11 +105,11 @@
 },
 {
     "rssChannelDicData" :     {
-        "descriptionMap" : "content:encoded",
+        "descriptionMap" : "content:encoded.__cdata",
         "image" : "",
-        "link" : "link",
-        "pubDate" : "pubDate",
-        "title" : "title"
+        "link" : "link.$",
+        "pubDate" : "pubDate.$",
+        "title" : "title.$"
     },
     "rssDatasPath" : "channel.item",
     "rssDesc" : "",
@@ -183,7 +153,7 @@
         "descriptionMap" : "description.__cdata",
         "image" : "",
         "link" : "link.$",
-        "pubDate" : "pubDate",
+        "pubDate" : "pubDate.$",
         "title" : "title.$"
     },
     "rssDatasPath" : "channel.item",
@@ -198,7 +168,7 @@
         "descriptionMap" : "description.__cdata",
         "image" : "",
         "link" : "link.$",
-        "pubDate" : "pubDate",
+        "pubDate" : "pubDate.$",
         "title" : "title.$"
     },
     "rssDatasPath" : "channel.item",

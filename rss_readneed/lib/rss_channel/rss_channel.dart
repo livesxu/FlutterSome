@@ -119,7 +119,7 @@ class ChannelState extends State<Channel> {
 
     List<ShowChannelModel> datas = datasArray.map((value){
 
-//      print(value);
+      print(value);
 
       String imageShowTemp = imageList != null ? value[imageList[0]][imageList[1]].toString() : value[imageValue].toString();
 
@@ -173,7 +173,7 @@ class ChannelState extends State<Channel> {
               children: <Widget>[
                 ClipRRect(
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(4),topRight: Radius.circular(4)),
-                  child: Image.network(model.image,),
+                  child: (model.image != null) ? Image.network(model.image,) : Container(),
                 ),
                 ListTile(
                   title: Text(model.title),
