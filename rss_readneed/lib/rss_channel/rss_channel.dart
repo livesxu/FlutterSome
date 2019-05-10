@@ -10,6 +10,8 @@ import 'package:rss_readneed/rss_channel/rss_web.dart';
 import 'package:loading/loading.dart';
 import 'package:loading/indicator/ball_spin_fade_loader_indicator.dart';
 
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+
 class Channel extends StatefulWidget {
 
   final RecommendModel model;
@@ -196,13 +198,166 @@ class ChannelState extends State<Channel> {
     }).toList(),);
   }
 
+  //切片样式 - 大小相同
+  Widget _silivers () {
+    
+    return CustomScrollView(
+      slivers: <Widget>[
+
+        SliverAppBar(
+          pinned: true,//在页面上不消失
+//            floating: true,//跟随滚动出现（立刻）
+          title: Text(widget.model.rsstitle),
+          expandedHeight: 100,
+          flexibleSpace:FlexibleSpaceBar(
+//            title: Text("SubTitle Show".toUpperCase()),
+            background: Image.network(_data[0].image,fit: BoxFit.cover,),
+          ),
+        ),
+
+        SliverSafeArea(
+            minimum: EdgeInsets.all(4),
+            sliver: SliverGrid(
+                delegate: SliverChildBuilderDelegate((_,int index){
+
+                  ShowChannelModel model = _data[index];
+
+                  return InkWell(
+                    child: Card(
+                      child: Column(
+                        children: <Widget>[
+                          AspectRatio(
+                            aspectRatio: 1/1,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.only(topLeft: Radius.circular(4),topRight: Radius.circular(4)),
+                              child: (model.image != null) ? Image.network(model.image,fit: BoxFit.cover,) : Container(),
+                            ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.all(4),
+                            width: double.infinity,
+                            child: Text(
+                              model.title,
+                              softWrap: false,//是否自动换行 false文字不考虑容器大小  单行显示   超出；屏幕部分将默认截断处理
+                              overflow: TextOverflow.ellipsis,//文字超出屏幕之后的处理方式  TextOverflow.clip剪裁   TextOverflow.fade 渐隐  TextOverflow.ellipsis省略号
+                              maxLines: 2, //最大行数
+                              textDirection: TextDirection.ltr,
+                              textAlign: TextAlign.left,
+                            ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.all(2),
+                            width: double.infinity,
+                            child: Text(
+                              model.pubDate,
+                              softWrap: false,
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 1,
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                  fontSize: 10
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    onTap: (){
+
+                      print(model.link);
+                      //跳转web
+                      Navigator.of(context).push(MaterialPageRoute(builder: (_){
+
+                        return WebView(urlString: model.link,urlTitle: model.title,);
+                      }));
+                    },
+                  );
+                },
+                  childCount: _data.length,
+                ),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,childAspectRatio: 9/12)
+            )
+        ),
+      ],
+    );
+  }
+
+  //瀑布流展示 - 大小不一
+  Widget _staggered () {
+
+    return StaggeredGridView.countBuilder(
+        crossAxisCount: 4,
+        itemBuilder: ((_,int index){
+
+          ShowChannelModel model = _data[index];
+
+          return InkWell(
+            child: Card(
+              child: Column(
+                children: <Widget>[
+                  AspectRatio(
+                    aspectRatio: 1/1,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.only(topLeft: Radius.circular(4),topRight: Radius.circular(4)),
+                      child: (model.image != null) ? Image.network(model.image,fit: BoxFit.cover,) : Container(),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(4),
+                    width: double.infinity,
+                    child: Text(
+                      model.title,
+                      softWrap: false,//是否自动换行 false文字不考虑容器大小  单行显示   超出；屏幕部分将默认截断处理
+                      overflow: TextOverflow.ellipsis,//文字超出屏幕之后的处理方式  TextOverflow.clip剪裁   TextOverflow.fade 渐隐  TextOverflow.ellipsis省略号
+                      maxLines: 2, //最大行数
+                      textDirection: TextDirection.ltr,
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(2),
+                    width: double.infinity,
+                    child: Text(
+                      model.pubDate,
+                      softWrap: false,
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                      textAlign: TextAlign.right,
+                      style: TextStyle(
+                          fontSize: 10
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            onTap: (){
+
+              print(model.link);
+              //跳转web
+              Navigator.of(context).push(MaterialPageRoute(builder: (_){
+
+                return WebView(urlString: model.link,urlTitle: model.title,);
+              }));
+            },
+          );
+
+        }),
+        itemCount: _data.length,
+        staggeredTileBuilder: (int index) => new StaggeredTile.count(2, index.isEven ? 2 : 1),
+        mainAxisSpacing: 4.0,
+        crossAxisSpacing: 4.0,
+    );
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text(widget.model.rsstitle),
       ),
-      body: _isLoading ? _loadingView() : _layoutViews(),
+      body: _isLoading ? _loadingView() : _staggered(),
     );
   }
   @override

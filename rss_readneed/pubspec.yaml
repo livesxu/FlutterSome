@@ -24,6 +24,8 @@ dependencies:
   flutter_webview_plugin:
   loading:
   rxdart:
+#  瀑布流
+  flutter_staggered_grid_view:
 
 dev_dependencies:
   flutter_test:
