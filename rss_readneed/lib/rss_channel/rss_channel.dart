@@ -283,9 +283,12 @@ class ChannelState extends State<Channel> {
   }
 
   //瀑布流展示 - 大小不一
+  //不要设置图片比例!!!
   Widget _staggered () {
 
-    return StaggeredGridView.countBuilder(
+    return Container(
+      padding: EdgeInsets.all(4),
+      child: StaggeredGridView.countBuilder(
         crossAxisCount: 4,
         itemBuilder: ((_,int index){
 
@@ -293,43 +296,40 @@ class ChannelState extends State<Channel> {
 
           return InkWell(
             child: Card(
-              child: Column(
-                children: <Widget>[
-                  AspectRatio(
-                    aspectRatio: 1/1,
-                    child: ClipRRect(
+                child:Column(
+                  children: <Widget>[
+                    ClipRRect(
                       borderRadius: BorderRadius.only(topLeft: Radius.circular(4),topRight: Radius.circular(4)),
                       child: (model.image != null) ? Image.network(model.image,fit: BoxFit.cover,) : Container(),
                     ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(4),
-                    width: double.infinity,
-                    child: Text(
-                      model.title,
-                      softWrap: false,//是否自动换行 false文字不考虑容器大小  单行显示   超出；屏幕部分将默认截断处理
-                      overflow: TextOverflow.ellipsis,//文字超出屏幕之后的处理方式  TextOverflow.clip剪裁   TextOverflow.fade 渐隐  TextOverflow.ellipsis省略号
-                      maxLines: 2, //最大行数
-                      textDirection: TextDirection.ltr,
-                      textAlign: TextAlign.left,
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(2),
-                    width: double.infinity,
-                    child: Text(
-                      model.pubDate,
-                      softWrap: false,
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
-                      textAlign: TextAlign.right,
-                      style: TextStyle(
-                          fontSize: 10
+                    Container(
+                      padding: EdgeInsets.all(4),
+                      width: double.infinity,
+                      child: Text(
+                        model.title,
+                        softWrap: false,//是否自动换行 false文字不考虑容器大小  单行显示   超出；屏幕部分将默认截断处理
+                        overflow: TextOverflow.ellipsis,//文字超出屏幕之后的处理方式  TextOverflow.clip剪裁   TextOverflow.fade 渐隐  TextOverflow.ellipsis省略号
+                        maxLines: 2, //最大行数
+                        textDirection: TextDirection.ltr,
+                        textAlign: TextAlign.left,
                       ),
                     ),
-                  ),
-                ],
-              ),
+                    Container(
+                      padding: EdgeInsets.all(2),
+                      width: double.infinity,
+                      child: Text(
+                        model.pubDate,
+                        softWrap: false,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                        textAlign: TextAlign.right,
+                        style: TextStyle(
+                            fontSize: 10
+                        ),
+                      ),
+                    ),
+                  ],
+                )
             ),
             onTap: (){
 
@@ -341,12 +341,12 @@ class ChannelState extends State<Channel> {
               }));
             },
           );
-
         }),
         itemCount: _data.length,
-        staggeredTileBuilder: (int index) => new StaggeredTile.count(2, index.isEven ? 2 : 1),
-        mainAxisSpacing: 4.0,
-        crossAxisSpacing: 4.0,
+        staggeredTileBuilder: (int index) => new StaggeredTile.fit(2),
+        mainAxisSpacing: 2.0,
+        crossAxisSpacing: 2.0,
+      ),
     );
   }
 
