@@ -12,6 +12,7 @@ version: 1.0.0+1
 environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"
 
+#  https://pub.dartlang.org
 dependencies:
   flutter:
     sdk: flutter
@@ -26,6 +27,7 @@ dependencies:
   rxdart:
 #  瀑布流
   flutter_staggered_grid_view:
+  fish_redux:
 
 dev_dependencies:
   flutter_test:

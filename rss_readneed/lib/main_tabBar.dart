@@ -5,6 +5,8 @@ import 'package:rss_readneed/rss_recommend/rss_recommend.dart';
 import 'package:rss_readneed/rss_collect/rss_collect.dart';
 import 'package:rss_readneed/rss_setting/rss_setting.dart';
 
+import 'package:rss_readneed/rss_add/page.dart' as rss_add;
+
 class MainTabBar extends StatefulWidget {
   @override
   MainTabBarState createState() => new MainTabBarState();
@@ -36,6 +38,21 @@ class MainTabBarState extends State<MainTabBar> {
     return new Scaffold(
       appBar: new GradientAppBar(
         title: new Text('ReadNeed'),
+        actions: <Widget>[
+          FlatButton(
+            onPressed: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (_)=>rss_add.rss_addPage().buildPage({})));
+            },
+            child: Icon(
+              Icons.add,
+              color: Colors.white,
+              size: 32,
+            ),
+            padding: EdgeInsets.only(left: 20),
+            splashColor: Color.fromARGB(0, 0, 0, 0),//将透明度为0，无点击效果
+            highlightColor: Color.fromARGB(0, 0, 0, 0),
+          )
+        ],
         shadowColor: Theme.of(context).primaryColor,
         gradient: RadialGradient(//更改为圆扩散
             colors: [Theme.of(context).primaryColorLight,Theme.of(context).primaryColorDark],
