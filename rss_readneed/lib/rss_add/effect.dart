@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 //一些副作用 作为
 Effect<rss_addState> buildEffect() {
   return combineEffects(<Object, Effect<rss_addState>>{
-    Lifecycle.initState:_init,
+    Lifecycle.initState:_init,//初始
     Lifecycle.dispose:_dispose,
     rss_addAction.sureAction:_sureAction,
   });

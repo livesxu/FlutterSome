@@ -6,6 +6,7 @@ import 'package:rss_readneed/rss_collect/rss_collect.dart';
 import 'package:rss_readneed/rss_setting/rss_setting.dart';
 
 import 'package:rss_readneed/rss_add/page.dart' as rss_add;
+import 'package:rss_readneed/some_image_show/page.dart' as image_show;
 
 class MainTabBar extends StatefulWidget {
   @override
@@ -41,7 +42,7 @@ class MainTabBarState extends State<MainTabBar> {
         actions: <Widget>[
           FlatButton(
             onPressed: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (_)=>rss_add.rss_addPage().buildPage({})));
+              Navigator.of(context).push(MaterialPageRoute(builder: (_)=>image_show.some_image_showPage().buildPage({})));
             },
             child: Icon(
               Icons.add,
