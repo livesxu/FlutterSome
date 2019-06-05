@@ -22,11 +22,12 @@ Widget buildView(image_listState state, Dispatch dispatch, ViewService viewServi
         SliverAppBar(
           title: Text("image_list_page"),
           floating: true,//跟随滑动展示头视图
-//          expandedHeight: 100,
-//          flexibleSpace:FlexibleSpaceBar(
+//          expandedHeight: 100,//扩展高度
+//          flexibleSpace:FlexibleSpaceBar(//扩展bar
 ////            title: Text("SubTitle Show".toUpperCase()),
 //            background: Image.network(state.datas[0]["url"],fit: BoxFit.cover,),
 //          ),
+//          bottom: PreferredSize(child: Text("TT"), preferredSize: Size(40, 40)),//扩展底部按钮
         ),
         SliverSafeArea(
           top: false,//头部非安全
@@ -45,7 +46,7 @@ Widget buildView(image_listState state, Dispatch dispatch, ViewService viewServi
                       elevation: 4,
                     );
                   }).toList(),
-                semanticIndexCallback: (_,int) {
+                semanticIndexCallback: (_,int) {//将出现index
 
                     print(int);
                 }
