@@ -28,6 +28,8 @@ dependencies:
 #  瀑布流
   flutter_staggered_grid_view:
   fish_redux:
+#  加载更多/刷新
+  flutter_easyrefresh: ^1.2.7
 
 dev_dependencies:
   flutter_test:

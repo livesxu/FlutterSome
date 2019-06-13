@@ -5,6 +5,7 @@ import 'action.dart';
 import 'state.dart';
 
 import 'package:rss_readneed/appbar_gradient.dart';
+import 'package:flutter_easyrefresh/easy_refresh.dart';
 
 Widget buildView(image_listState state, Dispatch dispatch, ViewService viewService) {
   return Scaffold(
@@ -16,45 +17,54 @@ Widget buildView(image_listState state, Dispatch dispatch, ViewService viewServi
 //          center: Alignment.topLeft,
 //          radius: 4),
 //    ),
-    body: CustomScrollView(
-      slivers: <Widget>[
+    body:EasyRefresh(
+      child: CustomScrollView(
+          slivers: <Widget>[
 
-        SliverAppBar(
-          title: Text("image_list_page"),
-          floating: true,//跟随滑动展示头视图
+            SliverAppBar(
+              title: Text("image_list_page"),
+              floating: true,//跟随滑动展示头视图
 //          expandedHeight: 100,//扩展高度
 //          flexibleSpace:FlexibleSpaceBar(//扩展bar
 ////            title: Text("SubTitle Show".toUpperCase()),
 //            background: Image.network(state.datas[0]["url"],fit: BoxFit.cover,),
 //          ),
 //          bottom: PreferredSize(child: Text("TT"), preferredSize: Size(40, 40)),//扩展底部按钮
+            ),
+            SliverSafeArea(
+              top: false,//头部非安全
+              minimum: EdgeInsets.all(4),
+              sliver: SliverList(
+                  delegate: SliverChildListDelegate(
+                      state.datas.map((info){
+
+                        return Card(
+                          child: Stack(
+                            children: <Widget>[
+                              ClipRRect(borderRadius: BorderRadius.all(Radius.circular(4)),child: Image.network(info["url"]),),
+
+                            ],
+                          ),
+                          elevation: 4,
+                        );
+                      }).toList(),
+                      semanticIndexCallback: (_,int) {//将出现index
+
+                        print(int);
+                      }
+                  )
+              ),
+            ),
+          ],
         ),
-        SliverSafeArea(
-          top: false,//头部非安全
-          minimum: EdgeInsets.all(4),
-          sliver: SliverList(
-              delegate: SliverChildListDelegate(
-                  state.datas.map((info){
+//        onRefresh: () async{
+//          print("onrefresh");
+//        },
+        loadMore: () async {
 
-                    return Card(
-                      child: Stack(
-                        children: <Widget>[
-                          ClipRRect(borderRadius: BorderRadius.all(Radius.circular(4)),child: Image.network(info["url"]),),
-
-                        ],
-                      ),
-                      elevation: 4,
-                    );
-                  }).toList(),
-                semanticIndexCallback: (_,int) {//将出现index
-
-                    print(int);
-                }
-              )
-          ),
-        ),
-      ],
-    ),
+          dispatch(image_listActionCreator.fetchAction());
+        }
+    )
 //    list展示方式
 //    ListView(
 //      children: state.datas.map((info){

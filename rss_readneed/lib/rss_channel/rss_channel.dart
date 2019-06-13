@@ -7,8 +7,7 @@ import 'dart:convert';
 
 import 'package:rss_readneed/rss_channel/rss_web.dart';
 
-import 'package:loading/loading.dart';
-import 'package:loading/indicator/ball_spin_fade_loader_indicator.dart';
+import 'package:rss_readneed/LoadingSupport.dart';
 
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -28,8 +27,6 @@ class Channel extends StatefulWidget {
 class ChannelState extends State<Channel> {
 
   List<ShowChannelModel> _data = [];
-
-  bool _isLoading = true;
 
   //布局数据
   Future<bool> layoutDatas () async {
@@ -157,11 +154,6 @@ class ChannelState extends State<Channel> {
     _data = datas;
 
     return true;
-  }
-
-  Widget _loadingView () {
-
-    return Center(child: Loading(indicator: BallSpinFadeLoaderIndicator()),);
   }
 
   Widget _layoutViews () {
@@ -350,6 +342,7 @@ class ChannelState extends State<Channel> {
     );
   }
 
+  final loadingKey = GlobalKey<LoadingSupportState>();
 
   @override
   Widget build(BuildContext context) {
@@ -357,25 +350,14 @@ class ChannelState extends State<Channel> {
       appBar: new AppBar(
         title: new Text(widget.model.rsstitle),
       ),
-      body: _isLoading ? _loadingView() : _staggered(),
+      body: LoadingSupport(isForwardLoading: true,loadingThings: () => layoutDatas(), showChild: () => _staggered(),key: loadingKey,)
+
     );
   }
   @override
   void initState() {
     super.initState();
 
-    Future<bool> isFutureDatas = layoutDatas();
-
-    if (isFutureDatas != null) {
-
-      isFutureDatas.then((bool isGetDatas){
-
-        setState(() {
-          _isLoading = false;
-        });
-
-      });
-    }
   }
 
   @override
