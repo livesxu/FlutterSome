@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 //loading -
 import 'package:loading/loading.dart';
 import 'package:loading/indicator/ball_spin_fade_loader_indicator.dart';
-
+/*页面拉取数据的loading规划展示*/
 typedef Future<void> LoadingThing();
 typedef Widget ShowChild();
 

@@ -4,20 +4,13 @@ import 'package:flutter/material.dart';
 import 'action.dart';
 import 'state.dart';
 
-import 'package:rss_readneed/appbar_gradient.dart';
+import 'package:rss_readneed/public.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_easyrefresh/material_footer.dart';
 
 Widget buildView(image_listState state, Dispatch dispatch, ViewService viewService) {
   return Scaffold(
-//    appBar: GradientAppBar(
-//      title: Text("image_list_page"),
-//      shadowColor: Theme.of(viewService.context).primaryColor,
-//      gradient: RadialGradient(//更改为圆扩散
-//          colors: [Theme.of(viewService.context).primaryColorLight,Theme.of(viewService.context).primaryColorDark],
-//          center: Alignment.topLeft,
-//          radius: 4),
-//    ),
+//    appBar: AppbarCommon(ctx: viewService.context,titleString: "image_list_page",),
     body:EasyRefresh(
       refreshFooter: MaterialFooter(key: null),//更换样式
       child: CustomScrollView(

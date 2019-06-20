@@ -7,7 +7,7 @@ import 'dart:convert';
 
 import 'package:rss_readneed/rss_channel/rss_web.dart';
 
-import 'package:rss_readneed/LoadingSupport.dart';
+import 'package:rss_readneed/public.dart';
 
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 

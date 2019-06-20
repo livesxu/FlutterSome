@@ -4,18 +4,11 @@ import 'package:flutter/material.dart';
 import 'action.dart';
 import 'state.dart';
 
-import 'package:rss_readneed/appbar_gradient.dart';
+import 'package:rss_readneed/public.dart';
 
 Widget buildView(some_image_showState state, Dispatch dispatch, ViewService viewService) {
   return Scaffold(
-    appBar: GradientAppBar(
-      title: Text("some_image_page"),
-      shadowColor: Theme.of(viewService.context).primaryColor,
-      gradient: RadialGradient(//更改为圆扩散
-          colors: [Theme.of(viewService.context).primaryColorLight,Theme.of(viewService.context).primaryColorDark],
-          center: Alignment.topLeft,
-          radius: 4),
-    ),
+    appBar: AppbarCommon(titleString: "some_image_page",ctx: viewService.context,),
     body: ListView(
       children: state.datas.map((info){
 

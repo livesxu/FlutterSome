@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-
+/*复写系统appbar实现渐变appbar*/
 const double _kLeadingWidth = kToolbarHeight; // So the leading button is square.
 
 // Bottom justify the kToolbarHeight child which may overflow the top.

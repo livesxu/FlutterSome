@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:rss_readneed/appbar_gradient.dart';
+import 'package:rss_readneed/public.dart';
 
 import 'package:rss_readneed/rss_recommend/rss_recommend.dart';
 import 'package:rss_readneed/rss_collect/rss_collect.dart';
 import 'package:rss_readneed/rss_setting/rss_setting.dart';
-
-import 'package:rss_readneed/rss_add/page.dart' as rss_add;
-import 'package:rss_readneed/some_image_show/page.dart' as image_show;
 
 class MainTabBar extends StatefulWidget {
   @override
@@ -37,12 +34,12 @@ class MainTabBarState extends State<MainTabBar> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new GradientAppBar(
-        title: new Text('ReadNeed'),
+      appBar: new AppbarCommon(
+        titleString: 'ReadNeed',
         actions: <Widget>[
           FlatButton(
             onPressed: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (_)=>image_show.some_image_showPage().buildPage({})));
+              AppNavigator.pushRoute(context, "imageShow");
             },
             child: Icon(
               Icons.add,
@@ -54,11 +51,6 @@ class MainTabBarState extends State<MainTabBar> {
             highlightColor: Color.fromARGB(0, 0, 0, 0),
           )
         ],
-        shadowColor: Theme.of(context).primaryColor,
-        gradient: RadialGradient(//更改为圆扩散
-            colors: [Theme.of(context).primaryColorLight,Theme.of(context).primaryColorDark],
-            center: Alignment.topLeft,
-            radius: 4),
       ),
       bottomNavigationBar: _bottomTabBar(_currentIndex),
       floatingActionButton: _bottomBook(_currentIndex == 1),
