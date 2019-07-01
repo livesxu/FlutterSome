@@ -30,6 +30,11 @@ dependencies:
   fish_redux:
 #  加载更多/刷新
   flutter_easyrefresh: ^1.2.7
+#  混合开发
+  flutter_boost:
+    git:
+      url: 'https://github.com/alibaba/flutter_boost.git'
+      ref: '0.0.415'
 
 dev_dependencies:
   flutter_test:

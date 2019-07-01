@@ -11,21 +11,21 @@ class AppNavigator {
 
     if (_instance == null) {
 
-      _instance = AppNavigator()
-                    ..configRoutesAction();
+      _instance = AppNavigator();
     }
     return _instance;
   }
   //路由集合
-  Map _configRoutes;
-  //配置路由
-  void configRoutesAction () {
+  Map _configRoutes = {
 
-    _instance._configRoutes = {
+    "imageShow":image_show.some_image_showPage().buildPage({}),
+    "rssAdd":rss_add.rss_addPage().buildPage({}),
+  };
 
-      "imageShow":image_show.some_image_showPage().buildPage({}),
-      "rssAdd":rss_add.rss_addPage().buildPage({}),
-    };
+  //获取route对应的页面
+  static Widget routePage (String route) {
+
+    return AppNavigator.instance._configRoutes[route];
   }
 
   static push (BuildContext context,Widget scene) {
@@ -35,7 +35,7 @@ class AppNavigator {
 
   static pushRoute (BuildContext context,String route) {
 
-    if (AppNavigator._instance._configRoutes.containsKey(route)) {
+    if (AppNavigator.instance._configRoutes.containsKey(route)) {
 
       Widget widget = _instance._configRoutes[route];
 

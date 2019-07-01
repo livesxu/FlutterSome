@@ -35,6 +35,7 @@ class MainTabBarState extends State<MainTabBar> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppbarCommon(
+        ctx: context,
         titleString: 'ReadNeed',
         actions: <Widget>[
           FlatButton(

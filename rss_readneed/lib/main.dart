@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:rss_readneed/public.dart';
 import 'package:rss_readneed/main_tabBar.dart';
+
+import 'package:flutter_boost/flutter_boost.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class MyApp extends StatefulWidget {
+  @override
+  MyAppState createState() => new MyAppState();
+}
+
+class MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,9 +23,41 @@ class MyApp extends StatelessWidget {
 //        primarySwatch: mainColor,
 //        primaryColorDark:mainColor,
       ),
-      home: MainTabBar(),
-      routes: {},
+      home: Container(),
+      builder: FlutterBoost.init(),
+      routes: {'imageShow': (BuildContext context) => AppNavigator.routePage("imageShow"),},
     );
+  }
+  @override
+  void initState() {
+    super.initState();
+
+    //混合支持 - flutter_boost
+    FlutterBoost.singleton.registerPageBuilders({
+
+      'imageShow': (pageName, params, _) => AppNavigator.routePage("imageShow"),
+
+    });
+
+    FlutterBoost.handleOnStartPage();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+  }
+
+  @override
+  void didUpdateWidget(MyApp oldWidget) {
+    // TODO: implement didUpdateWidget
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
   }
 }
 
