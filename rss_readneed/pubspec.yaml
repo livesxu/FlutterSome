@@ -54,6 +54,7 @@ flutter:
   - images_assets/icon.png
   - images_assets/zhifeiji.png
   - images_assets/ren.png
+  - images_assets/back_btn_nav.png
   - lib/rss_recommend/rss_recommend.json
 
   # The following line ensures that the Material Icons font is

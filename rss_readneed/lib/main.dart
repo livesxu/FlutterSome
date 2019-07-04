@@ -21,25 +21,21 @@ class MyAppState extends State<MyApp> {
         scaffoldBackgroundColor: Colors.grey[100],//背景色
 
 //        primarySwatch: mainColor,
-//        primaryColorDark:mainColor,
+        primaryColor: mainColor,
+        primaryColorLight: mainColor[50],
+        primaryColorDark:mainColor[900],
+
       ),
-      home: Container(),
-      builder: FlutterBoost.init(),
-      routes: {'imageShow': (BuildContext context) => AppNavigator.routePage("imageShow"),},
+      home:MainTabBar(),
+      builder: FlutterBoost.init(),//FlutterBoost初始支持
     );
   }
   @override
   void initState() {
     super.initState();
 
-    //混合支持 - flutter_boost
-    FlutterBoost.singleton.registerPageBuilders({
-
-      'imageShow': (pageName, params, _) => AppNavigator.routePage("imageShow"),
-
-    });
-
-    FlutterBoost.handleOnStartPage();
+    //FlutterBoost routers 统一至router
+    AppNavigator.flutterMixRouterConfig();
   }
 
   @override
@@ -67,7 +63,7 @@ const int _mainColorPrimaryValue = 0xFFED9C3C;
 const MaterialColor mainColor = MaterialColor(
   _mainColorPrimaryValue,
   <int, Color>{
-    50: Color(0xFFED9C3C),
+    50: Color(0xFFFFD700),
     100: Color(0xFFED9C3C),
     200: Color(0xFFED9C3C),
     300: Color(0xFFED9C3C),

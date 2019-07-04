@@ -8,7 +8,7 @@ import 'package:rss_readneed/public.dart';
 
 Widget buildView(some_image_showState state, Dispatch dispatch, ViewService viewService) {
   return Scaffold(
-    appBar: AppbarCommon(titleString: "some_image_page",ctx: viewService.context,),
+    appBar: AppbarCommon(titleString: "地理图片集",ctx: viewService.context,isNeedBack: true,),
     body: ListView(
       children: state.datas.map((info){
 

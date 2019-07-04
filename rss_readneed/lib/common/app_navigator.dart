@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_boost/flutter_boost.dart';
+
 import 'package:rss_readneed/some_image_show/page.dart' as image_show;
 import 'package:rss_readneed/rss_add/page.dart' as rss_add;
+
 
 /*跳转基础类/规划类*/
 class AppNavigator {
@@ -22,6 +25,19 @@ class AppNavigator {
     "rssAdd":rss_add.rss_addPage().buildPage({}),
   };
 
+
+  static flutterMixRouterConfig () {
+
+    //混合支持 - flutter_boost
+    FlutterBoost.singleton.registerPageBuilders({
+
+      'imageShow': (pageName, params, _) => AppNavigator.routePage("imageShow"),
+
+    });
+
+    FlutterBoost.handleOnStartPage();
+  }
+
   //获取route对应的页面
   static Widget routePage (String route) {
 
@@ -41,6 +57,11 @@ class AppNavigator {
 
       Navigator.of(context).push(MaterialPageRoute(builder: (_) => widget));
     }
+  }
+
+  static pop (BuildContext context) {
+
+    Navigator.pop(context);
   }
 
 }
