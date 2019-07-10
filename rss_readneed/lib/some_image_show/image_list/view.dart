@@ -46,6 +46,10 @@ Widget buildView(image_listState state, Dispatch dispatch, ViewService viewServi
                       semanticIndexCallback: (_,int) {//将出现index
 
                         print(int);
+                        if (int == (state.datas.length - 2)) {
+
+                          dispatch(image_listActionCreator.fetchAction());
+                        }
                       }
                   )
               ),

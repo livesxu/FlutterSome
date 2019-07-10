@@ -30,10 +30,13 @@ void _fetchAction(Action action, Context<image_listState> ctx) async {
 
   http.Response response = await http.get("http://dili.bdatu.com/jiekou/albums/a${ctx.state.id}.html");
 
-  Map map = jsonDecode(response.body);
+  if (response.statusCode == 200) {//成功，解析数据，追加
 
-  print(map);
+    Map map = jsonDecode(response.body);
 
-  ctx.dispatch(image_listActionCreator.appendAction(map["picture"]));
+    print(map);
+
+    ctx.dispatch(image_listActionCreator.appendAction(map["picture"]));
+  }
 
 }
