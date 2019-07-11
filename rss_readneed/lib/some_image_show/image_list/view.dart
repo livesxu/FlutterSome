@@ -16,9 +16,10 @@ Widget buildView(image_listState state, Dispatch dispatch, ViewService viewServi
       child: CustomScrollView(
           slivers: <Widget>[
 
-            SliverAppBar(
-              title: Text("image_list_page"),
-              floating: true,//跟随滑动展示头视图
+            SliverAppbarCommon(
+              ctx: viewService.context,
+              titleString: "图片",
+//              floating: true,//跟随滑动展示头视图
 //          expandedHeight: 100,//扩展高度
 //          flexibleSpace:FlexibleSpaceBar(//扩展bar
 ////            title: Text("SubTitle Show".toUpperCase()),

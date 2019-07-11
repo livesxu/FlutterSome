@@ -47,6 +47,7 @@ class GradientAppBar extends StatefulWidget implements PreferredSizeWidget {
     this.backgroundColor,
     this.brightness,
     this.iconTheme,
+    this.actionsIconTheme,
     this.textTheme,
     this.primary = true,
     this.centerTitle,
@@ -191,6 +192,15 @@ class GradientAppBar extends StatefulWidget implements PreferredSizeWidget {
   /// Defaults to [ThemeData.primaryIconTheme].
   final IconThemeData iconTheme;
 
+  /// The color, opacity, and size to use for the icons that appear in the app
+  /// bar's [actions]. This should only be used when the [actions] should be
+  /// themed differently than the icon that appears in the app bar's [leading]
+  /// widget.
+  ///
+  /// If this property is null, then [ThemeData.appBarTheme.actionsIconTheme] is
+  /// used, if that is also null, then this falls back to [iconTheme].
+  final IconThemeData actionsIconTheme;
+
   /// The typographic styles to use for text in the app bar. Typically this is
   /// set along with [brightness] [backgroundColor], [iconTheme].
   ///
@@ -279,6 +289,7 @@ class _AppBarState extends State<GradientAppBar> {
     assert(!widget.primary || debugCheckHasMediaQuery(context));
     assert(debugCheckHasMaterialLocalizations(context));
     final ThemeData themeData = Theme.of(context);
+    final AppBarTheme appBarTheme = AppBarTheme.of(context);
     final ScaffoldState scaffold = Scaffold.of(context, nullOk: true);
     final ModalRoute<dynamic> parentRoute = ModalRoute.of(context);
 
@@ -287,9 +298,18 @@ class _AppBarState extends State<GradientAppBar> {
     final bool canPop = parentRoute?.canPop ?? false;
     final bool useCloseButton = parentRoute is PageRoute<dynamic> && parentRoute.fullscreenDialog;
 
-    IconThemeData appBarIconTheme = widget.iconTheme ?? themeData.primaryIconTheme;
-    TextStyle centerStyle = widget.textTheme?.title ?? themeData.primaryTextTheme.title;
-    TextStyle sideStyle = widget.textTheme?.body1 ?? themeData.primaryTextTheme.body1;
+    IconThemeData overallIconTheme = widget.iconTheme
+        ?? appBarTheme.iconTheme
+        ?? themeData.primaryIconTheme;
+    IconThemeData actionsIconTheme = widget.actionsIconTheme
+        ?? appBarTheme.actionsIconTheme
+        ?? overallIconTheme;
+    TextStyle centerStyle = widget.textTheme?.title
+        ?? appBarTheme.textTheme?.title
+        ?? themeData.primaryTextTheme.title;
+    TextStyle sideStyle = widget.textTheme?.body1
+        ?? appBarTheme.textTheme?.body1
+        ?? themeData.primaryTextTheme.body1;
 
     if (widget.toolbarOpacity != 1.0) {
       final double opacity = const Interval(0.25, 1.0, curve: Curves.fastOutSlowIn).transform(widget.toolbarOpacity);
@@ -297,8 +317,11 @@ class _AppBarState extends State<GradientAppBar> {
         centerStyle = centerStyle.copyWith(color: centerStyle.color.withOpacity(opacity));
       if (sideStyle?.color != null)
         sideStyle = sideStyle.copyWith(color: sideStyle.color.withOpacity(opacity));
-      appBarIconTheme = appBarIconTheme.copyWith(
-          opacity: opacity * (appBarIconTheme.opacity ?? 1.0)
+      overallIconTheme = overallIconTheme.copyWith(
+          opacity: opacity * (overallIconTheme.opacity ?? 1.0)
+      );
+      actionsIconTheme = actionsIconTheme.copyWith(
+          opacity: opacity * (actionsIconTheme.opacity ?? 1.0)
       );
     }
 
@@ -360,6 +383,14 @@ class _AppBarState extends State<GradientAppBar> {
       );
     }
 
+    // Allow the trailing actions to have their own theme if necessary.
+    if (actions != null) {
+      actions = IconTheme.merge(
+        data: actionsIconTheme,
+        child: actions,
+      );
+    }
+
     final Widget toolbar = NavigationToolbar(
       leading: leading,
       middle: title,
@@ -374,7 +405,7 @@ class _AppBarState extends State<GradientAppBar> {
       child: CustomSingleChildLayout(
         delegate: const _ToolbarContainerLayout(),
         child: IconTheme.merge(
-          data: appBarIconTheme,
+          data: overallIconTheme,
           child: DefaultTextStyle(
             style: sideStyle,
             child: toolbar,

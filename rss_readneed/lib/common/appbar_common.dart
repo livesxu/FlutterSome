@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rss_readneed/common/appbar_gradient.dart';
+import 'package:rss_readneed/common/sliverAppbar_gradient.dart';
 /*统一appbar展示*/
 class AppbarCommon extends GradientAppBar {
 
@@ -21,6 +22,29 @@ class AppbarCommon extends GradientAppBar {
             center: Alignment.topLeft,
             radius: 4),
       ){assert(ctx != null);}
+}
+
+class SliverAppbarCommon extends GradientSliverAppBar {
+
+  String titleString;
+  BuildContext ctx;
+  List<Widget> actions;
+  bool isNeedBack;
+  SliverAppbarCommon({
+    @required this.ctx,
+    this.titleString,
+    this.actions,
+    this.isNeedBack,
+  }):super(title:Text(titleString,style: TextStyle(color: Colors.white,),),
+    leading:CustomBackBtn(isNeedBack: isNeedBack,),
+    actions:actions,
+    shadowColor: Theme.of(ctx).primaryColor,
+    gradient: RadialGradient(//更改为圆扩散
+        colors: [Theme.of(ctx).primaryColorLight,Theme.of(ctx).primaryColorDark],
+        center: Alignment.topLeft,
+        radius: 4),
+    floating:true,//跟随滑动展示头视图
+  ){assert(ctx != null);}
 }
 
 //自定义的返回按钮
