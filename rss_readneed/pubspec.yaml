@@ -25,6 +25,8 @@ dependencies:
   flutter_webview_plugin:
   loading:
   rxdart:
+#  本地存储 - 小数据
+  shared_preferences: ^0.5.3+4
 #  瀑布流
   flutter_staggered_grid_view:
   fish_redux:

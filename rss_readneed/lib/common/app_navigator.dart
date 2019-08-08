@@ -4,6 +4,7 @@ import 'package:flutter_boost/flutter_boost.dart';
 
 import 'package:rss_readneed/some_image_show/page.dart' as image_show;
 import 'package:rss_readneed/rss_add/page.dart' as rss_add;
+import 'package:rss_readneed/punch_card/page.dart' as punch_card;//打卡
 
 
 /*跳转基础类/规划类*/
@@ -23,6 +24,7 @@ class AppNavigator {
 
     "imageShow":image_show.some_image_showPage().buildPage({}),
     "rssAdd":rss_add.rss_addPage().buildPage({}),
+    "punchCard":punch_card.punch_cardPage().buildPage({}),
   };
 
 
@@ -32,7 +34,7 @@ class AppNavigator {
     FlutterBoost.singleton.registerPageBuilders({
 
       'imageShow': (pageName, params, _) => AppNavigator.routePage("imageShow"),
-
+      'punchCard': (pageName, params, _) => AppNavigator.routePage("punchCard"),
     });
 
     FlutterBoost.handleOnStartPage();

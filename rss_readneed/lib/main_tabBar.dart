@@ -40,7 +40,7 @@ class MainTabBarState extends State<MainTabBar> {
         actions: <Widget>[
           FlatButton(
             onPressed: (){
-              AppNavigator.pushRoute(context, "imageShow");
+              AppNavigator.pushRoute(context, "punchCard");
             },
             child: Icon(
               Icons.add,
