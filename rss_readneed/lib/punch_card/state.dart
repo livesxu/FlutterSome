@@ -1,5 +1,6 @@
 import 'package:fish_redux/fish_redux.dart';
 import 'package:rss_readneed/punch_card/punchCardModel.dart';
+import 'package:flutter/material.dart';
 
 class punch_cardState implements Cloneable<punch_cardState> {
 
@@ -8,12 +9,23 @@ class punch_cardState implements Cloneable<punch_cardState> {
 
   PunchCardModel model = PunchCardModel(todayThings: [],tomorrowThings: []);
 
+  //滑动控制
+  ScrollController scrollController = ScrollController();
+
+  //当天事情输入控制
+  TextEditingController controller = TextEditingController();
+
+  //明天(未来)事情输入控制
+  List<TextEditingController> tomorrowControllers = [];
+
   @override
   punch_cardState clone() {
     return punch_cardState()
             ..isToday = isToday
             ..isChange = isChange
-            ..model = model;
+            ..model = model
+            ..controller = controller
+            ..tomorrowControllers = tomorrowControllers;
   }
 }
 
@@ -48,6 +60,21 @@ punch_cardState initState(Map<String, dynamic> args) {
 
       newState.isToday = false;
     }
+  }
+  newState.controller.text = newState.model.workingThings;
+
+  for (int i = 0; i < newState.model.tomorrowThings.length; i++){
+
+    TextEditingController controller = TextEditingController(text: newState.model.tomorrowThings[i]);
+
+    newState.tomorrowControllers.add(controller);
+  }
+
+  if (newState.model.tomorrowThings.length < 5 && newState.isToday) {
+
+    //突出的一条添加，最多可填5条
+    TextEditingController controller = TextEditingController(text: "");
+    newState.tomorrowControllers.add(controller);
   }
 
   return newState;

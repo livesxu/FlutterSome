@@ -7,8 +7,10 @@ import 'package:rss_readneed/punch_card/punchCardModel.dart';
 Effect<punch_cardState> buildEffect() {
   return combineEffects(<Object, Effect<punch_cardState>>{
     Lifecycle.initState:_initAction,
+    Lifecycle.dispose:_dispose,
     punch_cardAction.showDatePickerAction: _showDatePickerAction,
     punch_cardAction.showTimePickerAction: _showTimePickerAction,
+    punch_cardAction.punchCardAction:_punchCardAction,
   });
 }
 
@@ -40,6 +42,24 @@ void _initAction(Action action, Context<punch_cardState> ctx) {
 
   }
 
+  //滑动收起键盘
+  ctx.state.scrollController.addListener((){
+
+    FocusScope.of(ctx.context).requestFocus(FocusNode());
+  });
+
+}
+
+void _dispose(Action action, Context<punch_cardState> ctx) {
+
+  ctx.state.scrollController.dispose();
+  ctx.state.controller.dispose();
+
+  for (int i = 0 ; i < ctx.state.tomorrowControllers.length ; i++ ) {
+
+    TextEditingController controller = ctx.state.tomorrowControllers[i];
+    controller.dispose();
+  }
 }
 
 void _showDatePickerAction(Action action, Context<punch_cardState> ctx) async {
@@ -119,4 +139,10 @@ void _showTimePickerAction(Action action, Context<punch_cardState> ctx) async {
   }
 
   ctx.dispatch(punch_cardActionCreator.sureTimePickerAction(newFinishTimeString));
+}
+
+//下班 提交操作
+void _punchCardAction(Action action, Context<punch_cardState> ctx) {
+
+  
 }

@@ -8,7 +8,9 @@ enum punch_cardAction {
   retimeTodayAction,//刷新当天时间
   showTimePickerAction,//时间选择
   sureTimePickerAction,//确认时间
-
+  addTomorrowThingsAction,//添加明日之星
+  changeInCountAction,//更改是否统计按钮
+  punchCardAction,//下班打卡操作
 }
 
 class punch_cardActionCreator {
@@ -29,5 +31,14 @@ class punch_cardActionCreator {
   }
   static Action sureTimePickerAction(time) {
     return Action(punch_cardAction.sureTimePickerAction,payload: time);
+  }
+  static Action addTomorrowThingsAction() {
+    return const Action(punch_cardAction.addTomorrowThingsAction);
+  }
+  static Action changeInCountAction(isInCount) {
+    return Action(punch_cardAction.changeInCountAction,payload: isInCount);
+  }
+  static Action punchCardAction() {
+    return const Action(punch_cardAction.punchCardAction);
   }
 }
