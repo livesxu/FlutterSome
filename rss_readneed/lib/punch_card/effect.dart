@@ -19,7 +19,7 @@ void _initAction(Action action, Context<punch_cardState> ctx) {
   if (ctx.state.isChange == false && ctx.state.isToday == true) {//如果不是修改，同时又是今天，校验是否有相关数据已存在
 
     //获取当天string
-    String dateString = PunchCardModel().timeString(PunchCardModel().todayDateTime());
+    String dateString = PunchCardModel().dateTimeString(PunchCardModel().todayDateTime());
 
     //然后用当天做匹配，万一存储的数据里面有则应该展示,数据更改和查询放在effect
     Future<List<PunchCardModel>> datas = PunchCardModel().getDatas();
@@ -41,6 +41,14 @@ void _initAction(Action action, Context<punch_cardState> ctx) {
     });
 
   }
+
+  //刷新今天要做的事
+  PunchCardModel().getTomorrowThings().then((List<String> list){
+
+    ctx.state.storeTomorrowThings = list;
+
+    ctx.dispatch(punch_cardActionCreator.refreshTodayDoThings());
+  });
 
   //滑动收起键盘
   ctx.state.scrollController.addListener((){
@@ -144,5 +152,23 @@ void _showTimePickerAction(Action action, Context<punch_cardState> ctx) async {
 //下班 提交操作
 void _punchCardAction(Action action, Context<punch_cardState> ctx) {
 
-  
+  List<String> tomorrowThings = ctx.state.tomorrowControllers.map((controller) => controller.text).toList();
+  tomorrowThings.remove("");//移除没有内容的目标
+  //保存到下一个编写日使用
+  PunchCardModel().saveTomorrowThings(tomorrowThings);
+
+  PunchCardModel storeModel = PunchCardModel(
+    yearTime: ctx.state.model.yearTime,
+    monthTime: ctx.state.model.monthTime,
+    dateTime: ctx.state.model.dateTime,
+    todayThings: ctx.state.model.todayThings,
+    finishTime: ctx.state.model.finishTime,
+    workingThings: ctx.state.controller.text,//填充当天内容
+    tomorrowThings: tomorrowThings,//填充内容
+    inCount:ctx.state.model.inCount,
+  );
+
+  PunchCardModel().save(storeModel,ctx.state.isChange);
+
+  Navigator.pop(ctx.context);
 }

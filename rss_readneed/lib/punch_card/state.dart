@@ -18,6 +18,9 @@ class punch_cardState implements Cloneable<punch_cardState> {
   //明天(未来)事情输入控制
   List<TextEditingController> tomorrowControllers = [];
 
+  //本地存储的历史明天事情(作为属性直接在init中先获取到，用不用再说)
+  List<String> storeTomorrowThings = [];
+
   @override
   punch_cardState clone() {
     return punch_cardState()
@@ -25,7 +28,8 @@ class punch_cardState implements Cloneable<punch_cardState> {
             ..isChange = isChange
             ..model = model
             ..controller = controller
-            ..tomorrowControllers = tomorrowControllers;
+            ..tomorrowControllers = tomorrowControllers
+            ..storeTomorrowThings = storeTomorrowThings;
   }
 }
 

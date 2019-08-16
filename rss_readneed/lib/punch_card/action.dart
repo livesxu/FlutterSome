@@ -11,6 +11,8 @@ enum punch_cardAction {
   addTomorrowThingsAction,//添加明日之星
   changeInCountAction,//更改是否统计按钮
   punchCardAction,//下班打卡操作
+  refreshTodayDoThings,//刷新当天应该做的事
+  doTodayThing,//勾选今天该做的事
 }
 
 class punch_cardActionCreator {
@@ -40,5 +42,11 @@ class punch_cardActionCreator {
   }
   static Action punchCardAction() {
     return const Action(punch_cardAction.punchCardAction);
+  }
+  static Action refreshTodayDoThings() {
+    return const Action(punch_cardAction.refreshTodayDoThings);
+  }
+  static Action doTodayThing(thing) {
+    return Action(punch_cardAction.doTodayThing,payload: thing);
   }
 }

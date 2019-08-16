@@ -6,10 +6,10 @@ class PunchCardModel {
   final String yearTime;//年度划分2019
   final String monthTime;//月度划分2019-08
   final String dateTime;//天数划分2019-08-07
-  final List<String> todayThings;//当天事项 已完成标记 添加前缀 over|
+  final List todayThings;//当天事项 已完成标记 添加前缀 over|
   final String finishTime;//结束工作时间
   final String workingThings;//工作内容
-  final List<String> tomorrowThings;//明日事项 - 结转为当天事项
+  final List tomorrowThings;//明日事项 - 结转为当天事项
   final bool inCount;// 1:统计  是否统计 - 默认逻辑1-5统计，6-7不统计
 
   PunchCardModel({
@@ -68,10 +68,35 @@ class PunchCardModel {
 
 
 //所有数据
-  Future<void> save(String datas) async {
+  Future<void> save(PunchCardModel model,bool isChange) async {
 
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString("punch_card_in",datas);
+    Future<List<PunchCardModel>> datas = PunchCardModel().getDatas();
+
+    datas.then((List<PunchCardModel> list) async {
+
+      if (list == null) return ;
+
+      if (isChange) {
+
+        for (PunchCardModel model1 in list) {
+
+          if (model1.dateTime == model.dateTime) {
+
+            list.remove(model1);
+            break;
+          }
+        }
+        list.add(model);
+
+      } else {
+
+        list.add(model);
+      }
+
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+
+      prefs.setString("punch_card_in",json.encode(list));
+    });
   }
 
   Future<List<PunchCardModel>> getDatas() async {
@@ -85,8 +110,9 @@ class PunchCardModel {
       return [];
     }
 
-    List<PunchCardModel> list = json.decode(string);
-    return list;
+    List list = json.decode(string);
+
+    return list.map((map) => PunchCardModel.fromJson(map)).toList();
   }
 
 //明日之星数据

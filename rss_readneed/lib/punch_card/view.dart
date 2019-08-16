@@ -19,9 +19,9 @@ Widget buildView(punch_cardState state, Dispatch dispatch, ViewService viewServi
               child: Column(
                 children: state.model.todayThings.map((string){
                   //over|
-                  String newTitleString = "";
-                  if (string.length >= 5) {
-                    newTitleString = string.substring(4);
+                  String newTitleString = string;
+                  if (string.contains("over|")) {
+                    newTitleString = string.substring(5);
                   }
                   return ListTile(
                     title: Text(newTitleString),
@@ -29,7 +29,7 @@ Widget buildView(punch_cardState state, Dispatch dispatch, ViewService viewServi
                         value: string.contains("over|"),
                         onChanged: (bool isSure){
                           //是否完成 - 选择
-
+                        dispatch(punch_cardActionCreator.doTodayThing(string));
                         }),
                   );
                 }).toList(),
@@ -120,6 +120,7 @@ Widget buildView(punch_cardState state, Dispatch dispatch, ViewService viewServi
                   SizedBox(width: 10,),
                   Expanded(
                       child: RaisedButton(
+                        color: Theme.of(viewService.context).primaryColor,
                         onPressed: (){ dispatch(punch_cardActionCreator.punchCardAction()); },
                         child: Text(state.isChange ? "更新下班" : "下班",
                           style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.w700),

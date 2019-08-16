@@ -15,7 +15,8 @@ Reducer<punch_cardState> buildReducer() {
       punch_cardAction.sureTimePickerAction: _sureTimePickerAction,
       punch_cardAction.addTomorrowThingsAction: _addTomorrowThingsAction,
       punch_cardAction.changeInCountAction:_changeInCountAction,
-
+      punch_cardAction.refreshTodayDoThings:_refreshTodayDoThings,
+      punch_cardAction.doTodayThing:_doTodayThing,
     },
   );
 }
@@ -31,29 +32,14 @@ punch_cardState _restartTodayAction(punch_cardState state, Action action) {
 
   newState.controller.text = newState.model.workingThings;
 
-  //取最多的数据的那个
-  int p = newState.tomorrowControllers.length > newState.model.tomorrowThings.length ? newState.tomorrowControllers.length : newState.model.tomorrowThings.length;//明日之星最多5条
+  List<TextEditingController> storeControllers = [];
+  for (String string in newState.model.tomorrowThings) {
 
-  for (int i = p-1; i >= 0; i--){
+    TextEditingController controller = TextEditingController(text: string);
 
-    if (newState.tomorrowControllers.length > i) {//判断controllers的数量是否能取到 - 这个判断能进去说明控制器够，控制器更多
-
-      TextEditingController controller = newState.tomorrowControllers[i];
-
-      if (newState.model.tomorrowThings.length > i) {//这个判断能进去说明数据够
-        controller.text = newState.model.tomorrowThings[i];
-      } else {//数据量不够的时候把控制器移除并销毁
-
-        newState.tomorrowControllers.remove(controller);
-//        controller.dispose();？？这儿不需要销毁没事吗？
-      }
-    } else {//没有更多的controllers则创建 - 数据量更多
-
-      TextEditingController controller = TextEditingController(text: newState.model.tomorrowThings[i]);
-
-      newState.tomorrowControllers.add(controller);
-    }
+    storeControllers.add(controller);
   }
+  newState.tomorrowControllers = storeControllers;
 
   if (newState.model.tomorrowThings.length < 5 && newState.isToday) {//当天添加
 
@@ -76,29 +62,14 @@ punch_cardState _sureDatePickerAction(punch_cardState state, Action action) {
 
   newState.controller.text = newState.model.workingThings;
 
-  //取最多的数据的那个
-  int p = newState.tomorrowControllers.length > newState.model.tomorrowThings.length ? newState.tomorrowControllers.length : newState.model.tomorrowThings.length;//明日之星最多5条
+  List<TextEditingController> storeControllers = [];
+  for (String string in newState.model.tomorrowThings) {
 
-  for (int i = p-1; i >= 0; i--){
+    TextEditingController controller = TextEditingController(text: string);
 
-    if (newState.tomorrowControllers.length > i) {//判断controllers的数量是否能取到 - 这个判断能进去说明控制器够，控制器更多
-
-      TextEditingController controller = newState.tomorrowControllers[i];
-
-      if (newState.model.tomorrowThings.length > i) {//这个判断能进去说明数据够
-        controller.text = newState.model.tomorrowThings[i];
-      } else {//数据量不够的时候把控制器移除并销毁
-
-        newState.tomorrowControllers.remove(controller);
-//        controller.dispose();？？这儿不需要销毁没事吗？
-      }
-    } else {//没有更多的controllers则创建 - 数据量更多
-
-      TextEditingController controller = TextEditingController(text: newState.model.tomorrowThings[i]);
-
-      newState.tomorrowControllers.add(controller);
-    }
+    storeControllers.add(controller);
   }
+  newState.tomorrowControllers = storeControllers;
 
   if (newState.model.tomorrowThings.length < 5 && newState.isToday) {//当天添加
 
@@ -172,6 +143,67 @@ punch_cardState _changeInCountAction(punch_cardState state, Action action) {
     workingThings: state.model.workingThings,
     tomorrowThings: state.model.tomorrowThings,
     inCount:inCount,
+  );
+
+  return newState;
+}
+
+punch_cardState _refreshTodayDoThings(punch_cardState state, Action action) {
+  final punch_cardState newState = state.clone();
+
+  //当天 && 无当天所做的事 && 取到预约事件
+  if (state.isToday == true && state.model.todayThings.length == 0 && state.storeTomorrowThings != null && state.storeTomorrowThings.length > 0) {
+
+    newState.model = PunchCardModel(
+      yearTime: state.model.yearTime,
+      monthTime: state.model.monthTime,
+      dateTime: state.model.dateTime,
+      todayThings: state.storeTomorrowThings,
+      finishTime: state.model.finishTime,
+      workingThings: state.model.workingThings,
+      tomorrowThings: state.model.tomorrowThings,
+      inCount:state.model.inCount,
+    );
+
+    return newState;
+
+  } else {
+
+    return  newState;
+  }
+}
+
+punch_cardState _doTodayThing(punch_cardState state, Action action) {
+  final punch_cardState newState = state.clone();
+
+  String thing = action.payload;
+
+  //通过文本改变和判断勾选
+  String newThingString ;
+  if (thing.contains("over|")) {
+
+    newThingString = thing.substring(5);
+  } else {
+
+    newThingString = "over|" + thing;
+  }
+  List newTodayThings = state.model.todayThings;
+
+  int index = state.model.todayThings.indexOf(thing);
+
+  newTodayThings.removeAt(index);
+
+  newTodayThings.insert(index, newThingString);
+
+  newState.model = PunchCardModel(
+    yearTime: state.model.yearTime,
+    monthTime: state.model.monthTime,
+    dateTime: state.model.dateTime,
+    todayThings: newTodayThings,
+    finishTime: state.model.finishTime,
+    workingThings: state.model.workingThings,
+    tomorrowThings: state.model.tomorrowThings,
+    inCount:state.model.inCount,
   );
 
   return newState;
