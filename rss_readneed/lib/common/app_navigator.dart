@@ -5,6 +5,7 @@ import 'package:flutter_boost/flutter_boost.dart';
 import 'package:rss_readneed/some_image_show/page.dart' as image_show;
 import 'package:rss_readneed/rss_add/page.dart' as rss_add;
 import 'package:rss_readneed/punch_card/page.dart' as punch_card;//打卡
+import 'package:rss_readneed/punch_card/punchCardModel.dart';//打卡的月度信息需要随app初始化
 
 
 /*跳转基础类/规划类*/
@@ -16,6 +17,7 @@ class AppNavigator {
     if (_instance == null) {
 
       _instance = AppNavigator();
+      PunchCardSettingModel.instance;////打卡的月度信息需要随app初始化
     }
     return _instance;
   }

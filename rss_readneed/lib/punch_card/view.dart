@@ -23,18 +23,22 @@ Widget buildView(punch_cardState state, Dispatch dispatch, ViewService viewServi
                   if (string.contains("over|")) {
                     newTitleString = string.substring(5);
                   }
-                  return ListTile(
-                    title: Text(newTitleString),
-                    trailing: Checkbox(
-                        value: string.contains("over|"),
-                        onChanged: (bool isSure){
-                          //是否完成 - 选择
-                        dispatch(punch_cardActionCreator.doTodayThing(string));
-                        }),
+                  return Container(
+                    height: 36,
+                    child: ListTile(
+                      title: Text(newTitleString),
+                      trailing: Checkbox(
+                          value: string.contains("over|"),
+                          onChanged: (bool isSure){
+                            //是否完成 - 选择
+                            dispatch(punch_cardActionCreator.doTodayThing(string));
+                          }),
+                    ),
                   );
                 }).toList(),
               ),
             ),//今日执行
+            SizedBox(height: 10,),
             Container(
               child: Card(
                 child: Row(
