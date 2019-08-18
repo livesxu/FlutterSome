@@ -13,6 +13,8 @@ enum punch_cardAction {
   punchCardAction,//下班打卡操作
   refreshTodayDoThings,//刷新当天应该做的事
   doTodayThing,//勾选今天该做的事
+  pushSettingVC,//跳转月度设置页面
+  pushListVC,//跳转传送门页面
 }
 
 class punch_cardActionCreator {
@@ -48,5 +50,11 @@ class punch_cardActionCreator {
   }
   static Action doTodayThing(thing) {
     return Action(punch_cardAction.doTodayThing,payload: thing);
+  }
+  static Action pushSettingVC() {
+    return const Action(punch_cardAction.pushSettingVC);
+  }
+  static Action pushListVC() {
+    return const Action(punch_cardAction.pushListVC);
   }
 }

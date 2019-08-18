@@ -140,12 +140,12 @@ Widget buildView(punch_cardState state, Dispatch dispatch, ViewService viewServi
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   RaisedButton(
-                    onPressed: null,
+                    onPressed: (){ dispatch(punch_cardActionCreator.pushSettingVC()); },
                     child: Text("月度规划"),
                   ),
                   SizedBox(width: 10,),
                   RaisedButton(
-                    onPressed: null,
+                    onPressed: (){ dispatch(punch_cardActionCreator.pushListVC()); },
                     child: Text("传送门"),
                   )
                 ],

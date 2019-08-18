@@ -315,7 +315,7 @@ class PunchCardSettingModel {
       }
     }
 
-    //没有找到，那就添加 - 同时存下来
+    //没有找到，那就以上个月为模板创建一份数据 - 同时存下来
     PunchCardSettingModel model = PunchCardSettingModel().initModelWith(currentMonthTimeString);
 
     models.add(model);

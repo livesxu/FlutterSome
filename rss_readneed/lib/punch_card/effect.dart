@@ -3,6 +3,8 @@ import 'action.dart';
 import 'state.dart';
 import 'package:flutter/material.dart';
 import 'package:rss_readneed/punch_card/punchCardModel.dart';
+import 'package:rss_readneed/punch_card/setting/page.dart' as setting;
+import 'package:rss_readneed/punch_card/list/page.dart' as list;
 
 Effect<punch_cardState> buildEffect() {
   return combineEffects(<Object, Effect<punch_cardState>>{
@@ -11,6 +13,8 @@ Effect<punch_cardState> buildEffect() {
     punch_cardAction.showDatePickerAction: _showDatePickerAction,
     punch_cardAction.showTimePickerAction: _showTimePickerAction,
     punch_cardAction.punchCardAction:_punchCardAction,
+    punch_cardAction.pushSettingVC:_pushSettingVC,
+    punch_cardAction.pushListVC:_pushListVC,
   });
 }
 
@@ -124,7 +128,7 @@ void _showDatePickerAction(Action action, Context<punch_cardState> ctx) async {
 
 void _showTimePickerAction(Action action, Context<punch_cardState> ctx) async {
 
-  //如果选择9点以前的时间将会自动移至下一天
+  //如果选择9点以前的时间将会自动移至下一天 - 选择时间点还未到涉夜加班结束时间将自动移至下一天
   DateTime finishTime = DateTime.parse(ctx.state.model.finishTime);
 
   TimeOfDay dayTime = TimeOfDay(hour: finishTime.hour,minute: finishTime.minute);
@@ -141,7 +145,8 @@ void _showTimePickerAction(Action action, Context<punch_cardState> ctx) async {
 
   String newFinishTimeString = ctx.state.model.dateTime + " " + timeSelectedString + ":00";
 
-  if (timeSelected.hour < 9) {
+  String monthFinishNextDayTime = ctx.state.model.dateTime + PunchCardSettingModel.instance.finishNextDayTime.substring(10);
+  if (DateTime.parse(newFinishTimeString).isBefore(DateTime.parse(monthFinishNextDayTime))) {
 
     newFinishTimeString = PunchCardModel().timeString(DateTime.parse(newFinishTimeString).add(Duration(days: 1)));
   }
@@ -171,4 +176,16 @@ void _punchCardAction(Action action, Context<punch_cardState> ctx) {
   PunchCardModel().save(storeModel,ctx.state.isChange);
 
   Navigator.pop(ctx.context);
+}
+
+//跳转月度设置页面
+void _pushSettingVC(Action action, Context<punch_cardState> ctx) {
+
+  Navigator.push(ctx.context, MaterialPageRoute(builder: (context) => setting.punch_card_settingPage().buildPage({"monthTime":ctx.state.model.monthTime})));
+}
+
+//跳转传送门页面
+void _pushListVC(Action action, Context<punch_cardState> ctx) {
+
+  Navigator.push(ctx.context, MaterialPageRoute(builder: (context) => list.punch_card_listPage().buildPage({"monthTime":ctx.state.model.monthTime})));
 }
