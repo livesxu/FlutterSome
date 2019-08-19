@@ -27,6 +27,8 @@ dependencies:
   rxdart:
 #  本地存储 - 小数据
   shared_preferences: ^0.5.3+4
+#  月份选择
+  month_picker_dialog: ^0.2.0
 #  瀑布流
   flutter_staggered_grid_view:
   fish_redux:

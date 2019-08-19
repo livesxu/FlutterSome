@@ -7,6 +7,30 @@ import 'state.dart';
 import 'package:rss_readneed/public.dart';
 
 Widget buildView(punch_card_settingState state, Dispatch dispatch, ViewService viewService) {
+
+  //左title右time视图
+  Widget leftTitleRightTimeWidget(String title,String time,String key) {
+
+    return InkWell(
+      child: Container(
+        padding: EdgeInsets.all(6),
+        height: 32,
+        child: Row(
+          children: <Widget>[
+            Text(title,
+              style: TextStyle(color: Colors.black87,fontSize: 16,fontWeight: FontWeight.w700),
+            ),
+            SizedBox(width: 10,),
+            Text(time,
+              style: TextStyle(color: Colors.black54,fontSize: 16,fontWeight: FontWeight.w600),
+            ),
+          ],
+        ),
+      ),
+      onTap: (){ dispatch(punch_card_settingActionCreator.changeSettingTime(key)); },
+    );
+  }
+
   return Scaffold(
     appBar: AppbarCommon(ctx: viewService.context,titleString: "月度规划",isNeedBack: true,),
     body: Column(
@@ -23,10 +47,95 @@ Widget buildView(punch_card_settingState state, Dispatch dispatch, ViewService v
               padding: EdgeInsets.only(top: 3,bottom: 3,left: 6,right: 6),
               margin: EdgeInsets.all(10),
             ),
-            onTap: (){  },
+            onTap: (){ dispatch(punch_card_settingActionCreator.chooseMonthAction()); },
           ),
         ),
-
+        //基础设置信息
+        Card(
+          child: Column(
+            children: <Widget>[
+              SizedBox(height: 6,),
+              leftTitleRightTimeWidget("上班时间", state.model.startTime.substring(10),"startTime"),
+              leftTitleRightTimeWidget("下班时间", state.model.finishTime.substring(10),"finishTime"),
+              leftTitleRightTimeWidget("通宵截止", state.model.finishNextDayTime.substring(10),"finishNextDayTime"),
+              Container(
+                padding: EdgeInsets.all(6),
+                height: 32,
+                child: Row(
+                  children: <Widget>[
+                    Text("周六统计",
+                      style: TextStyle(color: Colors.black87,fontSize: 16,fontWeight: FontWeight.w700),
+                    ),
+                    SizedBox(width: 10,),
+                    Checkbox(value: state.model.inCountSaturday, onChanged: (bool isCheck){ dispatch( punch_card_settingActionCreator.changeSettingCheck("inCountSaturday") ); }),
+                  ],
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(6),
+                height: 32,
+                child: Row(
+                  children: <Widget>[
+                    Text("周日统计",
+                      style: TextStyle(color: Colors.black87,fontSize: 16,fontWeight: FontWeight.w700),
+                    ),
+                    SizedBox(width: 10,),
+                    Checkbox(value: state.model.inCountSunday, onChanged: (bool isCheck){ dispatch( punch_card_settingActionCreator.changeSettingCheck("inCountSunday") ); }),
+                  ],
+                ),
+              ),
+              SizedBox(height: 6,),
+            ],
+          ),
+        ),
+        //月度列表
+        Container(
+          child: InkWell(
+            child: Container(
+              child: Text("月度统计",
+                style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.w700),
+              ),
+              decoration: BoxDecoration(color: Colors.red,borderRadius: BorderRadius.all(Radius.circular(4))),
+              padding: EdgeInsets.only(top: 3,bottom: 3,left: 6,right: 6),
+              margin: EdgeInsets.all(10),
+            ),
+            onTap: (){ /*跳转列表*/ },
+          ),
+        ),
+        Card(
+          child: Column(
+            children: <Widget>[
+              SizedBox(height: 6,),
+              Container(
+                padding: EdgeInsets.all(6),
+                height: 32,
+                child: Row(
+                  children: <Widget>[
+                    Text("加班时长",
+                      style: TextStyle(color: Colors.black87,fontSize: 16,fontWeight: FontWeight.w700),
+                    ),
+                    SizedBox(width: 10,),
+                    Text("总加班时长"),
+                  ],
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(6),
+                height: 32,
+                child: Row(
+                  children: <Widget>[
+                    Text("下班时间",
+                      style: TextStyle(color: Colors.black87,fontSize: 16,fontWeight: FontWeight.w700),
+                    ),
+                    SizedBox(width: 10,),
+                    Text("预计下班时间"),
+                  ],
+                ),
+              ),
+              SizedBox(height: 6,),
+            ],
+          ),
+        ),
       ],
     ),
   );

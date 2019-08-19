@@ -231,12 +231,13 @@ class PunchCardSettingModel {
     "inCountSunday":inCountSunday,
   };
 
+  //当前时刻的设置信息
   static PunchCardSettingModel _instance;
   static PunchCardSettingModel get instance {
 
     if (_instance == null) {
 
-      PunchCardSettingModel().getModel().then((PunchCardSettingModel model){
+      PunchCardSettingModel().getModel(PunchCardModel().dateTimeString(DateTime.now()).substring(0,7)).then((PunchCardSettingModel model){
 
         _instance = model;
       });
@@ -281,15 +282,12 @@ class PunchCardSettingModel {
     prefs.setString("punch_card_setting",json.encode(models));
   }
 
-  //取出当前所在的月份
-  Future<PunchCardSettingModel> getModel() async {
+  //取出所在的月份的数据
+  Future<PunchCardSettingModel> getModel(String currentMonthTimeString) async {
 
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
     String string = prefs.getString("punch_card_setting");
-
-    //获取当前所在的月
-    String currentMonthTimeString = PunchCardModel().dateTimeString(DateTime.now()).substring(0,7);
 
     if (string == null) {//如果不存在就返回新建数据,同时存储
 
@@ -316,13 +314,75 @@ class PunchCardSettingModel {
     }
 
     //没有找到，那就以上个月为模板创建一份数据 - 同时存下来
-    PunchCardSettingModel model = PunchCardSettingModel().initModelWith(currentMonthTimeString);
+    DateTime lastMonthDate = DateTime.parse(currentMonthTimeString + "-01").subtract(Duration(days: 2));//拿到上个月的倒数第二天
+
+    String lastMonthTimeString = lastMonthDate.toString().substring(0,7);
+
+    PunchCardSettingModel lastModel;
+    for(PunchCardSettingModel model in models) {
+
+      if (model.monthTime == lastMonthTimeString) {
+
+        lastModel = model;
+        break;
+      }
+    }
+    if (lastModel == null){//防范异常,上个月也不存在，那就新建
+      return PunchCardSettingModel().initModelWith(currentMonthTimeString);
+    }
+
+    //以上个月的数据建立新的的数据
+    PunchCardSettingModel model = PunchCardSettingModel(
+      monthTime: currentMonthTimeString,
+      startTime: lastModel.startTime,
+      finishTime: lastModel.finishTime,
+      finishNextDayTime: lastModel.finishNextDayTime,
+      inCountSaturday:lastModel.inCountSaturday,
+      inCountSunday:lastModel.inCountSunday,
+    );
 
     models.add(model);
 
     prefs.setString("punch_card_setting",json.encode(models));
 
     return model;
+  }
+
+  //月度数据统计
+  Future<List<PunchCardModel>> monthDatas (PunchCardSettingModel monthModel) {
+
+    List<PunchCardModel>monthDatas = [];
+
+    //月度第一天
+    DateTime monthFirstDay = DateTime.parse(monthModel.monthTime + "-01");
+
+    //月度最后一天   超过当月会指向下一个月第一天，再减一天
+    DateTime monthLastDay = DateTime.parse(monthModel.monthTime + "-32").subtract(Duration(days: 1));
+
+    PunchCardModel()
+        .getDatas()
+        .then((List<PunchCardModel> list){
+
+          List<PunchCardModel> listTemp = [];//存储当月捞出的所有数据
+          for (PunchCardModel model in list) {
+
+            if (model.monthTime == monthModel.monthTime) {
+
+              listTemp.add(model);
+            }
+          }
+
+
+          //再遍历当月的数据集
+          for (PunchCardModel model in listTemp) {
+
+            if (DateTime.parse(model.dateTime) == monthFirstDay) {
+
+              monthDatas.add(model);
+            }
+          }
+
+        });
   }
 }
 
