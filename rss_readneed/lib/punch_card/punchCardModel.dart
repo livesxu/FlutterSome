@@ -237,6 +237,9 @@ class PunchCardSettingModel {
 
     if (_instance == null) {
 
+      //先默认创建一个，因为异步数据可能还未获得
+      _instance = PunchCardSettingModel().initModelWith(DateTime.now().toString().substring(0,7));
+
       PunchCardSettingModel().getModel(PunchCardModel().dateTimeString(DateTime.now()).substring(0,7)).then((PunchCardSettingModel model){
 
         _instance = model;
@@ -349,40 +352,72 @@ class PunchCardSettingModel {
   }
 
   //月度数据统计
-  Future<List<PunchCardModel>> monthDatas (PunchCardSettingModel monthModel) {
+  Future<List<PunchCardModel>> monthDatas (PunchCardSettingModel monthModel) async {
 
     List<PunchCardModel>monthDatas = [];
 
     //月度第一天
     DateTime monthFirstDay = DateTime.parse(monthModel.monthTime + "-01");
 
-    //月度最后一天   超过当月会指向下一个月第一天，再减一天
-    DateTime monthLastDay = DateTime.parse(monthModel.monthTime + "-32").subtract(Duration(days: 1));
+    //取下个月的第一天使用while语句  //月度最后一天   超过当月会指向下一个月第一天，再减一天
+    DateTime monthLastDay = DateTime.parse(monthModel.monthTime + "-32");//.subtract(Duration(days: 1));
 
-    PunchCardModel()
-        .getDatas()
-        .then((List<PunchCardModel> list){
+    //当天
+    DateTime today = PunchCardModel().todayDateTime();
+    //如果当天在月度之中，则取当天之前的数据捞取
+    if (today.isBefore(monthLastDay)) {
 
-          List<PunchCardModel> listTemp = [];//存储当月捞出的所有数据
-          for (PunchCardModel model in list) {
+      monthLastDay = today;
+    }
 
-            if (model.monthTime == monthModel.monthTime) {
+    List<PunchCardModel> list = [];
 
-              listTemp.add(model);
-            }
-          }
+    //PunchCardModel().getDatas() -->
+    SharedPreferences prefs = await SharedPreferences.getInstance();
 
+    String string = prefs.getString("punch_card_in");
 
-          //再遍历当月的数据集
-          for (PunchCardModel model in listTemp) {
+    if (string == null) {//如果不存在就返回空数组
 
-            if (DateTime.parse(model.dateTime) == monthFirstDay) {
+    } else {
 
-              monthDatas.add(model);
-            }
-          }
+      List listDatas = json.decode(string);
 
-        });
+      list = listDatas.map((map) => PunchCardModel.fromJson(map)).toList();
+
+    }
+    // <-- PunchCardModel().getDatas()
+
+    List<PunchCardModel> listTemp = [];//存储当月捞出的所有数据
+    for (PunchCardModel model in list) {
+
+      if (model.monthTime == monthModel.monthTime) {
+
+        listTemp.add(model);
+      }
+    }
+
+    while (monthFirstDay.isBefore(monthLastDay)) {
+
+      bool haveData = false;
+      //再遍历当月的数据集
+      for (PunchCardModel model in listTemp) {
+
+        if (DateTime.parse(model.dateTime) == monthFirstDay) {
+
+          haveData = true;
+          monthDatas.add(model);
+          listTemp.remove(model);
+          break;
+        }
+      }
+      if (haveData == false) {//当天没有记录数据，则补充数据
+
+        monthDatas.add(PunchCardModel().initModelWith(monthFirstDay));
+      }
+      monthFirstDay = monthFirstDay.add(Duration(days: 1));
+    };
+    return monthDatas;
   }
 }
 

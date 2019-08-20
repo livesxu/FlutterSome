@@ -6,6 +6,7 @@ enum punch_card_settingAction {
   sureMonthAction,//选择月份
   changeSettingTime,//更改设置时间
   changeSettingCheck,//更改设置选择
+  jumpListAction,//跳转列表页
 }
 
 class punch_card_settingActionCreator {
@@ -20,5 +21,8 @@ class punch_card_settingActionCreator {
   }
   static Action changeSettingCheck(key) {
     return Action(punch_card_settingAction.changeSettingCheck,payload:key);
+  }
+  static Action jumpListAction() {
+    return const Action(punch_card_settingAction.jumpListAction);
   }
 }

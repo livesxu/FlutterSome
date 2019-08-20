@@ -8,11 +8,21 @@ class punch_card_settingState implements Cloneable<punch_card_settingState> {
 
   PunchCardSettingModel model;
 
+  //捞取、计算获得
+  List<PunchCardModel> monthList = [];
+
+  //展示的加班时长 预计下班时间
+  String totalShowTime = "";
+  String alreadyfinishTime = "";
+
   @override
   punch_card_settingState clone() {
     return punch_card_settingState()
                 ..monthTime = monthTime
-                ..model = model;
+                ..model = model
+                ..monthList = monthList
+                ..totalShowTime = totalShowTime
+                ..alreadyfinishTime = alreadyfinishTime;
   }
 }
 
@@ -22,7 +32,7 @@ punch_card_settingState initState(Map<String, dynamic> args) {
 
   newState.monthTime = args["monthTime"];
 
-  newState.model = PunchCardSettingModel.instance;
+  newState.model = PunchCardSettingModel.instance;//没有时拿单例里面的当前数据用一下，在init里面会初始刷新
 
   return newState;
 }
