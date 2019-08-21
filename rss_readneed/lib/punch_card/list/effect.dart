@@ -6,7 +6,6 @@ import 'package:rss_readneed/punch_card/punchCardModel.dart';
 
 Effect<punch_card_listState> buildEffect() {
   return combineEffects(<Object, Effect<punch_card_listState>>{
-    punch_card_listAction.action: _onAction,
     punch_card_listAction.changeCheckAction:_changeCheckAction,
   });
 }
@@ -31,7 +30,11 @@ void _changeCheckAction(Action action, Context<punch_card_listState> ctx) {
   //变更存储数据
   PunchCardModel().save(newModel, true);
   //变更显示数据
-  ctx.state.monthList;
+  int index = ctx.state.monthList.indexOf(model);
 
+  ctx.state.monthList.removeAt(index);
+  ctx.state.monthList.insert(index, newModel);
+
+  ctx.dispatch(punch_card_listActionCreator.refreshAction());
 
 }

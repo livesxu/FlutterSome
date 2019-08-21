@@ -6,6 +6,7 @@ import 'state.dart';
 
 import 'package:rss_readneed/public.dart';
 import 'package:rss_readneed/punch_card/punchCardModel.dart';
+import 'package:rss_readneed/punch_card/page.dart' as punchCard;
 
 Widget buildView(punch_card_listState state, Dispatch dispatch, ViewService viewService) {
   return Scaffold(
@@ -36,19 +37,19 @@ Widget buildView(punch_card_listState state, Dispatch dispatch, ViewService view
             timeColor = Colors.pink;
           }
 
-          return CheckboxListTile(
-            value: model.inCount,
-            onChanged: (incount){ /*更改是否统计*/},
+          return ListTile(
+            trailing: Checkbox(value: model.inCount, onChanged: (incount){ dispatch(punch_card_listActionCreator.changeCheckAction(model));/*更改是否统计*/},),
             title: RichText(text: TextSpan(
               text: model.dateTime.substring(8,10) + "  ",//加上间隔
               style: TextStyle(color: Colors.black,fontSize: 24,fontWeight: FontWeight.w600),
               children: [
-                  TextSpan(text:(model.finishTime.contains(model.dateTime) ? model.finishTime.substring(11,16) : model.finishTime),
+                TextSpan(text:(model.finishTime.contains(model.dateTime) ? model.finishTime.substring(11,16) : model.finishTime),
                     style: TextStyle(color: timeColor,fontSize: 20,fontWeight: FontWeight.w300)
-                  )
-              ]
+                )
+              ],
             )),
             subtitle: Text(model.workingThings),
+            onTap: (){ AppNavigator.push(ctx, punchCard.punch_cardPage().buildPage({"model":model}));},
           );
         }),
   );

@@ -63,6 +63,7 @@ punch_cardState initState(Map<String, dynamic> args) {
     } else {
 
       newState.isToday = false;
+      newState.isChange = true;
     }
   }
   newState.controller.text = newState.model.workingThings;
