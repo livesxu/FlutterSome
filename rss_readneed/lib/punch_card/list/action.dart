@@ -4,6 +4,7 @@ import 'package:fish_redux/fish_redux.dart';
 enum punch_card_listAction {
   refreshAction,
   changeCheckAction,
+  changeTimeAction,
 }
 
 class punch_card_listActionCreator {
@@ -12,5 +13,8 @@ class punch_card_listActionCreator {
   }
   static Action changeCheckAction(model) {
     return Action(punch_card_listAction.changeCheckAction,payload: model);
+  }
+  static Action changeTimeAction(model) {
+    return Action(punch_card_listAction.changeTimeAction,payload: model);
   }
 }

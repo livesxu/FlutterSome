@@ -18,6 +18,7 @@ class AppNavigator {
 
       _instance = AppNavigator();
       PunchCardSettingModel.instance;////打卡的月度信息需要随app初始化
+      PunchCardSettingModel.settings;
     }
     return _instance;
   }

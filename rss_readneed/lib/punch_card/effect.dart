@@ -145,7 +145,10 @@ void _showTimePickerAction(Action action, Context<punch_cardState> ctx) async {
 
   String newFinishTimeString = ctx.state.model.dateTime + " " + timeSelectedString + ":00";
 
-  String monthFinishNextDayTime = ctx.state.model.dateTime + PunchCardSettingModel.instance.finishNextDayTime.substring(10);
+  //所在月设置信息
+  PunchCardSettingModel monthModel = await PunchCardSettingModel().getModel(ctx.state.model.monthTime);
+
+  String monthFinishNextDayTime = ctx.state.model.dateTime + monthModel.finishNextDayTime.substring(10);
   if (DateTime.parse(newFinishTimeString).isBefore(DateTime.parse(monthFinishNextDayTime))) {
 
     newFinishTimeString = PunchCardModel().timeString(DateTime.parse(newFinishTimeString).add(Duration(days: 1)));

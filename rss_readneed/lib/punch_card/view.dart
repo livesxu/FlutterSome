@@ -138,17 +138,7 @@ Widget buildView(punch_cardState state, Dispatch dispatch, ViewService viewServi
             Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  RaisedButton(
-                    onPressed: (){ dispatch(punch_cardActionCreator.pushSettingVC()); },
-                    child: Text("月度规划"),
-                  ),
-                  SizedBox(width: 10,),
-                  RaisedButton(
-                    onPressed: (){ dispatch(punch_cardActionCreator.pushListVC()); },
-                    child: Text("传送门"),
-                  )
-                ],
+                children: judgeSettingAndList(state.isToday, dispatch),
               ),
               padding: EdgeInsets.all(4),
             ),//月度规划,传送门
@@ -195,5 +185,28 @@ List<Widget> TomorrowThingsItems(List<TextEditingController> controllers,bool is
     list.add(Container());
   }
 
+  return list;
+}
+
+List<Widget> judgeSettingAndList(bool isToday,Dispatch dispatch) {
+
+  List<Widget> list = [];
+
+  //只有当天才开放月度规划
+  if (isToday == true) {
+
+    Widget setting = RaisedButton(
+      onPressed: (){ dispatch(punch_cardActionCreator.pushSettingVC()); },
+      child: Text("月度规划"),
+    );
+    list.add(setting);
+  }
+  list.add(SizedBox(width: 10,));
+
+  //历史查询,暂隐藏
+//  RaisedButton(
+//    onPressed: (){ dispatch(punch_cardActionCreator.pushListVC()); },
+//    child: Text("传送门"),
+//  );
   return list;
 }

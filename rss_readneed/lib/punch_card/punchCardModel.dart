@@ -54,15 +54,18 @@ class PunchCardModel {
     //是否当天 - 当天则取当前时间,否则取下午6点（早9晚6，暂行基准）
     bool isToday = PunchCardModel().isToday(dateString);
 
-    String settingFinishTime = PunchCardSettingModel.instance.finishTime.substring(10);
+    //所在月设置信息
+    PunchCardSettingModel monthModel = PunchCardSettingModel().getSettingsModel(dateTime.toString().substring(0,7));
+
+    String settingFinishTime = monthModel.finishTime.substring(10);
 
     //是否统计
     bool inCount = dateTime.weekday < 6 ? true : false;
 
-    if (PunchCardSettingModel.instance.inCountSaturday && dateTime.weekday == 6) {
+    if (monthModel.inCountSaturday && dateTime.weekday == 6) {
 
       inCount = true;
-    } else if (PunchCardSettingModel.instance.inCountSunday && dateTime.weekday == 7) {
+    } else if (monthModel.inCountSunday && dateTime.weekday == 7) {
 
       inCount = true;
     }
@@ -248,6 +251,36 @@ class PunchCardSettingModel {
     return _instance;
   }
 
+  //所有的设置信息
+  static List<PunchCardSettingModel> _settings;
+  static List<PunchCardSettingModel> get settings {
+
+    if (_settings == null) {
+
+      _settings = [];
+
+      PunchCardSettingModel().getSettings().then((List<PunchCardSettingModel> settings){
+
+        _settings = settings;
+      });
+    }
+    return _settings;
+  }
+
+  //这个模式是在单例里面取，如果取不到那就用默认的补上使用
+  PunchCardSettingModel getSettingsModel(String currentMonthTimeString) {
+
+    for(PunchCardSettingModel model in PunchCardSettingModel.settings) {
+
+      if (model.monthTime == currentMonthTimeString) {
+
+        return model;
+      }
+    }
+    return PunchCardSettingModel().initModelWith(currentMonthTimeString);
+  }
+  
+
   PunchCardSettingModel initModelWith(String monthTime) {
 
     return PunchCardSettingModel(
@@ -284,6 +317,25 @@ class PunchCardSettingModel {
 
     prefs.setString("punch_card_setting",json.encode(models));
   }
+
+  //取出所在的月份的数据
+  Future<List<PunchCardSettingModel>> getSettings() async {
+
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    String string = prefs.getString("punch_card_setting");
+
+    if (string == null) {//如果不存在就返回新建数据,同时存储
+
+      return [];
+    }
+    List list = json.decode(string);
+
+    List<PunchCardSettingModel> models = list.map((map) => PunchCardSettingModel.fromJson(map)).toList();
+
+    return models;
+  }
+
 
   //取出所在的月份的数据
   Future<PunchCardSettingModel> getModel(String currentMonthTimeString) async {
@@ -372,21 +424,7 @@ class PunchCardSettingModel {
 
     List<PunchCardModel> list = [];
 
-    //PunchCardModel().getDatas() -->
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-
-    String string = prefs.getString("punch_card_in");
-
-    if (string == null) {//如果不存在就返回空数组
-
-    } else {
-
-      List listDatas = json.decode(string);
-
-      list = listDatas.map((map) => PunchCardModel.fromJson(map)).toList();
-
-    }
-    // <-- PunchCardModel().getDatas()
+    list = await PunchCardModel().getDatas();
 
     List<PunchCardModel> listTemp = [];//存储当月捞出的所有数据
     for (PunchCardModel model in list) {
