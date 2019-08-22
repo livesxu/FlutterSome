@@ -264,7 +264,21 @@ class PunchCardSettingModel {
         _settings = settings;
       });
     }
+
     return _settings;
+  }
+
+  static void get refreshSettings {
+
+    PunchCardSettingModel().getSettings().then((List<PunchCardSettingModel> settings){
+
+      _settings = settings;
+    });
+    //设置更新完之后更新_instance
+    PunchCardSettingModel().getModel(PunchCardModel().dateTimeString(DateTime.now()).substring(0,7)).then((PunchCardSettingModel model){
+
+      _instance = model;
+    });
   }
 
   //这个模式是在单例里面取，如果取不到那就用默认的补上使用
@@ -309,11 +323,11 @@ class PunchCardSettingModel {
 
       if (model1.monthTime == model.monthTime) {
 
-        list.remove(model1);
+        models.remove(model1);
         break;
       }
     }
-    list.add(model);
+    models.add(model);
 
     prefs.setString("punch_card_setting",json.encode(models));
   }

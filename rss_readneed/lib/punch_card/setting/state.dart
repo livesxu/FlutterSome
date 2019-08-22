@@ -15,6 +15,10 @@ class punch_card_settingState implements Cloneable<punch_card_settingState> {
   String totalShowTime = "";
   String alreadyfinishTime = "";
 
+  //月度计算时间 - 需当月，需设置
+  String monthPlanTime;
+  String leftDayPlanFinishTime;
+
   @override
   punch_card_settingState clone() {
     return punch_card_settingState()
@@ -22,7 +26,9 @@ class punch_card_settingState implements Cloneable<punch_card_settingState> {
                 ..model = model
                 ..monthList = monthList
                 ..totalShowTime = totalShowTime
-                ..alreadyfinishTime = alreadyfinishTime;
+                ..alreadyfinishTime = alreadyfinishTime
+                ..monthPlanTime = monthPlanTime
+                ..leftDayPlanFinishTime = leftDayPlanFinishTime;
   }
 }
 

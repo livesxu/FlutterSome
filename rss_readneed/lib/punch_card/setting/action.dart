@@ -7,6 +7,8 @@ enum punch_card_settingAction {
   changeSettingTime,//更改设置时间
   changeSettingCheck,//更改设置选择
   jumpListAction,//跳转列表页
+  refreshCountInfo,//刷新统计信息
+  planLeftFinishTimeAction,//规划加班时间
 }
 
 class punch_card_settingActionCreator {
@@ -24,5 +26,11 @@ class punch_card_settingActionCreator {
   }
   static Action jumpListAction() {
     return const Action(punch_card_settingAction.jumpListAction);
+  }
+  static Action refreshCountInfo() {
+    return const Action(punch_card_settingAction.refreshCountInfo);
+  }
+  static Action planLeftFinishTimeAction() {
+    return const Action(punch_card_settingAction.planLeftFinishTimeAction);
   }
 }

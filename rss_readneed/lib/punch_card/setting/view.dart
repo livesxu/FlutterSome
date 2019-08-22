@@ -22,7 +22,12 @@ Widget buildView(punch_card_settingState state, Dispatch dispatch, ViewService v
             ),
             SizedBox(width: 10,),
             Text(time,
-              style: TextStyle(color: Colors.black54,fontSize: 16,fontWeight: FontWeight.w600),
+              style: TextStyle(
+                  color: Colors.black54,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  decoration: TextDecoration.combine([TextDecoration.underline])
+              ),
             ),
           ],
         ),
@@ -90,17 +95,22 @@ Widget buildView(punch_card_settingState state, Dispatch dispatch, ViewService v
         ),
         //月度列表
         Container(
-          child: InkWell(
-            child: Container(
-              child: Text("月度统计",
-                style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.w700),
+          child: Row(
+            children: <Widget>[
+              InkWell(
+                child: Container(
+                  child: Text("月度统计",
+                    style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.w700),
+                  ),
+                  decoration: BoxDecoration(color: Colors.red,borderRadius: BorderRadius.all(Radius.circular(4))),
+                  padding: EdgeInsets.only(top: 3,bottom: 3,left: 6,right: 6),
+                  margin: EdgeInsets.all(10),
+                ),
+                onTap: (){ dispatch(punch_card_settingActionCreator.jumpListAction());/*跳转列表*/ },
               ),
-              decoration: BoxDecoration(color: Colors.red,borderRadius: BorderRadius.all(Radius.circular(4))),
-              padding: EdgeInsets.only(top: 3,bottom: 3,left: 6,right: 6),
-              margin: EdgeInsets.all(10),
-            ),
-            onTap: (){ dispatch(punch_card_settingActionCreator.jumpListAction());/*跳转列表*/ },
-          ),
+              IconButton(icon: Icon(Icons.refresh,color: Colors.blue,), onPressed: (){}),
+            ],
+          )
         ),
         Card(
           child: Column(
@@ -136,6 +146,40 @@ Widget buildView(punch_card_settingState state, Dispatch dispatch, ViewService v
             ],
           ),
         ),
+        Card(
+          child: (DateTime.now().toString().contains(state.model.monthTime))/*当月*/ ?
+          Container(
+            child: Container(
+              padding: EdgeInsets.all(6),
+              child: Row(
+                children: <Widget>[
+                  Text("计划下班时间",
+                    style: TextStyle(color: Colors.black87,fontSize: 16,fontWeight: FontWeight.w700),
+                  ),
+                  FlatButton.icon(
+                      onPressed: (){ dispatch(punch_card_settingActionCreator.planLeftFinishTimeAction());},
+                      icon: Icon(Icons.alarm,color: Colors.blue,),
+                      label: Text(state.monthPlanTime == null ? "选择时间" : state.monthPlanTime,style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w400),),
+                  ),
+                  SizedBox(width: 6,),
+                  Container(
+                    child: (state.leftDayPlanFinishTime == null) ? Container() :
+                    RichText(
+                      text: TextSpan(
+                        text: "剩余计划下班  ",
+                        style:TextStyle(color: Colors.black38,fontSize: 14,fontWeight: FontWeight.w600),
+                        children: [TextSpan(
+                          text: state.leftDayPlanFinishTime,
+                          style: TextStyle(color: Colors.orange,fontSize: 24,fontWeight: FontWeight.w300),
+                        )]
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ) :Container(),
+        )
       ],
     ),
   );
