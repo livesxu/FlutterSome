@@ -49,6 +49,7 @@ class ThirdDemo extends StatelessWidget {
 //                borderRadius: BorderRadius.circular(10)
 //              )
               shape: StadiumBorder()//体育场样式border
+//              shape: ContinuousRectangleBorder(borderRadius:BorderRadius.all(Radius.circular(5)) ),
             )
           ),
           child: RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.print), label: Text("Print")),
