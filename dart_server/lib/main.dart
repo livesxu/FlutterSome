@@ -2,8 +2,28 @@ import 'dart:io';
 
 import 'package:http_server/http_server.dart';
 
+import 'package:path/path.dart';
+
+//https://www.jianshu.com/p/b7cdf11f32f6
+import 'package:logging/logging.dart';
+
 void main() async {
+
+  Logger.root.level = Level.ALL;
+  Logger.root.onRecord.listen((rec){
+
+    print('${rec.level}::${rec.time}::${rec.message}');
+  });
+
   VirtualDirectory staticFiles=new VirtualDirectory('.');
+
+  String mainPath = Platform.script.toFilePath();
+
+  print(mainPath);
+
+  //index.html的路径
+  //dirname 取上一层路径
+  String indexPath = dirname(dirname(mainPath)) + "webApp/index.html";
 
   var requestServer = await HttpServer.bind(InternetAddress.loopbackIPv6, 8080);
 
@@ -18,10 +38,9 @@ void main() async {
     if(request.uri.toString()=='/'||request.uri.toString()=='/index.html'){
 //当我们收到请求根目录或者请求/index.html页面时，返回我们的刚刚写好的html页面
 //因为http_server这个包已经为我们处理好了，所以如果html不存在，也不会让服务器奔溃掉，而是返回未找到页面
-      print("html处理");
-      Directory directory=await new Directory("webApp/index.html");
+      Logger.root.info("html处理");
 
-      staticFiles.serveFile(new File('${directory.path}'), request);//这里是mac系统下的代码
+      staticFiles.serveFile(new File(indexPath), request);//这里是mac系统下的代码
 //    staticFiles.serveFile(new File('webApp/index.html'), request);//win系统使用该代码
     }else{
 //如果不是请求该页面，交回给get，post去处理
