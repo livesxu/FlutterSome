@@ -1,0 +1,71 @@
+time：2019-12-19T11:10:22.659711
+user-agent：Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15 
+connection：keep-alive 
+accept：text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 
+accept-language：zh-cn 
+accept-encoding：gzip, deflate 
+host：localhost:8080 
+upgrade-insecure-requests：1 
+
+time：2019-12-19T11:10:22.726119
+user-agent：Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15 
+connection：keep-alive 
+accept：*/* 
+accept-language：zh-cn 
+accept-encoding：gzip, deflate 
+host：localhost:8080 
+referer：http://localhost:8080/user/login 
+
+time：2019-12-19T11:10:36.228240
+user-agent：Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15 
+connection：keep-alive 
+accept：text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 
+accept-language：zh-cn 
+accept-encoding：gzip, deflate 
+host：localhost:8080 
+upgrade-insecure-requests：1 
+
+time：2019-12-19T11:10:38.458305
+user-agent：Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15 
+connection：keep-alive 
+accept：text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 
+accept-language：zh-cn 
+accept-encoding：gzip, deflate 
+host：localhost:8080 
+upgrade-insecure-requests：1 
+
+time：2019-12-19T11:10:38.483989
+user-agent：Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15 
+connection：keep-alive 
+accept：*/* 
+accept-language：zh-cn 
+accept-encoding：gzip, deflate 
+host：localhost:8080 
+referer：http://localhost:8080/user/logout 
+
+time：2019-12-19T11:10:53.610336
+user-agent：Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15 
+connection：keep-alive 
+accept：text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 
+accept-language：zh-cn 
+accept-encoding：gzip, deflate 
+host：localhost:8080 
+upgrade-insecure-requests：1 
+
+time：2019-12-19T11:10:58.462932
+user-agent：Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15 
+connection：keep-alive 
+accept：text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 
+accept-language：zh-cn 
+accept-encoding：gzip, deflate 
+host：localhost:8080 
+upgrade-insecure-requests：1 
+
+time：2019-12-19T11:10:58.523007
+user-agent：Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15 
+connection：keep-alive 
+accept：*/* 
+accept-language：zh-cn 
+accept-encoding：gzip, deflate 
+host：localhost:8080 
+referer：http://localhost:8080/user/delete 

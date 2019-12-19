@@ -1,0 +1,17 @@
+time：2019-12-19T11:07:57.796804
+user-agent：Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15 
+connection：keep-alive 
+accept：text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 
+accept-language：zh-cn 
+accept-encoding：gzip, deflate 
+host：localhost:8080 
+upgrade-insecure-requests：1 
+
+time：2019-12-19T11:07:59.729427
+user-agent：Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15 
+connection：keep-alive 
+accept：text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 
+accept-language：zh-cn 
+accept-encoding：gzip, deflate 
+host：localhost:8080 
+upgrade-insecure-requests：1 
