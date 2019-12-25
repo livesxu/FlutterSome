@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d31217c9-e40f-4c4c-b7d5-185f18a55aa4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-    </list>
+    <list default="true" id="d31217c9-e40f-4c4c-b7d5-185f18a55aa4" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +15,7 @@
     <session id="1788962463">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -40,14 +39,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dart" value="584" />
+          <entry key="dart" value="585" />
           <entry key="html" value="17" />
           <entry key="yaml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Dart" value="584" />
+          <entry key="Dart" value="585" />
           <entry key="HTML" value="17" />
           <entry key="YAML" value="3" />
         </counts>
@@ -64,8 +63,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="53" column="15" selection-start-line="53" selection-start-column="15" selection-end-line="53" selection-end-column="15" />
+            <state relative-caret-position="132">
+              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -261,7 +260,7 @@
       <window_info anchor="bottom" id="Dart Analysis" weight="0.32946298" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="TODO" />
-      <window_info anchor="bottom" id="Run" visible="true" weight="0.32946298" />
+      <window_info anchor="bottom" id="Run" weight="0.32946298" />
       <window_info anchor="bottom" id="Debug" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
@@ -353,8 +352,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="53" column="15" selection-start-line="53" selection-start-column="15" selection-end-line="53" selection-end-column="15" />
+        <state relative-caret-position="132">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
