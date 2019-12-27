@@ -1,0 +1,25 @@
+{
+  "name": "LXAOPTask",
+  "version": "0.1.0",
+  "summary": "LXAOPTask",
+  "homepage": "https://github.com/livesxu/LXAOPTask.git",
+  "license": "MIT",
+  "authors": {
+    "livesxu": "livesxu@163.com"
+  },
+  "platforms": {
+    "ios": "5.0"
+  },
+  "source": {
+    "git": "https://github.com/livesxu/LXAOPTask.git",
+    "tag": "0.1.0"
+  },
+  "source_files": "LXAOPTask",
+  "frameworks": "UIKit",
+  "requires_arc": true,
+  "dependencies": {
+    "Aspects": [
+      "~> 1.4.1"
+    ]
+  }
+}

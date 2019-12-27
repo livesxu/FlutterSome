@@ -1,0 +1,6 @@
+framework module LXAOPTask {
+  umbrella header "LXAOPTask-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module LXCategory {
+  umbrella header "LXCategory-umbrella.h"
+
+  export *
+  module * { export * }
+}

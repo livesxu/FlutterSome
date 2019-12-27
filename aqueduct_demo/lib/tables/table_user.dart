@@ -6,6 +6,9 @@ class _User {
   @Column(primaryKey: true)
   int id;
 
+  @Column(indexed: true,autoincrement: true)
+  int user_id;
+
   @Column(indexed: true)
   String user_name;
 

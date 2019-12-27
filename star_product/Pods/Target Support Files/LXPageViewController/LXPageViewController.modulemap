@@ -1,0 +1,6 @@
+framework module LXPageViewController {
+  umbrella header "LXPageViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}

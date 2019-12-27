@@ -1,0 +1,86 @@
+10
+
+dir
+1130
+http://xuxiaobo@svn.idata365.com:81/svn/IOS-V2/shujin-dev1.0/star_product/Stars
+http://xuxiaobo@svn.idata365.com:81/svn/IOS-V2
+
+
+
+2018-10-09T02:37:34.233119Z
+1130
+xuxiaobo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8f8c478f-5f01-0010-890b-93b6b773ee2d
+
+Base.lproj
+dir
+
+Expand
+dir
+
+Other
+dir
+
+CommonBase
+dir
+
+Vender
+dir
+
+Main
+dir
+
+Stars.entitlements
+file
+
+
+
+
+2018-09-27T14:57:41.000000Z
+2de6a04cdba79ed13580c47dfd70cc5f
+2018-09-11T02:35:07.661531Z
+1093
+xuxiaobo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+181
+
+Resource
+dir
+
+Assets.xcassets
+dir
+

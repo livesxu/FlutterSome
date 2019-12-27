@@ -1,0 +1,6 @@
+framework module LXScrollLoopViewController {
+  umbrella header "LXScrollLoopViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}

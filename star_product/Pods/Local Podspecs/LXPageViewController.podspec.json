@@ -1,0 +1,20 @@
+{
+  "name": "LXPageViewController",
+  "version": "0.1.0",
+  "summary": "LXPageViewController",
+  "homepage": "https://github.com/livesxu/LXPageViewController.git",
+  "license": "MIT",
+  "authors": {
+    "livesxu": "livesxu@163.com"
+  },
+  "platforms": {
+    "ios": "5.0"
+  },
+  "source": {
+    "git": "https://github.com/livesxu/LXPageViewController.git",
+    "tag": "0.1.0"
+  },
+  "source_files": "LXPageViewController",
+  "frameworks": "UIKit",
+  "requires_arc": true
+}

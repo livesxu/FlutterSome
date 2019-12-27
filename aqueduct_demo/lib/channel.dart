@@ -77,6 +77,10 @@ class AqueductDemoChannel extends ApplicationChannel {
     () => ArticleController(context),
     );
 
+    router.route("/user/[:id([0-9]+)]").link(
+        () => UsersController(context)
+    );
+
     return router;
   }
 }
@@ -105,7 +109,9 @@ class ArticleController extends ResourceController {
     final query = Query<Article>(context)
       ..sortBy((Article e) => e.createData, QuerySortOrder.ascending);
     final List<Article> articles = await query.fetch();
-    return Response.ok(articles);
+    print(articles);
+    return Response.ok(articles)
+      ..contentType = ContentType.json;
   }
 
   @Operation.post()//添加一篇文章
@@ -157,4 +163,51 @@ class ArticleController extends ResourceController {
       return Response.ok("删除失败，数据不存在");
     }
   }
+}
+
+class UsersController extends ResourceController {
+
+  UsersController(this.context);
+
+  final ManagedContext context;
+
+  //添加一个用户
+  @Operation.post()
+  FutureOr<Response> addUser(@Bind.body(require: ["nick_name","password"]) User user) async {
+    user.vip = false;
+    user.user_name = (user.user_name == null) ? user.nick_name : user.user_name;
+    user.rank = "0";
+
+    final result = await context.insertObject(user);
+
+    return Response.ok(result);
+  }
+
+  //查询所有用户
+  @Operation.get()
+  Future<Response> allUsers() async {
+
+    final query = Query<User>(context)
+        ..sortBy((User user) => user.id, QuerySortOrder.ascending);
+    final List<User> users = await query.fetch();
+
+    return Response.ok(users);
+  }
+
+  //查询某一个用户昵称
+  @Operation.get("id")
+  Future<Response> queryNameById(@Bind.path("id") int id) async {
+
+    final query = Query<User>(context)
+        ..where((User user) => user.id).equalTo(id);
+    User user = await query.fetchOne();
+
+    if (user != null) {
+
+      return Response.ok({"nickName":user.nick_name});
+    } else {
+      return Response.ok("have no this user");
+    }
+  }
+
 }

@@ -1,0 +1,136 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - Aspects (1.4.1)
+  - CustomPickView (0.1.0)
+  - FDFullscreenPopGesture (1.1)
+  - IQKeyboardManager (4.0.13)
+  - LXAlertBlock (0.1.0)
+  - LXAOPTask (0.1.0):
+    - Aspects (~> 1.4.1)
+  - LXCategory (0.2.0):
+    - LXCategory/no-arc (= 0.2.0)
+  - LXCategory/no-arc (0.2.0)
+  - LXPageViewController (0.1.0)
+  - LXRouter (0.1.0)
+  - LXScrollLoopViewController (0.1.0)
+  - LXShowLoading (0.1.0):
+    - MBProgressHUD (~> 1.1.0)
+  - Masonry (1.0.2)
+  - MBProgressHUD (1.1.0)
+  - MJRefresh (3.1.15.3)
+  - ReactiveObjC (3.1.0)
+  - YTKNetwork (2.0.4):
+    - AFNetworking (~> 3.0)
+  - YYCache (1.0.4)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - YYModel (1.0.4)
+  - YYWebImage (1.0.5):
+    - YYCache
+    - YYImage
+
+DEPENDENCIES:
+  - Aspects
+  - CustomPickView (from `https://github.com/livesxu/CustomPickView.git`)
+  - FDFullscreenPopGesture (~> 1.1)
+  - IQKeyboardManager (~> 4.0.7)
+  - LXAlertBlock (from `https://github.com/livesxu/LXAlertBlock.git`)
+  - LXAOPTask (from `https://github.com/livesxu/LXAOPTask.git`)
+  - LXCategory (from `https://github.com/livesxu/LXCategory.git`)
+  - LXPageViewController (from `https://github.com/livesxu/LXPageViewController.git`)
+  - LXRouter (from `https://github.com/livesxu/LXRouter.git`)
+  - LXScrollLoopViewController (from `https://github.com/livesxu/LXScrollLoopViewController.git`)
+  - LXShowLoading (from `https://github.com/livesxu/LXShowLoading.git`)
+  - Masonry (~> 1.0.1)
+  - MJRefresh (~> 3.1.15.1)
+  - ReactiveObjC
+  - YTKNetwork
+  - YYCache
+  - YYModel (~> 1.0.4)
+  - YYWebImage
+
+EXTERNAL SOURCES:
+  CustomPickView:
+    :git: https://github.com/livesxu/CustomPickView.git
+  LXAlertBlock:
+    :git: https://github.com/livesxu/LXAlertBlock.git
+  LXAOPTask:
+    :git: https://github.com/livesxu/LXAOPTask.git
+  LXCategory:
+    :git: https://github.com/livesxu/LXCategory.git
+  LXPageViewController:
+    :git: https://github.com/livesxu/LXPageViewController.git
+  LXRouter:
+    :git: https://github.com/livesxu/LXRouter.git
+  LXScrollLoopViewController:
+    :git: https://github.com/livesxu/LXScrollLoopViewController.git
+  LXShowLoading:
+    :git: https://github.com/livesxu/LXShowLoading.git
+
+CHECKOUT OPTIONS:
+  CustomPickView:
+    :commit: dae3703acce2a1b01103f921304b1b36ef06a12e
+    :git: https://github.com/livesxu/CustomPickView.git
+  LXAlertBlock:
+    :commit: 13a79a0610bad094e276fe3315322a444b60ace0
+    :git: https://github.com/livesxu/LXAlertBlock.git
+  LXAOPTask:
+    :commit: d6d8049ff1b7fa41ca0879c667d0a985fba87b57
+    :git: https://github.com/livesxu/LXAOPTask.git
+  LXCategory:
+    :commit: 8fb1d924a81713d1627383e9cfa9a2c250e3a4ae
+    :git: https://github.com/livesxu/LXCategory.git
+  LXPageViewController:
+    :commit: a8f419601ec352ac5698f70509ef67cb6c35b229
+    :git: https://github.com/livesxu/LXPageViewController.git
+  LXRouter:
+    :commit: fbd4ba683f2d563cdfb4949afcc9c806af7368a8
+    :git: https://github.com/livesxu/LXRouter.git
+  LXScrollLoopViewController:
+    :commit: c644d27d384bd1b56430abf9e1261595bb631b60
+    :git: https://github.com/livesxu/LXScrollLoopViewController.git
+  LXShowLoading:
+    :commit: 4759cb8322f96fa471d4a5df5c2b60d5dc024afe
+    :git: https://github.com/livesxu/LXShowLoading.git
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  CustomPickView: e10a397456a53312c9746277d6586e28dbb059bb
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  IQKeyboardManager: 8eab4d8111418414619d1df8e4779ce5d0f8d7e2
+  LXAlertBlock: 9667b584f3dec358b0d2f8b0825c3c78b32e4225
+  LXAOPTask: ed7ac53f2ccd00a869a53036c450723baa83a08c
+  LXCategory: aa9df03d9fa46419d1f524a92e4347e43e17d369
+  LXPageViewController: f1bd584a900a78d7f387cc3af9ec5a4db724e28d
+  LXRouter: a5fbb8d1cf53488bd9996019c5bddf8805b16664
+  LXScrollLoopViewController: 15250ddac32837cc9d8f667fe6a18947c20bf8e1
+  LXShowLoading: a68213eda01e90a6ccce82fa65fdaba8f4a6fac7
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
+  ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
+  YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
+
+PODFILE CHECKSUM: 7879c20773294e5d6ae45073bd3c2030295eaf11
+
+COCOAPODS: 1.2.0

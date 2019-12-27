@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/IOS-V2/!svn/ver/1123/shujin-dev1.0/star_product/Stars/CommonBase/BaseInfo
+END
+CommonWebTableViewCell.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/IOS-V2/!svn/ver/1122/shujin-dev1.0/star_product/Stars/CommonBase/BaseInfo/CommonWebTableViewCell.h
+END
+CommonWebViewController.m
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/IOS-V2/!svn/ver/1093/shujin-dev1.0/star_product/Stars/CommonBase/BaseInfo/CommonWebViewController.m
+END
+BaseViewModel.m
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/IOS-V2/!svn/ver/1093/shujin-dev1.0/star_product/Stars/CommonBase/BaseInfo/BaseViewModel.m
+END
+BaseModel.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/IOS-V2/!svn/ver/1093/shujin-dev1.0/star_product/Stars/CommonBase/BaseInfo/BaseModel.h
+END
+CommonWebTableViewCell.m
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/IOS-V2/!svn/ver/1111/shujin-dev1.0/star_product/Stars/CommonBase/BaseInfo/CommonWebTableViewCell.m
+END
+BaseModel.m
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/IOS-V2/!svn/ver/1093/shujin-dev1.0/star_product/Stars/CommonBase/BaseInfo/BaseModel.m
+END
+MainNaviController.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/IOS-V2/!svn/ver/1093/shujin-dev1.0/star_product/Stars/CommonBase/BaseInfo/MainNaviController.h
+END
+BaseViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/IOS-V2/!svn/ver/1093/shujin-dev1.0/star_product/Stars/CommonBase/BaseInfo/BaseViewController.h
+END
+MainNaviController.m
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/IOS-V2/!svn/ver/1093/shujin-dev1.0/star_product/Stars/CommonBase/BaseInfo/MainNaviController.m
+END
+BaseViewController.m
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/IOS-V2/!svn/ver/1123/shujin-dev1.0/star_product/Stars/CommonBase/BaseInfo/BaseViewController.m
+END
+BaseViewModel+RequestCancel.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/IOS-V2/!svn/ver/1093/shujin-dev1.0/star_product/Stars/CommonBase/BaseInfo/BaseViewModel+RequestCancel.h
+END
+NaviStandCopy.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/IOS-V2/!svn/ver/1122/shujin-dev1.0/star_product/Stars/CommonBase/BaseInfo/NaviStandCopy.h
+END
+CommonWebViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/IOS-V2/!svn/ver/1093/shujin-dev1.0/star_product/Stars/CommonBase/BaseInfo/CommonWebViewController.h
+END
+BaseViewModel+RequestCancel.m
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/IOS-V2/!svn/ver/1093/shujin-dev1.0/star_product/Stars/CommonBase/BaseInfo/BaseViewModel+RequestCancel.m
+END
+BaseViewModel.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/IOS-V2/!svn/ver/1093/shujin-dev1.0/star_product/Stars/CommonBase/BaseInfo/BaseViewModel.h
+END
+NaviStandCopy.m
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/IOS-V2/!svn/ver/1123/shujin-dev1.0/star_product/Stars/CommonBase/BaseInfo/NaviStandCopy.m
+END

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/IOS-V2/!svn/ver/1129/shujin-dev1.0/star_product/Stars/Other
+END
+main.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/IOS-V2/!svn/ver/1093/shujin-dev1.0/star_product/Stars/Other/main.m
+END
+AppDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/IOS-V2/!svn/ver/1093/shujin-dev1.0/star_product/Stars/Other/AppDelegate.h
+END
+AppDelegate+Assist.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/IOS-V2/!svn/ver/1093/shujin-dev1.0/star_product/Stars/Other/AppDelegate+Assist.h
+END
+Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/IOS-V2/!svn/ver/1093/shujin-dev1.0/star_product/Stars/Other/Info.plist
+END
+AppDelegate.m
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/IOS-V2/!svn/ver/1093/shujin-dev1.0/star_product/Stars/Other/AppDelegate.m
+END
+AppDelegate+Assist.m
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/IOS-V2/!svn/ver/1129/shujin-dev1.0/star_product/Stars/Other/AppDelegate+Assist.m
+END
+MainPCH.pch
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/IOS-V2/!svn/ver/1093/shujin-dev1.0/star_product/Stars/Other/MainPCH.pch
+END
