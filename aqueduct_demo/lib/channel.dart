@@ -2,7 +2,10 @@ import 'aqueduct_demo.dart';
 import 'app_config.dart';
 
 import 'tables/table_user.dart';
+import 'tables/tables_rss.dart';
 import 'package:aqueduct/aqueduct.dart';
+
+import 'package:aqueduct_demo/RssVc/login_vc.dart';
 
 /// This type initializes an application.
 ///
@@ -80,6 +83,8 @@ class AqueductDemoChannel extends ApplicationChannel {
     router.route("/user/[:id([0-9]+)]").link(
         () => UsersController(context)
     );
+
+    router.route("login/*").link(() => LoginVc(context));
 
     return router;
   }
