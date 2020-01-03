@@ -11,9 +11,9 @@ class LoginVc extends Controller {
   
   @override
   FutureOr<RequestOrResponse> handle(Request request) {
-    
-    @Bind.path("")
-    
+
+    List<String> paths = request.path.segments;
+
     return Response.ok("");
   }
 }
