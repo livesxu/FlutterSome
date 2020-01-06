@@ -1,16 +1,31 @@
 import 'harness/app.dart';
-import '../lib/tables/tables_rss.dart';
 //https://aqueduct.io/docs/testing/tests/
 
 Future main() async {
   final harness = Harness()..install();
 
-  test("GET /example returns 200 {'key': 'value'}", () async {
-    expectResponse(await harness.agent.get("/example"), 200, body: {"key": "value"});
-  });
+//  test("GET /example returns 200 {'key': 'value'}", () async {
+//    expectResponse(await harness.agent.get("/example"), 200, body: {"key": "value"});
+//  });
+//
+//  test("GET /login/in returns 200 {'key': 'value'}", () async {
+//    expectResponse(await harness.agent.get("/login/in"), 200, body: {"key": "value"});
+//  });
+//添加账号测试
+//  test("post login return 200", () async {
+//    final response = await harness.agent.post("/login", body: {
+//      "id":14,
+//      "nick_name":"postOneMan",
+//      "password":"123456"
+//    });
+//
+//    expect(response, hasStatus(200));
+//  });
 
-  test("GET /login/in returns 200 {'key': 'value'}", () async {
-    expectResponse(await harness.agent.get("/login/in"), 200, body: {"key": "value"});
+  test("post login return 200", () async {
+    final response = await harness.agent.get("/login?id=12&password=123456");
+
+    expect(response, hasStatus(200));
   });
 
 //  test("POST /employees adds an audit log record", () async {

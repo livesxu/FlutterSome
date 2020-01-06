@@ -84,7 +84,7 @@ class AqueductDemoChannel extends ApplicationChannel {
         () => UsersController(context)
     );
 
-    router.route("login/*").link(() => LoginVc(context));
+    router.route("/login").link(() => LoginResourceVc(context));
 
     return router;
   }
