@@ -6,6 +6,7 @@ import 'tables/tables_rss.dart';
 import 'package:aqueduct/aqueduct.dart';
 
 import 'package:aqueduct_demo/RssVc/login_vc.dart';
+import 'package:aqueduct_demo/RssVc/tag_vc.dart';
 
 /// This type initializes an application.
 ///
@@ -84,7 +85,11 @@ class AqueductDemoChannel extends ApplicationChannel {
         () => UsersController(context)
     );
 
+    //登录
     router.route("/login").link(() => LoginResourceVc(context));
+
+    //标签
+    router.route("/tag").link(() => TagResourceVc(context));
 
     return router;
   }

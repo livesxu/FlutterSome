@@ -21,12 +21,30 @@ Future main() async {
 //
 //    expect(response, hasStatus(200));
 //  });
+//登录测试
+//  test("get login return 200", () async {
+//    final response = await harness.agent.get("/login?id=12&password=123456");
+//
+//    expect(response, hasStatus(200));
+//  });
+//
+////添加标签测试
+//  test("post tag return 200", () async {
+//    final response = await harness.agent.post("/tag", body: {
+//      "tagName":"教育"
+//    });
+//
+//    expect(response, hasStatus(200));
+//  });
+//查询标签测试
+  test("get tag return 200", () async {
+    final response = await harness.agent.get("/tag");
 
-  test("post login return 200", () async {
-    final response = await harness.agent.get("/login?id=12&password=123456");
-
+    print(response);
     expect(response, hasStatus(200));
   });
+
+
 
 //  test("POST /employees adds an audit log record", () async {
 //    final response = await harness.agent.post("/employees", body: {

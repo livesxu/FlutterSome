@@ -21,7 +21,7 @@ class LoginResourceVc extends ResourceController {
     user.user_name = (user.user_name == null) ? user.nick_name : user.user_name;
     user.rank = "0";
 
-    final result = await context.insertObject(user);
+    final result = await context.insertObject<User>(user);
 
     return Response.ok(result);
   }

@@ -35,7 +35,7 @@ class _RssInfo {
   String infoName;
   String infoUrl;
   String infoIntroduce;
-  String infoState;
+  String infoState;//1有效 0失效
   DateTime infoUpdateTime;
   ManagedSet<Tag> infoTags;
 
