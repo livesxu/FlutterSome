@@ -7,6 +7,7 @@ import 'package:aqueduct/aqueduct.dart';
 
 import 'package:aqueduct_demo/RssVc/login_vc.dart';
 import 'package:aqueduct_demo/RssVc/tag_vc.dart';
+import 'package:aqueduct_demo/RssVc/info_vc.dart';
 
 /// This type initializes an application.
 ///
@@ -77,19 +78,23 @@ class AqueductDemoChannel extends ApplicationChannel {
           return Response.ok({"validate":"Success"});
     });
 
-    router.route('/article/[:id([0-9]+)]').link(
-    () => ArticleController(context),
-    );
-
-    router.route("/user/[:id([0-9]+)]").link(
-        () => UsersController(context)
-    );
+//    router.route('/article/[:id([0-9]+)]').link(
+//    () => ArticleController(context),
+//    );
+//
+//    router.route("/user/[:id([0-9]+)]").link(
+//        () => UsersController(context)
+//    );
 
     //登录
     router.route("/login").link(() => LoginResourceVc(context));
 
     //标签
     router.route("/tag").link(() => TagResourceVc(context));
+
+    //内容 + 文章
+    router.route("/info/[:id]").link(() => InfoResourceVc(context));
+    router.route("/article/[:infoId]").link(() => ArticleResourceVc(context));
 
     return router;
   }

@@ -12,6 +12,7 @@ class InfoResourceVc extends ResourceController {
   FutureOr<Response> addInfo (@Bind.body(require: ["infoName","infoUrl"]) RssInfo info) async {
 
     info.infoState = "1";//默认有效
+    info.infoUpdateTime = DateTime.now();
 
     final result = await context.insertObject<RssInfo>(info);
 
@@ -36,7 +37,7 @@ class InfoResourceVc extends ResourceController {
         ..where((RssInfo info)=>info.infoId).equalTo(id)
         ..join(set:(RssInfo info)=> info.articles);
 
-    final result = query.fetch();
+    final result = await query.fetch();
 
     return Response.ok(result);
   }
@@ -54,11 +55,21 @@ class ArticleResourceVc extends ResourceController {
 
     List<RssArticle> newArt = articles.map((RssArticle mArt) {
 
-        mArt.info.infoId = infoId;
+      RssArticle newOne = RssArticle();
+      newOne.articleTitle = mArt.articleTitle;
+      newOne.articleContent = mArt.articleContent;
+      newOne.articleUrl = mArt.articleUrl;
+      newOne.articleTime = DateTime.now();
+      newOne.state = 1;
+      newOne.info = RssInfo()
+        ..infoId = infoId;
+      return newOne;
 
      }).toList();
 
     final result = await context.insertObjects<RssArticle>(newArt);
+
+    print(result);
 
     return Response.ok(result);
   }

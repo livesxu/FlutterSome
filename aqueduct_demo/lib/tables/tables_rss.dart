@@ -60,7 +60,6 @@ class _InterestInfo {
 }
 
 class RssArticle extends ManagedObject<_RssArticle> implements _RssArticle {}
-@Table(name: "_Contents")
 class _RssArticle {
   @Column(primaryKey: true,autoincrement: true)
   int articleId;

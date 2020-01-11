@@ -36,11 +36,38 @@ Future main() async {
 //
 //    expect(response, hasStatus(200));
 //  });
-//查询标签测试
-  test("get tag return 200", () async {
-    final response = await harness.agent.get("/tag");
+////查询标签测试
+//  test("get tag return 200", () async {
+//    final response = await harness.agent.get("/tag");
+//
+//    print(response);
+//    expect(response, hasStatus(200));
+//  });
+////添加内容测试
+//  test("post info return 200", () async {
+//    final response = await harness.agent.post("/info", body: {
+//      "infoName":"教育内容测试",
+//      "infoUrl":"http://www.baidu.com",
+//      "infoIntroduce":"介绍",
+//    });
+//
+//    expect(response, hasStatus(200));
+//  });
+//查询内容测试
+  test("get info return 200", () async {
+    final response = await harness.agent.get("/info/2");
 
     print(response);
+    expect(response, hasStatus(200));
+  });
+//添加文章测试
+  test("post aricle return 200", () async {
+    final response = await harness.agent.post("/article/2", body: [{
+      "articleTitle":"文章2测试",
+      "articleContent":"文章2测试测试",
+      "articleUrl":"http://www.baidu.com",
+    }]);
+
     expect(response, hasStatus(200));
   });
 
