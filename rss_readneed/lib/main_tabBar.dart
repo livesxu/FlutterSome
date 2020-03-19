@@ -40,7 +40,7 @@ class MainTabBarState extends State<MainTabBar> {
         actions: <Widget>[
           FlatButton(
             onPressed: (){
-              AppNavigator.pushRoute(context, "punchCard");
+              AppNavigator.pushRoute(context, "rssAdd");
             },
             child: Icon(
               Icons.add,
@@ -102,7 +102,7 @@ class MainTabBarState extends State<MainTabBar> {
                   colorBlendMode: BlendMode.srcIn,
                 ),
               ),
-              title: Text("我的")),
+              title: Text("图赏")),
         ]
     );
   }
@@ -132,7 +132,7 @@ class MainTabBarState extends State<MainTabBar> {
           height: 36,
           child: Image.asset(
             isCurrentShow ? "images_assets/book104.png" : "images_assets/book116.png",
-            color: Theme.of(context).primaryColor,
+            color:isCurrentShow ? Theme.of(context).primaryColor : Colors.grey[400],
             colorBlendMode: BlendMode.srcIn,//混合模式，color覆盖着色
           ),
         ),
@@ -160,7 +160,7 @@ class MainTabBarState extends State<MainTabBar> {
         children: <Widget>[
           Recommend(),
           Collect(),
-          Setting(),
+          AppNavigator.routePage('imageShow'),
         ],
         controller: tabController,
     );

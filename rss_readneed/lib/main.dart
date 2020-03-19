@@ -27,7 +27,7 @@ class MyAppState extends State<MyApp> {
 
       ),
       home:MainTabBar(),
-      builder: FlutterBoost.init(),//FlutterBoost初始支持
+//      builder: FlutterBoost.init(),//FlutterBoost初始支持
     );
   }
   @override
@@ -35,7 +35,7 @@ class MyAppState extends State<MyApp> {
     super.initState();
 
     //FlutterBoost routers 统一至router
-    AppNavigator.flutterMixRouterConfig();
+//    AppNavigator.flutterMixRouterConfig();
   }
 
   @override

@@ -1,13 +1,14 @@
 import 'package:fish_redux/fish_redux.dart';
 import 'package:flutter/material.dart';
+import '../public.dart';
 
 import 'action.dart';
 import 'state.dart';
 
 Widget buildView(rss_addState state, Dispatch dispatch, ViewService viewService) {
   return Scaffold(
-    appBar: AppBar(
-      title: Text("Add"),
+    appBar: AppbarCommon(
+      titleString: 'Add', ctx: viewService.context
     ),
     body: Container(
       padding: EdgeInsets.only(left: 20,top: 20,right: 20),
@@ -21,6 +22,7 @@ Widget buildView(rss_addState state, Dispatch dispatch, ViewService viewService)
                   controller: state.urlInputEditingController,
                   decoration: InputDecoration(
                     labelText: "Url",
+                    helperText: 'eg:Http://www.uisdc.com/feed',
                     hintText: "Input Rss Link",
                   ),
                 ),

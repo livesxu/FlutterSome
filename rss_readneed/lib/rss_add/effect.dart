@@ -1,4 +1,5 @@
 import 'package:fish_redux/fish_redux.dart';
+import 'package:fish_redux/src/redux/basic.dart' as fish;
 import 'action.dart';
 import 'state.dart';
 
@@ -13,7 +14,7 @@ Effect<rss_addState> buildEffect() {
   });
 }
 
-void _init(Action action, Context<rss_addState> ctx) {
+void _init(fish.Action action, Context<rss_addState> ctx) {
 
   ctx.state.urlInputEditingController.addListener((){
 
@@ -30,13 +31,13 @@ void _init(Action action, Context<rss_addState> ctx) {
   });
 }
 
-void _dispose(Action action, Context<rss_addState> ctx) {
+void _dispose(fish.Action action, Context<rss_addState> ctx) {
 
   ctx.state.urlInputEditingController.dispose();
   ctx.state.testEditingController.dispose();
 }
 
-void _sureAction(Action action, Context<rss_addState> ctx) {
+void _sureAction(fish.Action action, Context<rss_addState> ctx) {
 
   Navigator.of(ctx.context).pop();
 }

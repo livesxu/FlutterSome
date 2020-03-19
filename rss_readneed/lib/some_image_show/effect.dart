@@ -7,6 +7,7 @@ import 'package:http/http.dart' as http;
 
 import 'package:flutter/material.dart';
 import 'package:rss_readneed/some_image_show/image_list/page.dart' as image_list;
+import 'package:fish_redux/src/redux/basic.dart' as fish;
 
 Effect<some_image_showState> buildEffect() {
   return combineEffects(<Object, Effect<some_image_showState>>{
@@ -15,7 +16,7 @@ Effect<some_image_showState> buildEffect() {
   });
 }
 
-void _datasAction(Action action, Context<some_image_showState> ctx) async {
+void _datasAction(fish.Action action, Context<some_image_showState> ctx) async {
 
   http.Response response = await http.get("http://dili.bdatu.com/jiekou/mains/p1.html");
 
@@ -45,7 +46,7 @@ void _datasAction(Action action, Context<some_image_showState> ctx) async {
   ctx.dispatch(some_image_showActionCreator.datasAction(infos));
 }
 
-void _jumpListAction(Action action, Context<some_image_showState> ctx) {
+void _jumpListAction(fish.Action action, Context<some_image_showState> ctx) {
 
   if (action.payload != null) {
 

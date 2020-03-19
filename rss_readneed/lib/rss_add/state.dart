@@ -24,8 +24,8 @@ rss_addState initState(Map<String, dynamic> args) {
 
   final rss_addState state = rss_addState();
 
-  state.urlString = "uri";
-  state.testString = "test";
+  state.urlString = "";
+  state.testString = "";
   state.urlInputEditingController = TextEditingController(text: state.urlString);
   state.testEditingController = TextEditingController(text: state.testString);
 

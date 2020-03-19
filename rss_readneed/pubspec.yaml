@@ -38,7 +38,7 @@ dependencies:
   flutter_boost:
     git:
       url: 'https://github.com/alibaba/flutter_boost.git'
-      ref: '0.0.415'
+      ref: '1.12.13'
 
 dev_dependencies:
   flutter_test:
@@ -53,12 +53,7 @@ flutter:
 
 #添加资源 ->
   assets:
-  - images_assets/book104.png
-  - images_assets/book116.png
-  - images_assets/icon.png
-  - images_assets/zhifeiji.png
-  - images_assets/ren.png
-  - images_assets/back_btn_nav.png
+  - images_assets/
   - lib/rss_recommend/rss_recommend.json
 
   # The following line ensures that the Material Icons font is
