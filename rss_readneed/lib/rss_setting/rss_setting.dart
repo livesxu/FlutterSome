@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import '../public.dart';
 import 'dart:io';
 
+import '../common/photo_common.dart';
+
 
 class Setting extends StatefulWidget {
 
   ScrollController controller = new ScrollController();
+  File headImgFile = null;
 
   @override
   SettingState createState() => new SettingState();
@@ -37,16 +40,44 @@ class SettingState extends State<Setting> with AutomaticKeepAliveClientMixin {
       img_w = Image.file(file);
     }
 
-    return ClipRRect(
-      borderRadius: BorderRadius.all(Radius.circular(20)),
-      child: Container(
-        width: 40,
-        height: 40,
-        color: Colors.white,
-        child: img_w,
+    return InkWell(
+      onTap: () => _headerTouchAction(),
+      child: ClipRRect(
+        borderRadius: BorderRadius.all(Radius.circular(20)),
+        child: Container(
+          width: 40,
+          height: 40,
+          color: Colors.white,
+          child: img_w,
+        ),
       ),
     );
   }
+
+  _headerTouchAction () async {
+
+    final option = await showModalBottomSheet(context: context, builder: (BuildContext ctx) => _bottomPhotoChoose());
+     option.runtimeType;
+    Photo.noti.stream.listen((info){
+      if (info[option] is File) {
+        widget.headImgFile = info[option];
+        print(info);
+        setState(() {
+
+        });
+      }
+    });
+    Photo.choose(PhotoSource.gallery, option);
+  }
+
+  Widget _bottomPhotoChoose(){
+    return Container(color: Colors.blue,child: Column(children: <Widget>[
+      ListTile(onTap: (){Navigator.of(context).pop("a");},title: Text("optionA"),),
+      ListTile(onTap: (){Navigator.of(context).pop("b");},title: Text("optionB"),),
+      ListTile(onTap: (){Navigator.of(context).pop("c");},title: Text("optionC"),),
+      ListTile(onTap: (){Navigator.of(context).pop("d");},title: Text("optionD"),),],),);
+}
+
 
   FlexibleSpaceBar _topSpace() {
 
@@ -65,7 +96,7 @@ class SettingState extends State<Setting> with AutomaticKeepAliveClientMixin {
       title:Container(
         child: Row(
           children: <Widget>[
-            _headerImg(null,null),
+            _headerImg(null,widget.headImgFile),
             SizedBox(width: 10,),
             Text('我的名字'),
           ],
