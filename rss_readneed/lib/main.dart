@@ -3,6 +3,7 @@ import 'package:rss_readneed/public.dart';
 import 'package:rss_readneed/main_tabBar.dart';
 
 import 'package:flutter_boost/flutter_boost.dart';
+import './common/photo_common.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,6 +27,7 @@ class MyAppState extends State<MyApp> {
         primaryColorDark:mainColor[900],
 
       ),
+//      home: MyHomePage(),
       home:MainTabBar(),
 //      builder: FlutterBoost.init(),//FlutterBoost初始支持
     );

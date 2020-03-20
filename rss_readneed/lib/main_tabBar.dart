@@ -34,25 +34,6 @@ class MainTabBarState extends State<MainTabBar> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppbarCommon(
-        ctx: context,
-        titleString: 'ReadNeed',
-        actions: <Widget>[
-          FlatButton(
-            onPressed: (){
-              AppNavigator.pushRoute(context, "rssAdd");
-            },
-            child: Icon(
-              Icons.add,
-              color: Colors.white,
-              size: 32,
-            ),
-            padding: EdgeInsets.only(left: 20),
-            splashColor: Color.fromARGB(0, 0, 0, 0),//将透明度为0，无点击效果
-            highlightColor: Color.fromARGB(0, 0, 0, 0),
-          )
-        ],
-      ),
       bottomNavigationBar: _bottomTabBar(_currentIndex),
       floatingActionButton: _bottomBook(_currentIndex == 1),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -102,7 +83,7 @@ class MainTabBarState extends State<MainTabBar> {
                   colorBlendMode: BlendMode.srcIn,
                 ),
               ),
-              title: Text("图赏")),
+              title: Text("我的")),
         ]
     );
   }
@@ -160,7 +141,7 @@ class MainTabBarState extends State<MainTabBar> {
         children: <Widget>[
           Recommend(),
           Collect(),
-          AppNavigator.routePage('imageShow'),
+          Setting(),
         ],
         controller: tabController,
     );

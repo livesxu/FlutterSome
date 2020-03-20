@@ -39,6 +39,9 @@ dependencies:
     git:
       url: 'https://github.com/alibaba/flutter_boost.git'
       ref: '1.12.13'
+#  相机相册 - video先去除：https://pub.dev/packages/image_picker#-readme-tab-
+  image_picker: ^0.6.3+4
+#  video_player: ^0.10.8+1
 
 dev_dependencies:
   flutter_test:
