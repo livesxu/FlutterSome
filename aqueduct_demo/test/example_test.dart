@@ -28,14 +28,14 @@ Future main() async {
 //    expect(response, hasStatus(200));
 //  });
 //
-////添加标签测试
-//  test("post tag return 200", () async {
-//    final response = await harness.agent.post("/tag", body: {
-//      "tagName":"教育"
-//    });
-//
-//    expect(response, hasStatus(200));
-//  });
+//添加标签测试
+  test("post tag return 200", () async {
+    final response = await harness.agent.post("/tag", body: {
+      "tagName":"娱乐"
+    });
+
+    expect(response, hasStatus(200));
+  });
 ////查询标签测试
 //  test("get tag return 200", () async {
 //    final response = await harness.agent.get("/tag");
@@ -54,22 +54,22 @@ Future main() async {
 //    expect(response, hasStatus(200));
 //  });
 //查询内容测试
-  test("get info return 200", () async {
-    final response = await harness.agent.get("/info/2");
-
-    print(response);
-    expect(response, hasStatus(200));
-  });
-//添加文章测试
-  test("post aricle return 200", () async {
-    final response = await harness.agent.post("/article/2", body: [{
-      "articleTitle":"文章2测试",
-      "articleContent":"文章2测试测试",
-      "articleUrl":"http://www.baidu.com",
-    }]);
-
-    expect(response, hasStatus(200));
-  });
+//  test("get info return 200", () async {
+//    final response = await harness.agent.get("/info/2");
+//
+//    print(response);
+//    expect(response, hasStatus(200));
+//  });
+////添加文章测试
+//  test("post aricle return 200", () async {
+//    final response = await harness.agent.post("/article/2", body: [{
+//      "articleTitle":"文章2测试2",
+//      "articleContent":"文章2测试测试2",
+//      "articleUrl":"http://www.baidu.com",
+//    }]);
+//
+//    expect(response, hasStatus(200));
+//  });
 
 
 

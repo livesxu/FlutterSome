@@ -1,5 +1,6 @@
 import '../aqueduct_demo.dart';
-import '../tables/table_user.dart';
+
+import '../tables/tables_rss.dart';
 
 //https://aqueduct.io/docs/http/controller/
 //https://aqueduct.io/docs/http/routing/
@@ -15,26 +16,39 @@ class LoginResourceVc extends ResourceController {
   final ManagedContext context;
 
   //添加一个用户
+  /*入参：
+  * phone 必传
+  * password 必传 MD5加密
+  * nick 可选
+  * headImg 可选
+  */
+//
   @Operation.post()
-  FutureOr<Response> addUser(@Bind.body(require: ["nick_name","password"]) User user) async {
-    user.vip = false;
-    user.user_name = (user.user_name == null) ? user.nick_name : user.user_name;
-    user.rank = "0";
+  FutureOr<Response> addUser(@Bind.body(require: ["phone","password"]) RssUser user) async {
 
-    final result = await context.insertObject<User>(user);
+    user.nick = (user.nick == null) ? user.phone : user.nick;
+    user.introduce = '';
+    user.headImg = '';
+    user.vip = 0;
+    user.level = 0;
+    user.state = "1";
+    user.createDate = DateTime.now();
+    user.loginTime = user.createDate;
+
+    final result = await context.insertObject<RssUser>(user);
 
     return Response.ok(result);
   }
 
-  //使用id和password 查询指定用户信息 - 登录
+  //使用phone和password 查询指定用户信息 - 登录
   @Operation.get()
-  FutureOr<Response> loginUser(@Bind.query("id") int id,@Bind.query("password") String password) async {
+  FutureOr<Response> loginUser(@Bind.query("phone") String phone,@Bind.query("password") String password) async {
 
-    final query = Query<User>(context)
-        ..where((User user) => user.id).equalTo(id)
-        ..where((User user) => user.password).equalTo(password);
+    final query = Query<RssUser>(context)
+        ..where((RssUser user) => user.phone).equalTo(phone)
+        ..where((RssUser user) => user.password).equalTo(password);
 
-    User user = await query.fetchOne();
+    RssUser user = await query.fetchOne();
 
     if (user != null) {
 

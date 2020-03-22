@@ -1,7 +1,6 @@
 import 'aqueduct_demo.dart';
 import 'app_config.dart';
 
-import 'tables/table_user.dart';
 import 'tables/tables_rss.dart';
 import 'package:aqueduct/aqueduct.dart';
 
@@ -65,26 +64,12 @@ class AqueductDemoChannel extends ApplicationChannel {
       return Response.ok({"hello": "hello world"});
     });
 
-    router.route('/queryAllArticle').linkFunction((request) async{
-      final query = Query<Article>(context);//拿到表的查询实例
-      final List<Article> articles=await query.fetch();//查询所有数据
-      return Response.ok(articles);//数据以json形式返回给客户端
-    });
-
     router
         .route("/validate")
         .link(() =>  ValidateController())
         .linkFunction((request){
           return Response.ok({"validate":"Success"});
     });
-
-//    router.route('/article/[:id([0-9]+)]').link(
-//    () => ArticleController(context),
-//    );
-//
-//    router.route("/user/[:id([0-9]+)]").link(
-//        () => UsersController(context)
-//    );
 
     //登录
     router.route("/login").link(() => LoginResourceVc(context));
@@ -111,118 +96,4 @@ class ValidateController extends Controller {
     }
     return Response.unauthorized();
   }
-}
-
-class ArticleController extends ResourceController {
-  ArticleController(this.context);
-
-  final ManagedContext context;
-
-  @Operation.get() //获取文章列表
-  FutureOr<Response> getArticle() async {
-//查询文章，并根据createDate进行排序
-    final query = Query<Article>(context)
-      ..sortBy((Article e) => e.createData, QuerySortOrder.ascending);
-    final List<Article> articles = await query.fetch();
-    print(articles);
-    return Response.ok(articles)
-      ..contentType = ContentType.json;
-  }
-
-  @Operation.post()//添加一篇文章
-  FutureOr<Response> insertArticle(
-      @Bind.body(ignore: ["createData"]) Article article) async {
-    article.createData = DateTime.now();
-//插入一条数据
-    final result = await context.insertObject<Article>(article);
-    return Response.ok(result);
-  }
-
-  @Operation.get('id')//查询单个文章
-  Future<Response> getArticleById(@Bind.path('id') int id) async {
-//根据id查询一条数据
-    final query = Query<Article>(context)..where((a) => a.id).equalTo(id);
-    final article = await query.fetchOne();
-    if (article != null) {
-      return Response.ok(article);
-    } else {
-      return Response.ok("have no");
-    }
-  }
-
-  @Operation.put()//修改一篇文章
-  Future<Response> updateArticleById(
-      @Bind.body(ignore: ["createData"]) Article article) async {
-
-    final query = Query<Article>(context)
-      ..values.content = article.content
-      ..where((a) => a.id).equalTo(article.id);
-//更新一条数据
-    final result = await query.updateOne();
-//    final article = await query.fetchOne();
-    if (result != null) {
-      return Response.ok(result);
-    } else {
-      return Response.ok("更新失败，数据不存在");
-    }
-  }
-
-  @Operation.delete('id')//删除一篇文章
-  Future<Response> deleteArticleById(@Bind.path('id') int id) async {
-    final query = Query<Article>(context)..where((a) => a.id).equalTo(id);
-//删除一条数据
-    final result = await query.delete();
-    if (result != null && result == 1) {
-      return Response.ok("删除成功");
-    } else {
-      return Response.ok("删除失败，数据不存在");
-    }
-  }
-}
-
-class UsersController extends ResourceController {
-
-  UsersController(this.context);
-
-  final ManagedContext context;
-
-  //添加一个用户
-  @Operation.post()
-  FutureOr<Response> addUser(@Bind.body(require: ["nick_name","password"]) User user) async {
-    user.vip = false;
-    user.user_name = (user.user_name == null) ? user.nick_name : user.user_name;
-    user.rank = "0";
-
-    final result = await context.insertObject(user);
-
-    return Response.ok(result);
-  }
-
-  //查询所有用户
-  @Operation.get()
-  Future<Response> allUsers() async {
-
-    final query = Query<User>(context)
-        ..sortBy((User user) => user.id, QuerySortOrder.ascending);
-    final List<User> users = await query.fetch();
-
-    return Response.ok(users);
-  }
-
-  //查询某一个用户昵称
-  @Operation.get("id")
-  Future<Response> queryNameById(@Bind.path("id") int id) async {
-
-    final query = Query<User>(context)
-        ..where((User user) => user.id).equalTo(id);
-    User user = await query.fetchOne();
-
-    if (user != null) {
-
-      return Response.ok({"nickName":user.nick_name});
-    } else {
-      return Response.ok("have no this user");
-    }
-  }
-
 }

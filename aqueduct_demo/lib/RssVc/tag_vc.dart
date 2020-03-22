@@ -20,6 +20,9 @@ class TagResourceVc extends ResourceController {
   }
 
   //根据名称添加一个标签
+  /*
+  * tagName 标签名称 必传
+   */
   @Operation.post()
   FutureOr<Response> addTag (@Bind.body(require: ["tagName"]) Tag tag) async {
 

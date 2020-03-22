@@ -7,7 +7,11 @@ class InfoResourceVc extends ResourceController {
 
   final ManagedContext context;
 
-  //添加内容
+  //添加栏目
+  /*
+  *infoName:必传
+  * infoUrl:必传
+  */
   @Operation.post()
   FutureOr<Response> addInfo (@Bind.body(require: ["infoName","infoUrl"]) RssInfo info) async {
 
@@ -19,7 +23,7 @@ class InfoResourceVc extends ResourceController {
     return Response.ok(result);
   }
 
-  //查询所有内容
+  //查询所有栏目
   @Operation.get()
   FutureOr<Response> allInfo () async {
 
@@ -29,7 +33,7 @@ class InfoResourceVc extends ResourceController {
     return Response.ok(infos);
   }
 
-  //查询某个内容的所有文章
+  //查询某个栏目的所有文章 eg: /info/1
   @Operation.get("id")
   FutureOr<Response> infoAricles (@Bind.path("id") int id) async {
 
@@ -43,6 +47,7 @@ class InfoResourceVc extends ResourceController {
   }
 }
 
+//在某个栏目下添加文章
 class ArticleResourceVc extends ResourceController {
 
   ArticleResourceVc(this.context);
@@ -50,6 +55,12 @@ class ArticleResourceVc extends ResourceController {
   final ManagedContext context;
 
   //根据内容批量插入文章
+  /*数组批量添加[]
+  * articleTitle 标题 必传
+  * articleContent 内容 必传
+  * articleUrl 链接 必传
+  *
+   */
   @Operation.post("infoId")
   FutureOr<Response> addArticles (@Bind.path("infoId") int infoId,@Bind.body() List<RssArticle> articles) async {
 
@@ -74,6 +85,16 @@ class ArticleResourceVc extends ResourceController {
     return Response.ok(result);
   }
 
+  //查询一篇文章 eg: /article?id=123
+  @Operation.get()
+  FutureOr<Response> getArticleById(@Bind.query('id') int id) async {
 
+    final query = Query<RssArticle>(context)
+      ..where((RssArticle article)=>article.articleId).equalTo(id);
+
+    final result = await query.fetchOne();
+
+    return Response.ok(result);
+  }
 
 }
