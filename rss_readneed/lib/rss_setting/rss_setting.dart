@@ -16,19 +16,6 @@ class Setting extends StatefulWidget {
 
 class SettingState extends State<Setting> with AutomaticKeepAliveClientMixin {
 
-  PreferredSize _topBottom (){
-
-    return PreferredSize(
-        child:Row(
-          children: <Widget>[
-            Text('112233'),
-            Text('223344'),
-          ],
-        ),
-        preferredSize: Size(double.infinity, 100)
-    );
-  }
-
   Widget _headerImg (String link,File file) {
 
     Widget img_w = Image.asset("images_assets/ren.png");
@@ -37,7 +24,7 @@ class SettingState extends State<Setting> with AutomaticKeepAliveClientMixin {
       img_w = Image.network(link);
     } else if (file != null) {
 
-      img_w = Image.file(file);
+      img_w = Image.file(file,fit: BoxFit.fill,);
     }
 
     return InkWell(
@@ -53,30 +40,70 @@ class SettingState extends State<Setting> with AutomaticKeepAliveClientMixin {
       ),
     );
   }
-
+  //点击头像
   _headerTouchAction () async {
 
-    final option = await showModalBottomSheet(context: context, builder: (BuildContext ctx) => _bottomPhotoChoose());
-     option.runtimeType;
+    final option = await showModalBottomSheet(
+      context: context,
+      builder: (BuildContext ctx) => _bottomPhotoChoose(),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(20),topRight:Radius.circular(20))
+      )
+    );
+
+    if (option == 'camera') {
+
+      _showPhoto(PhotoSource.camera);
+    } else if (option == 'gallery') {
+
+      _showPhoto(PhotoSource.gallery);
+    } else {
+
+    }
+  }
+
+  //展示选择器
+  Widget _bottomPhotoChoose(){
+    return Container(
+      height: 200,
+      child: Column(children: <Widget>[
+        InkWell(
+          child: Container(
+            height: 50,
+            child: Text('相册',style: TextStyle(fontSize: 24,fontWeight: FontWeight.w600),),
+          ),
+          onTap: (){Navigator.of(context).pop("gallery");},
+        ),
+        InkWell(
+          child: Container(
+            height: 50,
+            child: Text('相机',style: TextStyle(fontSize: 24,fontWeight: FontWeight.w600),),
+          ),
+          onTap: (){Navigator.of(context).pop("camera");},
+        ),
+        InkWell(
+          child: Text('取消',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400,color: Colors.black38),),
+          onTap: (){Navigator.of(context).pop("cancel");},
+        )],
+        mainAxisAlignment: MainAxisAlignment.center,
+      ),
+    );
+  }
+
+  //弹出选择图片or相机
+  void _showPhoto(PhotoSource source){
+
     Photo.noti.stream.listen((info){
-      if (info[option] is File) {
-        widget.headImgFile = info[option];
+      if (info['rss_setting'] is File) {
+        widget.headImgFile = info['rss_setting'];
         print(info);
         setState(() {
 
         });
       }
     });
-    Photo.choose(PhotoSource.gallery, option);
+    Photo.choose(source, "rss_setting");
   }
-
-  Widget _bottomPhotoChoose(){
-    return Container(color: Colors.blue,child: Column(children: <Widget>[
-      ListTile(onTap: (){Navigator.of(context).pop("a");},title: Text("optionA"),),
-      ListTile(onTap: (){Navigator.of(context).pop("b");},title: Text("optionB"),),
-      ListTile(onTap: (){Navigator.of(context).pop("c");},title: Text("optionC"),),
-      ListTile(onTap: (){Navigator.of(context).pop("d");},title: Text("optionD"),),],),);
-}
 
 
   FlexibleSpaceBar _topSpace() {
@@ -98,7 +125,7 @@ class SettingState extends State<Setting> with AutomaticKeepAliveClientMixin {
           children: <Widget>[
             _headerImg(null,widget.headImgFile),
             SizedBox(width: 10,),
-            Text('我的名字'),
+            Text('昵称',style: TextStyle(fontSize: 16),),
           ],
         ),
       ),
@@ -126,6 +153,11 @@ class SettingState extends State<Setting> with AutomaticKeepAliveClientMixin {
           pinned: true,//在页面上不消失
           expandedHeight: 120,//扩展高度
           flexibleSpace: _topSpace(),
+          actions: <Widget>[
+            IconButton(icon: Icon(Icons.settings,color: Colors.white,), onPressed: (){
+              AppNavigator.pushRoute(context, 'login');
+            })
+          ],
         ),
         SliverSafeArea(
             sliver: SliverList(

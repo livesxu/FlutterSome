@@ -12,7 +12,18 @@ enum PhotoSource {
 
 class Photo {
 
-  static Future<Map> choose(PhotoSource source,String identity) async {
+  static void choose(PhotoSource source,String identity) async {
+
+    ImageSource sourceC;
+    if (source == PhotoSource.camera) {
+      sourceC = ImageSource.camera;
+    } else if (source == PhotoSource.gallery){
+
+      sourceC = ImageSource.gallery;
+    } else {
+      Photo.noti.sink.add({identity:null});
+      return ;
+    }
 
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
@@ -22,8 +33,9 @@ class Photo {
 
     String _pickImageError;
     try {
+
       File _imageFile = await ImagePicker.pickImage(
-          source: ImageSource.gallery
+          source: sourceC
       );
       Photo.noti.sink.add({identity:_imageFile});
       prefs.remove("last_indentity");

@@ -4,6 +4,8 @@ import 'package:flutter_boost/flutter_boost.dart';
 
 import 'package:rss_readneed/some_image_show/page.dart' as image_show;
 import 'package:rss_readneed/rss_add/page.dart' as rss_add;
+import '../Login/page.dart' as login;
+import '../Login/Register/page.dart' as register;
 
 
 /*跳转基础类/规划类*/
@@ -23,6 +25,8 @@ class AppNavigator {
 
     "imageShow":image_show.some_image_showPage().buildPage({}),
     "rssAdd":rss_add.rss_addPage().buildPage({}),
+    "login":login.LoginPage().buildPage({}),
+    "register":register.registerPage().buildPage({}),
   };
 
 
