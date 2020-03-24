@@ -34,6 +34,7 @@ class LoginResourceVc extends ResourceController {
     user.state = "1";
     user.createDate = DateTime.now();
     user.loginTime = user.createDate;
+    user.auth = '';
 
     final result = await context.insertObject<RssUser>(user);
 
