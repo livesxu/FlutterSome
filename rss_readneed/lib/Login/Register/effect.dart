@@ -4,9 +4,6 @@ import 'state.dart';
 
 import '../../public.dart';
 
-import 'dart:convert';
-import 'package:http/http.dart' as http;
-
 Effect<registerState> buildEffect() {
   return combineEffects(<Object, Effect<registerState>>{
     Lifecycle.dispose: _dispose,
@@ -40,13 +37,16 @@ void _submitAction(Action action, Context<registerState> ctx) async {
     return ;
   }
   //注册
-  http.Response response = await http.post('http://localhost:8080/login',
-                                      body: {"phone":ctx.state.accountVc.text,
-                                             "password":ctx.state.passwordVc.text});
 
-  if(response.statusCode == 200) {
+  ResuestResult result = await RequestCommon.Post('/login', {"phone":ctx.state.accountVc.text,
+    "password":ctx.state.passwordVc.text});
+
+  if(result.success) {
 
     Toast.show(ctx.context, '注册成功');
+  } else {
+
+    Toast.show(ctx.context, '注册失败');
   }
 
 }

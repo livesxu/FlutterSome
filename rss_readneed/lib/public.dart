@@ -13,9 +13,7 @@ export './common/toast_common.dart';
 
 export './common/app_navigator.dart';
 
-//import 'dart:convert';
-//import 'package:http/http.dart' as http;
-const String Url_Host = 'http://localhost:8888';
+export './common/request_common.dart';
 
 //自定义 MaterialColor
 const int _mainColorPrimaryValue = 0xFFED9C3C;

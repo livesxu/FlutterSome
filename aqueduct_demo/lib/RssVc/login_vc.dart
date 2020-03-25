@@ -55,8 +55,7 @@ class LoginResourceVc extends ResourceController {
 
       return Response.ok(user);
     } else {
-
-      return Response.ok("账号或密码错误，登录失败");
+      return Response.badRequest(body:"账号或密码错误，登录失败");
     }
   }
 

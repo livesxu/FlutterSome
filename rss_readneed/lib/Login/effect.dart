@@ -3,9 +3,6 @@ import 'action.dart';
 import 'state.dart';
 import '../public.dart';
 
-import 'dart:convert';
-import 'package:http/http.dart' as http;
-
 Effect<LoginState> buildEffect() {
   return combineEffects(<Object, Effect<LoginState>>{
     Lifecycle.dispose:_dispose,
@@ -37,11 +34,15 @@ void _submitAction(Action action, Context<LoginState> ctx) async {
     return ;
   }
   //请求登录 todo
-  http.Response response = await http.get("http://localhost:8080/login?phone="+ctx.state.accountVc.text + "&password=" + ctx.state.passwordVc.text);
 
-  if (response.statusCode == 200) {
+  ResuestResult result = await RequestCommon.Get("/login?phone="+ctx.state.accountVc.text + "&password=" + ctx.state.passwordVc.text);
+
+  if (result.success) {
 
     Toast.show(ctx.context, '登录成功');
+  } else {
+
+    Toast.show(ctx.context, result.msg);
   }
 }
 
