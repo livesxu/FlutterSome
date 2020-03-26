@@ -3,7 +3,6 @@ import 'package:rss_readneed/public.dart';
 import 'package:rss_readneed/main_tabBar.dart';
 
 import 'package:flutter_boost/flutter_boost.dart';
-import './common/photo_common.dart';
 
 void main() => runApp(MyApp());
 
@@ -35,6 +34,8 @@ class MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
+
+    Account.share;//默认自动加载缓存个人信息
 
     //FlutterBoost routers 统一至router
 //    AppNavigator.flutterMixRouterConfig();

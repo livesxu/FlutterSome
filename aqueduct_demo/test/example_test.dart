@@ -11,21 +11,21 @@ Future main() async {
 //  test("GET /login/in returns 200 {'key': 'value'}", () async {
 //    expectResponse(await harness.agent.get("/login/in"), 200, body: {"key": "value"});
 //  });
-//添加账号测试
-  test("post login return 200", () async {
-    final response = await harness.agent.post("/login", body: {
-      "phone":"1234",
-      "password":"1234"
-    });
-
-    expect(response, hasStatus(200));
-  });
-//登录测试
-//  test("get login return 200", () async {
-//    final response = await harness.agent.get("/login?id=12&password=123456");
+////添加账号测试
+//  test("post login return 200", () async {
+//    final response = await harness.agent.post("/login", body: {
+//      "phone":"1234",
+//      "password":"1234"
+//    });
 //
 //    expect(response, hasStatus(200));
 //  });
+//登录测试
+  test("get login return 200", () async {
+    final response = await harness.agent.get("/login?phone=12345&password=12345");
+
+    expect(response, hasStatus(200));
+  });
 //
 ////添加标签测试
 //  test("post tag return 200", () async {

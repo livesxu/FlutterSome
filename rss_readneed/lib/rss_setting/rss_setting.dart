@@ -14,12 +14,12 @@ class Setting extends StatefulWidget {
   SettingState createState() => new SettingState();
 }
 
-class SettingState extends State<Setting> with AutomaticKeepAliveClientMixin {
+class SettingState extends State<Setting> with AutomaticKeepAliveClientMixin,Login {
 
   Widget _headerImg (String link,File file) {
 
-    Widget img_w = Image.asset("images_assets/ren.png");
-    if (link != null) {
+    Widget img_w = Image.asset("images_assets/icon.png");
+    if (link != null && link.length > 0) {
 
       img_w = Image.network(link);
     } else if (file != null) {
@@ -28,7 +28,7 @@ class SettingState extends State<Setting> with AutomaticKeepAliveClientMixin {
     }
 
     return InkWell(
-      onTap: () => _headerTouchAction(),
+      onTap: () => this.judgeLogin(context, ()=> _headerTouchAction()),
       child: ClipRRect(
         borderRadius: BorderRadius.all(Radius.circular(20)),
         child: Container(
@@ -123,9 +123,9 @@ class SettingState extends State<Setting> with AutomaticKeepAliveClientMixin {
       title:Container(
         child: Row(
           children: <Widget>[
-            _headerImg(null,widget.headImgFile),
+            _headerImg(Account.share.headImg,widget.headImgFile),
             SizedBox(width: 10,),
-            Text('昵称',style: TextStyle(fontSize: 16),),
+            Text(Account.share.nick??"昵称",style: TextStyle(fontSize: 16),),
           ],
         ),
       ),
@@ -155,7 +155,12 @@ class SettingState extends State<Setting> with AutomaticKeepAliveClientMixin {
           flexibleSpace: _topSpace(),
           actions: <Widget>[
             IconButton(icon: Icon(Icons.settings,color: Colors.white,), onPressed: (){
-              AppNavigator.pushRoute(context, 'login');
+              this.judgeLogin(context,(){
+
+                setState(() {
+
+                });
+              });
             })
           ],
         ),

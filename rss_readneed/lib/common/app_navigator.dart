@@ -63,8 +63,12 @@ class AppNavigator {
   }
 
   static pop (BuildContext context) {
-
     Navigator.pop(context);
   }
+
+//  static popTo (BuildContext context) {
+//
+//  Navigator.popUntil(context, predicate)
+//}
 
 }

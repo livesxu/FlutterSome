@@ -5,6 +5,7 @@ import '../public.dart';
 
 import 'package:crypto/crypto.dart';
 import 'dart:convert';
+import 'package:flutter/widgets.dart' as widgets;
 
 Effect<LoginState> buildEffect() {
   return combineEffects(<Object, Effect<LoginState>>{
@@ -43,7 +44,12 @@ void _submitAction(Action action, Context<LoginState> ctx) async {
 
   if (result.success) {
 
+    Account.analysisInfo(result.body);
+
     Toast.show(ctx.context, '登录成功');
+
+    widgets.Navigator.pop(ctx.context,{{'success':true}});
+
   } else {
 
     Toast.show(ctx.context, result.msg);

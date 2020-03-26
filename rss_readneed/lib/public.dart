@@ -15,6 +15,8 @@ export './common/app_navigator.dart';
 
 export './common/request_common.dart';
 
+export './Login/Account.dart';
+
 //自定义 MaterialColor
 const int _mainColorPrimaryValue = 0xFFED9C3C;
 
