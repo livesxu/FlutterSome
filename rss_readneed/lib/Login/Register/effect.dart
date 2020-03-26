@@ -4,6 +4,9 @@ import 'state.dart';
 
 import '../../public.dart';
 
+import 'package:crypto/crypto.dart';
+import 'dart:convert';
+
 Effect<registerState> buildEffect() {
   return combineEffects(<Object, Effect<registerState>>{
     Lifecycle.dispose: _dispose,
@@ -37,9 +40,9 @@ void _submitAction(Action action, Context<registerState> ctx) async {
     return ;
   }
   //注册
-
+  var digest = md5.convert(utf8.encode(ctx.state.passwordVc.text));
   ResuestResult result = await RequestCommon.Post('/login', {"phone":ctx.state.accountVc.text,
-    "password":ctx.state.passwordVc.text});
+    "password":digest.toString()});
 
   if(result.success) {
 

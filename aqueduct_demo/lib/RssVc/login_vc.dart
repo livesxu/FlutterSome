@@ -2,6 +2,9 @@ import '../aqueduct_demo.dart';
 
 import '../tables/tables_rss.dart';
 
+import 'package:crypto/crypto.dart';
+import 'dart:convert';
+
 //https://aqueduct.io/docs/http/controller/
 //https://aqueduct.io/docs/http/routing/
 
@@ -34,7 +37,7 @@ class LoginResourceVc extends ResourceController {
     user.state = "1";
     user.createDate = DateTime.now();
     user.loginTime = user.createDate;
-    user.auth = '';
+    user.auth = md5.convert(utf8.encode(user.loginTime.toString() + user.phone)).toString();//auth 登录时间+账号md5加密
 
     final result = await context.insertObject<RssUser>(user);
 
@@ -45,11 +48,15 @@ class LoginResourceVc extends ResourceController {
   @Operation.get()
   FutureOr<Response> loginUser(@Bind.query("phone") String phone,@Bind.query("password") String password) async {
 
+    //更改为直接索引更新登录时间和auth
+    DateTime nowTime = DateTime.now();
     final query = Query<RssUser>(context)
-        ..where((RssUser user) => user.phone).equalTo(phone)
-        ..where((RssUser user) => user.password).equalTo(password);
+      ..where((RssUser user) => user.phone).equalTo(phone)
+      ..where((RssUser user) => user.password).equalTo(password)
+      ..values.loginTime = nowTime
+      ..values.auth = md5.convert(utf8.encode(nowTime.toString() + phone)).toString();
 
-    RssUser user = await query.fetchOne();
+    RssUser user = await query.updateOne();
 
     if (user != null) {
 

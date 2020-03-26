@@ -3,6 +3,9 @@ import 'action.dart';
 import 'state.dart';
 import '../public.dart';
 
+import 'package:crypto/crypto.dart';
+import 'dart:convert';
+
 Effect<LoginState> buildEffect() {
   return combineEffects(<Object, Effect<LoginState>>{
     Lifecycle.dispose:_dispose,
@@ -33,9 +36,10 @@ void _submitAction(Action action, Context<LoginState> ctx) async {
     Toast.show(ctx.context, '请输入密码');
     return ;
   }
-  //请求登录 todo
-
-  ResuestResult result = await RequestCommon.Get("/login?phone="+ctx.state.accountVc.text + "&password=" + ctx.state.passwordVc.text);
+//  https://pub.dartlang.org/packages/crypto
+  var digest = md5.convert(utf8.encode(ctx.state.passwordVc.text));
+  //请求登录
+  ResuestResult result = await RequestCommon.Get("/login?phone="+ctx.state.accountVc.text + "&password=" + digest.toString());
 
   if (result.success) {
 
