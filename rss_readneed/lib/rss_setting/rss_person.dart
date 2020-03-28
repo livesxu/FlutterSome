@@ -42,68 +42,14 @@ class PersonState extends State<Person> with AutomaticKeepAliveClientMixin,Login
   //点击头像
   _headerTouchAction () async {
 
-    final option = await showModalBottomSheet(
-      context: context,
-      builder: (BuildContext ctx) => _bottomPhotoChoose(),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.only(topLeft: Radius.circular(20),topRight:Radius.circular(20))
-      )
-    );
-
-    if (option == 'camera') {
-
-      _showPhoto(PhotoSource.camera);
-    } else if (option == 'gallery') {
-
-      _showPhoto(PhotoSource.gallery);
-    } else {
-
-    }
-  }
-
-  //展示选择器
-  Widget _bottomPhotoChoose(){
-    return Container(
-      height: 200,
-      child: Column(children: <Widget>[
-        InkWell(
-          child: Container(
-            height: 50,
-            child: Text('相册',style: TextStyle(fontSize: 24,fontWeight: FontWeight.w600),),
-          ),
-          onTap: (){Navigator.of(context).pop("gallery");},
-        ),
-        InkWell(
-          child: Container(
-            height: 50,
-            child: Text('相机',style: TextStyle(fontSize: 24,fontWeight: FontWeight.w600),),
-          ),
-          onTap: (){Navigator.of(context).pop("camera");},
-        ),
-        InkWell(
-          child: Text('取消',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400,color: Colors.black38),),
-          onTap: (){Navigator.of(context).pop("cancel");},
-        )],
-        mainAxisAlignment: MainAxisAlignment.center,
-      ),
+     Photo.chooseForPhoto(context,'header_img').then(
+        (File file){
+          setState(() {
+            widget.headImgFile = file;
+          });
+        }
     );
   }
-
-  //弹出选择图片or相机
-  void _showPhoto(PhotoSource source){
-
-    Photo.noti.stream.listen((info){
-      if (info['rss_setting'] is File) {
-        widget.headImgFile = info['rss_setting'];
-        print(info);
-        setState(() {
-
-        });
-      }
-    });
-    Photo.choose(source, "rss_setting");
-  }
-
 
   FlexibleSpaceBar _topSpace() {
 
