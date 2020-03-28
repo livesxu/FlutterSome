@@ -3,7 +3,7 @@ import 'package:rss_readneed/public.dart';
 
 import 'package:rss_readneed/rss_recommend/rss_recommend.dart';
 import 'package:rss_readneed/rss_collect/rss_collect.dart';
-import 'package:rss_readneed/rss_setting/rss_setting.dart';
+import 'package:rss_readneed/rss_setting/rss_person.dart';
 
 class MainTabBar extends StatefulWidget {
   @override
@@ -141,7 +141,7 @@ class MainTabBarState extends State<MainTabBar> {
         children: <Widget>[
           Recommend(),
           Collect(),
-          Setting(),
+          Person(),
         ],
         controller: tabController,
     );

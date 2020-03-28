@@ -35,6 +35,7 @@ class MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
 
+    ErrorHandle.systemError();
     Account.share;//默认自动加载缓存个人信息
 
     //FlutterBoost routers 统一至router

@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-const String Url_Host = 'http://localhost:8888';
-//const String Url_Host = 'http://localhost:8080';//测试host
+import './consts.dart';
 
 class ResuestResult {
 

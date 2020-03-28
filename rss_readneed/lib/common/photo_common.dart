@@ -10,6 +10,7 @@ enum PhotoSource {
   gallery,
 }
 
+//相机相册
 class Photo {
 
   static void choose(PhotoSource source,String identity) async {

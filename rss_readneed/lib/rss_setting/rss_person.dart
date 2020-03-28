@@ -4,39 +4,38 @@ import 'dart:io';
 
 import '../common/photo_common.dart';
 
+import './setting.dart';
 
-class Setting extends StatefulWidget {
+
+class Person extends StatefulWidget {
 
   ScrollController controller = new ScrollController();
   File headImgFile = null;
 
   @override
-  SettingState createState() => new SettingState();
+  PersonState createState() => new PersonState();
 }
 
-class SettingState extends State<Setting> with AutomaticKeepAliveClientMixin,Login {
+class PersonState extends State<Person> with AutomaticKeepAliveClientMixin,Login {
 
   Widget _headerImg (String link,File file) {
 
-    Widget img_w = Image.asset("images_assets/icon.png");
-    if (link != null && link.length > 0) {
+    Widget childWidget;
+    if (file != null) {
 
-      img_w = Image.network(link);
-    } else if (file != null) {
+      childWidget = ImageCommon.withFile(file,"images_assets/icon.png", () => this.judgeLogin(context, ()=> _headerTouchAction()));
+    } else {
 
-      img_w = Image.file(file,fit: BoxFit.fill,);
+      childWidget = ImageCommon.withUrl(Account.share.headImg,"images_assets/icon.png", () => this.judgeLogin(context, ()=> _headerTouchAction()));
     }
 
-    return InkWell(
-      onTap: () => this.judgeLogin(context, ()=> _headerTouchAction()),
-      child: ClipRRect(
-        borderRadius: BorderRadius.all(Radius.circular(20)),
-        child: Container(
-          width: 40,
-          height: 40,
-          color: Colors.white,
-          child: img_w,
-        ),
+    return ClipRRect(
+      borderRadius: BorderRadius.all(Radius.circular(20)),
+      child: Container(
+        width: 40,
+        height: 40,
+        color: Colors.white,
+        child: childWidget,
       ),
     );
   }
@@ -154,13 +153,17 @@ class SettingState extends State<Setting> with AutomaticKeepAliveClientMixin,Log
           expandedHeight: 120,//扩展高度
           flexibleSpace: _topSpace(),
           actions: <Widget>[
-            IconButton(icon: Icon(Icons.settings,color: Colors.white,), onPressed: (){
-              this.judgeLogin(context,(){
+            IconButton(icon: Icon(Icons.settings,color: Colors.white,), onPressed: () {
+              //必要时刷新页面
+               Navigator.push(context, MaterialPageRoute(builder: (_)=>Setting())).then((needRefresh){
 
-                setState(() {
+                 if (needRefresh != null && needRefresh == true) {
 
-                });
-              });
+                   setState(() {
+
+                   });
+                 }
+               });
             })
           ],
         ),
@@ -197,7 +200,7 @@ class SettingState extends State<Setting> with AutomaticKeepAliveClientMixin,Log
   }
 
   @override
-  void didUpdateWidget(Setting oldWidget) {
+  void didUpdateWidget(Person oldWidget) {
     // TODO: implement didUpdateWidget
     super.didUpdateWidget(oldWidget);
   }
