@@ -20,9 +20,19 @@ Future main() async {
 //
 //    expect(response, hasStatus(200));
 //  });
-//登录测试
-  test("get login return 200", () async {
-    final response = await harness.agent.get("/login?phone=12345&password=12345");
+////登录测试
+//  test("get login return 200", () async {
+//    final response = await harness.agent.get("/login?phone=12345&password=12345");
+//
+//    expect(response, hasStatus(200));
+//  });
+
+//修改账号测试
+  test("put login return 200", () async {
+    final response = await harness.agent.put("/login", body: {
+      "phone":"123456",
+      "nick":"波波"
+    });
 
     expect(response, hasStatus(200));
   });

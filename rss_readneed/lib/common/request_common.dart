@@ -45,4 +45,19 @@ class RequestCommon {
     }
   }
 
+  static Future<ResuestResult> Put(String url,dynamic body) async {
+
+    http.Response response = await http.put(Url_Host + url,
+                                            headers:{"content-type":"application/json"},
+                                            body:jsonEncode(body));
+
+    if (response.statusCode == 200) {
+
+      return ResuestResult(success: true,msg: '',body: jsonDecode(response.body));
+    } else {
+
+      return ResuestResult(success: false,msg: response.body.toString(),body: {});
+    }
+  }
+
 }

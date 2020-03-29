@@ -66,6 +66,36 @@ class LoginResourceVc extends ResourceController {
     }
   }
 
-  //退出登录 - 清空auth...
+  //退出登录 - 直接本地保存的登录数据清空即可
+
+  //修改用户信息，应该使用auth或者id操作 todo
+  @Operation.put()
+  FutureOr<Response> changeInfo(@Bind.body(require: ["phone"]) RssUser user_new) async {
+
+    final query = Query<RssUser>(context)
+      ..where((RssUser user) => user.phone).equalTo(user_new.phone);
+
+    if (user_new.nick != null) {
+
+      query.values.nick = user_new.nick;
+    }
+    if (user_new.introduce != null) {
+
+      query.values.introduce = user_new.introduce;
+    }
+    if (user_new.headImg != null) {
+
+      query.values.headImg = user_new.headImg;
+    }
+
+    RssUser user = await query.updateOne();
+
+    if (user != null) {
+
+      return Response.ok(user);
+    } else {
+      return Response.badRequest(body:"更新失败");
+    }
+  }
 
 }

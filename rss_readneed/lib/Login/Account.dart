@@ -66,6 +66,16 @@ class Account {
 
     }
 
+    //清理登录信息
+    static clearInfo() async {
+
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setString('account', '');
+
+      _share = AccountModel();
+      isLogin = false;
+    }
+
     //解析存储数据
     static analysisInfo(Map info){
 

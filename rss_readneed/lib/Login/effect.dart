@@ -48,7 +48,7 @@ void _submitAction(Action action, Context<LoginState> ctx) async {
 
     Toast.show(ctx.context, '登录成功');
 
-    widgets.Navigator.pop(ctx.context,{{'success':true}});
+    widgets.Navigator.pop(ctx.context,{'success':true});
 
   } else {
 
