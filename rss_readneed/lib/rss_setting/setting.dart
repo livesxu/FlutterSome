@@ -5,6 +5,8 @@ import 'dart:io';
 
 import '../common/photo_common.dart';
 
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
+
 class Setting extends StatefulWidget {
 
   File headImgFile = null;
@@ -101,17 +103,17 @@ class _SettingState extends State<Setting> with Login {
           ListTile(
             leading: Text("清理缓存",style: TextStyle(fontSize: 16),),
             trailing: Icon(Icons.navigate_next),
-            onTap: ()=> this.judgeLogin(context, ()=> _headerTouchAction()),
+            onTap: ()=> DefaultCacheManager().emptyCache(),
           ),
           ListTile(
             leading: Text("分享",style: TextStyle(fontSize: 16),),
             trailing: Icon(Icons.navigate_next),
-            onTap: ()=> this.judgeLogin(context, ()=> _headerTouchAction()),
+//            onTap: ()=> , todo
           ),
           ListTile(
             leading: Text('关于我们',style: TextStyle(fontSize: 16),),
             trailing: Icon(Icons.navigate_next),
-            onTap: ()=> this.judgeLogin(context, ()=> _headerTouchAction()),
+//            onTap: ()=> , todo
           ),
           SizedBox(height: 50,),
           Container(
