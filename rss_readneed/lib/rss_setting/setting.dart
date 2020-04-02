@@ -9,24 +9,15 @@ import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
 class Setting extends StatefulWidget {
 
-  File headImgFile = null;
-
   @override
   _SettingState createState() => _SettingState();
 }
 
 class _SettingState extends State<Setting> with Login {
 
-  Widget _headerImg (String link,File file) {
+  Widget _headerImg (String link) {
 
-    Widget childWidget;
-    if (file != null) {
-
-      childWidget = ImageCommon.withFile(file,"images_assets/icon.png", () => this.judgeLogin(context, ()=> _headerTouchAction()));
-    } else {
-
-      childWidget = ImageCommon.withUrl(Account.share.headImg,"images_assets/icon.png", () => this.judgeLogin(context, ()=> _headerTouchAction()));
-    }
+    Widget childWidget = ImageCommon.withUrl(Account.share.headImg,"images_assets/icon.png", () => this.judgeLogin(context, ()=> _headerTouchAction()));
 
     return ClipRRect(
       borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -41,13 +32,26 @@ class _SettingState extends State<Setting> with Login {
   //点击头像
   _headerTouchAction () async {
 
-    Photo.chooseForPhoto(context,'header_img').then(
-            (File file){
-          setState(() {
-            widget.headImgFile = file;
-          });
-        }
-    );
+    String img_url = await Photo.chooseAndUploadImage(context,'header_img');
+
+    if (img_url == null) {
+
+      return ;
+    }
+
+    ResuestResult result = await RequestCommon.Put('/login', {'phone':Account.share.phone,"headImg":img_url});
+
+    if (result.success) {
+
+      Account.share.headImg = img_url;
+      Account.writeInfo();
+      setState(() {
+
+      });
+    } else {
+
+      Toast.show(context, '更新失败');
+    }
   }
 
   //修改昵称
@@ -91,7 +95,7 @@ class _SettingState extends State<Setting> with Login {
       body: ListView(
         children: <Widget>[
           ListTile(
-            leading: _headerImg(Account.share.headImg,widget.headImgFile),
+            leading: _headerImg(Account.share.headImg),
             trailing: Icon(Icons.navigate_next),
             onTap: ()=> this.judgeLogin(context, ()=> _headerTouchAction()),
           ),

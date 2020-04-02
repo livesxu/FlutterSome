@@ -31,7 +31,7 @@ class LoginResourceVc extends ResourceController {
 
     user.nick = (user.nick == null) ? user.phone : user.nick;
     user.introduce = '';
-    user.headImg = '';
+    user.headImg = 'http://localhost:8888' + '/image/' + 'icon_default.png';
     user.vip = 0;
     user.level = 0;
     user.state = "1";

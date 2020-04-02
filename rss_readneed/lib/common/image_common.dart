@@ -13,6 +13,7 @@ class ImageCommon {
     return InkWell(
       onTap: touchCall,
       child: CachedNetworkImage(
+          fit: BoxFit.fill,
           imageUrl: url ?? "",
           placeholder: (context, url) => Image.asset(placeholder,fit: BoxFit.fill,),
           errorWidget: (context, url, error){

@@ -46,6 +46,8 @@ dependencies:
 #  flutter_cache_manager: ^1.1.3
 #  加载图片 https://pub.dev/packages/cached_network_image#-readme-tab-
   cached_network_image: ^2.0.0
+#  *** https://github.com/flutterchina/dio/blob/master/README-ZH.md ***
+  dio:
 
 
 dev_dependencies:

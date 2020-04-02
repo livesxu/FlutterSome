@@ -10,7 +10,6 @@ import './setting.dart';
 class Person extends StatefulWidget {
 
   ScrollController controller = new ScrollController();
-  File headImgFile = null;
 
   @override
   PersonState createState() => new PersonState();
@@ -18,16 +17,9 @@ class Person extends StatefulWidget {
 
 class PersonState extends State<Person> with AutomaticKeepAliveClientMixin,Login {
 
-  Widget _headerImg (String link,File file) {
+  Widget _headerImg (String link) {
 
-    Widget childWidget;
-    if (file != null) {
-
-      childWidget = ImageCommon.withFile(file,"images_assets/icon.png", () => this.judgeLogin(context, ()=> _headerTouchAction()));
-    } else {
-
-      childWidget = ImageCommon.withUrl(Account.share.headImg,"images_assets/icon.png", () => this.judgeLogin(context, ()=> _headerTouchAction()));
-    }
+    Widget childWidget = ImageCommon.withUrl(Account.share.headImg,"images_assets/icon.png", () => this.judgeLogin(context, ()=> _headerTouchAction()));
 
     return ClipRRect(
       borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -42,13 +34,26 @@ class PersonState extends State<Person> with AutomaticKeepAliveClientMixin,Login
   //点击头像
   _headerTouchAction () async {
 
-     Photo.chooseForPhoto(context,'header_img').then(
-        (File file){
-          setState(() {
-            widget.headImgFile = file;
-          });
-        }
-    );
+    String img_url = await Photo.chooseAndUploadImage(context,'header_img');
+
+    if (img_url == null) {
+
+      return ;
+    }
+
+    ResuestResult result = await RequestCommon.Put('/login', {'phone':Account.share.phone,"headImg":img_url});
+
+    if (result.success) {
+
+      Account.share.headImg = img_url;
+      Account.writeInfo();
+      setState(() {
+
+      });
+    } else {
+
+      Toast.show(context, '更新失败');
+    }
   }
 
   FlexibleSpaceBar _topSpace() {
@@ -68,7 +73,7 @@ class PersonState extends State<Person> with AutomaticKeepAliveClientMixin,Login
       title:Container(
         child: Row(
           children: <Widget>[
-            _headerImg(Account.share.headImg,widget.headImgFile),
+            _headerImg(Account.share.headImg),
             SizedBox(width: 10,),
             Text(Account.share.nick??"昵称",style: TextStyle(fontSize: 16),),
           ],

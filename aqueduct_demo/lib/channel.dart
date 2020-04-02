@@ -7,6 +7,7 @@ import 'package:aqueduct/aqueduct.dart';
 import 'package:aqueduct_demo/RssVc/login_vc.dart';
 import 'package:aqueduct_demo/RssVc/tag_vc.dart';
 import 'package:aqueduct_demo/RssVc/info_vc.dart';
+import 'package:aqueduct_demo/RssVc/image_vc.dart';
 
 /// This type initializes an application.
 ///
@@ -63,6 +64,17 @@ class AqueductDemoChannel extends ApplicationChannel {
         .linkFunction((request) async {
       return Response.ok({"hello": "hello world"});
     });
+
+    //获取图片
+    router
+         .route("/image/*")
+         .link(() => FileController("store/image"));
+
+    //上传
+    router
+        .route("/uploadImg")
+        .link(() => ImageController());
+
 
     router
         .route("/validate")
