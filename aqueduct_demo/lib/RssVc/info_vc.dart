@@ -26,7 +26,7 @@ class InfoResourceVc extends ResourceController {
     }
 
     info.infoState = "1";//默认有效
-    info.infoUpdateTime = DateTime.now();
+    info.infoUpdateTime = DateTime.now().add(Duration(hours: 8));
     if (info.infoIntroduce == null) {
       info.infoIntroduce = info.infoName;
     }
@@ -83,7 +83,7 @@ class ArticleResourceVc extends ResourceController {
       newOne.articleTitle = mArt.articleTitle;
       newOne.articleContent = mArt.articleContent;
       newOne.articleUrl = mArt.articleUrl;
-      newOne.articleTime = DateTime.now();
+      newOne.articleTime = DateTime.now().add(Duration(hours: 8));
       newOne.state = 1;
       newOne.info = RssInfo()
         ..infoId = infoId;
