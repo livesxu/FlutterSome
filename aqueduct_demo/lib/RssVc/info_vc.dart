@@ -11,12 +11,25 @@ class InfoResourceVc extends ResourceController {
   /*
   *infoName:必传
   * infoUrl:必传
+  * infoIntroduce:可传
   */
   @Operation.post()
   FutureOr<Response> addInfo (@Bind.body(require: ["infoName","infoUrl"]) RssInfo info) async {
 
+    final query = Query<RssInfo>(context)
+                  ..where((RssInfo one)=>one.infoUrl).equalTo(info.infoUrl);
+    final resultOne = await query.fetchOne();
+
+    if (resultOne != null) {
+
+      return Response.ok(resultOne);
+    }
+
     info.infoState = "1";//默认有效
     info.infoUpdateTime = DateTime.now();
+    if (info.infoIntroduce == null) {
+      info.infoIntroduce = info.infoName;
+    }
 
     final result = await context.insertObject<RssInfo>(info);
 
@@ -41,7 +54,7 @@ class InfoResourceVc extends ResourceController {
         ..where((RssInfo info)=>info.infoId).equalTo(id)
         ..join(set:(RssInfo info)=> info.articles);
 
-    final result = await query.fetch();
+    final result = await query.fetchOne();
 
     return Response.ok(result);
   }

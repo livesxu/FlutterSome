@@ -48,6 +48,9 @@ dependencies:
   cached_network_image: ^2.0.0
 #  *** https://github.com/flutterchina/dio/blob/master/README-ZH.md ***
   dio:
+#  轮播图 https://pub.dev/packages/flutter_swiper#-readme-tab-
+#  https://github.com/best-flutter/flutter_swiper/blob/master/README-ZH.md
+  flutter_swiper: ^1.1.6
 
 
 dev_dependencies:

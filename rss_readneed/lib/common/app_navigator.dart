@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_boost/flutter_boost.dart';
 
+import '../rss_recommend/rss_recommend.dart' as rss_recommend;
 import 'package:rss_readneed/some_image_show/page.dart' as image_show;
 import 'package:rss_readneed/rss_add/page.dart' as rss_add;
 import '../Login/page.dart' as login;
 import '../Login/Register/page.dart' as register;
+import '../Home/page.dart' as home;
 
 
 /*跳转基础类/规划类*/
@@ -23,6 +25,8 @@ class AppNavigator {
   //路由集合
   Map _configRoutes = {
 
+    'home':home.homePage().buildPage({}),
+    'rssRecommend':rss_recommend.Recommend(),
     "imageShow":image_show.some_image_showPage().buildPage({}),
     "rssAdd":rss_add.rss_addPage().buildPage({}),
     "login":login.LoginPage().buildPage({}),

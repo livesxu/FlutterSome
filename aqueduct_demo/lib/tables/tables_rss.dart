@@ -36,6 +36,7 @@ class _RssInfo {
   String infoName;
   String infoUrl;
   String infoIntroduce;//介绍
+//  String infoImage;//图片
   String infoState;//1有效 0失效
   DateTime infoUpdateTime;
   ManagedSet<Tag> infoTags;
@@ -68,6 +69,7 @@ class _RssArticle {
   int articleId;
   String articleTitle;
   String articleContent;
+//  String articleImage;//图片
   DateTime articleTime;
   String articleUrl;
   ManagedSet<Tag> tags;

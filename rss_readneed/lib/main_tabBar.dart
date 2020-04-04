@@ -37,7 +37,7 @@ class MainTabBarState extends State<MainTabBar> {
       bottomNavigationBar: _bottomTabBar(_currentIndex),
       floatingActionButton: _bottomBook(_currentIndex == 1),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      body:_tabBarView,
+      body:_pageView,
     );
   }
 
@@ -126,33 +126,34 @@ class MainTabBarState extends State<MainTabBar> {
     super.initState();
 
     //使用pageView实现
-//    _pageView = PageView(
-//      children: <Widget>[
-//        Recommend(),
-//        Collect(),
-//        Setting(),
-//      ],
-//      controller: pageController,
-//      onPageChanged: selectedIndex,
-//    );
-
-    //使用tabBarView实现
-    _tabBarView = TabBarView(
-        children: <Widget>[
-          Recommend(),
-          Collect(),
-          Person(),
-        ],
-        controller: tabController,
+    _pageView = PageView(
+      children: <Widget>[
+        AppNavigator.routePage('home'),
+        Collect(),
+        Person(),
+      ],
+      controller: pageController,
+      onPageChanged: selectedIndex,
+      physics: NeverScrollableScrollPhysics(),//禁止滑动
     );
-    tabController.addListener((){
 
-      setState(() {
-
-        _currentIndex = tabController.index;
-
-      });
-    });
+//    //使用tabBarView实现
+//    _tabBarView = TabBarView(
+//        children: <Widget>[
+//          AppNavigator.routePage('home'),
+//          Collect(),
+//          Person(),
+//        ],
+//        controller: tabController,
+//    );
+//    tabController.addListener((){
+//
+//      setState(() {
+//
+//        _currentIndex = tabController.index;
+//
+//      });
+//    });
   }
 
   @override
