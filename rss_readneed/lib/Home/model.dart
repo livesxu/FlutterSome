@@ -1,9 +1,9 @@
 class InfoModel {
 
   int infoId;
-  String infoName;
-  String infoUrl;
-  String infoImage;
+  String infoName;//名称
+  String infoUrl;//链接
+  String infoImage;//图片
   String infoIntroduce;//介绍
 
   InfoModel.fromJson(Map json)

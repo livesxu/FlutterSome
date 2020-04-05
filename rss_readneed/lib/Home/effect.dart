@@ -14,7 +14,7 @@ Effect<homeState> buildEffect() {
 
 void _initState(Action action, Context<homeState> ctx) async {
 
-  _requestTodays(ctx);
+//  _requestTodays(ctx);
 
   _requestInfos(ctx);
 }

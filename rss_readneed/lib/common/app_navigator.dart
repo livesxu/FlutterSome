@@ -13,6 +13,8 @@ import '../Home/page.dart' as home;
 /*跳转基础类/规划类*/
 class AppNavigator {
 
+  String locationPageShortString = "/";
+
   static AppNavigator _instance;
   static AppNavigator get instance {
 
@@ -75,4 +77,62 @@ class AppNavigator {
 //  Navigator.popUntil(context, predicate)
 //}
 
+}
+
+class NaviManagerObserver extends NavigatorObserver{
+  @override
+
+  void didPush(Route<dynamic> route, Route<dynamic> previousRoute) {
+
+    AppNavigator.instance.locationPageShortString = route.settings.name;
+  }
+
+  /// The [Navigator] popped `route`.
+  ///
+  /// The route immediately below that one, and thus the newly active
+  /// route, is `previousRoute`.
+  void didPop(Route<dynamic> route, Route<dynamic> previousRoute) {
+
+    AppNavigator.instance.locationPageShortString = previousRoute.settings.name;
+  }
+
+  /// The [Navigator] removed `route`.
+  ///
+  /// If only one route is being removed, then the route immediately below
+  /// that one, if any, is `previousRoute`.
+  ///
+  /// If multiple routes are being removed, then the route below the
+  /// bottommost route being removed, if any, is `previousRoute`, and this
+  /// method will be called once for each removed route, from the topmost route
+  /// to the bottommost route.
+  void didRemove(Route<dynamic> route, Route<dynamic> previousRoute) {
+
+  }
+
+  /// The [Navigator] replaced `oldRoute` with `newRoute`.
+  void didReplace({ Route<dynamic> newRoute, Route<dynamic> oldRoute }) {
+
+  }
+
+  /// The [Navigator]'s route `route` is being moved by a user gesture.
+  ///
+  /// For example, this is called when an iOS back gesture starts.
+  ///
+  /// Paired with a call to [didStopUserGesture] when the route is no longer
+  /// being manipulated via user gesture.
+  ///
+  /// If present, the route immediately below `route` is `previousRoute`.
+  /// Though the gesture may not necessarily conclude at `previousRoute` if
+  /// the gesture is canceled. In that case, [didStopUserGesture] is still
+  /// called but a follow-up [didPop] is not.
+  void didStartUserGesture(Route<dynamic> route, Route<dynamic> previousRoute) {
+
+  }
+
+  /// User gesture is no longer controlling the [Navigator].
+  ///
+  /// Paired with an earlier call to [didStartUserGesture].
+  void didStopUserGesture() {
+
+  }
 }

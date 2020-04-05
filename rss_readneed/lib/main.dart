@@ -29,6 +29,7 @@ class MyAppState extends State<MyApp> {
 //      home: MyHomePage(),
       home:MainTabBar(),
 //      builder: FlutterBoost.init(),//FlutterBoost初始支持
+      navigatorObservers: [NaviManagerObserver()],
     );
   }
   @override

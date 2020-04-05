@@ -47,6 +47,31 @@ class _RssInfo {
   ManagedSet<RssArticle> articles;
   
   InterestInfo interestInfo;
+
+  //内容解析逻辑*****
+  /*
+  1.添加内容链接
+
+   */
+  //内容本地响应正则解析链路
+  @Column(nullable: true)
+  String topExp;//分栏一级正则解析式 - 获取内容集合
+  @Column(nullable: true)
+  String titleExpStart;//标题解析前标志字段
+  @Column(nullable: true)
+  String titleExpEnd;//标题解析后标志字段
+  @Column(nullable: true)
+  String contentExpStart;//内容解析前标志字段
+  @Column(nullable: true)
+  String contentExpEnd;//内容解析后标志字段
+  @Column(nullable: true)
+  String imageExpStart;//图片解析前标志字段
+  @Column(nullable: true)
+  String imageExpEnd;//图片解析后标志字段
+  @Column(nullable: true)
+  String linkExpStart;//链接解析前标志字段
+  @Column(nullable: true)
+  String linkExpEnd;//链接解析后标志字段
 }
 
 //主题关注 - 栏目关注
