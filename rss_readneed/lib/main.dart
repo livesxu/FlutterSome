@@ -4,9 +4,17 @@ import 'package:rss_readneed/main_tabBar.dart';
 
 import 'package:flutter_boost/flutter_boost.dart';
 
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux/redux.dart';
+import './mainAppFlutterRedux/store.dart';
+import './mainAppFlutterRedux/reducer.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
+
+  final store = Store<AppStore>(appReducer);
+
   @override
   MyAppState createState() => new MyAppState();
 }
@@ -14,7 +22,31 @@ class MyApp extends StatefulWidget {
 class MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return StoreProvider<AppStore>(
+      store: widget.store,
+      child: MaterialApp(
+        title: 'ReadNeed',
+        theme: ThemeData(
+
+          scaffoldBackgroundColor: Colors.grey[100],//背景色
+
+//        primarySwatch: mainColor,
+          primaryColor: mainColor,
+          primaryColorLight: mainColor[50],
+          primaryColorDark:mainColor[900],
+
+        ),
+//      home: MyHomePage(),
+        home:MainTabBar(),
+//      builder: FlutterBoost.init(),//FlutterBoost初始支持
+        navigatorObservers: [NaviManagerObserver()],
+      ),
+    );
+
+
+
+
+      MaterialApp(
       title: 'ReadNeed',
       theme: ThemeData(
 
