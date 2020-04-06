@@ -7,6 +7,11 @@ import '../common/photo_common.dart';
 
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux/redux.dart';
+import '../mainAppFlutterRedux/state.dart';
+import '../mainAppFlutterRedux/action.dart';
+
 class Setting extends StatefulWidget {
 
   @override
@@ -88,6 +93,49 @@ class _SettingState extends State<Setting> with Login {
     Alert.dismiss();
   }
 
+  //选择主题
+  _chooseTopic() {
+    
+    Alert.addAlert(Alert(
+      customView: Column(
+        children: <Widget>[
+          FlatButton(onPressed: (){
+            Store<AppState> state = StoreProvider.of(context);
+            state.dispatch(AppAction.topicAction(mainColor));
+            Alert.dismiss();
+          }, child: Container(padding: EdgeInsets.all(20),decoration: BoxDecoration(borderRadius: BorderRadius.circular(2),color:mainColor))),
+          FlatButton(onPressed: (){
+            Store<AppState> state = StoreProvider.of(context);
+            state.dispatch(AppAction.topicAction(Colors.blue));
+            Alert.dismiss();
+          }, child: Container(padding: EdgeInsets.all(20),decoration: BoxDecoration(borderRadius: BorderRadius.circular(2),color:Colors.blue))),
+          FlatButton(onPressed: (){
+            Store<AppState> state = StoreProvider.of(context);
+            state.dispatch(AppAction.topicAction(Colors.deepOrange));
+            Alert.dismiss();
+          }, child: Container(padding: EdgeInsets.all(20),decoration: BoxDecoration(borderRadius: BorderRadius.circular(2),color:Colors.deepOrange))),
+          FlatButton(onPressed: (){
+            Store<AppState> state = StoreProvider.of(context);
+            state.dispatch(AppAction.topicAction(Colors.red));
+            Alert.dismiss();
+          }, child: Container(padding: EdgeInsets.all(20),decoration: BoxDecoration(borderRadius: BorderRadius.circular(2),color:Colors.red))),
+          FlatButton(onPressed: (){
+            Store<AppState> state = StoreProvider.of(context);
+            state.dispatch(AppAction.topicAction(Colors.deepPurple));
+            Alert.dismiss();
+          }, child: Container(padding: EdgeInsets.all(20),decoration: BoxDecoration(borderRadius: BorderRadius.circular(2),color:Colors.deepPurple))),
+          FlatButton(onPressed: (){
+            Store<AppState> state = StoreProvider.of(context);
+            state.dispatch(AppAction.topicAction(Colors.blueGrey));
+            Alert.dismiss();
+          }, child: Container(padding: EdgeInsets.all(20),decoration: BoxDecoration(borderRadius: BorderRadius.circular(2),color:Colors.blueGrey))),
+          SizedBox(height: 5,)
+        ],
+      ),
+    ));
+    Alert.show(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,6 +151,11 @@ class _SettingState extends State<Setting> with Login {
             leading: Text(Account.share.nick??"昵称",style: TextStyle(fontSize: 16),),
             trailing: Icon(Icons.navigate_next),
             onTap: ()=> this.judgeLogin(context, ()=> _changeNickName()),
+          ),
+          ListTile(
+            leading: Text("主题",style: TextStyle(fontSize: 16),),
+            trailing: Icon(Icons.navigate_next),
+            onTap: ()=> _chooseTopic(),
           ),
           ListTile(
             leading: Text("清理缓存",style: TextStyle(fontSize: 16),),

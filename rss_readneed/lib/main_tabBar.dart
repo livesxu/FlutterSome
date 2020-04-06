@@ -5,11 +5,6 @@ import 'package:rss_readneed/rss_recommend/rss_recommend.dart';
 import 'package:rss_readneed/rss_collect/rss_collect.dart';
 import 'package:rss_readneed/rss_setting/rss_person.dart';
 
-import 'package:flutter_redux/flutter_redux.dart';
-import 'package:redux/redux.dart';
-import './mainAppFlutterRedux/reducer.dart';
-import './mainAppFlutterRedux/store.dart';
-
 class MainTabBar extends StatefulWidget {
   @override
   MainTabBarState createState() => new MainTabBarState();
@@ -38,6 +33,11 @@ class MainTabBarState extends State<MainTabBar> {
 
   @override
   Widget build(BuildContext context) {
+
+    Consts.screenWidth = MediaQuery.of(context).size.width;
+    Consts.screenHeight = MediaQuery.of(context).size.height;
+    Consts.tabBar = context;
+
     return new Scaffold(
       bottomNavigationBar: _bottomTabBar(_currentIndex),
       floatingActionButton: _bottomBook(_currentIndex == 1),
@@ -53,8 +53,7 @@ class MainTabBarState extends State<MainTabBar> {
     return BottomNavigationBar(
         currentIndex: selectedIndex,
         onTap: (int index){
-          Store<AppStore> store = StoreProvider.of(context);
-          store.dispatch(AppAction.action);
+
           setState(() {
             _currentIndex = index;
 

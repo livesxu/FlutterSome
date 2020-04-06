@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './consts.dart';
 
 class Alert extends StatelessWidget {
 
@@ -107,8 +108,7 @@ class Alert extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    double screen_width = MediaQuery.of(context).size.width;
-    screen_width = screen_width > 500 ? 500 : screen_width;
+    double screen_width = Consts.screenWidth > 500 ? 500 : Consts.screenWidth;
     double alert_s_w = screen_width - 60;//控制宽度
 
     List<Widget> widgets_c = [];
@@ -120,20 +120,22 @@ class Alert extends StatelessWidget {
     widgets_c.add(customView ?? Container());
 
     //操作按钮
-    List<Widget> actions_new = [];
-    for (FlatButton action in actions) {
+    if (actions != null && actions.length > 0) {
 
-      Widget item = Container(
-        width: alert_s_w/actions.length,
-        child: action,
-      );
+      List<Widget> actions_new = [];
+      for (FlatButton action in actions) {
 
-      actions_new.add(item);
-    }
-    if (actions_new.length > 0) {
+        Widget item = Container(
+          width: alert_s_w/actions.length,
+          child: action,
+        );
+
+        actions_new.add(item);
+      }
 
       widgets_c.add(Row(children:actions_new,));
     }
+
 
     return Positioned(
         child: Container(

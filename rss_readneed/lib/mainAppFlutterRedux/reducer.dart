@@ -1,14 +1,10 @@
-import 'store.dart';
+import 'state.dart';
 import 'action.dart';
 
-enum AppAction{
-  action
-}
+AppState appReducer (AppState state, action) {
 
-AppStore appReducer (AppStore state, action) {
-
-  if (action == AppAction.action) {
-
-    print('1234');
-  }
+  return AppState(
+    account: state.account,
+    themeData: action,
+  );
 }

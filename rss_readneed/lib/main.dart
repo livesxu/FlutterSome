@@ -6,14 +6,26 @@ import 'package:flutter_boost/flutter_boost.dart';
 
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
-import './mainAppFlutterRedux/store.dart';
+import './mainAppFlutterRedux/state.dart';
 import './mainAppFlutterRedux/reducer.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
 
-  final store = Store<AppStore>(appReducer);
+  final store = Store<AppState>(appReducer,initialState: AppState(
+    account: AccountModel(),
+    themeData: ThemeData(
+
+      scaffoldBackgroundColor: Colors.grey[100],//背景色
+
+//        primarySwatch: mainColor,
+      primaryColor: mainColor,
+      primaryColorLight: mainColor[50],
+      primaryColorDark:mainColor[900],
+
+    )
+  ));
 
   @override
   MyAppState createState() => new MyAppState();
@@ -22,25 +34,18 @@ class MyApp extends StatefulWidget {
 class MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return StoreProvider<AppStore>(
+    return StoreProvider<AppState>(
       store: widget.store,
-      child: MaterialApp(
-        title: 'ReadNeed',
-        theme: ThemeData(
+      child: StoreBuilder<AppState>(builder: (BuildContext context,Store store){
 
-          scaffoldBackgroundColor: Colors.grey[100],//背景色
-
-//        primarySwatch: mainColor,
-          primaryColor: mainColor,
-          primaryColorLight: mainColor[50],
-          primaryColorDark:mainColor[900],
-
-        ),
-//      home: MyHomePage(),
-        home:MainTabBar(),
+        return MaterialApp(
+          title: 'ReadNeed',
+          theme: store.state.themeData,
+          home:MainTabBar(),
 //      builder: FlutterBoost.init(),//FlutterBoost初始支持
-        navigatorObservers: [NaviManagerObserver()],
-      ),
+          navigatorObservers: [NaviManagerObserver()],
+        );
+      }),
     );
 
 

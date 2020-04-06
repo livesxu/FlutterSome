@@ -1,5 +1,6 @@
 //https://www.jianshu.com/p/cf7877c9bdeb
 import 'package:flutter/material.dart';
+import './consts.dart';
 
 class Toast {
   static OverlayEntry _overlayEntry; //toast靠它加到屏幕上
@@ -20,10 +21,10 @@ class Toast {
       _overlayEntry = OverlayEntry(
           builder: (BuildContext context) => Positioned(
             //top值，可以改变这个值来改变toast在屏幕中的位置
-            top: MediaQuery.of(context).size.height / 2 - 50.0,
+            top: Consts.screenHeight - 50.0,
             child: Container(
                 alignment: Alignment.center,
-                width: MediaQuery.of(context).size.width,
+                width: Consts.screenWidth,
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 80.0),
                   child: AnimatedOpacity(
