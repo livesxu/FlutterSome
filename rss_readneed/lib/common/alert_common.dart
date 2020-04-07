@@ -158,4 +158,16 @@ class Alert extends StatelessWidget {
         )
     );
   }
+
+  // 添加蒙层 OverlayEntry 使用 Positioned
+  static void showCustomOverlay(BuildContext context,OverlayEntry overlayEntry) {
+    OverlayState overlayState = Overlay.of(context);
+    overlayState.insert(overlayEntry);
+  }
+  //移除蒙层
+  static void dismissCustomOverlay(OverlayEntry overlayEntry){
+
+    overlayEntry.remove();
+    overlayEntry = null;
+  }
 }

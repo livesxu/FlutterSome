@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
+import '../public.dart';
 
 class AppAction {
 
   static ThemeData topicAction(MaterialColor color){
 
-    return ThemeData(
+    ThemeManager.analysisInfo(color);
 
-      scaffoldBackgroundColor: Colors.grey[100],//背景色
+    ThemeManager.themeData = ThemeManager.themeFrom(color);
 
-      primaryColor: color,
-      primaryColorLight: color[50],
-      primaryColorDark:color[900],
-    );
+    return ThemeManager.themeData;
   }
 
+  static AccountModel accountAction() {
 
+    return Account.share;
+  }
 }
 

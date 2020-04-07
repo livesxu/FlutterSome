@@ -95,42 +95,18 @@ class _SettingState extends State<Setting> with Login {
 
   //选择主题
   _chooseTopic() {
-    
+
+    List<Widget> themeWidgets = themeColors.map((MaterialColor color){
+      return FlatButton(onPressed: (){
+        Store<AppState> state = StoreProvider.of(context);
+        state.dispatch(AppAction.topicAction(color));
+        Alert.dismiss();
+      }, child: Container(padding: EdgeInsets.all(20),decoration: BoxDecoration(borderRadius: BorderRadius.circular(2),color:color)));
+    }).toList();
+
     Alert.addAlert(Alert(
       customView: Column(
-        children: <Widget>[
-          FlatButton(onPressed: (){
-            Store<AppState> state = StoreProvider.of(context);
-            state.dispatch(AppAction.topicAction(mainColor));
-            Alert.dismiss();
-          }, child: Container(padding: EdgeInsets.all(20),decoration: BoxDecoration(borderRadius: BorderRadius.circular(2),color:mainColor))),
-          FlatButton(onPressed: (){
-            Store<AppState> state = StoreProvider.of(context);
-            state.dispatch(AppAction.topicAction(Colors.blue));
-            Alert.dismiss();
-          }, child: Container(padding: EdgeInsets.all(20),decoration: BoxDecoration(borderRadius: BorderRadius.circular(2),color:Colors.blue))),
-          FlatButton(onPressed: (){
-            Store<AppState> state = StoreProvider.of(context);
-            state.dispatch(AppAction.topicAction(Colors.deepOrange));
-            Alert.dismiss();
-          }, child: Container(padding: EdgeInsets.all(20),decoration: BoxDecoration(borderRadius: BorderRadius.circular(2),color:Colors.deepOrange))),
-          FlatButton(onPressed: (){
-            Store<AppState> state = StoreProvider.of(context);
-            state.dispatch(AppAction.topicAction(Colors.red));
-            Alert.dismiss();
-          }, child: Container(padding: EdgeInsets.all(20),decoration: BoxDecoration(borderRadius: BorderRadius.circular(2),color:Colors.red))),
-          FlatButton(onPressed: (){
-            Store<AppState> state = StoreProvider.of(context);
-            state.dispatch(AppAction.topicAction(Colors.deepPurple));
-            Alert.dismiss();
-          }, child: Container(padding: EdgeInsets.all(20),decoration: BoxDecoration(borderRadius: BorderRadius.circular(2),color:Colors.deepPurple))),
-          FlatButton(onPressed: (){
-            Store<AppState> state = StoreProvider.of(context);
-            state.dispatch(AppAction.topicAction(Colors.blueGrey));
-            Alert.dismiss();
-          }, child: Container(padding: EdgeInsets.all(20),decoration: BoxDecoration(borderRadius: BorderRadius.circular(2),color:Colors.blueGrey))),
-          SizedBox(height: 5,)
-        ],
+        children: themeWidgets,
       ),
     ));
     Alert.show(context);

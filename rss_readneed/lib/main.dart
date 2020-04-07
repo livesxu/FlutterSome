@@ -8,24 +8,19 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import './mainAppFlutterRedux/state.dart';
 import './mainAppFlutterRedux/reducer.dart';
+import './mainAppFlutterRedux/action.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
 
-  final store = Store<AppState>(appReducer,initialState: AppState(
-    account: AccountModel(),
-    themeData: ThemeData(
+  bool isLaunchStoreInfoSyn = false;
 
-      scaffoldBackgroundColor: Colors.grey[100],//背景色
-
-//        primarySwatch: mainColor,
-      primaryColor: mainColor,
-      primaryColorLight: mainColor[50],
-      primaryColorDark:mainColor[900],
-
-    )
-  ));
+  Store store;
+  // = Store<AppState>(appReducer,initialState: AppState(
+//    account: Account.share,
+//    themeData: ThemeManager.themeData
+//  ));
 
   @override
   MyAppState createState() => new MyAppState();
@@ -34,47 +29,70 @@ class MyApp extends StatefulWidget {
 class MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return StoreProvider<AppState>(
-      store: widget.store,
-      child: StoreBuilder<AppState>(builder: (BuildContext context,Store store){
 
-        return MaterialApp(
-          title: 'ReadNeed',
-          theme: store.state.themeData,
-          home:MainTabBar(),
+    return FutureBuilder(
+        //使用FutureBuilder因为异步加载存储在本地的主题需要时间，所以添加一个开场页面
+        future: didFinishLaunch(),
+        builder: (BuildContext context,AsyncSnapshot<void> snapshot){
+
+          if (snapshot.connectionState == ConnectionState.done) {
+
+            return StoreProvider<AppState>(
+              store: widget.store,
+              child: StoreBuilder<AppState>(builder: (BuildContext context,Store store){
+
+                return MaterialApp(
+                  title: 'ReadNeed',
+                  theme: store.state.themeData,
+                  home:MainTabBar(),
 //      builder: FlutterBoost.init(),//FlutterBoost初始支持
-          navigatorObservers: [NaviManagerObserver()],
-        );
-      }),
-    );
-
-
-
-
-      MaterialApp(
-      title: 'ReadNeed',
-      theme: ThemeData(
-
-        scaffoldBackgroundColor: Colors.grey[100],//背景色
-
-//        primarySwatch: mainColor,
-        primaryColor: mainColor,
-        primaryColorLight: mainColor[50],
-        primaryColorDark:mainColor[900],
-
-      ),
-//      home: MyHomePage(),
-      home:MainTabBar(),
-//      builder: FlutterBoost.init(),//FlutterBoost初始支持
-      navigatorObservers: [NaviManagerObserver()],
+                  navigatorObservers: [NaviManagerObserver()],
+                );
+              }),
+            );
+          } else {
+            return MaterialApp(
+              home: Scaffold(
+                body: Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  child: Center(child: Text('时间是最宝贵的财富',style: TextStyle(
+                    fontSize: 24
+                  ),),)
+                ),
+              )
+            );
+          }
+        }
     );
   }
+
+  Future<void> didFinishLaunch () async {
+
+    if (widget.isLaunchStoreInfoSyn == false) {
+
+      final pref = await ThemeManager.initTheme();
+
+      await Account.readInfo(pref);
+
+      widget.isLaunchStoreInfoSyn = true;
+
+      widget.store = Store<AppState>(appReducer,initialState: AppState(
+          account: Account.share,
+          themeData: ThemeManager.themeData
+      ));
+
+      await Future.delayed(Duration(milliseconds: 1000)); //等待1秒
+    }
+  }
+
   @override
   void initState() {
     super.initState();
 
+    didFinishLaunch();
+
     ErrorHandle.systemError();
-    Account.share;//默认自动加载缓存个人信息
 
     //FlutterBoost routers 统一至router
 //    AppNavigator.flutterMixRouterConfig();

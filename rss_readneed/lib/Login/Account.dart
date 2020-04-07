@@ -35,15 +35,12 @@ class Account {
 
         _share = AccountModel();
 
-        readInfo();
       }
       return _share;
     }
 
     //读取数据
-    static readInfo () async {
-
-      SharedPreferences prefs = await SharedPreferences.getInstance();
+    static readInfo (SharedPreferences prefs) async {
 
       String accountInfo = prefs.get('account');
 
