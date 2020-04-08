@@ -92,6 +92,8 @@ class AqueductDemoChannel extends ApplicationChannel {
     //内容 + 文章
     router.route("/info/[:id]").link(() => InfoResourceVc(context));
     router.route("/article/[:infoId]").link(() => ArticleResourceVc(context));
+    //内容正则添加/修改
+    router.route("/exp/[:id]").link(() => ExpResourceVc(context));
 
     return router;
   }

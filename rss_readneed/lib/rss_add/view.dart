@@ -8,45 +8,69 @@ import 'state.dart';
 Widget buildView(rss_addState state, Dispatch dispatch, ViewService viewService) {
   return Scaffold(
     appBar: AppbarCommon(
-      titleString: 'Add', ctx: viewService.context
+      titleString: 'Add',
+      ctx: viewService.context,
+      actions: <Widget>[
+        //todo 使用指导
+        IconButton(icon: Icon(Icons.info_outline), onPressed:(){})
+      ],
     ),
-    body: Container(
-      padding: EdgeInsets.only(left: 20,top: 20,right: 20),
-      child: Column(
-        children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: <Widget>[
-              Expanded(//扩充区域部件 good
-                child: TextField(
-                  controller: state.urlInputEditingController,
-                  decoration: InputDecoration(
-                    labelText: "Url",
-                    helperText: 'eg:Http://www.uisdc.com/feed',
-                    hintText: "Input Rss Link",
-                  ),
+    floatingActionButton: FlatButton(
+      color: Theme.of(viewService.context).primaryColor,
+      textColor: Colors.white,
+      shape: RoundedRectangleBorder(borderRadius:BorderRadius.all(Radius.circular(20))),
+      child: Text("(.*?)",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600),),
+      onPressed: () => dispatch(rss_addActionCreator.appendGreedyAction()),
+    ),
+    body: ListView(
+      padding: EdgeInsets.only(left: 10,right: 10,bottom: 20),
+      children: <Widget>[
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: <Widget>[
+            Expanded(//扩充区域部件 good
+              child: TextField(
+                controller: state.urlInputEditingController,
+                decoration: InputDecoration(
+                  labelText: "网站/链接",
+                  helperText: 'eg: https://www.baidu.com',
+                  hintText: "请输入需要跟踪的网站或者链接",
                 ),
+                onSubmitted: (string){dispatch(rss_addActionCreator.sureAction());},
               ),
-              SizedBox(width: 20,),
-              Container(
-                width:100,
-                height: 30,
-                child: RaisedButton(
-                  child: Text("确定"),
-                  onPressed: () => dispatch(rss_addActionCreator.sureAction()),
-                ),
-              ),
-            ],
-          ),
-          TextField(
-            controller: state.testEditingController,
-            decoration: InputDecoration(
-              labelText: "Test".toUpperCase(),
-              hintText: "Test Rss Link Info Something...",
             ),
+            Container(
+              width:80,
+              height: 30,
+              child: FlatButton(
+                child: Icon(Icons.near_me,color: Colors.blue,),
+                onPressed: () => dispatch(rss_addActionCreator.sureAction()),)
+            ),
+          ],
+        ),
+        TextField(
+          controller: state.expEditingController,
+          decoration: InputDecoration(
+            labelText: "正则",
+            hintText: "请输入顶级正则(内容/列表匹配正则)",
           ),
-        ],
-      )
+          onSubmitted: (string){ dispatch(rss_addActionCreator.expChangeAction());},
+        ),
+        Container(
+          child: state.items.length > 0 ?
+              Row(children: <Widget>[
+                RichText(
+                    text: TextSpan(text:'匹配',style: TextStyle(color: Colors.blue),children:[
+                      TextSpan(text: state.items.length.toString(),style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: Colors.red)),
+                      TextSpan(text: '项',style: TextStyle(color: Colors.blue))
+                    ])
+                ),
+                IconButton(icon: Icon(Icons.send,color: Theme.of(viewService.context).primaryColor,), onPressed: ()=>dispatch(rss_addActionCreator.goNextAction()))
+              ],)
+              :Text('未匹配',style: TextStyle(color: Colors.grey))
+        ),
+        Text(state.items.length > 0 ? state.items.join('\n------\n') : state.htmlBody),
+      ],
     ),
   );
 }

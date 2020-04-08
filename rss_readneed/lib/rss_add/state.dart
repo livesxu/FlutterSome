@@ -6,17 +6,22 @@ import 'package:flutter/material.dart';
 class rss_addState implements Cloneable<rss_addState> {
 
   String urlString;
-  String testString;
+  String expString;
   TextEditingController urlInputEditingController;
-  TextEditingController testEditingController;
+  TextEditingController expEditingController;
+
+  String htmlBody = '';
+  List<String> items = [];
 
   @override
   rss_addState clone() {
     return rss_addState()
         ..urlString = urlString
-        ..testString = testString
+        ..expString = expString
         ..urlInputEditingController = urlInputEditingController
-        ..testEditingController = testEditingController;
+        ..expEditingController = expEditingController
+        ..htmlBody = htmlBody
+        ..items = items;
   }
 }
 
@@ -25,9 +30,9 @@ rss_addState initState(Map<String, dynamic> args) {
   final rss_addState state = rss_addState();
 
   state.urlString = "";
-  state.testString = "";
+  state.expString = "";
   state.urlInputEditingController = TextEditingController(text: state.urlString);
-  state.testEditingController = TextEditingController(text: state.testString);
+  state.expEditingController = TextEditingController(text: state.expString);
 
   return state;
 }

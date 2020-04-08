@@ -21,7 +21,7 @@ class Toast {
       _overlayEntry = OverlayEntry(
           builder: (BuildContext context) => Positioned(
             //top值，可以改变这个值来改变toast在屏幕中的位置
-            top: Consts.screenHeight - 50.0,
+            top: Consts.screenHeight/2 - 50.0,
             child: Container(
                 alignment: Alignment.center,
                 width: Consts.screenWidth,

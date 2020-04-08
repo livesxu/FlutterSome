@@ -60,6 +60,41 @@ class InfoResourceVc extends ResourceController {
   }
 }
 
+
+class ExpResourceVc extends ResourceController {
+
+  ExpResourceVc(this.context);
+
+  final ManagedContext context;
+
+  //内容正则修改 eg: /exp/1
+  @Operation.post("id")
+  FutureOr<Response> infoAricles (@Bind.path("id") int id, @Bind.body(require: ['topExp']) RssInfo exp) async {
+
+    final query = Query<RssInfo>(context)
+      ..where((RssInfo info)=>info.infoId).equalTo(id);
+
+    query.values.topExp = exp.topExp;
+    query.values.titleExpStart = exp.titleExpStart;
+    query.values.titleExpEnd = exp.titleExpEnd;
+    query.values.contentExpStart = exp.contentExpStart;
+    query.values.contentExpEnd = exp.contentExpEnd;
+    query.values.imageExpStart = exp.imageExpStart;
+    query.values.imageExpEnd = exp.imageExpEnd;
+    query.values.linkExpStart = exp.linkExpStart;
+    query.values.linkExpEnd = exp.linkExpEnd;
+
+    final result = await query.updateOne();
+
+    if (result != null) {
+
+      return Response.ok(result);
+    } else {
+      return Response.badRequest(body:"更新失败");
+    }
+  }
+}
+
 //在某个栏目下添加文章
 class ArticleResourceVc extends ResourceController {
 

@@ -2,47 +2,71 @@ import 'package:fish_redux/fish_redux.dart';
 import 'action.dart';
 import 'state.dart';
 
+import '../Home/model.dart';
 import '../public.dart';
 import 'package:http/http.dart' as http;
 
 Effect<infoState> buildEffect() {
   return combineEffects(<Object, Effect<infoState>>{
     Lifecycle.initState:_initState,
-    infoAction.action: _onAction,
   });
 }
 
 void _initState(Action action, Context<infoState> ctx) async {
 
-  http.Response response = await http.get('https://www.bilibili.com/ranking',
-  headers: {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64)AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.163 Safari/535.1'});
+//  1.本地链路/主正则 -
+  if (ctx.state.infoModel.topExp != null && ctx.state.infoModel.topExp.length > 0) {
 
-  print(response.body);
-  RegExp exp = RegExp(r'rank-item(.*?)href="(.*?)"(.*?)title(.*?)pts');
-  Iterable<Match> matches = exp.allMatches(response.body);
+    http.Response response = await http.get(ctx.state.infoModel.infoUrl,
+        headers: {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64)AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.163 Safari/535.1'});
 
-  int count = 0;
-  List<String> items = [];
-  for (Match m in matches) {
+    print(response.body);
+    RegExp exp = RegExp(ctx.state.infoModel.topExp);
+    Iterable<Match> matches = exp.allMatches(response.body);
 
-    if (m.groupCount > 0) {
-      String match = m.group(0);
-      items.add(match);
-      print(match);
-      count ++;
+    //提取每一个item的字符串
+    List<String> items = [];
+    for (Match m in matches) {
+
+      if (m.groupCount > 0) {//忽略仅匹配到正则的结果
+        String match = m.group(0);
+        items.add(match);
+      }
     }
 
-  }
-  Map<String,String> item = {};
-  for (String str in items) {
-      String title = itemExp(str, '"title">', '</a>');
-      String content = '';
-      String image = '';
-      String link = itemExp(str, '<a href="', ' target="_blank">');
+    bool titleExp = (ctx.state.infoModel.titleExpStart != null && ctx.state.infoModel.titleExpStart.length > 0 &&
+        ctx.state.infoModel.titleExpEnd != null && ctx.state.infoModel.titleExpEnd.length > 0);
+    bool contentExp = (ctx.state.infoModel.contentExpStart != null && ctx.state.infoModel.contentExpStart.length > 0 &&
+        ctx.state.infoModel.contentExpEnd != null && ctx.state.infoModel.contentExpEnd.length > 0);
+    bool imageExp = (ctx.state.infoModel.imageExpStart != null && ctx.state.infoModel.imageExpStart.length > 0 &&
+        ctx.state.infoModel.imageExpEnd != null && ctx.state.infoModel.imageExpEnd.length > 0);
+    bool linkExp = (ctx.state.infoModel.linkExpStart != null && ctx.state.infoModel.linkExpStart.length > 0 &&
+        ctx.state.infoModel.linkExpEnd != null && ctx.state.infoModel.linkExpEnd.length > 0);
 
+    ctx.state.articles = items.map((String itemString){
+
+      ArticleModel amodel = ArticleModel();
+      amodel.articleTitle = titleExp ? itemExp(itemString, ctx.state.infoModel.titleExpStart, ctx.state.infoModel.titleExpEnd) : '';
+      amodel.articleContent = contentExp ? itemExp(itemString, ctx.state.infoModel.contentExpStart, ctx.state.infoModel.contentExpEnd) : '';
+      amodel.articleImage = imageExp ? itemExp(itemString, ctx.state.infoModel.imageExpStart, ctx.state.infoModel.imageExpEnd) : '';
+      amodel.articleUrl = linkExp ? itemExp(itemString, ctx.state.infoModel.linkExpStart, ctx.state.infoModel.linkExpEnd) : '';
+
+      return amodel;
+
+    }).toList();
+
+    ctx.dispatch(infoActionCreator.fetchAction());
+
+  } else {//2.本地链路有问题，a.上报 todo b.请求数据
+
+    ResuestResult result = await RequestCommon.Get('/info/' + ctx.state.infoModel.infoId.toString());
+
+    List datas = result.body["articles"];
+    ctx.state.articles = datas.map((obj) => ArticleModel.fromJson(obj)).toList();
+
+    ctx.dispatch(infoActionCreator.fetchAction());
   }
 
-  print('count' + count.toString());
 }
 
 String itemExp(String matchString,String start,String end){

@@ -9,7 +9,9 @@ Widget buildView(homeState state, Dispatch dispatch, ViewService viewService) {
   ListAdapter adapter = viewService.buildAdapter();
   return Scaffold(
     appBar: AppbarCommon(ctx: viewService.context,titleString: 'ReadNeed',actions: <Widget>[
-      IconButton(icon: Icon(Icons.search), onPressed: null)
+      IconButton(icon: Icon(Icons.search), onPressed: (){
+        AppNavigator.push(viewService.context, AppNavigator.routePage('rssAdd'));
+      })
     ],),
     body: KeepAliveWidget(child: ListView.builder(itemBuilder: adapter.itemBuilder,itemCount: adapter.itemCount,),)
   );

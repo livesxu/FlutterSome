@@ -10,7 +10,7 @@ Widget buildView(InfoModel infoModel, Dispatch dispatch, ViewService viewService
 
   return InkWell(
     onTap: (){
-      AppNavigator.push(viewService.context, infoPage().buildPage({}));
+      AppNavigator.push(viewService.context, infoPage().buildPage({"info":infoModel}));
     },
     child: Container(child: Text(infoModel.infoName),),
   );
