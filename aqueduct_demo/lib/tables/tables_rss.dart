@@ -34,7 +34,6 @@ class _RssInfo {
   @Column(primaryKey: true,autoincrement: true)
   int infoId;
   String infoName;
-  @Column(unique: true)
   String infoUrl;
   @Column(nullable: true)
   String infoIntroduce;//介绍
@@ -101,7 +100,6 @@ class _RssArticle {
   @Column(nullable: true)
   String articleImage;//图片
   DateTime articleTime;
-  @Column(unique: true)
   String articleUrl;
   ManagedSet<Tag> tags;
   int state;//可用 、软删除(查询过滤)

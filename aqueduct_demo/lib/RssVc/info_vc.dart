@@ -17,7 +17,8 @@ class InfoResourceVc extends ResourceController {
   FutureOr<Response> addInfo (@Bind.body(require: ["infoName","infoUrl"]) RssInfo info) async {
 
     final query = Query<RssInfo>(context)
-                  ..where((RssInfo one)=>one.infoUrl).equalTo(info.infoUrl);
+                  ..where((RssInfo one)=>one.infoUrl).equalTo(info.infoUrl)
+                  ..where((RssInfo one)=>one.infoName).equalTo(info.infoName);
     final resultOne = await query.fetchOne();
 
     if (resultOne != null) {
@@ -127,8 +128,6 @@ class ArticleResourceVc extends ResourceController {
      }).toList();
 
     final result = await context.insertObjects<RssArticle>(newArt);
-
-    print(result);
 
     return Response.ok(result);
   }

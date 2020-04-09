@@ -7,14 +7,17 @@ import 'state.dart';
 
 Widget buildView(rss_addState state, Dispatch dispatch, ViewService viewService) {
   return Scaffold(
+    key: state.sKey,
     appBar: AppbarCommon(
-      titleString: 'Add',
+      titleString: '创建栏目',
       ctx: viewService.context,
       actions: <Widget>[
-        //todo 使用指导
-        IconButton(icon: Icon(Icons.info_outline), onPressed:(){})
+        IconButton(icon: Icon(Icons.info_outline), onPressed:(){
+          state.sKey.currentState.openEndDrawer();
+        })
       ],
     ),
+    endDrawer: Image.asset('images_assets/exp.png'),//todo 不够详细，可以找一个更好的示例
     floatingActionButton: FlatButton(
       color: Theme.of(viewService.context).primaryColor,
       textColor: Colors.white,

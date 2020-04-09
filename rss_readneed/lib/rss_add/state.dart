@@ -13,6 +13,8 @@ class rss_addState implements Cloneable<rss_addState> {
   String htmlBody = '';
   List<String> items = [];
 
+  var sKey = GlobalKey<ScaffoldState>();
+
   @override
   rss_addState clone() {
     return rss_addState()
@@ -21,7 +23,8 @@ class rss_addState implements Cloneable<rss_addState> {
         ..urlInputEditingController = urlInputEditingController
         ..expEditingController = expEditingController
         ..htmlBody = htmlBody
-        ..items = items;
+        ..items = items
+        ..sKey = sKey;
   }
 }
 

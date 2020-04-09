@@ -18,7 +18,10 @@ class ImageCommon {
           placeholder: (context, url) => Image.asset(placeholder,fit: BoxFit.fill,),
           errorWidget: (context, url, error){
 
-            ReportHandle.handle('url_image_error', 1, error.toString());
+            if (url != null && url != '') {
+
+              ReportHandle.handle('url_image_error', 1, error.toString());
+            }
 
             return Image.asset(placeholder,fit: BoxFit.fill,);
           },

@@ -8,11 +8,6 @@ import '../../public.dart';
 
 Widget buildView(expFineState state, Dispatch dispatch, ViewService viewService) {
   return Scaffold(
-    endDrawer: Container(
-      width: 200,
-      color: Colors.red,
-      child: Text('endDrawer'),
-    ),
     appBar: AppbarCommon(
       titleString: '内容完善',
       ctx: viewService.context,
@@ -44,16 +39,16 @@ Widget buildView(expFineState state, Dispatch dispatch, ViewService viewService)
       padding: EdgeInsets.only(left: 10,right: 10,bottom: 20),
       children: <Widget>[
         ListTile(
-          leading: Text('链接名称'),
+          leading: Text('栏目名称'),
           title: TextField(
             controller: state.nameEditingController,
             decoration: InputDecoration(
-              hintText: "请输入链接名称",
+              hintText: "请输入栏目名称",
             ),
             onTap: (){ dispatch(expFineActionCreator.focusAction(0)); },
           ),
         ),
-        Text('以下为筛选条目的细节，需要填写指定内容的边缘信息，将指定内容用(.*?)代替，保证边缘信息具有唯一性'),
+        Text('以下为筛选细节，需要填写指定内容的边缘信息，将指定内容用(.*?)代替，保证边缘信息具有唯一性'),
         Text(state.examples.first),
         Card(
           child: Column(

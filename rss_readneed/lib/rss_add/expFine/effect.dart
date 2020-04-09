@@ -154,10 +154,16 @@ String itemExp(String matchString,String start,String end){
   return '';
 }
 
-void _analysisAction(Action action, Context<expFineState> ctx) {
+void _analysisAction(Action action, Context<expFineState> ctx) async {
+
+  if (ctx.state.nameEditingController.text.length <= 0) {
+
+    Toast.show(ctx.context, '栏目名称必须填写哦~');
+    return ;
+  }
 
   InfoModel infoModel = InfoModel();
-  infoModel.infoName = 'Test';
+  infoModel.infoName = ctx.state.nameEditingController.text;
   infoModel.infoUrl = ctx.state.url;
 //  String infoImage;//图片
 //  String infoIntroduce;//介绍
@@ -191,7 +197,7 @@ void _analysisAction(Action action, Context<expFineState> ctx) {
     infoModel.linkExpEnd = linkExps.last;
   }
 
-  AppNavigator.push(ctx.context, infoPage().buildPage({"info":infoModel}));
+  AppNavigator.push(ctx.context, infoPage().buildPage({"info":infoModel,'from':'check'}));
 }
 
 void _dispose(Action action, Context<expFineState> ctx) {

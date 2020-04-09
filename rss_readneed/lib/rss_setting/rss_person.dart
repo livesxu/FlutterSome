@@ -20,7 +20,6 @@ class PersonState extends State<Person> with AutomaticKeepAliveClientMixin,Login
   Widget _headerImg (String link) {
 
     Widget childWidget = ImageCommon.withUrl(Account.share.headImg,"images_assets/icon.png", () => this.judgeLogin(context, ()=> _headerTouchAction()));
-
     return ClipRRect(
       borderRadius: BorderRadius.all(Radius.circular(20)),
       child: Container(
@@ -82,11 +81,6 @@ class PersonState extends State<Person> with AutomaticKeepAliveClientMixin,Login
     );
   }
 
-  Widget _sliverItem (BuildContext ctx,int index) {
-
-    return Text(index.toString());
-  }
-
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -118,14 +112,39 @@ class PersonState extends State<Person> with AutomaticKeepAliveClientMixin,Login
             })
           ],
         ),
-        SliverSafeArea(
-            sliver: SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  (BuildContext ctx,int index) => _sliverItem(ctx, index),
-                  childCount: 100
-                )
+        SliverList(
+            delegate: SliverChildListDelegate(
+                <Widget>[
+                  ListTile(
+                    leading: Icon(Icons.create),
+                    title: Text('创建栏目',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600),),
+                    subtitle: Text('拥有自己的栏目并从中获取奖励'),
+                    onTap: (){ AppNavigator.push(context, AppNavigator.routePage('rssAdd')); },
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.touch_app),
+                    title: Text('我的栏目',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600),),
+                    subtitle: Text('管理栏目,让内容更加丰富'),
+                    onTap: (){  },
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.show_chart),
+                    title: Text('栏目奖励',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600),),
+                    subtitle: Text('收益一目了然'),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.assistant_photo),
+                    title: Text('发布需求',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600),),
+                    subtitle: Text('需要订阅某项内容却未提供'),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.settings_input_antenna),
+                    title: Text('处理需求',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600),),
+                    subtitle: Text('帮助别人订阅内容获取奖励'),
+                  ),
+                ]
             )
-        ),
+        )
       ],
     );
   }

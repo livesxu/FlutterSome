@@ -12,6 +12,18 @@ Widget buildView(InfoModel infoModel, Dispatch dispatch, ViewService viewService
     onTap: (){
       AppNavigator.push(viewService.context, infoPage().buildPage({"info":infoModel}));
     },
-    child: Container(child: Text(infoModel.infoName),),
+    child: ListTile(
+      leading: ClipRRect(
+        borderRadius: BorderRadius.all(Radius.circular(20)),
+        child: Container(
+          width: 40,
+          height: 40,
+          color: Colors.white,
+          child: ImageCommon.withUrl(infoModel.infoImage, "images_assets/icon.png", null),
+        ),
+      ),
+      title: Text(infoModel.infoName),
+      subtitle: Text(infoModel.infoIntroduce),
+    )
   );
 }

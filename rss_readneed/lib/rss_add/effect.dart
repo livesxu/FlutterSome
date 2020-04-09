@@ -27,7 +27,7 @@ void _dispose(Action action, Context<rss_addState> ctx) {
 
 void _expChangeAction(Action action, Context<rss_addState> ctx) {
   //test
-  ctx.state.expEditingController.text = 'rank-item(.*?)href="(.*?)"(.*?)title(.*?)pts';
+//  ctx.state.expEditingController.text = 'rank-item(.*?)href="(.*?)"(.*?)title(.*?)pts';
 
   if (ctx.state.urlInputEditingController.text.length <= 0) {
 
@@ -81,7 +81,7 @@ void _appendGreedyAction(Action action, Context<rss_addState> ctx){
 void _sureAction(Action action, Context<rss_addState> ctx) async {
 
   //test
-  ctx.state.urlInputEditingController.text = 'https://www.bilibili.com/ranking';
+//  ctx.state.urlInputEditingController.text = 'https://www.bilibili.com/ranking';
 
   if (ctx.state.urlInputEditingController.text.length <= 0) {
 
@@ -117,22 +117,29 @@ void _goNextAction(Action action, Context<rss_addState> ctx) async {
   }
 
   //todo 展示结果不明确，展示框待优化
-  Alert.addNomal(
-      '内容订阅',
-      '链接：'+ ctx.state.urlInputEditingController.text + "\n" +
-      '正则：'+ ctx.state.expEditingController.text + "\n" +
-      '示例：'+ '\n' +
-      ctx.state.items.first,
-      (){
-          Alert.dismiss();
+  Alert.addAlert(Alert(
+    title: Alert.commonTitle('栏目订阅'),
+    message: Alert.commonMessage('链接：'+ ctx.state.urlInputEditingController.text + "\n" +
+        '正则：'+ ctx.state.expEditingController.text),
+    customView: Container(
+      height: 300,
+      child: ListView(
+        children: <Widget>[
+          Text(ctx.state.items.first,style: TextStyle(fontSize: 12,color: Colors.black54,decoration: TextDecoration.none,))
+        ],
+      ),
+    ),
+    actions: [Alert.commonCancelBtn('取消'),Alert.commonSureBtn('确定', (){
+      Alert.dismiss();
 
-          AppNavigator.push(ctx.context, expFinePage().buildPage({
-            'url':ctx.state.urlInputEditingController.text,
-            'exp':ctx.state.expEditingController.text,
-            'examples':examples
-          }));
-      }
-  );
+      AppNavigator.push(ctx.context, expFinePage().buildPage({
+        'url':ctx.state.urlInputEditingController.text,
+        'exp':ctx.state.expEditingController.text,
+        'examples':examples
+      }));
+    })],
+  ));
+
   Alert.show(ctx.context);
 }
 

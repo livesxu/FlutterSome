@@ -5,10 +5,13 @@ import 'state.dart';
 import '../Home/model.dart';
 import '../public.dart';
 import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'package:flutter/material.dart' hide Action;
 
 Effect<infoState> buildEffect() {
   return combineEffects(<Object, Effect<infoState>>{
     Lifecycle.initState:_initState,
+    infoAction.checkSureInfo:_checkSureInfo,
   });
 }
 
@@ -86,5 +89,17 @@ String itemExp(String matchString,String start,String end){
   return '';
 }
 
-void _onAction(Action action, Context<infoState> ctx) {
+void _checkSureInfo(Action action, Context<infoState> ctx) async {
+  
+  ResuestResult result = await RequestCommon.Post('/info', ctx.state.infoModel);
+
+  if (result.success) {
+
+    Toast.show(ctx.context, '栏目创建成功');
+
+    Navigator.of(ctx.context)
+      ..pop()
+      ..pop()
+      ..pop();
+  }
 }

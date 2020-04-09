@@ -38,7 +38,7 @@ class InfoModel {
 
   Map toJson() =>
       {
-        'infoId':infoId,
+//        'infoId':infoId,//包装报文时由服务器生成infoId
         'infoName':infoName,
         'infoUrl':infoUrl,
         'infoImage':infoImage,
