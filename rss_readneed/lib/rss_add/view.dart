@@ -18,12 +18,28 @@ Widget buildView(rss_addState state, Dispatch dispatch, ViewService viewService)
       ],
     ),
     endDrawer: Image.asset('images_assets/exp.png'),//todo 不够详细，可以找一个更好的示例
-    floatingActionButton: FlatButton(
-      color: Theme.of(viewService.context).primaryColor,
-      textColor: Colors.white,
-      shape: RoundedRectangleBorder(borderRadius:BorderRadius.all(Radius.circular(20))),
-      child: Text("(.*?)",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600),),
-      onPressed: () => dispatch(rss_addActionCreator.appendGreedyAction()),
+    floatingActionButton:Container(
+      width: 100,
+      height: 100,
+      child: Stack(
+        children: <Widget>[
+          Positioned(child: FlatButton(
+            color: Theme.of(viewService.context).primaryColor,
+            textColor: Colors.white,
+            shape: RoundedRectangleBorder(borderRadius:BorderRadius.all(Radius.circular(20))),
+            child: Text("\"",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600),),
+            onPressed: () => dispatch(rss_addActionCreator.appendDPointAction()),
+          ),
+          ),
+          Positioned(top: 50, child: FlatButton(
+            color: Theme.of(viewService.context).primaryColor,
+            textColor: Colors.white,
+            shape: RoundedRectangleBorder(borderRadius:BorderRadius.all(Radius.circular(20))),
+            child: Text("(.*?)",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600),),
+            onPressed: () => dispatch(rss_addActionCreator.appendGreedyAction()),
+          )),
+        ],
+      ),
     ),
     body: ListView(
       padding: EdgeInsets.only(left: 10,right: 10,bottom: 20),

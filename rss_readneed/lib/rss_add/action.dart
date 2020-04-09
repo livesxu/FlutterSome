@@ -4,6 +4,7 @@ enum rss_addAction {
 
   sureAction,//确定
   expChangeAction,//正则改变事件
+  appendDPointAction,//追加双引号
   appendGreedyAction,//追加非贪婪匹配符
   refreshAction,//刷新页面
   goNextAction,//确认进入下一页
@@ -19,6 +20,10 @@ class rss_addActionCreator {
   static Action expChangeAction () {
 
     return Action(rss_addAction.expChangeAction);
+  }
+  static Action appendDPointAction () {
+
+    return Action(rss_addAction.appendDPointAction);
   }
   static Action appendGreedyAction () {
 

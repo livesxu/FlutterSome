@@ -7,12 +7,14 @@ import 'package:http/http.dart' as http;
 
 import '../public.dart';
 import './expFine/page.dart';
+import 'dart:convert';
 
 //一些副作用 作为
 Effect<rss_addState> buildEffect() {
   return combineEffects(<Object, Effect<rss_addState>>{
     Lifecycle.dispose:_dispose,
     rss_addAction.expChangeAction:_expChangeAction,
+    rss_addAction.appendDPointAction:_appendDPointAction,
     rss_addAction.appendGreedyAction:_appendGreedyAction,
     rss_addAction.sureAction:_sureAction,
     rss_addAction.goNextAction:_goNextAction,
@@ -65,11 +67,18 @@ void _expChangeAction(Action action, Context<rss_addState> ctx) {
   ctx.dispatch(rss_addActionCreator.refreshAction());
 }
 
+void _appendDPointAction(Action action, Context<rss_addState> ctx){
+
+  ctx.state.expEditingController.text += "\"";
+
+  ctx.dispatch(rss_addActionCreator.refreshAction());
+}
+
 void _appendGreedyAction(Action action, Context<rss_addState> ctx){
 
   if (ctx.state.expEditingController.text.length > 0) {
 
-    ctx.state.expEditingController.text = ctx.state.expEditingController.text + "(.*?)";
+    ctx.state.expEditingController.text += "(.*?)";
 
     ctx.dispatch(rss_addActionCreator.refreshAction());
   } else {
@@ -82,7 +91,7 @@ void _sureAction(Action action, Context<rss_addState> ctx) async {
 
   //test
 //  ctx.state.urlInputEditingController.text = 'https://www.bilibili.com/ranking';
-
+  ctx.state.urlInputEditingController.text ='https://image.so.com/z?ch=beauty';
   if (ctx.state.urlInputEditingController.text.length <= 0) {
 
     Toast.show(ctx.context, '请输入需要跟踪的网站或者链接');
@@ -94,6 +103,11 @@ void _sureAction(Action action, Context<rss_addState> ctx) async {
       headers: {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64)AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.163 Safari/535.1'});
 
   ctx.state.htmlBody = response.body;
+
+  if (!ctx.state.htmlBody.contains('<?xml') && !ctx.state.htmlBody.contains('<html')) {
+    //兼容json数据解析
+    ctx.state.htmlBody = jsonDecode(response.body).toString();
+  }
 
   ctx.state.expEditingController.text = '';
   ctx.state.items = [];

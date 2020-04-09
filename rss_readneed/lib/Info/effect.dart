@@ -23,9 +23,16 @@ void _initState(Action action, Context<infoState> ctx) async {
     http.Response response = await http.get(ctx.state.infoModel.infoUrl,
         headers: {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64)AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.163 Safari/535.1'});
 
+    String responseString = response.body;
+    if (!responseString.contains('<?xml') && !responseString.contains('<html')) {
+
+      ctx.state.isJsonR = true;
+      //兼容json数据解析
+      responseString = jsonDecode(responseString).toString();
+    }
     print(response.body);
     RegExp exp = RegExp(ctx.state.infoModel.topExp);
-    Iterable<Match> matches = exp.allMatches(response.body);
+    Iterable<Match> matches = exp.allMatches(responseString);
 
     //提取每一个item的字符串
     List<String> items = [];
@@ -52,6 +59,8 @@ void _initState(Action action, Context<infoState> ctx) async {
       amodel.articleTitle = titleExp ? itemExp(itemString, ctx.state.infoModel.titleExpStart, ctx.state.infoModel.titleExpEnd) : '';
       amodel.articleContent = contentExp ? itemExp(itemString, ctx.state.infoModel.contentExpStart, ctx.state.infoModel.contentExpEnd) : '';
       amodel.articleImage = imageExp ? itemExp(itemString, ctx.state.infoModel.imageExpStart, ctx.state.infoModel.imageExpEnd) : '';
+      amodel.articleImage = amodel.articleImage.replaceAll(" ", '');//把内部空格去除
+
       amodel.articleUrl = linkExp ? itemExp(itemString, ctx.state.infoModel.linkExpStart, ctx.state.infoModel.linkExpEnd) : '';
 
       return amodel;

@@ -19,7 +19,7 @@ Widget buildView(infoState state, Dispatch dispatch, ViewService viewService) {
       subtitle: Text(model.articleContent),
     )];
 
-    if (model.articleImage != null) {
+    if (model.articleImage != null && model.articleImage.length > 0) {
 
       children.insert(0,
         AspectRatio(aspectRatio: 16.0/9.0, child: ClipRRect(
@@ -36,16 +36,26 @@ Widget buildView(infoState state, Dispatch dispatch, ViewService viewService) {
         ),
       ),
       onTap: (){
+
+        if (model.articleUrl == null || model.articleUrl.length <= 0) {
+
+          return ;
+        }
         AppNavigator.push(viewService.context, WebView(urlString: model.articleUrl,urlTitle: model.articleTitle,));
       },
     );
   }
 
-  List<Widget> listActions = [
-    IconButton(icon: Icon(Icons.link), onPressed: (){
-      AppNavigator.push(viewService.context, WebView(urlString: state.infoModel.infoUrl,urlTitle: state.infoModel.infoName,));
-    })
-  ];
+  List<Widget> listActions = [];
+
+  if (state.isJsonR == false) {//非json数据展示源网页
+
+    listActions.add(
+        IconButton(icon: Icon(Icons.link), onPressed: (){
+          AppNavigator.push(viewService.context, WebView(urlString: state.infoModel.infoUrl,urlTitle: state.infoModel.infoName,));
+        })
+    );
+  }
 
   String titleString = state.infoModel.infoName;
   if (state.flag == 'check') {//检查栏目

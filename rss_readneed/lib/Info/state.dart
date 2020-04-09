@@ -8,13 +8,15 @@ class infoState implements Cloneable<infoState> {
   List<ArticleModel> articles = [];
 
   String flag;//标记 check:检查内容
+  bool isJsonR = false;//默认非json数据源
 
   @override
   infoState clone() {
     return infoState()
       ..infoModel = infoModel
       ..articles = articles
-      ..flag = flag;
+      ..flag = flag
+      ..isJsonR = isJsonR;
   }
 }
 
