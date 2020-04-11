@@ -36,6 +36,8 @@ class _RssInfo {
   String infoName;
   String infoUrl;
   @Column(nullable: true)
+  String abInfoUrl;//绝对栏目链接 - 相比infourl更加准确，因为rss或者json内容的infourl是无法链接正式网页的
+  @Column(nullable: true)
   String infoIntroduce;//介绍
   @Column(nullable: true)
   String infoImage;//图片

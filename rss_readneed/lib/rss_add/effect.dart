@@ -30,6 +30,7 @@ void _dispose(Action action, Context<rss_addState> ctx) {
 void _expChangeAction(Action action, Context<rss_addState> ctx) {
   //test
 //  ctx.state.expEditingController.text = 'rank-item(.*?)href="(.*?)"(.*?)title(.*?)pts';
+//  ctx.state.expEditingController.text = '<item>(.*?)</item>';
 
   if (ctx.state.urlInputEditingController.text.length <= 0) {
 
@@ -91,7 +92,7 @@ void _sureAction(Action action, Context<rss_addState> ctx) async {
 
   //test
 //  ctx.state.urlInputEditingController.text = 'https://www.bilibili.com/ranking';
-  ctx.state.urlInputEditingController.text ='https://image.so.com/z?ch=beauty';
+  ctx.state.urlInputEditingController.text ='http://www.ixiqi.com/feed';
   if (ctx.state.urlInputEditingController.text.length <= 0) {
 
     Toast.show(ctx.context, '请输入需要跟踪的网站或者链接');
@@ -107,8 +108,11 @@ void _sureAction(Action action, Context<rss_addState> ctx) async {
   if (!ctx.state.htmlBody.contains('<?xml') && !ctx.state.htmlBody.contains('<html')) {
     //兼容json数据解析
     ctx.state.htmlBody = jsonDecode(response.body).toString();
+  } else {
+    ctx.state.htmlBody = ctx.state.htmlBody.replaceAll("\n", "");//将换行符清除
+    ctx.state.htmlBody = ctx.state.htmlBody.replaceAll(RegExp(r'>(\s*?)<'), '><');//将标签之间的空格清除
   }
-
+  
   ctx.state.expEditingController.text = '';
   ctx.state.items = [];
 

@@ -29,8 +29,11 @@ void _initState(Action action, Context<infoState> ctx) async {
       ctx.state.isJsonR = true;
       //兼容json数据解析
       responseString = jsonDecode(responseString).toString();
+    } else {
+      responseString = responseString.replaceAll("\n", "");//将换行符清除
+      responseString = responseString.replaceAll(RegExp(r'>(\s*?)<'), '><');//将标签之间的空格清除
     }
-    print(response.body);
+//    print(response.body);
     RegExp exp = RegExp(ctx.state.infoModel.topExp);
     Iterable<Match> matches = exp.allMatches(responseString);
 
@@ -92,7 +95,10 @@ String itemExp(String matchString,String start,String end){
 
       String str = match.group(0);
 
-      return str.substring(start.length,str.length - end.length);
+      String startString = RegExp(start).allMatches(str).first.group(0);
+      String endString = RegExp(end).allMatches(str).last.group(0);
+
+      return str.substring(startString.length,str.length - endString.length);
     }
   }
   return '';
