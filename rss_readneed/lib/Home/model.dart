@@ -5,6 +5,7 @@ class InfoModel {
   int infoId;
   String infoName;//名称
   String infoUrl;//链接
+  String abInfoUrl;//绝对栏目链接 - 相比infourl更加准确，因为rss或者json内容的infourl是无法链接正式网页的
   String infoImage;//图片
   String infoIntroduce;//介绍
 
@@ -23,6 +24,7 @@ class InfoModel {
       : infoId = json['infoId'],
         infoName = json['infoName'],
         infoUrl = json['infoUrl'],
+        abInfoUrl = json['abInfoUrl'],
         infoImage = json['infoImage'],
         infoIntroduce = json['infoIntroduce'],
         topExp = json['topExp'],
@@ -41,6 +43,7 @@ class InfoModel {
 //        'infoId':infoId,//包装报文时由服务器生成infoId
         'infoName':infoName,
         'infoUrl':infoUrl,
+        'abInfoUrl':abInfoUrl,
         'infoImage':infoImage,
         'infoIntroduce':infoIntroduce,
         'topExp':topExp,

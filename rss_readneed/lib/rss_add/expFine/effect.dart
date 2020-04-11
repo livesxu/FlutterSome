@@ -148,7 +148,10 @@ String itemExp(String matchString,String start,String end){
 
       String str = match.group(0);
 
-      return str.substring(start.length,str.length - end.length);
+      String startString = RegExp(start).allMatches(str).first.group(0);
+      String endString = RegExp(end).allMatches(str).last.group(0);
+
+      return str.substring(startString.length,str.length - endString.length);
     }
   }
   return '';

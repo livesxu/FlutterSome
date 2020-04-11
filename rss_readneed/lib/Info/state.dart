@@ -7,7 +7,7 @@ class infoState implements Cloneable<infoState> {
 
   List<ArticleModel> articles = [];
 
-  String flag;//标记 check:检查内容
+  String flag;//标记 check:检查内容 checkFeed:feed订阅进入 少一层结构
   bool isJsonR = false;//默认非json数据源
 
   @override

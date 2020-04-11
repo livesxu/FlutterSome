@@ -60,7 +60,10 @@ void _initState(Action action, Context<infoState> ctx) async {
 
       ArticleModel amodel = ArticleModel();
       amodel.articleTitle = titleExp ? itemExp(itemString, ctx.state.infoModel.titleExpStart, ctx.state.infoModel.titleExpEnd) : '';
+
       amodel.articleContent = contentExp ? itemExp(itemString, ctx.state.infoModel.contentExpStart, ctx.state.infoModel.contentExpEnd) : '';
+      amodel.articleContent = amodel.articleContent.replaceAll(RegExp(r'<(.*?)>'), '');//将内容里面的标签全部去除展示
+
       amodel.articleImage = imageExp ? itemExp(itemString, ctx.state.infoModel.imageExpStart, ctx.state.infoModel.imageExpEnd) : '';
       amodel.articleImage = amodel.articleImage.replaceAll(" ", '');//把内部空格去除
 
@@ -112,9 +115,17 @@ void _checkSureInfo(Action action, Context<infoState> ctx) async {
 
     Toast.show(ctx.context, '栏目创建成功');
 
-    Navigator.of(ctx.context)
-      ..pop()
-      ..pop()
-      ..pop();
+    if (ctx.state.flag == 'checkFeed') {//checkFeed自动解析，所以少一层结构
+
+      Navigator.of(ctx.context)
+        ..pop()
+        ..pop();
+    } else {
+
+      Navigator.of(ctx.context)
+        ..pop()
+        ..pop()
+        ..pop();
+    }
   }
 }

@@ -58,7 +58,7 @@ Widget buildView(infoState state, Dispatch dispatch, ViewService viewService) {
   }
 
   String titleString = state.infoModel.infoName;
-  if (state.flag == 'check') {//检查栏目
+  if (state.flag != null && state.flag.contains('check')) {//检查栏目
 
     listActions.insert(0,
         IconButton(icon: Icon(Icons.check_box), onPressed: (){
