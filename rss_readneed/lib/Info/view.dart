@@ -41,7 +41,7 @@ Widget buildView(infoState state, Dispatch dispatch, ViewService viewService) {
 
           return ;
         }
-        AppNavigator.push(viewService.context, WebView(urlString: model.articleUrl,urlTitle: model.articleTitle,));
+        AppNavigator.push(viewService.context, CommonWebView(urlString: model.articleUrl,urlTitle: model.articleTitle,));
       },
     );
   }
@@ -52,7 +52,11 @@ Widget buildView(infoState state, Dispatch dispatch, ViewService viewService) {
 
     listActions.add(
         IconButton(icon: Icon(Icons.link), onPressed: (){
-          AppNavigator.push(viewService.context, WebView(urlString: state.infoModel.infoUrl,urlTitle: state.infoModel.infoName,));
+
+          //使用更准确的网页地址跳转 infoUrl可能是数据源并非网络地址 todo:创建栏目时未提供输入 介绍和img
+          String url = (state.infoModel.abInfoUrl != null && state.infoModel.abInfoUrl.length > 0) ? state.infoModel.abInfoUrl : state.infoModel.infoUrl;
+
+          AppNavigator.push(viewService.context, CommonWebView(urlString: url,urlTitle: state.infoModel.infoName,));
         })
     );
   }

@@ -81,10 +81,12 @@ Widget buildView(rss_addState state, Dispatch dispatch, ViewService viewService)
                 RichText(
                     text: TextSpan(text:'匹配',style: TextStyle(color: Colors.blue),children:[
                       TextSpan(text: state.items.length.toString(),style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: Colors.red)),
-                      TextSpan(text: '项',style: TextStyle(color: Colors.blue))
+                      TextSpan(text: '项',style: TextStyle(color: Colors.blue)),
+                      TextSpan(text: ' 🔎 ',style: TextStyle(color: Colors.black,fontSize: 20)),
+                      TextSpan(text: '有效项：' + state.validItems.length.toString() + ' ',style: TextStyle(color: (state.validItems.length > 0) ? Colors.blue : Colors.red)),
                     ])
                 ),
-                IconButton(icon: Icon(Icons.send,color: Theme.of(viewService.context).primaryColor,), onPressed: ()=>dispatch(rss_addActionCreator.goNextAction()))
+                state.validItems.length > 0 ? IconButton(icon: Icon(Icons.send,size: 30,color: Theme.of(viewService.context).primaryColor,), onPressed: ()=>dispatch(rss_addActionCreator.goNextAction())) : Container()
               ],)
               :Text('未匹配',style: TextStyle(color: Colors.grey))
         ),

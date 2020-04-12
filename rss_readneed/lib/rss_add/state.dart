@@ -11,7 +11,8 @@ class rss_addState implements Cloneable<rss_addState> {
   TextEditingController expEditingController;
 
   String htmlBody = '';
-  List<String> items = [];
+  List<String> items = [];//所有匹配集合
+  List<String> validItems = [];//有效匹配集合
 
   var sKey = GlobalKey<ScaffoldState>();
 
@@ -24,6 +25,7 @@ class rss_addState implements Cloneable<rss_addState> {
         ..expEditingController = expEditingController
         ..htmlBody = htmlBody
         ..items = items
+        ..validItems = validItems
         ..sKey = sKey;
   }
 }
@@ -34,6 +36,13 @@ rss_addState initState(Map<String, dynamic> args) {
 
   state.urlString = "";
   state.expString = "";
+
+  String argsUrl = args['url'];
+  if (argsUrl != null && argsUrl.length > 0) {
+
+    state.urlString = argsUrl;
+  }
+
   state.urlInputEditingController = TextEditingController(text: state.urlString);
   state.expEditingController = TextEditingController(text: state.expString);
 

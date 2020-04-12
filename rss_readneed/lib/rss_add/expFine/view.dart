@@ -39,7 +39,9 @@ Widget buildView(expFineState state, Dispatch dispatch, ViewService viewService)
       padding: EdgeInsets.only(left: 10,right: 10,bottom: 20),
       children: <Widget>[
         ListTile(
-          leading: Text('栏目名称'),
+          leading: RichText(text: TextSpan(text:'栏目名称',style: TextStyle(color: Colors.black),children: [
+            TextSpan(text:'*',style: TextStyle(color: Colors.red,fontSize: 16))
+          ])),
           title: TextField(
             controller: state.nameEditingController,
             decoration: InputDecoration(
@@ -48,8 +50,11 @@ Widget buildView(expFineState state, Dispatch dispatch, ViewService viewService)
             onTap: (){ dispatch(expFineActionCreator.focusAction(0)); },
           ),
         ),
-        Text('以下为筛选细节，需要填写指定内容的边缘信息，将指定内容用(.*?)代替，保证边缘信息具有唯一性'),
-        Text(state.examples.first),
+        Text('以下为筛选细节，需要填写指定内容的边缘信息，将指定内容用(.*?)代替，请保证边缘信息具有唯一性'),
+        Card(
+          child: Text(state.examples.first),
+          elevation: 2,
+        ),
         Card(
           child: Column(
             children: <Widget>[

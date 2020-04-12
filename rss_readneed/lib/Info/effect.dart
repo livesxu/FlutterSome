@@ -23,7 +23,7 @@ void _initState(Action action, Context<infoState> ctx) async {
     http.Response response = await http.get(ctx.state.infoModel.infoUrl,
         headers: {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64)AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.163 Safari/535.1'});
 
-    String responseString = response.body;
+    String responseString = utf8.decode(response.bodyBytes);
     if (!responseString.contains('<?xml') && !responseString.contains('<html')) {
 
       ctx.state.isJsonR = true;
@@ -56,6 +56,7 @@ void _initState(Action action, Context<infoState> ctx) async {
     bool linkExp = (ctx.state.infoModel.linkExpStart != null && ctx.state.infoModel.linkExpStart.length > 0 &&
         ctx.state.infoModel.linkExpEnd != null && ctx.state.infoModel.linkExpEnd.length > 0);
 
+    String lastItemImg = '';
     ctx.state.articles = items.map((String itemString){
 
       ArticleModel amodel = ArticleModel();
@@ -63,9 +64,16 @@ void _initState(Action action, Context<infoState> ctx) async {
 
       amodel.articleContent = contentExp ? itemExp(itemString, ctx.state.infoModel.contentExpStart, ctx.state.infoModel.contentExpEnd) : '';
       amodel.articleContent = amodel.articleContent.replaceAll(RegExp(r'<(.*?)>'), '');//将内容里面的标签全部去除展示
+      amodel.articleContent = amodel.articleContent.replaceAll(RegExp(r'&([0-9a-z]{2,6});'), '');//去除常用转义符
+      amodel.articleContent = amodel.articleContent.replaceAll(RegExp(r'&#([0-9]{2,4});'), '');//去除常用转义符
 
       amodel.articleImage = imageExp ? itemExp(itemString, ctx.state.infoModel.imageExpStart, ctx.state.infoModel.imageExpEnd) : '';
       amodel.articleImage = amodel.articleImage.replaceAll(" ", '');//把内部空格去除
+      if (amodel.articleImage == lastItemImg) {//防止抓到一些样式图，都是样式图则只展示第一个
+        amodel.articleImage = '';
+      } else {
+        lastItemImg = amodel.articleImage;
+      }
 
       amodel.articleUrl = linkExp ? itemExp(itemString, ctx.state.infoModel.linkExpStart, ctx.state.infoModel.linkExpEnd) : '';
 
@@ -115,7 +123,13 @@ void _checkSureInfo(Action action, Context<infoState> ctx) async {
 
     Toast.show(ctx.context, '栏目创建成功');
 
-    if (ctx.state.flag == 'checkFeed') {//checkFeed自动解析，所以少一层结构
+
+    if (ctx.state.flag == 'checkFeedInWeb') {//web自动直接解析
+
+      Navigator.of(ctx.context)
+        ..pop();
+
+    } else if (ctx.state.flag == 'checkFeedInAdd') {//checkFeed自动解析，所以少一层结构
 
       Navigator.of(ctx.context)
         ..pop()

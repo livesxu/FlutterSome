@@ -52,8 +52,9 @@ class CustomBackBtn extends StatelessWidget {
 
   //强制添加返回按钮标记
   final isNeedBack;
+  final VoidCallback backAction;
 
-  const CustomBackBtn({ Key key,this.isNeedBack }) : super(key: key);
+  const CustomBackBtn({ Key key,this.isNeedBack,this.backAction }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +71,13 @@ class CustomBackBtn extends StatelessWidget {
       ),
       tooltip: MaterialLocalizations.of(context).backButtonTooltip,
       onPressed: () {
-        Navigator.maybePop(context);
+
+        if (backAction != null) {
+
+          backAction();
+        } else {
+          Navigator.maybePop(context);
+        }
       },
     );
   }

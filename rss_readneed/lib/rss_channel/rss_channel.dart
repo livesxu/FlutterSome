@@ -182,7 +182,7 @@ class ChannelState extends State<Channel> {
             //跳转web
             Navigator.of(context).push(MaterialPageRoute(builder: (_){
 
-              return WebView(urlString: model.link,urlTitle: model.title,);
+              return CommonWebView(urlString: model.link,urlTitle: model.title,);
             }));
           },
         )
@@ -260,7 +260,7 @@ class ChannelState extends State<Channel> {
                       //跳转web
                       Navigator.of(context).push(MaterialPageRoute(builder: (_){
 
-                        return WebView(urlString: model.link,urlTitle: model.title,);
+                        return CommonWebView(urlString: model.link,urlTitle: model.title,);
                       }));
                     },
                   );
@@ -329,7 +329,7 @@ class ChannelState extends State<Channel> {
               //跳转web
               Navigator.of(context).push(MaterialPageRoute(builder: (_){
 
-                return WebView(urlString: model.link,urlTitle: model.title,);
+                return CommonWebView(urlString: model.link,urlTitle: model.title,);
               }));
             },
           );
