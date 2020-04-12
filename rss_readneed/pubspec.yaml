@@ -74,7 +74,6 @@ flutter:
 #添加资源 ->
   assets:
   - images_assets/
-  - lib/rss_recommend/rss_recommend.json
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

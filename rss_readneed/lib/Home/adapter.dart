@@ -3,6 +3,9 @@ import 'state.dart';
 import 'model.dart';
 import './infoCom/component.dart';
 import './todayCom/component.dart';
+import './groupInfosCom/component.dart';
+
+import 'model.dart';
 
 class homeAdapter extends DynamicFlowAdapter<homeState> {
   homeAdapter()
@@ -10,7 +13,7 @@ class homeAdapter extends DynamicFlowAdapter<homeState> {
           pool: <String, Component<Object>>{
             'todays':todayComponent(),
             'info':infoComponentComponent(),
-
+            'groupInfo':groupInfosComponent(),
           },
           connector: _homeConnector(),
           );
@@ -30,6 +33,13 @@ class _homeConnector extends ConnOp<homeState, List<ItemBean>> {
     if (state.infos.length > 0) {
 
       List<ItemBean> items = state.infos.map((InfoModel model) => ItemBean('info', model)).toList();
+      itemAll.addAll(items);
+    }
+
+    //todo 网络来源同步更新处理
+    if (FeedGroupInfoLinks.length > 0) {
+
+      List<ItemBean> items = FeedGroupInfoLinks.map((String link) => ItemBean('groupInfo', link)).toList();
       itemAll.addAll(items);
     }
 
