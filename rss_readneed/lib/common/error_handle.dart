@@ -21,13 +21,15 @@ class ErrorHandle {
 //  try {}
 //  catch (e){}
 //  final{}
-  static syncError(VoidCallback doAction) {
+  static syncError(VoidCallback doAction,VoidCallback catchThen) {
 
     try {
       doAction();
     }
     catch (e, stack){
+
       ReportHandle.handle('Error_sync', 0, e.toString() + '\n' + stack.toString());
+      catchThen();
     }
   }
 

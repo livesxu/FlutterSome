@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:convert';//包含json.dart
 
-import 'package:rss_readneed/rss_recommend/recommendModel.dart';
-import 'package:rss_readneed/rss_channel/rss_channel.dart';
 import '../public.dart';
+import '../Home/model.dart';
+import '../Info/page.dart';
 
 class Recommend extends StatefulWidget {
   @override
@@ -13,7 +13,7 @@ class Recommend extends StatefulWidget {
 
 class RecommendState extends State<Recommend> {
 
-  List<RecommendModel> _datas = [];
+  List<InfoModel> _datas = [];
 
   @override
   Widget build(BuildContext context) {
@@ -39,20 +39,21 @@ class RecommendState extends State<Recommend> {
       ),
       body: Container(
         child: ListView(
-          children: _datas.map((model) => ListTile(
-            title:Text(
-              model.rsstitle,
-              style: TextStyle(fontSize: 14),
+          children: _datas.map((infoModel) => ListTile(
+            leading: ClipRRect(
+              borderRadius: BorderRadius.all(Radius.circular(20)),
+              child: Container(
+                width: 40,
+                height: 40,
+                color: Colors.white,
+                child: ImageCommon.withUrl(infoModel.infoImage, "images_assets/icon.png", null),
+              ),
             ),
-            leading: Icon(Icons.rss_feed),
+            title: Text(infoModel.infoName),
+            subtitle: Text(infoModel.infoIntroduce),
             onTap: (){
-
-              //跳转channel
-              Navigator.of(context).push(MaterialPageRoute(builder: (_){
-
-                return Channel(model: model,);
-              }));
-            },
+              AppNavigator.push(context, infoPage().buildPage({"info":infoModel}));
+            }
           )
           ).toList(),
         ),
@@ -63,18 +64,9 @@ class RecommendState extends State<Recommend> {
   void initState() {
     super.initState();
 
-    Future<String> jsonString = DefaultAssetBundle.of(context).loadString("lib/rss_recommend/rss_recommend.json");
+    List datas = jsonDecode(someFeedInfo);
 
-    jsonString.then((String value){
-
-      List recommend = json.decode(value);
-
-      setState(() {
-
-        _datas = recommend.map((item) => RecommendModel.fromJson(item)).toList();
-      });
-
-    });
+    _datas = datas.map((obj) => InfoModel.fromJson(obj)).toList();
   }
 
   @override

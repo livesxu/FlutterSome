@@ -15,6 +15,7 @@ import '../Info/page.dart';
 //一些副作用 作为
 Effect<rss_addState> buildEffect() {
   return combineEffects(<Object, Effect<rss_addState>>{
+    Lifecycle.initState:_initState,
     Lifecycle.dispose:_dispose,
     rss_addAction.expChangeAction:_expChangeAction,
     rss_addAction.appendDPointAction:_appendDPointAction,
@@ -22,6 +23,15 @@ Effect<rss_addState> buildEffect() {
     rss_addAction.sureAction:_sureAction,
     rss_addAction.goNextAction:_goNextAction,
   });
+}
+
+void _initState(Action action, Context<rss_addState> ctx) {
+
+  //传递过来有值时直接触发确认
+  if (ctx.state.urlInputEditingController.text.length > 0) {
+
+    ctx.dispatch(rss_addActionCreator.sureAction());
+  }
 }
 
 void _dispose(Action action, Context<rss_addState> ctx) {
@@ -119,7 +129,13 @@ void _sureAction(Action action, Context<rss_addState> ctx) async {
   http.Response response = await http.get(ctx.state.urlInputEditingController.text,
       headers: {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64)AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.163 Safari/535.1'});
 
-  ctx.state.htmlBody = utf8.decode(response.bodyBytes);
+  ErrorHandle.syncError((){
+
+    ctx.state.htmlBody = utf8.decode(response.bodyBytes);
+  },(){
+    Toast.show(ctx.context, '栏目内容转码错误');
+    return;
+  });
 
   if (!ctx.state.htmlBody.contains('<?xml') && !ctx.state.htmlBody.contains('<html')) {
     //兼容json数据解析
