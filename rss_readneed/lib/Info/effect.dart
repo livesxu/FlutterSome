@@ -66,6 +66,7 @@ void _initState(Action action, Context<infoState> ctx) async {
       amodel.articleContent = amodel.articleContent.replaceAll(RegExp(r'<(.*?)>'), '');//将内容里面的标签全部去除展示
       amodel.articleContent = amodel.articleContent.replaceAll(RegExp(r'&([0-9a-z]{2,6});'), '');//去除常用转义符
       amodel.articleContent = amodel.articleContent.replaceAll(RegExp(r'&#([0-9]{2,4});'), '');//去除常用转义符
+      amodel.articleContent = amodel.articleContent.length > 500 ? (amodel.articleContent.substring(0,500) + '...') : amodel.articleContent;
 
       amodel.articleImage = imageExp ? itemExp(itemString, ctx.state.infoModel.imageExpStart, ctx.state.infoModel.imageExpEnd) : '';
       amodel.articleImage = amodel.articleImage.replaceAll(" ", '');//把内部空格去除

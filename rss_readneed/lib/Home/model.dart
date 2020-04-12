@@ -88,3 +88,32 @@ class ArticleModel {
         'articleImage':articleImage,
       };
 }
+
+//各网站feed页面链接
+const FeedGroupInfoLinks = [
+  'http://www.baidu.com/search/rss.html',//百度新闻
+  'http://rss.people.com.cn/',//人民网
+  'http://rss.huanqiu.com',//环球网
+  'http://www.sciencenet.cn/RSS.aspx',//科学网
+  'http://www.163.com/rss',//网易
+  'http://rss.sina.com.cn',//新浪
+  'http://rss.news.sohu.com',//搜狐
+  'http://news.hexun.com/rss/',//和讯网
+  'http://news.ifeng.com/rss/',//凤凰网
+  'http://www.chinanews.com/rss/',//中国新闻网
+  'http://rss.zol.com.cn',//中关村
+  'http://rss.yesky.com',//天极网
+  'http://www.nfcmag.com/rss/index.html',//南风窗
+  'http://www.fjsen.com/rss/rss.htm',//东南网
+  'http://other.caixin.com/rss/',//财新网
+  'http://www.stats.gov.cn/wzgl/rss/',//国家统计局
+  'http://edition.cnn.com/services/rss/',//CNN
+  'http://www.pc841.com/rss/',//科技pc841
+  'http://www.ebrun.com/rss/',//亿邦动力网
+  'http://www.mtime.com/rss/',//时光网
+  'https://www.meiwen.com.cn/rssmap.html',//美文阅读
+  'http://www.chexun.com/about/rss.html',//车讯网
+  'http://www.yoka.com/about/2012/rss.shtml',//YOKA时尚网
+  'http://www.daimg.com/rssmap.html',//大图网
+  'http://www.lanrentuku.com/about/rssmap.html',//懒人图库
+];
