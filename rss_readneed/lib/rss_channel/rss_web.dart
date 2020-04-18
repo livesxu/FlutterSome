@@ -94,13 +94,13 @@ class _CommonWebViewState extends State<CommonWebView> {
 //            print('Page started loading: $url');
             _subject.add(url);
             widget.urlIn.add(url);
-            //todo 添加loading
+            LoadingCommon.show(context, true);
           },
           onPageFinished: (String url) {
 //            print('Page finished loading: $url');
             widget.currentLink = url;
             widget.urlIn.remove(url);
-            //todo 移除loading
+            LoadingCommon.dismiss();
           },
           gestureNavigationEnabled: true,
         );
@@ -122,11 +122,11 @@ class _CommonWebViewState extends State<CommonWebView> {
   void initState() {
     super.initState();
 
-    _subject.delay(Duration(seconds: 5)).listen((url){
+    _subject.delay(Duration(seconds: 2)).listen((url){
 
       if (widget.urlIn.contains(url)) {
 
-        //todo 移除loading
+        LoadingCommon.dismiss();
         print(url);
         judgeRssFeed(url);
       }

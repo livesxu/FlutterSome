@@ -124,11 +124,11 @@ void _sureAction(Action action, Context<rss_addState> ctx) async {
     Toast.show(ctx.context, '请输入需要跟踪的网站或者链接');
     return ;
   }
-
+  LoadingCommon.show(ctx.context, true);
   //1.获取内容
   http.Response response = await http.get(ctx.state.urlInputEditingController.text,
       headers: {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64)AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.163 Safari/535.1'});
-
+  LoadingCommon.dismiss();
   ErrorHandle.syncError((){
 
     ctx.state.htmlBody = utf8.decode(response.bodyBytes);

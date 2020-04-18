@@ -1,92 +1,115 @@
 import 'package:flutter/material.dart';
-// todo
-class Loading {
+import './consts.dart';
 
-  List<LoadingItem> items = [];
+//loading -
+import 'package:loading/loading.dart';
+import 'package:loading/indicator/ball_spin_fade_loader_indicator.dart';
 
+class LoadingCommon extends StatelessWidget {
 
+  static int _loadingCount = 0;
+  static OverlayEntry _overlayEntryCurrent;
 
-  static Loading _instance;
-  static Loading get instance {
+  static bool get loading {
 
+    bool temp =  _loadingCount > 0;
 
+    if (!temp) {
 
-    return _instance;
+      _loadingCount = 0;
+    }
+    return temp;
+  }
+  //todo 锁
+  //展示弹框
+  static void show(BuildContext context,bool mask){
+
+    OverlayState overlayState = Overlay.of(context);
+    if (loading) {
+      _loadingCount  += 1;
+
+    } else {
+      _loadingCount  += 1;
+
+      //延时0.3s执行,如果.3秒之内请求完成则不闪烁loading
+      Future.delayed(Duration(milliseconds: 300),(){
+
+        if (loading) {
+
+          _overlayEntryCurrent = OverlayEntry(
+              builder: (BuildContext context) => LoadingCommon(isMask: mask,)
+          );
+          overlayState.insert(_overlayEntryCurrent);
+        }
+      });
+    }
   }
 
-  static show (BuildContext ctx,) {
+  //弹框消失
+  static void dismiss() {
 
-    LoadingItem(timeout: 15,flag: '');
+    _loadingCount -= 1;
+    if (!loading && _overlayEntryCurrent != null) {
+      _overlayEntryCurrent.remove();
+      _overlayEntryCurrent = null;
+    }
   }
-}
 
-class LoadingItem {
+  static Widget forwardLoading(Widget showWidget) {
 
-  final int timeout;
-  final String flag;
+    return Stack(
+       children: <Widget>[
+         showWidget,
+         Center(child: commonItem(),)
+       ],
+    );
+  }
 
-  LoadingItem({
-    this.timeout = 15,
-    this.flag = '',
+  LoadingCommon({
+    this.isMask,
   });
 
-  OverlayEntry _overlayEntry;
-  bool _showing = false;
-  DateTime _startedTime;
+  final bool isMask;
 
-  void show (BuildContext ctx,Widget widget) async {
+  @override
+  Widget build(BuildContext context) {
 
-    _startedTime = DateTime.now();
+    double topFlag = 0;
+    double leftFlag = 0;
+    double widthFlag = Consts.screenWidth;
+    double heightFlag = Consts.screenHeight;
+    if (!isMask) {
 
-    //获取OverlayState
-    OverlayState overlayState = Overlay.of(ctx);
-    _showing = true;
-    if (_overlayEntry == null) {
-      _overlayEntry = OverlayEntry(
-          builder: (BuildContext context) =>
-              Positioned(
-//top值，可以改变这个值来改变toast在屏幕中的位置
-                top: MediaQuery
-                    .of(context)
-                    .size
-                    .height / 2 - 50.0,
-                child: Container(
-                    alignment: Alignment.center,
-                    width: MediaQuery
-                        .of(context)
-                        .size
-                        .width,
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 80.0),
-                      child: AnimatedOpacity(
-                        opacity: _showing ? 0.7 : 0.0, //目标透明度
-                        duration: _showing
-                            ? Duration(milliseconds: 100)
-                            : Duration(milliseconds: 400),
-                        child: widget,
-                      ),
-                    )),
-              ));
-      overlayState.insert(_overlayEntry);
-    } else {
-      //重新绘制UI，类似setState
-      _overlayEntry.markNeedsBuild();
+      topFlag = Consts.screenHeight/2 - 30;
+      leftFlag = Consts.screenWidth/2 - 30;
+      widthFlag = 60;
+      heightFlag = 60;
     }
 
-    await Future.delayed(Duration(milliseconds: 1000 * timeout));
-
-    if (DateTime.now().difference(_startedTime).inMilliseconds >= 1000 * timeout) {
-      _showing = false;
-      _overlayEntry.remove();
-      _overlayEntry = null;
-    }
-
+    return Positioned(
+      top: topFlag,left: leftFlag,width: widthFlag,height: heightFlag,
+        child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(isMask ? 0 : 5)),
+              color: Colors.black38,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  child: Column(
+                      children: [commonItem()]
+                  ),
+                ),
+              ],
+            )
+        )
+    );
   }
 
-  void hide () {
+  static Widget commonItem () {
 
-    _showing = false;
-    _overlayEntry.remove();
-    _overlayEntry = null;
+    return Loading(indicator: BallSpinFadeLoaderIndicator());
   }
 }
+

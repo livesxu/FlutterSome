@@ -17,6 +17,7 @@ Effect<infoState> buildEffect() {
 
 void _initState(Action action, Context<infoState> ctx) async {
 
+  LoadingCommon.show(ctx.context, true);
 //  1.本地链路/主正则 -
   if (ctx.state.infoModel.topExp != null && ctx.state.infoModel.topExp.length > 0) {
 
@@ -93,6 +94,8 @@ void _initState(Action action, Context<infoState> ctx) async {
 
     ctx.dispatch(infoActionCreator.fetchAction());
   }
+
+  LoadingCommon.dismiss();
 
 }
 

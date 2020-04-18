@@ -8,9 +8,9 @@ export './common/appbar_common.dart';
 export './common/appbar_gradient.dart';
 export './common/sliverAppbar_gradient.dart';
 
-export './common/LoadingSupport.dart';
 export './common/toast_common.dart';
 export './common/alert_common.dart';
+export './common/loading_common.dart';
 export './common/image_common.dart';
 export './common/keepalive.dart';
 
