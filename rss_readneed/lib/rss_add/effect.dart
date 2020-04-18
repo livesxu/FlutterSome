@@ -127,7 +127,7 @@ void _sureAction(Action action, Context<rss_addState> ctx) async {
   LoadingCommon.show(ctx.context, true);
   //1.获取内容
   http.Response response = await http.get(ctx.state.urlInputEditingController.text,
-      headers: {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64)AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.163 Safari/535.1'});
+      headers: {'User-Agent':RequestCommon.randomUserAgent()});
   LoadingCommon.dismiss();
   ErrorHandle.syncError((){
 

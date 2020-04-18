@@ -137,7 +137,7 @@ class _CommonWebViewState extends State<CommonWebView> {
 
     //1.获取内容
     http.Response response = await http.get(url,
-        headers: {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64)AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.163 Safari/535.1'});
+        headers: {'User-Agent':RequestCommon.randomUserAgent()});
 
     String body = utf8.decode(response.bodyBytes);
 

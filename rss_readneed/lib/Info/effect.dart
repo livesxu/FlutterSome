@@ -22,7 +22,7 @@ void _initState(Action action, Context<infoState> ctx) async {
   if (ctx.state.infoModel.topExp != null && ctx.state.infoModel.topExp.length > 0) {
 
     http.Response response = await http.get(ctx.state.infoModel.infoUrl,
-        headers: {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64)AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.163 Safari/535.1'});
+        headers: {'User-Agent':RequestCommon.randomUserAgent()});
 
     String responseString = utf8.decode(response.bodyBytes);
     if (!responseString.contains('<?xml') && !responseString.contains('<html')) {
