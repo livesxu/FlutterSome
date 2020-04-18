@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'package:http/http.dart' as http;
 import './consts.dart';
+import 'package:dio/dio.dart';
 
 import 'dart:math';
 
@@ -21,44 +21,42 @@ class RequestCommon {
 
   static Future<ResuestResult> Get(String url) async {
 
-    http.Response response = await http.get(Url_Host + url);
+    Response response = await Dio().get(Url_Host + url);
 
     if (response.statusCode == 200) {
 
-      return ResuestResult(success: true,msg: '',body: jsonDecode(response.body));
+      return ResuestResult(success: true,msg: '',body: response.data);
     } else {
 
-      return ResuestResult(success: false,msg: response.body.toString(),body: {});
+      return ResuestResult(success: false,msg: response.toString(),body: {});
     }
   }
 
   static Future<ResuestResult> Post(String url,dynamic body) async {
 
-    http.Response response = await http.post(Url_Host + url,
-                                            headers:{"content-type":"application/json"},
-                                            body:jsonEncode(body));
+    Response response = await Dio().post(Url_Host + url,data: body,
+                                            options: Options(contentType:"application/json"),);
 
     if (response.statusCode == 200) {
 
-      return ResuestResult(success: true,msg: '',body: jsonDecode(response.body));
+      return ResuestResult(success: true,msg: '',body: response.data);
     } else {
 
-      return ResuestResult(success: false,msg: response.body.toString(),body: {});
+      return ResuestResult(success: false,msg: response.toString(),body: {});
     }
   }
 
   static Future<ResuestResult> Put(String url,dynamic body) async {
 
-    http.Response response = await http.put(Url_Host + url,
-                                            headers:{"content-type":"application/json"},
-                                            body:jsonEncode(body));
+    Response response = await Dio().put(Url_Host + url,data: body,
+                                              options: Options(contentType:"application/json"),);
 
     if (response.statusCode == 200) {
 
-      return ResuestResult(success: true,msg: '',body: jsonDecode(response.body));
+      return ResuestResult(success: true,msg: '',body: response.data);
     } else {
 
-      return ResuestResult(success: false,msg: response.body.toString(),body: {});
+      return ResuestResult(success: false,msg: response.toString(),body: {});
     }
   }
 

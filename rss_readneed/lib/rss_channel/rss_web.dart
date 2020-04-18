@@ -7,7 +7,9 @@ import '../rss_add/page.dart';
 
 import 'dart:async';
 import 'dart:convert';
+import 'package:gbk2utf8/gbk2utf8.dart';
 import 'package:http/http.dart' as http;
+import 'package:dio/dio.dart';
 //https://pub.dev/packages/webview_flutter#-example-tab-
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -139,10 +141,25 @@ class _CommonWebViewState extends State<CommonWebView> {
     http.Response response = await http.get(url,
         headers: {'User-Agent':RequestCommon.randomUserAgent()});
 
-    String body = utf8.decode(response.bodyBytes);
+    //转码判断编码类型gbk or utf8
+    String body_judge = response.body;
+    RegExp exp_meta = RegExp('<meta(.*?)charset(.*?)>');
+    Iterable<Match> matches_meta = exp_meta.allMatches(body_judge);
+    RegExp exp_encoding = RegExp('encoding="(.*?)"');
+    Iterable<Match> matches_encoding = exp_encoding.allMatches(body_judge);
 
-    if (body.contains('<?xml') || body.contains('<html')) {
+    String body = '';
+    if ((matches_meta.length > 0 && matches_meta.first.group(0).toLowerCase().contains('gb')) ||
+        (matches_encoding.length > 0 && matches_encoding.first.group(0).toLowerCase().contains('gb'))) {
 
+      body = gbk.decode(response.bodyBytes);
+    } else {
+      body = utf8.decode(response.bodyBytes);
+    }
+
+    if (body.contains('<?xml') || body.contains('<html') || body.contains('<rss')) {
+
+      body = body.replaceAll("\r", "");//将enter符清除
       body = body.replaceAll("\n", "");//将换行符清除
       body = body.replaceAll(RegExp(r'>(\s*?)<'), '><');//将标签之间的空格清除
 

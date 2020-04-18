@@ -8,6 +8,7 @@ import 'package:http/http.dart' as http;
 import '../public.dart';
 import './expFine/page.dart';
 import 'dart:convert';
+import 'package:gbk2utf8/gbk2utf8.dart';
 
 import '../Home/model.dart';
 import '../Info/page.dart';
@@ -131,16 +132,31 @@ void _sureAction(Action action, Context<rss_addState> ctx) async {
   LoadingCommon.dismiss();
   ErrorHandle.syncError((){
 
-    ctx.state.htmlBody = utf8.decode(response.bodyBytes);
+    //转码判断编码类型gbk or utf8
+    String body_judge = response.body;
+    RegExp exp_meta = RegExp('<meta(.*?)charset(.*?)>');
+    Iterable<Match> matches_meta = exp_meta.allMatches(body_judge);
+    RegExp exp_encoding = RegExp('encoding="(.*?)"');
+    Iterable<Match> matches_encoding = exp_encoding.allMatches(body_judge);
+
+    if ((matches_meta.length > 0 && matches_meta.first.group(0).toLowerCase().contains('gb')) ||
+        (matches_encoding.length > 0 && matches_encoding.first.group(0).toLowerCase().contains('gb'))) {
+
+      ctx.state.htmlBody = gbk.decode(response.bodyBytes);
+    } else {
+      ctx.state.htmlBody = utf8.decode(response.bodyBytes);
+    }
+
   },(){
     Toast.show(ctx.context, '栏目内容转码错误');
     return;
   });
 
-  if (!ctx.state.htmlBody.contains('<?xml') && !ctx.state.htmlBody.contains('<html')) {
+  if (!ctx.state.htmlBody.contains('<?xml') && !ctx.state.htmlBody.contains('<html') && !ctx.state.htmlBody.contains('<rss')) {
     //兼容json数据解析
     ctx.state.htmlBody = jsonDecode(response.body).toString();
   } else {
+    ctx.state.htmlBody = ctx.state.htmlBody.replaceAll("\r", "");//将enter符清除
     ctx.state.htmlBody = ctx.state.htmlBody.replaceAll("\n", "");//将换行符清除
     ctx.state.htmlBody = ctx.state.htmlBody.replaceAll(RegExp(r'>(\s*?)<'), '><');//将标签之间的空格清除
 
@@ -202,7 +218,8 @@ class JudgeFeed {
   static void judgeRssFeed(String originalLink,String body,BuildContext ctx,String from) async {
 
     //顶部正则<item>(.*?)</item>检验
-    RegExp exp = RegExp('<item>(.*?)</item>');
+    String topExp = '<item>(.*?)</item>';
+    RegExp exp = RegExp(topExp);
     Iterable<Match> matches = exp.allMatches(body);
 
     //提取每一个item的字符串，即使仅匹配到正则结果也捞出来
@@ -215,8 +232,22 @@ class JudgeFeed {
 
     //如果数据小于等于1个那就算了
     if (items.length <= 1) {
+      //降配匹配到description
+      topExp = '<item>(.*?)</description>';
+      exp = RegExp(topExp);
+      matches = exp.allMatches(body);
 
-      return ;
+      //提取每一个item的字符串，即使仅匹配到正则结果也捞出来
+      items = [];
+      for (Match m in matches) {
+
+        String match = m.group(0);
+        items.add(match);
+      }
+      if (items.length <= 1) {
+
+        return ;
+      }
     }
 
     String feedInfo;
@@ -325,7 +356,7 @@ class JudgeFeed {
       infoModel.infoName = feedTitle.length == 0 ? infoModel.infoUrl : feedTitle;
       infoModel.infoImage = feedImg;//图片
       infoModel.infoIntroduce = feedDesc;//介绍
-      infoModel.topExp = '<item>(.*?)</item>';
+      infoModel.topExp = topExp;
 
       List<String> titleExps = itemTitleExp.split("(.*?)");
       infoModel.titleExpStart = titleExps.first;

@@ -6,6 +6,7 @@ import '../Home/model.dart';
 import '../public.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:gbk2utf8/gbk2utf8.dart';
 import 'package:flutter/material.dart' hide Action;
 
 Effect<infoState> buildEffect() {
@@ -24,13 +25,29 @@ void _initState(Action action, Context<infoState> ctx) async {
     http.Response response = await http.get(ctx.state.infoModel.infoUrl,
         headers: {'User-Agent':RequestCommon.randomUserAgent()});
 
-    String responseString = utf8.decode(response.bodyBytes);
-    if (!responseString.contains('<?xml') && !responseString.contains('<html')) {
+    //转码判断编码类型gbk or utf8
+    String body_judge = response.body;
+    RegExp exp_meta = RegExp('<meta(.*?)charset(.*?)>');
+    Iterable<Match> matches_meta = exp_meta.allMatches(body_judge);
+    RegExp exp_encoding = RegExp('encoding="(.*?)"');
+    Iterable<Match> matches_encoding = exp_encoding.allMatches(body_judge);
+
+    String responseString = '';
+    if ((matches_meta.length > 0 && matches_meta.first.group(0).toLowerCase().contains('gb')) ||
+        (matches_encoding.length > 0 && matches_encoding.first.group(0).toLowerCase().contains('gb'))) {
+
+      responseString = gbk.decode(response.bodyBytes);
+    } else {
+      responseString = utf8.decode(response.bodyBytes);
+    }
+
+    if (!responseString.contains('<?xml') && !responseString.contains('<html') && !responseString.contains('<rss')) {
 
       ctx.state.isJsonR = true;
       //兼容json数据解析
       responseString = jsonDecode(responseString).toString();
     } else {
+      responseString = responseString.replaceAll("\r", "");//将enter符清除
       responseString = responseString.replaceAll("\n", "");//将换行符清除
       responseString = responseString.replaceAll(RegExp(r'>(\s*?)<'), '><');//将标签之间的空格清除
     }
