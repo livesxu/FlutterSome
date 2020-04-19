@@ -75,6 +75,8 @@ class MyAppState extends State<MyApp> {
 
       await Account.readInfo(pref);
 
+      CollectCommon.readInfo(pref);//非必要性不需要等待，异步执行即可
+
       widget.isLaunchStoreInfoSyn = true;
 
       widget.store = Store<AppState>(appReducer,initialState: AppState(

@@ -17,6 +17,8 @@ export './common/keepalive.dart';
 export './common/app_navigator.dart';
 
 export './common/request_common.dart';
+export './Home/model.dart';
+export './common/collect_common.dart';
 
 export './Login/Account.dart';
 export './common/theme_manager.dart';

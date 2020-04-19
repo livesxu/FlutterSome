@@ -3,7 +3,7 @@ class InfoModel {
   InfoModel({this.infoId});
 
   int infoId;
-  String infoName;//名称
+  String infoName;//名称  ***infoName和infoUrl确定一个InfoModel***
   String infoUrl;//链接
   String abInfoUrl;//绝对栏目链接 - 相比infourl更加准确，因为rss或者json内容的infourl是无法链接正式网页的
   String infoImage;//图片

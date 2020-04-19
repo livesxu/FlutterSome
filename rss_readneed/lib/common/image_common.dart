@@ -15,7 +15,7 @@ class ImageCommon {
       child: CachedNetworkImage(
           fit: BoxFit.fill,
           imageUrl: url ?? "",
-          placeholder: (context, url) => Image.asset(placeholder,fit: BoxFit.fill,),
+          placeholder: (context, url) => (placeholder != null && placeholder.length > 0) ? Image.asset(placeholder,fit: BoxFit.fill,) : Container(),
           errorWidget: (context, url, error){
 
             if (url != null && url != '') {
@@ -23,7 +23,12 @@ class ImageCommon {
               ReportHandle.handle('url_image_error', 1, error.toString());
             }
 
-            return Image.asset(placeholder,fit: BoxFit.fill,);
+            if (placeholder != null && placeholder.length > 0) {
+
+              return Image.asset(placeholder,fit: BoxFit.fill,);
+            } else {
+              return Container();
+            }
           },
       ),
     );

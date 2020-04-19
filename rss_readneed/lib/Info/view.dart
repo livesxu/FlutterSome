@@ -41,7 +41,7 @@ Widget buildView(infoState state, Dispatch dispatch, ViewService viewService) {
 
           return ;
         }
-        AppNavigator.push(viewService.context, CommonWebView(urlString: model.articleUrl,urlTitle: model.articleTitle,));
+        AppNavigator.push(viewService.context, CommonWebView(urlString: model.articleUrl,urlTitle: model.articleTitle,articleModel:model,));
       },
     );
   }
@@ -67,11 +67,37 @@ Widget buildView(infoState state, Dispatch dispatch, ViewService viewService) {
     listActions.insert(0,
         IconButton(icon: Icon(Icons.check_box), onPressed: (){
 
+          CollectCommon.collectInfo(state.infoModel);//创建同时收藏
+
           dispatch(infoActionCreator.checkSureInfo());
+
         })
     );
 
     titleString = '验证通过点击右侧✅';
+  } else {
+    //非检查则添加收藏按钮
+    bool containInStore = CollectCommon.judgeInfoContain(state.infoModel) != -1;
+
+    listActions.insert(0,
+        IconButton(icon: Icon(containInStore ? Icons.star : Icons.star_border), onPressed: () async {
+
+          if (containInStore) {
+
+            bool result = await CollectCommon.removeCollectInfo(state.infoModel);
+
+            Toast.show(viewService.context, result ? '取消收藏成功':'取消收藏失败');
+
+          } else {
+
+            bool result = await CollectCommon.collectInfo(state.infoModel);
+
+            Toast.show(viewService.context, result ? '收藏成功':'收藏失败');
+          }
+          //刷新页面
+          dispatch(infoActionCreator.fetchAction());
+        })
+    );
   }
 
   return Scaffold(

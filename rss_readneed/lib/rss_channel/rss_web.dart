@@ -14,17 +14,20 @@ import 'package:dio/dio.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import '../rss_add/effect.dart';
+import '../Home/model.dart';
 
 class CommonWebView extends StatefulWidget {
 
   String urlString;
   String urlTitle;
   String currentLink;
+  ArticleModel articleModel;//从内容条目进入将带入条目model，用以收藏并取消右侧编辑按钮
 
   CommonWebView({
 
     this.urlString,
     this.urlTitle,
+    this.articleModel
   });
 
   List<String> urlIn = [];
@@ -40,8 +43,60 @@ class _CommonWebViewState extends State<CommonWebView> {
 
   final _subject = ReplaySubject();
 
+  //如果非内容条目进入则带入编辑按钮，可制作
+  List<Widget> rightActions() {
+
+    List<Widget> rightActions = [];
+    if (widget.articleModel == null) {
+
+      rightActions.add(
+          IconButton(icon: Icon(Icons.create), onPressed: (){
+            Navigator.of(context).push(MaterialPageRoute(builder: (_) => rss_addPage().buildPage({'url':widget.currentLink})))
+                .then((_){
+            });
+          })
+      );
+    }
+    return rightActions;
+  }
+
+  Widget floatBtn() {
+
+    if (widget.articleModel == null) {
+
+      return Container();
+    } else {
+
+      bool containInStore = CollectCommon.judgeArticleContain(widget.articleModel) != -1;
+
+      return Container(
+        width: 50,
+        height: 150,
+        child: IconButton(icon: Icon(containInStore ? Icons.star : Icons.star_border,size: 36,color: Theme.of(context).primaryColor,), onPressed: () async {
+
+          if (containInStore) {
+
+            bool result = await CollectCommon.removeCollectArticle(widget.articleModel);
+
+            Toast.show(context, result ? '取消收藏成功':'取消收藏失败');
+
+          } else {
+
+            bool result = await CollectCommon.collectArticle(widget.articleModel);
+
+            Toast.show(context, result ? '收藏成功':'收藏失败');
+          }
+          setState(() {
+
+          });
+        }),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: GradientAppBar(
         title:Text(widget.urlTitle,style: TextStyle(color: Colors.white,),),
@@ -60,20 +115,14 @@ class _CommonWebViewState extends State<CommonWebView> {
             });
           });
         },),
-        actions:<Widget>[
-          IconButton(icon: Icon(Icons.create), onPressed: (){
-
-            Navigator.of(context).push(MaterialPageRoute(builder: (_) => rss_addPage().buildPage({'url':widget.currentLink})))
-                .then((_){
-            });
-          })
-        ],
+        actions:rightActions(),
         shadowColor: Theme.of(context).primaryColor,
         gradient: RadialGradient(//更改为圆扩散
             colors: [Theme.of(context).primaryColorLight,Theme.of(context).primaryColorDark],
             center: Alignment.topLeft,
             radius: 4),
       ),
+      floatingActionButton: floatBtn(),
       body: Builder(builder: (BuildContext context) {
         return WebView(
           initialUrl: widget.urlString,
