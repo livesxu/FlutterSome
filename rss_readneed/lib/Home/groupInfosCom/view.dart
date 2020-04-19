@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import '../../rss_channel/rss_web.dart';
 import '../../public.dart';
 
-Widget buildView(String state, Dispatch dispatch, ViewService viewService) {
+Widget buildView(Map<String,String> state, Dispatch dispatch, ViewService viewService) {
 
-  return InkWell(
-    child: Container(height: 30,child: Text(state),),
-    onTap: ()=> AppNavigator.push(viewService.context, CommonWebView(urlString: state,urlTitle: state,)),
+  return ListTile(
+    title: Text(state['name'],style: TextStyle(color: Colors.black87),),
+    onTap: ()=> AppNavigator.push(viewService.context, CommonWebView(urlString: state['link'],urlTitle: state['name'],)),
   );
 }

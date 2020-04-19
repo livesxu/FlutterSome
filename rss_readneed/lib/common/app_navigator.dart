@@ -8,6 +8,7 @@ import 'package:rss_readneed/rss_add/page.dart' as rss_add;
 import '../Login/page.dart' as login;
 import '../Login/Register/page.dart' as register;
 import '../Home/page.dart' as home;
+import '../rss_collect/page.dart' as collect;
 
 
 /*跳转基础类/规划类*/
@@ -28,6 +29,7 @@ class AppNavigator {
   Map _configRoutes = {
 
     'home':home.homePage().buildPage({}),
+    'collect':collect.collectPage().buildPage({}),
     'rssRecommend':rss_recommend.Recommend(),
     "imageShow":image_show.some_image_showPage().buildPage({}),
     "rssAdd":rss_add.rss_addPage().buildPage({}),

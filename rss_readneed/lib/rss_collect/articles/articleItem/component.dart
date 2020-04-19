@@ -2,8 +2,10 @@ import 'package:fish_redux/fish_redux.dart';
 
 import 'view.dart';
 
-class groupInfosComponent extends Component<Map<String,String>> {
-  groupInfosComponent()
+import '../../../public.dart';
+
+class articleItemComponent extends Component<ArticleModel> {
+  articleItemComponent()
       : super(
             view: buildView,
             );

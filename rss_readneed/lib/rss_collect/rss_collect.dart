@@ -4,7 +4,7 @@ import '../public.dart';
 import '../rss_channel/rss_web.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import '../rss_add/page.dart';
-
+//使用fish_redux重写，见page
 class Collect extends StatefulWidget {
   @override
   CollectState createState() => new CollectState();

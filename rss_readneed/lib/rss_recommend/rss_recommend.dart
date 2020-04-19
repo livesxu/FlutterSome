@@ -64,9 +64,7 @@ class RecommendState extends State<Recommend> {
   void initState() {
     super.initState();
 
-    List datas = jsonDecode(someFeedInfo);
-
-    _datas = datas.map((obj) => InfoModel.fromJson(obj)).toList();
+    _datas = someFeedInfos.map((obj) => InfoModel.fromJson(obj)).toList();
   }
 
   @override

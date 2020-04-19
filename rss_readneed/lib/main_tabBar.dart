@@ -134,7 +134,8 @@ class MainTabBarState extends State<MainTabBar> {
     _pageView = PageView(
       children: <Widget>[
         AppNavigator.routePage('home'),
-        Collect(),
+//        Collect(),
+        AppNavigator.routePage('collect'),
         Person(),
       ],
       controller: pageController,

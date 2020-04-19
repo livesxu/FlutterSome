@@ -23,5 +23,7 @@ export './common/collect_common.dart';
 export './Login/Account.dart';
 export './common/theme_manager.dart';
 
+export './rss_channel/rss_web.dart';
+
 
 
