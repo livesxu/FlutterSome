@@ -47,6 +47,7 @@ class MyAppState extends State<MyApp> {
                   home:MainTabBar(),
 //      builder: FlutterBoost.init(),//FlutterBoost初始支持
                   navigatorObservers: [NaviManagerObserver()],
+                  builder: FlutterBoost.init(),
                 );
               }),
             );
@@ -97,7 +98,7 @@ class MyAppState extends State<MyApp> {
     ErrorHandle.systemError();
 
     //FlutterBoost routers 统一至router
-//    AppNavigator.flutterMixRouterConfig();
+    AppNavigator.flutterMixRouterConfig();
   }
 
   @override

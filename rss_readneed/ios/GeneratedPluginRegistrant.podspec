@@ -8,4 +8,7 @@ Pod::Spec.new do |s|
   s.platform         = :ios, "8.0"
   s.source_files     =  "Runner/GeneratedPluginRegistrant.h", "Runner/GeneratedPluginRegistrant.m"
   s.source           = { :path => 'xxx' }
+
+  s.dependency 'Flutter'
+
 end
