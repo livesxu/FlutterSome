@@ -23,7 +23,7 @@ public class FlutterPluginTestPlugin implements MethodCallHandler {
     if (call.method.equals("showMsg")) {
 
       String msg = (String) call.arguments;
-      result.success(msg +"ppppp");
+      result.success(msg +"ppAndroidpp");
     } else {
       result.notImplemented();
     }

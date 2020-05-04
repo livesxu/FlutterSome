@@ -14,7 +14,7 @@
       
       NSString *msg = call.arguments;
       
-      result([msg stringByAppendingString:@"ppppp"]);
+      result([msg stringByAppendingString:@"ppiOSpp"]);
       
   } else {
     result(FlutterMethodNotImplemented);
