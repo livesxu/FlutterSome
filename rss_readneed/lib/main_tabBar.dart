@@ -135,8 +135,10 @@ class MainTabBarState extends State<MainTabBar> {
       children: <Widget>[
         AppNavigator.routePage('home'),
 //        Collect(),
-        AppNavigator.routePage('collect'),
+//        AppNavigator.routePage('collect'),
         Person(),
+//        AppNavigator.routePage("canvas")
+        AppNavigator.routePage("weibo")
       ],
       controller: pageController,
       onPageChanged: selectedIndex,

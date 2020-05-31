@@ -8,7 +8,6 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import './mainAppFlutterRedux/state.dart';
 import './mainAppFlutterRedux/reducer.dart';
-import './mainAppFlutterRedux/action.dart';
 
 void main() => runApp(MyApp());
 

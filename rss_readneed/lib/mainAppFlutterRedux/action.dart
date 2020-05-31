@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
 import '../public.dart';
 
-class AppAction {
+class ThemeDataAction {
 
-  static ThemeData topicAction(MaterialColor color){
+  MaterialColor color;
 
-    ThemeManager.analysisInfo(color);
+  ThemeDataAction({this.color});
+}
 
-    ThemeManager.themeData = ThemeManager.themeFrom(color);
+class AccountAction {
 
-    return ThemeManager.themeData;
-  }
+  Account account;
 
-  static AccountModel accountAction() {
-
-    return Account.share;
-  }
+  AccountAction({this.account});
 }
 

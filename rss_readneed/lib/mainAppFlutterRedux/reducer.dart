@@ -4,25 +4,23 @@ import 'state.dart';
 import 'action.dart';
 import '../public.dart';
 
-AppState appReducer (AppState state, action) {
-
-  return AppState(
-    account: accountReducer(state.account,action),
-    themeData: themeReducer(state.themeData,action),
-  );
-}
-
-final accountReducer = combineReducers<AccountModel>([
-  TypedReducer<AccountModel,AccountModel>((oldAccount,newAccount){
-    oldAccount = newAccount;
-    return oldAccount;
-  }),
+final Reducer<AppState> appReducer = combineReducers([
+  new TypedReducer<AppState, ThemeDataAction>(themeReducer),
+  new TypedReducer<AppState, AccountAction>(accountReducer),
 ]);
 
-final themeReducer = combineReducers<ThemeData>([
-  TypedReducer<ThemeData,ThemeData>((oldThemeData,newThemeData){
-    oldThemeData = newThemeData;
-    return oldThemeData;
-  }),
-]);
+final themeReducer = (AppState state, ThemeDataAction data) {
 
+  ThemeManager.analysisInfo(data.color);
+
+  ThemeManager.themeData = ThemeManager.themeFrom(data.color);
+
+  return state
+            ..themeData = ThemeManager.themeData;
+};
+
+final accountReducer = (AppState state, AccountAction data) {
+
+  return state
+    ..account = Account.share;
+};

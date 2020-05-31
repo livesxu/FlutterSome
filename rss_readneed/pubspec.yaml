@@ -56,7 +56,14 @@ dependencies:
 #  序列化 指令(flutter packages pub run build_runner watch) https://github.com/dart-lang/json_serializable
 #  https://flutterchina.club/json/#在项目中设置json_serializable
   json_annotation: ^3.0.0
+#  json转dart 配合 json_annotation https://blog.csdn.net/laxian2009/article/details/83594253
+  json2entity:
+#  利用注解实现的路由 https://github.com/alibaba-flutter/annotation_route
+  annotation_route:
+  source_gen:
 
+#  也是路由的一种配置，有空看看 todo:
+#  fluro:
 
 dev_dependencies:
   flutter_test:

@@ -10,6 +10,8 @@ import '../Login/Register/page.dart' as register;
 import '../Home/page.dart' as home;
 import '../rss_collect/page.dart' as collect;
 
+import 'canvas_image.dart';
+import 'package:rss_readneed/Weibo/weibo_home.dart';
 
 /*跳转基础类/规划类*/
 class AppNavigator {
@@ -35,6 +37,8 @@ class AppNavigator {
     "rssAdd":rss_add.rss_addPage().buildPage({}),
     "login":login.LoginPage().buildPage({}),
     "register":register.registerPage().buildPage({}),
+    "canvas":Signature(),
+    "weibo":WeiboHome()
   };
 
 

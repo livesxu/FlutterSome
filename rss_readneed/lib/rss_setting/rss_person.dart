@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:redux/redux.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:rss_readneed/mainAppFlutterRedux/state.dart';
 import '../public.dart';
 import 'dart:io';
 
@@ -69,15 +72,17 @@ class PersonState extends State<Person> with AutomaticKeepAliveClientMixin,Login
         ],
       ),
       titlePadding: EdgeInsets.only(left: 100,bottom: 10),
-      title:Container(
-        child: Row(
-          children: <Widget>[
-            _headerImg(Account.share.headImg),
-            SizedBox(width: 10,),
-            Text(Account.share.nick??"昵称",style: TextStyle(fontSize: 16),),
-          ],
-        ),
-      ),
+      title:StoreBuilder<AppState>(builder: (BuildContext context,Store store){
+        return Container(
+          child: Row(
+            children: <Widget>[
+              _headerImg(store.state.account.headImg),
+              SizedBox(width: 10,),
+              Text(store.state.account.nick ?? "昵称",style: TextStyle(fontSize: 16),),
+            ],
+          ),
+        );
+      }),
     );
   }
 
@@ -101,13 +106,13 @@ class PersonState extends State<Person> with AutomaticKeepAliveClientMixin,Login
             IconButton(icon: Icon(Icons.settings,color: Colors.white,), onPressed: () {
               //必要时刷新页面
                Navigator.push(context, MaterialPageRoute(builder: (_)=>Setting())).then((needRefresh){
-
-                 if (needRefresh != null && needRefresh == true) {
-
-                   setState(() {
-
-                   });
-                 }
+                    //不再使用返回刷新方式，使用fish_redux代替
+//                 if (needRefresh != null && needRefresh == true) {
+//
+//                   setState(() {
+//
+//                   });
+//                 }
                });
             })
           ],

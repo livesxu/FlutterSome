@@ -99,7 +99,7 @@ class _SettingState extends State<Setting> with Login {
     List<Widget> themeWidgets = themeColors.map((MaterialColor color){
       return FlatButton(onPressed: (){
         Store<AppState> state = StoreProvider.of(context);
-        state.dispatch(AppAction.topicAction(color));
+        state.dispatch(ThemeDataAction(color: color));
         Alert.dismiss();
       }, child: Container(padding: EdgeInsets.all(20),decoration: BoxDecoration(borderRadius: BorderRadius.circular(2),color:color)));
     }).toList();
@@ -116,55 +116,60 @@ class _SettingState extends State<Setting> with Login {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppbarCommon(ctx: context,titleString: '设置',),
-      body: ListView(
-        children: <Widget>[
-          ListTile(
-            leading: _headerImg(Account.share.headImg),
-            trailing: Icon(Icons.navigate_next),
-            onTap: ()=> this.judgeLogin(context, ()=> _headerTouchAction()),
-          ),
-          ListTile(
-            leading: Text(Account.share.nick??"昵称",style: TextStyle(fontSize: 16),),
-            trailing: Icon(Icons.navigate_next),
-            onTap: ()=> this.judgeLogin(context, ()=> _changeNickName()),
-          ),
-          ListTile(
-            leading: Text("主题",style: TextStyle(fontSize: 16),),
-            trailing: Icon(Icons.navigate_next),
-            onTap: ()=> _chooseTopic(),
-          ),
-          ListTile(
-            leading: Text("清理缓存",style: TextStyle(fontSize: 16),),
-            trailing: Icon(Icons.navigate_next),
-            onTap: ()=> DefaultCacheManager().emptyCache(),
-          ),
-          ListTile(
-            leading: Text("分享",style: TextStyle(fontSize: 16),),
-            trailing: Icon(Icons.navigate_next),
+      body: StoreConnector<AppState,Store>(builder: (_,Store store) {
+        return ListView(
+          children: <Widget>[
+            ListTile(
+              leading: _headerImg(store.state.account.headImg),
+              trailing: Icon(Icons.navigate_next),
+              onTap: ()=> this.judgeLogin(context, ()=> _headerTouchAction()),
+            ),
+            ListTile(
+              leading: Text(store.state.account.nick??"昵称",style: TextStyle(fontSize: 16),),
+              trailing: Icon(Icons.navigate_next),
+              onTap: ()=> this.judgeLogin(context, ()=> _changeNickName()),
+            ),
+            ListTile(
+              leading: Text("主题",style: TextStyle(fontSize: 16),),
+              trailing: Icon(Icons.navigate_next),
+              onTap: ()=> _chooseTopic(),
+            ),
+            ListTile(
+              leading: Text("清理缓存",style: TextStyle(fontSize: 16),),
+              trailing: Icon(Icons.navigate_next),
+              onTap: ()=> DefaultCacheManager().emptyCache(),
+            ),
+            ListTile(
+              leading: Text("分享",style: TextStyle(fontSize: 16),),
+              trailing: Icon(Icons.navigate_next),
 //            onTap: ()=> , todo
-          ),
-          ListTile(
-            leading: Text('关于我们',style: TextStyle(fontSize: 16),),
-            trailing: Icon(Icons.navigate_next),
+            ),
+            ListTile(
+              leading: Text('关于我们',style: TextStyle(fontSize: 16),),
+              trailing: Icon(Icons.navigate_next),
 //            onTap: ()=> , todo
-          ),
-          SizedBox(height: 50,),
-          Container(
-            margin: EdgeInsets.only(left: 50,right: 50),
-            height: 50,
-            child: Account.isLogin ? RaisedButton(
-                color: Theme.of(context).primaryColor,
-                child: Text('退出登录',style: TextStyle(color: Colors.white,fontSize: 20),),
-                shape: RoundedRectangleBorder(borderRadius:BorderRadius.all(Radius.circular(25))),
-                onPressed: (){
-                  Account.clearInfo();
-                  Navigator.pop(context,true);//退出并更新数据
-                }
-            ) : Container(),
-          ),
+            ),
+            SizedBox(height: 50,),
+            Container(
+              margin: EdgeInsets.only(left: 50,right: 50),
+              height: 50,
+              child: Account.isLogin ? RaisedButton(
+                  color: Theme.of(context).primaryColor,
+                  child: Text('退出登录',style: TextStyle(color: Colors.white,fontSize: 20),),
+                  shape: RoundedRectangleBorder(borderRadius:BorderRadius.all(Radius.circular(25))),
+                  onPressed: (){
+                    Account.clearInfo();
+                    store.dispatch(AccountAction());
+                    Navigator.pop(context,true);//退出并更新数据,更新数据逻辑已由flutter_redux代替
+                  }
+              ) : Container(),
+            ),
 
-        ],
-      ),
+          ],
+        );
+      }, converter: (Store store){
+        return store;
+      })
     );
   }
 }
