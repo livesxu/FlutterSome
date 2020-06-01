@@ -55,12 +55,13 @@ dependencies:
   flutter_swiper: ^1.1.6
 #  序列化 指令(flutter packages pub run build_runner watch) https://github.com/dart-lang/json_serializable
 #  https://flutterchina.club/json/#在项目中设置json_serializable
-  json_annotation: ^3.0.0
+  json_annotation:
 #  json转dart 配合 json_annotation https://blog.csdn.net/laxian2009/article/details/83594253
+#  j2e -j 'json' -o lib/Weibo -s
   json2entity:
-#  利用注解实现的路由 https://github.com/alibaba-flutter/annotation_route
-  annotation_route:
-  source_gen:
+#  利用注解实现的路由 https://github.com/alibaba-flutter/annotation_route  与 json_annotation 一起使用时报错？todo:
+#  annotation_route:
+#  source_gen:
 
 #  也是路由的一种配置，有空看看 todo:
 #  fluro:
@@ -69,8 +70,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 #  序列化
-  build_runner: ^1.0.0
-  json_serializable: ^3.2.0
+  build_runner:
+  json_serializable:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec

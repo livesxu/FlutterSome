@@ -93,16 +93,18 @@ class WeiboAccountModel {
 
   String access_token;
   int expires_in;//access_token的生命周期，单位是秒数。
+  String uid;//授权用户的UID
 
   WeiboAccountModel.fromJson(Map json)
       : access_token = json['access_token'],
-        expires_in = json['expires_in']
+        expires_in = json['expires_in'],
+        uid = json['uid']
         ;
 
   Map toJson() =>
       {
         'access_token':access_token,
         'expires_in':expires_in,
-
+        'uid':uid,
       };
 }
