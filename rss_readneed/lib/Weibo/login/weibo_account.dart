@@ -1,3 +1,4 @@
+import 'package:rss_readneed/Weibo/home/contentCom/model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
@@ -34,13 +35,17 @@ class WeiboAccount {
     if (_share == null)  {
 
       _share = WeiboAccountModel();
-      readInfo(null);
     }
     return _share;
   }
 
   //读取数据
   static readInfo (SharedPreferences prefs) async {
+
+    if (_share != null && _share.access_token != null) {
+
+      return ;
+    }
 
     if (prefs == null) {
 
@@ -95,10 +100,16 @@ class WeiboAccountModel {
   int expires_in;//access_token的生命周期，单位是秒数。
   String uid;//授权用户的UID
 
+  //获取到的用户信息 - 暂不存储
+  UserEntity userInfo;
+
   WeiboAccountModel.fromJson(Map json)
       : access_token = json['access_token'],
         expires_in = json['expires_in'],
-        uid = json['uid']
+        uid = json['uid'],
+        userInfo = json['userInfo'] == null
+            ? null
+            : UserEntity.fromJson(json['userInfo'])
         ;
 
   Map toJson() =>
@@ -106,5 +117,6 @@ class WeiboAccountModel {
         'access_token':access_token,
         'expires_in':expires_in,
         'uid':uid,
+        'userInfo':userInfo
       };
 }

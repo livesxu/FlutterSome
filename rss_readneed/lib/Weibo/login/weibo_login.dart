@@ -66,9 +66,11 @@ class _WeiboLoginState extends State<WeiboLogin> {
     Response response = await Dio().post("https://open.weibo.cn/oauth2/access_token?client_id=1791529406&client_secret=bf245e3d4421d001e1ade25e60aba27f&grant_type=authorization_code&redirect_uri=https://api.weibo.com/oauth2/default.html&code=" + code);
 
     print(response.data);
+    if (response.statusCode == 200) {
 
-    WeiboAccount.analysisInfo(response.data);
+      WeiboAccount.analysisInfo(response.data);
 
-    Navigator.of(context).pop({"success":true});
+      Navigator.of(context).pop({"success":true});
+    }
   }
 }

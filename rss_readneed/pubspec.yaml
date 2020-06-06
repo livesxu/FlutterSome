@@ -57,7 +57,7 @@ dependencies:
 #  https://flutterchina.club/json/#在项目中设置json_serializable
   json_annotation:
 #  json转dart 配合 json_annotation https://blog.csdn.net/laxian2009/article/details/83594253
-#  j2e -j 'json' -o lib/Weibo -s
+#  j2e -j 'json' -o lib/Weibo -s  =>  flutter packages pub run build_runner build --delete-conflicting-outputs
   json2entity:
 #  利用注解实现的路由 https://github.com/alibaba-flutter/annotation_route  与 json_annotation 一起使用时报错？todo:
 #  annotation_route:
