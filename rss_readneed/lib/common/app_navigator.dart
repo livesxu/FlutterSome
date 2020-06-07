@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_boost/flutter_boost.dart';
+import 'package:rss_readneed/GitHub/github.dart';
 
 import '../rss_recommend/rss_recommend.dart' as rss_recommend;
 import 'package:rss_readneed/some_image_show/page.dart' as image_show;
@@ -40,7 +41,8 @@ class AppNavigator {
     "login":login.LoginPage().buildPage({}),
     "register":register.registerPage().buildPage({}),
     "canvas":Signature(),
-    "weibo":weibo_home.weibo_homePage().buildPage({})
+    "weibo":weibo_home.weibo_homePage().buildPage({}),
+    "github":GitHubLogin(),
   };
 
 
