@@ -24,7 +24,7 @@ class _weibo_homeConnector extends ConnOp<weibo_homeState, List<ItemBean>> {
 
     List<ItemBean> list = <ItemBean>[];
 
-    list.add(ItemBean("user",userComState(accountModel: WeiboAccount.share.userInfo)));
+    list.add(ItemBean("user",userComState(accountModel: WeiboAccount.share.userInfo,isPageHeader: true)));
 
     if(state.contents != null) {
 

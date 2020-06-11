@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:fish_redux/fish_redux.dart';
 import 'package:rss_readneed/Weibo/home/contentCom/model.dart';
@@ -25,18 +27,20 @@ void _initState(Action action, Context<weibo_homeState> ctx) async {
 
   if(WeiboAccount.isLogin) {
 
-    //获取当前登录用户的信息基础信息
-    Dio().get("https://api.weibo.com/2/users/show.json?access_token=" + WeiboAccount.share.access_token + "&uid=" + WeiboAccount.share.uid)
-        .then(
-            (Response response){
+    ctx.dispatch(weibo_homeActionCreator.onAction());
 
-          if(response.statusCode == 200) {
-            UserEntity userInfo = UserEntity.fromJson(response.data);
-            WeiboAccount.share.userInfo = userInfo;
-            WeiboAccount.writeInfo();
-          }
-        }
-    );
+//    //获取当前登录用户的信息基础信息
+//    Dio().get("https://api.weibo.com/2/users/show.json?access_token=" + WeiboAccount.share.access_token + "&uid=" + WeiboAccount.share.uid)
+//        .then(
+//            (Response response){
+//
+//          if(response.statusCode == 200) {
+//            UserEntity userInfo = UserEntity.fromJson(response.data);
+//            WeiboAccount.share.userInfo = userInfo;
+//            WeiboAccount.writeInfo();
+//          }
+//        }
+//    );
 
     //已登录，获取当前登录用户及其所关注（授权）用户的最新微博
     //https://open.weibo.com/wiki/2/statuses/home_timeline
@@ -54,6 +58,7 @@ void _initState(Action action, Context<weibo_homeState> ctx) async {
           }
         }
     );
+
   } else {
 
   }

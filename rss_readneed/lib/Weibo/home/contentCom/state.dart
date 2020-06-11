@@ -5,7 +5,7 @@ class contentComState implements Cloneable<contentComState> {
 
   StatusesEntity contentModel;
 
-  contentComState({StatusesEntity model, contentModel}) {
+  contentComState({StatusesEntity contentModel}) {
 
     this.contentModel = contentModel;
   }
