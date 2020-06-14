@@ -1,7 +1,1222 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d31217c9-e40f-4c4c-b7d5-185f18a55aa4" name="Default Changelist" comment="" />
+    <list default="true" id="d31217c9-e40f-4c4c-b7d5-185f18a55aa4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../star_product/Podfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Podfile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/AFNetworking/AFCompatibilityMacros.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/AFNetworking/AFHTTPSessionManager.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/AFNetworking/AFHTTPSessionManager.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/AFNetworking/AFNetworking.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/AFNetworking/AFSecurityPolicy.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/AFNetworking/AFSecurityPolicy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/AFNetworking/AFURLSessionManager.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/AFNetworking/AFURLSessionManager.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/UIKit+AFNetworking/AFAutoPurgingImageCache.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/UIKit+AFNetworking/AFAutoPurgingImageCache.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/UIKit+AFNetworking/AFImageDownloader.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/UIKit+AFNetworking/AFImageDownloader.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/UIKit+AFNetworking/UIImage+AFNetworking.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/UIKit+AFNetworking/UIKit+AFNetworking.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/UIKit+AFNetworking/UIRefreshControl+AFNetworking.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/UIKit+AFNetworking/UIRefreshControl+AFNetworking.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Aspects/Aspects.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Aspects/Aspects.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Aspects/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Aspects/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/CustomPickView/CustomPickView/PickViewCustom.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/CustomPickView/CustomPickView/PickViewCustom.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/CustomPickView/CustomPickView/PickerCustomModel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/CustomPickView/CustomPickView/PickerCustomModel.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/CustomPickView/CustomPickView/UIView+Picker.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/CustomPickView/CustomPickView/UIView+Picker.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/CustomPickView/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/CustomPickView/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/FDFullscreenPopGesture/FDFullscreenPopGesture/UINavigationController+FDFullscreenPopGesture.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/FDFullscreenPopGesture/FDFullscreenPopGesture/UINavigationController+FDFullscreenPopGesture.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/FDFullscreenPopGesture/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/FDFullscreenPopGesture/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Categories/IQNSArray+Sort.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Categories/IQNSArray+Sort.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Categories/IQUIScrollView+Additions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Categories/IQUIScrollView+Additions.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Categories/IQUITextFieldView+Additions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Categories/IQUITextFieldView+Additions.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Categories/IQUIView+Hierarchy.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Categories/IQUIView+Hierarchy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Categories/IQUIViewController+Additions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Categories/IQUIViewController+Additions.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Categories/IQUIWindow+Hierarchy.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Categories/IQUIWindow+Hierarchy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Constants/IQKeyboardManagerConstants.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Constants/IQKeyboardManagerConstantsInternal.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/IQKeyboardManager.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/IQKeyboardManager.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/IQKeyboardReturnKeyHandler.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/IQKeyboardReturnKeyHandler.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/IQTextView/IQTextView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/IQTextView/IQTextView.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQBarButtonItem.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQBarButtonItem.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQPreviousNextView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQPreviousNextView.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQTitleBarButtonItem.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQTitleBarButtonItem.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQToolbar.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQToolbar.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQUIView+IQKeyboardToolbar.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQUIView+IQKeyboardToolbar.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle/IQButtonBarArrowDown@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle/IQButtonBarArrowDown@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle/IQButtonBarArrowLeft@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle/IQButtonBarArrowLeft@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle/IQButtonBarArrowRight@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle/IQButtonBarArrowRight@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle/IQButtonBarArrowUp@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle/IQButtonBarArrowUp@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle/de.lproj/IQKeyboardManager.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle/en.lproj/IQKeyboardManager.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle/es.lproj/IQKeyboardManager.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle/fr.lproj/IQKeyboardManager.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle/zh-Hans/IQKeyboardManager.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle/zh-Hant/IQKeyboardManager.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/IQKeyboardManager/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXAOPTask/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXAOPTask/LXAOPTask/LXAOPTask.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXAOPTask/LXAOPTask/LXAOPTask.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXAOPTask/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXAlertBlock/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXAlertBlock/LXAlertBlock/LXAlertBlockTips.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXAlertBlock/LXAlertBlock/LXAlertBlockTips.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXAlertBlock/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/FCXSafeCollection.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/FCXSafeCollection.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/LXCategorys.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/NSNumber+LXSafeCategory.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/NSNumber+LXSafeCategory.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/NSObject+Chain_lx.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/NSObject+Chain_lx.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/NSObject+Description.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/NSObject+Description.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/NSObject+LXObserver.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/NSObject+LXObserver.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/NSString+Deal.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/NSString+Deal.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/NSString+LXSafeCategory.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/NSString+LXSafeCategory.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/NSString+PreciseDecimalCalculate.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/NSString+PreciseDecimalCalculate.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UIButton+Custom.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UIButton+Custom.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UIColor+Turn.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UIColor+Turn.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UIControl+TouchControl.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UIControl+TouchControl.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UIDevice+CurrentDevice.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UIDevice+CurrentDevice.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UIImage+Deal.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UIImage+Deal.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UIImage+LXTint.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UIImage+LXTint.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UIImage+MissPrompt.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UIImage+MissPrompt.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UIImageView+CornerRadius.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UIImageView+CornerRadius.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UILabel+Custom.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UILabel+Custom.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UIScrollView+EmptyDataSet.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UIScrollView+EmptyDataSet.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UITableView+LXiOS11Support.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UITableView+LXiOS11Support.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UITextField+Custom.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UITextField+Custom.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UITextView+PlaceHolder.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UITextView+PlaceHolder.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UIView+HitTest.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UIView+HitTest.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UIView+LXTouch.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UIView+LXTouch.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UIView+LayerAction.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXCategory/LXCategory/UIView+LayerAction.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXPageViewController/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXPageViewController/LXPageViewController/LXPageViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXPageViewController/LXPageViewController/LXPageViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXRouter/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXRouter/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXRouter/Router/LXRouter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXRouter/Router/LXRouter.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXScrollLoopViewController/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXScrollLoopViewController/LXScrollLoopViewController/LXScrollLoopViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXScrollLoopViewController/LXScrollLoopViewController/LXScrollLoopViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXScrollLoopViewController/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXShowLoading/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXShowLoading/LXShowLoading/UIView+ShowExtension.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXShowLoading/LXShowLoading/UIView+ShowExtension.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/LXShowLoading/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Local Podspecs/CustomPickView.podspec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Local Podspecs/LXAOPTask.podspec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Local Podspecs/LXAlertBlock.podspec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Local Podspecs/LXCategory.podspec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Local Podspecs/LXPageViewController.podspec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Local Podspecs/LXRouter.podspec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Local Podspecs/LXScrollLoopViewController.podspec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Local Podspecs/LXShowLoading.podspec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MBProgressHUD/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MBProgressHUD/MBProgressHUD.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MBProgressHUD/MBProgressHUD.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MBProgressHUD/README.mdown" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Base/MJRefreshAutoFooter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Base/MJRefreshAutoFooter.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Base/MJRefreshBackFooter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Base/MJRefreshBackFooter.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Base/MJRefreshComponent.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Base/MJRefreshComponent.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Base/MJRefreshFooter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Base/MJRefreshFooter.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Base/MJRefreshHeader.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Base/MJRefreshHeader.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Custom/Header/MJRefreshGifHeader.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Custom/Header/MJRefreshGifHeader.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Custom/Header/MJRefreshNormalHeader.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Custom/Header/MJRefreshNormalHeader.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Custom/Header/MJRefreshStateHeader.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/Custom/Header/MJRefreshStateHeader.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/MJRefresh.bundle/arrow@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/MJRefresh.bundle/en.lproj/Localizable.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/MJRefresh.bundle/zh-Hans.lproj/Localizable.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/MJRefresh.bundle/zh-Hant.lproj/Localizable.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/MJRefresh.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/MJRefreshConst.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/MJRefreshConst.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/NSBundle+MJRefresh.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/NSBundle+MJRefresh.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/UIScrollView+MJExtension.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/UIScrollView+MJExtension.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/UIScrollView+MJRefresh.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/UIScrollView+MJRefresh.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/UIView+MJExtension.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/MJRefresh/UIView+MJExtension.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/MJRefresh/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Manifest.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/Masonry/MASCompositeConstraint.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/Masonry/MASCompositeConstraint.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/Masonry/MASConstraint+Private.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/Masonry/MASConstraint.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/Masonry/MASConstraint.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/Masonry/MASConstraintMaker.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/Masonry/MASConstraintMaker.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/Masonry/MASLayoutConstraint.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/Masonry/MASLayoutConstraint.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/Masonry/MASUtilities.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/Masonry/MASViewAttribute.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/Masonry/MASViewAttribute.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/Masonry/MASViewConstraint.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/Masonry/MASViewConstraint.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/Masonry/Masonry.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/Masonry/NSArray+MASAdditions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/Masonry/NSArray+MASAdditions.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/Masonry/NSArray+MASShorthandAdditions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/Masonry/NSLayoutConstraint+MASDebugAdditions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/Masonry/NSLayoutConstraint+MASDebugAdditions.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/Masonry/View+MASAdditions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/Masonry/View+MASAdditions.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/Masonry/View+MASShorthandAdditions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/Masonry/ViewController+MASAdditions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/Masonry/ViewController+MASAdditions.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Masonry/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/project.pbxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/AFNetworking.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/Aspects.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/CustomPickView.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/FDFullscreenPopGesture.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/IQKeyboardManager.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/LXAOPTask.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/LXAlertBlock.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/LXCategory.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/LXPageViewController.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/LXRouter.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/LXScrollLoopViewController.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/LXShowLoading.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/MBProgressHUD.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/MJRefresh.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/Masonry.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/Pods-Stars.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/ReactiveObjC.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/YTKNetwork.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/YYCache.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/YYImage.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/YYModel.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/YYWebImage.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/AFNetworking.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/Aspects.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/CustomPickView.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/FDFullscreenPopGesture.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/IQKeyboardManager.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/LXAOPTask.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/LXAlertBlock.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/LXCategory.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/LXPageViewController.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/LXRouter.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/LXScrollLoopViewController.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/LXShowLoading.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/MBProgressHUD.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/MJRefresh.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/Masonry.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/Pods-Stars.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/ReactiveObjC.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/TableViewSimple.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/YTKNetwork.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/YYCache.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/YYImage.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/YYModel.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/YYWebImage.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Pods.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/MKAnnotationView+RACSignalSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/MKAnnotationView+RACSignalSupport.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSArray+RACSequenceAdditions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSArray+RACSequenceAdditions.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSData+RACSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSData+RACSupport.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSDictionary+RACSequenceAdditions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSDictionary+RACSequenceAdditions.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSEnumerator+RACSequenceAdditions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSEnumerator+RACSequenceAdditions.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSFileHandle+RACSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSFileHandle+RACSupport.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSIndexSet+RACSequenceAdditions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSIndexSet+RACSequenceAdditions.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSInvocation+RACTypeParsing.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSInvocation+RACTypeParsing.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSNotificationCenter+RACSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSNotificationCenter+RACSupport.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSObject+RACDeallocating.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSObject+RACDeallocating.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSObject+RACDescription.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSObject+RACDescription.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSObject+RACKVOWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSObject+RACKVOWrapper.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSObject+RACLifting.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSObject+RACLifting.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSObject+RACPropertySubscribing.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSObject+RACPropertySubscribing.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSObject+RACSelectorSignal.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSObject+RACSelectorSignal.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSOrderedSet+RACSequenceAdditions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSOrderedSet+RACSequenceAdditions.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSSet+RACSequenceAdditions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSSet+RACSequenceAdditions.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSString+RACKeyPathUtilities.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSString+RACKeyPathUtilities.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSString+RACSequenceAdditions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSString+RACSequenceAdditions.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSString+RACSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSString+RACSupport.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSURLConnection+RACSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSURLConnection+RACSupport.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSUserDefaults+RACSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/NSUserDefaults+RACSupport.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACAnnotations.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACArraySequence.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACArraySequence.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACBehaviorSubject.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACBehaviorSubject.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACBlockTrampoline.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACBlockTrampoline.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACChannel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACChannel.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACCommand.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACCommand.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACCompoundDisposable.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACCompoundDisposable.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACCompoundDisposableProvider.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACDelegateProxy.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACDelegateProxy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACDisposable.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACDisposable.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACDynamicSequence.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACDynamicSequence.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACDynamicSignal.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACDynamicSignal.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACEagerSequence.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACEagerSequence.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACEmptySequence.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACEmptySequence.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACEmptySignal.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACEmptySignal.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACErrorSignal.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACErrorSignal.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACEvent.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACEvent.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACGroupedSignal.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACGroupedSignal.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACImmediateScheduler.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACImmediateScheduler.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACIndexSetSequence.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACIndexSetSequence.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACKVOChannel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACKVOChannel.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACKVOProxy.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACKVOProxy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACKVOTrampoline.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACKVOTrampoline.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACMulticastConnection+Private.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACMulticastConnection.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACMulticastConnection.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACPassthroughSubscriber.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACPassthroughSubscriber.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACQueueScheduler+Subclass.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACQueueScheduler.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACQueueScheduler.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACReplaySubject.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACReplaySubject.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACReturnSignal.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACReturnSignal.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACScheduler+Private.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACScheduler+Subclass.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACScheduler.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACScheduler.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACScopedDisposable.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACScopedDisposable.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACSequence.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACSequence.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACSerialDisposable.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACSerialDisposable.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACSignal+Operations.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACSignal+Operations.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACSignal.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACSignal.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACSignalProvider.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACSignalSequence.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACSignalSequence.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACStream+Private.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACStream.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACStream.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACStringSequence.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACStringSequence.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACSubject.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACSubject.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACSubscriber+Private.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACSubscriber.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACSubscriber.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACSubscriptingAssignmentTrampoline.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACSubscriptingAssignmentTrampoline.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACSubscriptionScheduler.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACSubscriptionScheduler.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACTargetQueueScheduler.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACTargetQueueScheduler.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACTestScheduler.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACTestScheduler.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACTuple.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACTuple.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACTupleSequence.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACTupleSequence.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACUnarySequence.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACUnarySequence.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACUnit.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACUnit.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACValueTransformer.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/RACValueTransformer.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/ReactiveObjC.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UIActionSheet+RACSignalSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UIActionSheet+RACSignalSupport.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UIAlertView+RACSignalSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UIAlertView+RACSignalSupport.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UIBarButtonItem+RACCommandSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UIBarButtonItem+RACCommandSupport.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UIButton+RACCommandSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UIButton+RACCommandSupport.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UICollectionReusableView+RACSignalSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UICollectionReusableView+RACSignalSupport.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UIControl+RACSignalSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UIControl+RACSignalSupport.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UIControl+RACSignalSupportPrivate.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UIControl+RACSignalSupportPrivate.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UIDatePicker+RACSignalSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UIDatePicker+RACSignalSupport.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UIGestureRecognizer+RACSignalSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UIGestureRecognizer+RACSignalSupport.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UIImagePickerController+RACSignalSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UIImagePickerController+RACSignalSupport.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UIRefreshControl+RACCommandSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UIRefreshControl+RACCommandSupport.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UISegmentedControl+RACSignalSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UISegmentedControl+RACSignalSupport.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UISlider+RACSignalSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UISlider+RACSignalSupport.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UIStepper+RACSignalSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UIStepper+RACSignalSupport.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UISwitch+RACSignalSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UISwitch+RACSignalSupport.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UITableViewCell+RACSignalSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UITableViewCell+RACSignalSupport.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UITableViewHeaderFooterView+RACSignalSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UITableViewHeaderFooterView+RACSignalSupport.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UITextField+RACSignalSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UITextField+RACSignalSupport.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UITextView+RACSignalSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/UITextView+RACSignalSupport.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/extobjc/RACEXTKeyPathCoding.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/extobjc/RACEXTRuntimeExtensions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/extobjc/RACEXTRuntimeExtensions.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/extobjc/RACEXTScope.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/ReactiveObjC/ReactiveObjC/extobjc/RACmetamacros.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/AFNetworking/AFNetworking-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/AFNetworking/AFNetworking-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/AFNetworking/AFNetworking-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/AFNetworking/AFNetworking.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/AFNetworking/AFNetworking.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/AFNetworking/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/Aspects/Aspects-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/Aspects/Aspects-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/Aspects/Aspects-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/Aspects/Aspects.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/Aspects/Aspects.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/Aspects/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/CustomPickView/CustomPickView-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/CustomPickView/CustomPickView-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/CustomPickView/CustomPickView-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/CustomPickView/CustomPickView.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/CustomPickView/CustomPickView.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/CustomPickView/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/FDFullscreenPopGesture/FDFullscreenPopGesture-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/FDFullscreenPopGesture/FDFullscreenPopGesture-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/FDFullscreenPopGesture/FDFullscreenPopGesture-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/FDFullscreenPopGesture/FDFullscreenPopGesture.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/FDFullscreenPopGesture/FDFullscreenPopGesture.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/FDFullscreenPopGesture/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/IQKeyboardManager/IQKeyboardManager-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/IQKeyboardManager/IQKeyboardManager-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/IQKeyboardManager/IQKeyboardManager-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/IQKeyboardManager/IQKeyboardManager.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/IQKeyboardManager/IQKeyboardManager.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/IQKeyboardManager/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXAOPTask/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXAOPTask/LXAOPTask-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXAOPTask/LXAOPTask-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXAOPTask/LXAOPTask-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXAOPTask/LXAOPTask.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXAOPTask/LXAOPTask.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXAlertBlock/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXAlertBlock/LXAlertBlock-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXAlertBlock/LXAlertBlock-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXAlertBlock/LXAlertBlock-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXAlertBlock/LXAlertBlock.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXAlertBlock/LXAlertBlock.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXCategory/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXCategory/LXCategory-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXCategory/LXCategory-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXCategory/LXCategory-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXCategory/LXCategory.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXCategory/LXCategory.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXPageViewController/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXPageViewController/LXPageViewController-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXPageViewController/LXPageViewController-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXPageViewController/LXPageViewController-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXPageViewController/LXPageViewController.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXPageViewController/LXPageViewController.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXRouter/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXRouter/LXRouter-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXRouter/LXRouter-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXRouter/LXRouter-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXRouter/LXRouter.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXRouter/LXRouter.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXScrollLoopViewController/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXScrollLoopViewController/LXScrollLoopViewController-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXScrollLoopViewController/LXScrollLoopViewController-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXScrollLoopViewController/LXScrollLoopViewController-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXScrollLoopViewController/LXScrollLoopViewController.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXScrollLoopViewController/LXScrollLoopViewController.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXShowLoading/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXShowLoading/LXShowLoading-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXShowLoading/LXShowLoading-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXShowLoading/LXShowLoading-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXShowLoading/LXShowLoading.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/LXShowLoading/LXShowLoading.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/MBProgressHUD/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/MBProgressHUD/MBProgressHUD-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/MBProgressHUD/MBProgressHUD-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/MBProgressHUD/MBProgressHUD.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/MBProgressHUD/MBProgressHUD.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/MJRefresh/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/MJRefresh/MJRefresh-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/MJRefresh/MJRefresh-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/MJRefresh/MJRefresh-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/MJRefresh/MJRefresh.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/MJRefresh/MJRefresh.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/Masonry/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/Masonry/Masonry-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/Masonry/Masonry-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/Masonry/Masonry-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/Masonry/Masonry.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/Masonry/Masonry.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/Pods-Stars/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/Pods-Stars/Pods-Stars-acknowledgements.markdown" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/Pods-Stars/Pods-Stars-acknowledgements.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/Pods-Stars/Pods-Stars-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/Pods-Stars/Pods-Stars-frameworks.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/Pods-Stars/Pods-Stars-resources.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/Pods-Stars/Pods-Stars-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/Pods-Stars/Pods-Stars.debug.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/Pods-Stars/Pods-Stars.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/Pods-Stars/Pods-Stars.release.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/ReactiveObjC/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/ReactiveObjC/ReactiveObjC-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/ReactiveObjC/ReactiveObjC-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/ReactiveObjC/ReactiveObjC-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/ReactiveObjC/ReactiveObjC.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/ReactiveObjC/ReactiveObjC.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YTKNetwork/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YTKNetwork/YTKNetwork-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YTKNetwork/YTKNetwork-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YTKNetwork/YTKNetwork-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YTKNetwork/YTKNetwork.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YTKNetwork/YTKNetwork.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YYCache/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YYCache/YYCache-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YYCache/YYCache-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YYCache/YYCache-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YYCache/YYCache.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YYCache/YYCache.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YYImage/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YYImage/YYImage-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YYImage/YYImage-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YYImage/YYImage-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YYImage/YYImage.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YYImage/YYImage.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YYModel/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YYModel/YYModel-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YYModel/YYModel-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YYModel/YYModel-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YYModel/YYModel.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YYModel/YYModel.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YYWebImage/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YYWebImage/YYWebImage-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YYWebImage/YYWebImage-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YYWebImage/YYWebImage-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YYWebImage/YYWebImage.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/Target Support Files/YYWebImage/YYWebImage.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YTKNetwork/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YTKNetwork/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YTKNetwork/YTKNetwork/YTKBaseRequest.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YTKNetwork/YTKNetwork/YTKBaseRequest.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YTKNetwork/YTKNetwork/YTKBatchRequest.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YTKNetwork/YTKNetwork/YTKBatchRequest.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YTKNetwork/YTKNetwork/YTKBatchRequestAgent.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YTKNetwork/YTKNetwork/YTKBatchRequestAgent.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YTKNetwork/YTKNetwork/YTKChainRequest.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YTKNetwork/YTKNetwork/YTKChainRequest.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YTKNetwork/YTKNetwork/YTKChainRequestAgent.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YTKNetwork/YTKNetwork/YTKChainRequestAgent.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YTKNetwork/YTKNetwork/YTKNetwork.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YTKNetwork/YTKNetwork/YTKNetworkAgent.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YTKNetwork/YTKNetwork/YTKNetworkAgent.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YTKNetwork/YTKNetwork/YTKNetworkConfig.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YTKNetwork/YTKNetwork/YTKNetworkConfig.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YTKNetwork/YTKNetwork/YTKNetworkPrivate.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YTKNetwork/YTKNetwork/YTKNetworkPrivate.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YTKNetwork/YTKNetwork/YTKRequest.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YTKNetwork/YTKNetwork/YTKRequest.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYCache/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYCache/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYCache/YYCache/YYCache.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYCache/YYCache/YYCache.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYCache/YYCache/YYDiskCache.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYCache/YYCache/YYDiskCache.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYCache/YYCache/YYKVStorage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYCache/YYCache/YYKVStorage.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYCache/YYCache/YYMemoryCache.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYCache/YYCache/YYMemoryCache.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYImage/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYImage/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYImage/YYImage/YYAnimatedImageView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYImage/YYImage/YYAnimatedImageView.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYImage/YYImage/YYFrameImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYImage/YYImage/YYFrameImage.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYImage/YYImage/YYImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYImage/YYImage/YYImage.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYImage/YYImage/YYImageCoder.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYImage/YYImage/YYImageCoder.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYImage/YYImage/YYSpriteSheetImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYImage/YYImage/YYSpriteSheetImage.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYModel/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYModel/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYModel/YYModel/NSObject+YYModel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYModel/YYModel/NSObject+YYModel.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYModel/YYModel/YYClassInfo.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYModel/YYModel/YYClassInfo.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYModel/YYModel/YYModel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYWebImage/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYWebImage/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYWebImage/YYWebImage/Categories/CALayer+YYWebImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYWebImage/YYWebImage/Categories/CALayer+YYWebImage.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYWebImage/YYWebImage/Categories/MKAnnotationView+YYWebImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYWebImage/YYWebImage/Categories/MKAnnotationView+YYWebImage.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYWebImage/YYWebImage/Categories/UIButton+YYWebImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYWebImage/YYWebImage/Categories/UIButton+YYWebImage.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYWebImage/YYWebImage/Categories/UIImage+YYWebImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYWebImage/YYWebImage/Categories/UIImage+YYWebImage.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYWebImage/YYWebImage/Categories/UIImageView+YYWebImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYWebImage/YYWebImage/Categories/UIImageView+YYWebImage.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYWebImage/YYWebImage/Categories/_YYWebImageSetter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYWebImage/YYWebImage/Categories/_YYWebImageSetter.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYWebImage/YYWebImage/YYImageCache.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYWebImage/YYWebImage/YYImageCache.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYWebImage/YYWebImage/YYWebImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYWebImage/YYWebImage/YYWebImageManager.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYWebImage/YYWebImage/YYWebImageManager.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYWebImage/YYWebImage/YYWebImageOperation.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Pods/YYWebImage/YYWebImage/YYWebImageOperation.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars.xcodeproj/project.pbxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars.xcodeproj/project.xcworkspace/xcuserdata/Livespro.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars.xcodeproj/project.xcworkspace/xcuserdata/livesxu.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars.xcodeproj/project.xcworkspace/xcuserdata/xuxiaobo.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars.xcodeproj/xcuserdata/CadaverousBlue.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars.xcodeproj/xcuserdata/changb.xcuserdatad/xcschemes/Shuzan.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars.xcodeproj/xcuserdata/changb.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars.xcodeproj/xcuserdata/livesxu.xcuserdatad/xcschemes/Stars.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars.xcodeproj/xcuserdata/livesxu.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars.xcodeproj/xcuserdata/rdvfx.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/RssReadNeed.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars.xcodeproj/xcuserdata/xuxiaobo.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars.xcworkspace/xcuserdata/admin.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars.xcworkspace/xcuserdata/admin.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars.xcworkspace/xcuserdata/xuxiaobo.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/AppIcon.appiconset/icon1024@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/AppIcon.appiconset/icon20@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/AppIcon.appiconset/icon20@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/AppIcon.appiconset/icon29@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/AppIcon.appiconset/icon29@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/AppIcon.appiconset/icon40@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/AppIcon.appiconset/icon40@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/AppIcon.appiconset/icon60@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/AppIcon.appiconset/icon60@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Common/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Common/button_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Common/button_n.imageset/button_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Common/button_n.imageset/button_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Common/mytopic_mark_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Common/mytopic_mark_n.imageset/mytopic_mark_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Common/mytopic_mark_n.imageset/mytopic_mark_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Common/nav_back_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Common/nav_back_n.imageset/nav_back_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Common/nav_back_n.imageset/nav_back_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Common/nav_back_white_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Common/nav_back_white_n.imageset/nav_back_white_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Common/nav_back_white_n.imageset/nav_back_white_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Common/nav_share_black_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Common/nav_share_black_n.imageset/nav_share_black_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Common/nav_share_black_n.imageset/nav_share_black_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Common/nav_share_white_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Common/nav_share_white_n.imageset/nav_share_white_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Common/nav_share_white_n.imageset/nav_share_white_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Common/publish_close_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Common/publish_close_n.imageset/publish_close_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Common/publish_close_n.imageset/publish_close_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/LaunchImage.launchimage/1125x2436@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/LaunchImage.launchimage/1242x2208@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/LaunchImage.launchimage/640x1136@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/LaunchImage.launchimage/640x960@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/LaunchImage.launchimage/750x1334@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/LaunchImage.launchimage/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Login/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Login/log_back_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Login/log_back_n.imageset/log_back_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Login/log_back_n.imageset/log_back_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Login/log_captcha_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Login/log_captcha_n.imageset/log_captcha_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Login/log_captcha_n.imageset/log_captcha_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Login/log_key_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Login/log_key_n.imageset/log_key_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Login/log_key_n.imageset/log_key_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Login/log_mobilenum_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Login/log_mobilenum_n.imageset/log_mobilenum_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Login/log_mobilenum_n.imageset/log_mobilenum_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Login/log_password_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Login/log_password_n.imageset/log_password_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Login/log_password_n.imageset/log_password_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Login/log_sina_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Login/log_sina_n.imageset/log_sina_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Login/log_sina_n.imageset/log_sina_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Login/log_wechat_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Login/log_wechat_n.imageset/log_wechat_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Login/log_wechat_n.imageset/log_wechat_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Login/login_bg.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Login/login_bg.imageset/log_bg_n.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_addstar_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_addstar_n.imageset/home_addstar_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_addstar_n.imageset/home_addstar_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_bg.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_bg.imageset/home_bg@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_bg.imageset/home_bg@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_diamond_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_diamond_n.imageset/home_diamond_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_diamond_n.imageset/home_diamond_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_mydiamond_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_mydiamond_n.imageset/home_mydiamond_n.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_mydiamond_n.imageset/home_mydiamond_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_mytaco_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_mytaco_n.imageset/home_mytaco_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_mytaco_n.imageset/home_mytaco_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_nav_history_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_nav_history_n.imageset/home_nav_history_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_nav_history_n.imageset/home_nav_history_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_nav_list_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_nav_list_n.imageset/home_nav_list_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_nav_list_n.imageset/home_nav_list_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_nav_profile_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_nav_profile_n.imageset/home_nav_profile_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_nav_profile_n.imageset/home_nav_profile_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_taco_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_taco_n.imageset/home_taco_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_taco_n.imageset/home_taco_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_totaldiamond_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_totaldiamond_n.imageset/home_totaldiamond_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Mine/home_totaldiamond_n.imageset/home_totaldiamond_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/detail_bottom_comment_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/detail_bottom_comment_n.imageset/detail_bottom_comment_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/detail_bottom_comment_n.imageset/detail_bottom_comment_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/detail_bottom_dislike_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/detail_bottom_dislike_n.imageset/detail_bottom_dislike_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/detail_bottom_dislike_n.imageset/detail_bottom_dislike_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/detail_bottom_dislike_p.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/detail_bottom_dislike_p.imageset/detail_bottom_dislike_p@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/detail_bottom_dislike_p.imageset/detail_bottom_dislike_p@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/detail_bottom_like_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/detail_bottom_like_n.imageset/detail_bottom_like_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/detail_bottom_like_n.imageset/detail_bottom_like_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/detail_bottom_like_p.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/detail_bottom_like_p.imageset/detail_bottom_like_p@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/detail_bottom_like_p.imageset/detail_bottom_like_p@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/news_site_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/news_site_n.imageset/news_site_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/news_site_n.imageset/news_site_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/star_levelbutton_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/star_levelbutton_n.imageset/star_levelbutton_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/star_levelbutton_n.imageset/star_levelbutton_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/star_market_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/star_market_n.imageset/star_market_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/star_market_n.imageset/star_market_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/star_news_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/star_news_n.imageset/star_news_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/star_news_n.imageset/star_news_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/star_support_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/star_support_n.imageset/star_support_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/star_support_n.imageset/star_support_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/star_treehole_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/star_treehole_n.imageset/star_treehole_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Star/star_treehole_n.imageset/star_treehole_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_community_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_community_n.imageset/tab_community_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_community_n.imageset/tab_community_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_community_p.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_community_p.imageset/tab_community_p@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_community_p.imageset/tab_community_p@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_home_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_home_n.imageset/tab_home_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_home_n.imageset/tab_home_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_home_s.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_home_s.imageset/tab_home_s@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_home_s.imageset/tab_home_s@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_job_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_job_n.imageset/tab_job_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_job_n.imageset/tab_job_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_job_p.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_job_p.imageset/tab_job_p@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_job_p.imageset/tab_job_p@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_market_home_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_market_home_n.imageset/tab_market_home_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_market_home_n.imageset/tab_market_home_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_market_home_p.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_market_home_p.imageset/tab_market_home_p@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_market_home_p.imageset/tab_market_home_p@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_market_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_market_n.imageset/tab_market_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_market_n.imageset/tab_market_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_market_profile_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_market_profile_n.imageset/tab_market_profile_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_market_profile_n.imageset/tab_market_profile_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_market_profile_p.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_market_profile_p.imageset/tab_market_profile_p@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_market_profile_p.imageset/tab_market_profile_p@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_market_shop_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_market_shop_n.imageset/tab_market_shop_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_market_shop_n.imageset/tab_market_shop_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_market_wishwall_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_market_wishwall_n.imageset/tab_market_wishwall_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_market_wishwall_n.imageset/tab_market_wishwall_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_market_wishwall_p.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_market_wishwall_p.imageset/tab_market_wishwall_p@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_market_wishwall_p.imageset/tab_market_wishwall_p@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_star_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_star_n.imageset/tab_star_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_star_n.imageset/tab_star_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_star_p.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_star_p.imageset/tab_star_p@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TabBase/tab_star_p.imageset/tab_star_p@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Task/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Task/historydiamond_bg.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Task/historydiamond_bg.imageset/historydiamond_bg@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Task/historydiamond_bg.imageset/historydiamond_bg@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Task/support_schedule_inner_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Task/support_schedule_inner_n.imageset/support_schedule_inner_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Task/support_schedule_inner_n.imageset/support_schedule_inner_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Task/support_schedule_outer_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Task/support_schedule_outer_n.imageset/support_schedule_outer_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Task/support_schedule_outer_n.imageset/support_schedule_outer_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Task/task_dailytask_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Task/task_dailytask_n.imageset/task_dailytask_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Task/task_dailytask_n.imageset/task_dailytask_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Task/task_market_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Task/task_market_n.imageset/task_market_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Task/task_market_n.imageset/task_market_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Task/task_rule_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Task/task_rule_n.imageset/task_rule_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Task/task_rule_n.imageset/task_rule_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Task/task_support_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Task/task_support_n.imageset/task_support_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/Task/task_support_n.imageset/task_support_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TopList/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TopList/list_bg.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TopList/list_bg.imageset/list_bg@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TopList/list_bg.imageset/list_bg@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TopList/list_star_1_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TopList/list_star_1_n.imageset/list_star_yellow_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TopList/list_star_1_n.imageset/list_star_yellow_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TopList/list_star_2_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TopList/list_star_2_n.imageset/list_star_blue_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TopList/list_star_2_n.imageset/list_star_blue_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TopList/list_star_3_n.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TopList/list_star_3_n.imageset/list_star_purple_n@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TopList/list_star_3_n.imageset/list_star_purple_n@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TopList/list_status_bg.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TopList/list_status_bg.imageset/list_status_bg@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/TopList/list_status_bg.imageset/list_status_bg@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/分享/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/分享/icon_pyq.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/分享/icon_pyq.imageset/icon_pyq@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/分享/icon_pyq.imageset/icon_pyq@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/分享/icon_qq.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/分享/icon_qq.imageset/icon_qq@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/分享/icon_qq.imageset/icon_qq@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/分享/icon_qzone.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/分享/icon_qzone.imageset/icon_qzone@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/分享/icon_qzone.imageset/icon_qzone@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/分享/icon_share_gray.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/分享/icon_share_gray.imageset/icon_fenxiang@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/分享/icon_share_gray.imageset/icon_fenxiang@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/分享/icon_wechat.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/分享/icon_wechat.imageset/icon_wechat@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/分享/icon_wechat.imageset/icon_wechat@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/分享/icon_weibo.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/分享/icon_weibo.imageset/icon_weibo@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Assets.xcassets/分享/icon_weibo.imageset/icon_weibo@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/CommonBase/BaseInfo/BaseModel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/CommonBase/BaseInfo/BaseModel.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/CommonBase/BaseInfo/BaseViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/CommonBase/BaseInfo/BaseViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/CommonBase/BaseInfo/BaseViewModel+RequestCancel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/CommonBase/BaseInfo/BaseViewModel+RequestCancel.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/CommonBase/BaseInfo/BaseViewModel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/CommonBase/BaseInfo/BaseViewModel.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/CommonBase/BaseInfo/CommonWebTableViewCell.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/CommonBase/BaseInfo/CommonWebTableViewCell.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/CommonBase/BaseInfo/CommonWebViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/CommonBase/BaseInfo/CommonWebViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/CommonBase/BaseInfo/MainNaviController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/CommonBase/BaseInfo/MainNaviController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/CommonBase/BaseInfo/NaviStandCopy.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/CommonBase/BaseInfo/NaviStandCopy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/CommonBase/MainTab/MainTabBarViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/CommonBase/MainTab/MainTabBarViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Category/Categorys.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Category/LXAlertBlockTips+AddConfig.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Category/LXAlertBlockTips+AddConfig.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Category/NSString+Utils.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Category/NSString+Utils.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Category/RuntimeSets/UIView+ShowStatus.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Category/RuntimeSets/UIView+ShowStatus.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Category/UIImageViewTouch.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Category/UIImageViewTouch.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Category/UILabelTouch.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Category/UILabelTouch.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Category/UITextField+InputNumberControl.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Category/UITextField+InputNumberControl.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Const/Const.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Const/Const.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Macros/APPMacros.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Macros/NotificationMacros.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Macros/UtilsMacros.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Macros/VendorMacros.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Network/CommonCache.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Network/CommonCache.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Network/CommonRequestApi.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Network/CommonRequestApi.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/CameraCustomSimple/CameraCustomViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/CameraCustomSimple/CameraCustomViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/CameraCustomSimple/FingerWaveView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/CameraCustomSimple/FingerWaveView.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/CameraCustomSimple/LLSimpleCamera/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/CameraCustomSimple/LLSimpleCamera/LLSimpleCamera/LLSimpleCamera+Helper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/CameraCustomSimple/LLSimpleCamera/LLSimpleCamera/LLSimpleCamera+Helper.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/CameraCustomSimple/LLSimpleCamera/LLSimpleCamera/LLSimpleCamera.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/CameraCustomSimple/LLSimpleCamera/LLSimpleCamera/LLSimpleCamera.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/CameraCustomSimple/LLSimpleCamera/LLSimpleCamera/UIImage+FixOrientation.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/CameraCustomSimple/LLSimpleCamera/LLSimpleCamera/UIImage+FixOrientation.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/CameraCustomSimple/LLSimpleCamera/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/CameraCustomSimple/flash-(auto)@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/CameraCustomSimple/flash-(auto)@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/CameraCustomSimple/switch-camera@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/CameraCustomSimple/switch-camera@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Images/X.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Images/X@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Images/broswerPic0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Images/broswerPic1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Images/broswerPic2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Images/broswerPic3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Images/broswerPic4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Images/btn_back_imagePicker@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Images/checkbox_pic2@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Images/checkbox_pic@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Images/checkbox_pic_non2@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Images/checkbox_pic_non@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Images/ico_eye@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Images/ico_eye@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Images/icon_pic_break@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Images/lock@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Images/paizhao.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Images/paizhao@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Images/shanguangdeng2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Images/shanguangdeng2@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Images/xiang.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Images/xiang@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhoto.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoBrowser/Models/LGPhotoPickerBrowserPhoto.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoBrowser/Models/LGPhotoPickerBrowserPhoto.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoBrowser/Models/LGPhotoRect.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoBrowser/Models/LGPhotoRect.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoBrowser/ViewControllers/LGPhotoPickerBrowserViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoBrowser/ViewControllers/LGPhotoPickerBrowserViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoBrowser/Views/LGImagePickerSelectView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoBrowser/Views/LGImagePickerSelectView.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoBrowser/Views/LGPhotoPickerBrowserPhotoImageView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoBrowser/Views/LGPhotoPickerBrowserPhotoImageView.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoBrowser/Views/LGPhotoPickerBrowserPhotoScrollView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoBrowser/Views/LGPhotoPickerBrowserPhotoScrollView.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoBrowser/Views/LGPhotoPickerBrowserPhotoView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoBrowser/Views/LGPhotoPickerBrowserPhotoView.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoBrowser/Views/LGPhotoPickerCustomToolBarView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoBrowser/Views/LGPhotoPickerCustomToolBarView.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoPicker/Models/LGPhotoAssets.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoPicker/Models/LGPhotoAssets.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoPicker/Models/LGPhotoPickerDatas.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoPicker/Models/LGPhotoPickerDatas.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoPicker/Models/LGPhotoPickerGroup.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoPicker/Models/LGPhotoPickerGroup.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoPicker/ViewControllers/LGPhotoPickerAssetsViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoPicker/ViewControllers/LGPhotoPickerAssetsViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoPicker/ViewControllers/LGPhotoPickerGroupViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoPicker/ViewControllers/LGPhotoPickerGroupViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoPicker/ViewControllers/LGPhotoPickerViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoPicker/ViewControllers/LGPhotoPickerViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoPicker/Views/LGPhotoPickerCollectionView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoPicker/Views/LGPhotoPickerCollectionView.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoPicker/Views/LGPhotoPickerCollectionViewCell.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoPicker/Views/LGPhotoPickerCollectionViewCell.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoPicker/Views/LGPhotoPickerFooterCollectionReusableView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoPicker/Views/LGPhotoPickerFooterCollectionReusableView.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoPicker/Views/LGPhotoPickerGroupTableViewCell.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoPicker/Views/LGPhotoPickerGroupTableViewCell.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoPicker/Views/LGPhotoPickerImageView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoPicker/Views/LGPhotoPickerImageView.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/LGPhotoPickerCommon.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/DACircularProgress/DACircularProgressView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/DACircularProgress/DACircularProgressView.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/NSData+ImageContentType.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/NSData+ImageContentType.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/SDImageCache.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/SDImageCache.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/SDWebImageCompat.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/SDWebImageCompat.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/SDWebImageDecoder.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/SDWebImageDecoder.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/SDWebImageDownloader.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/SDWebImageDownloader.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/SDWebImageDownloaderOperation.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/SDWebImageDownloaderOperation.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/SDWebImageManager.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/SDWebImageManager.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/SDWebImageOperation.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/SDWebImagePrefetcher.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/SDWebImagePrefetcher.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/UIButton+WebCache.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/UIButton+WebCache.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/UIImage+GIF.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/UIImage+GIF.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/UIImage+MultiFormat.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/UIImage+MultiFormat.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/UIImageView+HighlightedWebCache.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/UIImageView+HighlightedWebCache.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/UIImageView+WebCache.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/UIImageView+WebCache.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/UIView+WebCacheOperation.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Third/SDWebImage/UIView+WebCacheOperation.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Utils/Category/UIView+Layout.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/Utils/Category/UIView+Layout.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/ZLCamera/LGCameraImageView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/ZLCamera/LGCameraImageView.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/ZLCamera/ZLCamera.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/ZLCamera/ZLCamera.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/ZLCamera/ZLCameraImageView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/ZLCamera/ZLCameraImageView.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/ZLCamera/ZLCameraView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/ZLCamera/ZLCameraView.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/ZLCamera/ZLCameraViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/PhotoBrowser/ZLCamera/ZLCameraViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/UIViewController+PhotoExtension.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/UIViewController+PhotoExtension.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/YSHYClipViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/CameraAndPhoto/YSHYClipViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/Tool/Tools.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/UserCenter/UserCenter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Expand/UserCenter/UserCenter.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Community/ViewController/CommunityViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Community/ViewController/CommunityViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Login/View/CountdownBtn.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Login/View/CountdownBtn.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Login/ViewController/LoginViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Login/ViewController/LoginViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Login/ViewController/RegisterUserVC.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Login/ViewController/RegisterUserVC.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Login/ViewModel/LoginViewModel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Login/ViewModel/LoginViewModel.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Login/ViewModel/RegisterUserViewModel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Login/ViewModel/RegisterUserViewModel.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Market/MarketBars/MarketHome/ViewController/MarketHomeViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Market/MarketBars/MarketHome/ViewController/MarketHomeViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Market/MarketBars/MarketMineCenter/ViewController/MarketMineCenterViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Market/MarketBars/MarketMineCenter/ViewController/MarketMineCenterViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Market/MarketBars/MarketShop/ViewController/MarketShopViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Market/MarketBars/MarketShop/ViewController/MarketShopViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Market/MarketBars/MarketWall/ViewController/MarketWallViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Market/MarketBars/MarketWall/ViewController/MarketWallViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Market/ViewController/MarketViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Market/ViewController/MarketViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Mine/Model/StarsListModel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Mine/Model/StarsListModel.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Mine/VeiwModel/MineViewModel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Mine/VeiwModel/MineViewModel.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Mine/VeiwModel/TopListViewModel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Mine/VeiwModel/TopListViewModel.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Mine/View/StarItemsCollectionViewCell.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Mine/View/StarItemsCollectionViewCell.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Mine/ViewController/MineViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Mine/ViewController/MineViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Mine/ViewController/TopListViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Mine/ViewController/TopListViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Star/Model/StarInfoModel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Star/Model/StarInfoModel.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Star/Model/StarModel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Star/Model/StarModel.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Star/View/StarInfoTableViewCell.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Star/View/StarInfoTableViewCell.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Star/ViewController/StarViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Star/ViewController/StarViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Star/ViewModel/StarViewModel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Star/ViewModel/StarViewModel.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Task/Model/TaskScrollModel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Task/Model/TaskScrollModel.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Task/View/DayTaskTableViewCell.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Task/View/DayTaskTableViewCell.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Task/View/SupportTaskTableViewCell.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Task/View/SupportTaskTableViewCell.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Task/ViewController/RuleViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Task/ViewController/RuleViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Task/ViewController/SupportDetailViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Task/ViewController/SupportDetailViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Task/ViewController/SupportPayViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Task/ViewController/SupportPayViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Task/ViewController/TaskViewController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Task/ViewController/TaskViewController.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Task/ViewModel/RuleViewModel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Task/ViewModel/RuleViewModel.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Task/ViewModel/SupportDetailViewModel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Task/ViewModel/SupportDetailViewModel.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Task/ViewModel/TaskViewModel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Main/Task/ViewModel/TaskViewModel.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Other/AppDelegate+Assist.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Other/AppDelegate+Assist.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Other/AppDelegate.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Other/AppDelegate.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Other/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Other/MainPCH.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Other/main.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Stars.entitlements" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Vender/JPush/AppDelegate+Notification.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Vender/JPush/AppDelegate+Notification.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Vender/JPush/JKNotifier.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Vender/JPush/JKNotifier.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Vender/JPush/JKNotifierBar.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Vender/JPush/JKNotifierBar.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Vender/JPush/JPushManager.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Vender/JPush/JPushManager.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Vender/Mob/MobManager.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Vender/Mob/MobManager.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/Stars/Vender/Vender.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/StarsTests/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/StarsTests/ShuzanTests.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/StarsUITests/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../star_product/StarsUITests/ShuzanUITests.m" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,113 +1226,7 @@
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1788962463">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="dart" value="6" />
-          <entry key="html" value="3" />
-          <entry key="log" value="1" />
-          <entry key="packages" value="1" />
-          <entry key="yaml" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Dart" value="6" />
-          <entry key="HTML" value="3" />
-          <entry key="PLAIN_TEXT" value="2" />
-          <entry key="YAML" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="dart" value="585" />
-          <entry key="html" value="17" />
-          <entry key="yaml" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="Dart" value="585" />
-          <entry key="HTML" value="17" />
-          <entry key="YAML" value="3" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.packages">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/main.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
-              <folding>
-                <element signature="e#0#17#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/logging-0.11.3+2/lib/logging.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="225" selection-start-line="225" selection-end-line="225" />
-              <folding>
-                <element signature="e#0#12122#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webApp/index.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log/2019-12-18/16:28.log">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/http_server-0.9.8+3/lib/http_server.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="13" column="41" selection-start-line="12" selection-start-column="8" selection-end-line="13" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3a_XL_API_R" />
   <component name="FindInProjectRecents">
     <findStrings>
       <find>Logger</find>
@@ -126,21 +1235,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/lib/index.html" />
-        <option value="$PROJECT_DIR$/pubspec.yaml" />
-        <option value="$PROJECT_DIR$/lib/main.dart" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="453" />
-    <option name="y" value="23" />
-    <option name="width" value="1435" />
-    <option name="height" value="781" />
-  </component>
+  <component name="ProjectId" id="1dJGvrMpPV5MeLjZdqNQTOaZETw" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
       <profile-state>
@@ -166,41 +1261,6 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
-  </component>
-  <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="dart_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dart_server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dart_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dart_server" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dart_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dart_server" type="462c0819:PsiDirectoryNode" />
-              <item name="log" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dart_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dart_server" type="462c0819:PsiDirectoryNode" />
-              <item name="webApp" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.project.structure.last.selected" value="SDK Location" />
@@ -246,120 +1306,16 @@
     </task>
     <servers />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="453" y="23" width="1435" height="781" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" visible="true" weight="0.32950467" />
-      <window_info id="Structure" side_tool="true" />
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info id="Captures" order="0" weight="0.25" />
-      <window_info anchor="bottom" id="Dart Analysis" weight="0.32946298" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="TODO" />
-      <window_info anchor="bottom" id="Run" weight="0.32946298" />
-      <window_info anchor="bottom" id="Debug" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Flutter Performance" side_tool="true" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Flutter Inspector" />
-      <window_info anchor="right" id="Flutter Outline" />
-      <window_info anchor="right" id="Palette&#9;" />
-    </layout>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.packages">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/http_server-0.9.8+3/lib/http_server.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="13" column="41" selection-start-line="12" selection-start-column="8" selection-end-line="13" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/webApp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/FlutterGo/flutter/flutter/bin/cache/dart-sdk/lib/io/file.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1656">
-          <caret line="251" column="10" selection-start-line="251" selection-start-column="10" selection-end-line="251" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/2019-12-18/16:28.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/path-1.6.4/lib/path.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="182" column="7" selection-start-line="182" selection-start-column="7" selection-end-line="182" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webApp/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/logging-0.11.3+2/lib/logging.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="225" selection-start-line="225" selection-end-line="225" />
-          <folding>
-            <element signature="e#0#12122#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/FlutterGo/flutter/flutter/bin/cache/dart-sdk/lib/mirrors/mirrors.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#49815#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/main.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="masterDetails">
     <states>

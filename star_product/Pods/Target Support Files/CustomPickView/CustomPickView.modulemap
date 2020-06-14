@@ -1,6 +1,0 @@
-framework module CustomPickView {
-  umbrella header "CustomPickView-umbrella.h"
-
-  export *
-  module * { export * }
-}

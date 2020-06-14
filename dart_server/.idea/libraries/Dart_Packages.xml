@@ -5,38 +5,38 @@
         <entry key="http_server">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/http_server-0.9.8+3/lib" />
+              <option value="$PROJECT_DIR$/../../../../admin/.pub-cache/hosted/pub.dartlang.org/http_server-0.9.8+3/lib" />
             </list>
           </value>
         </entry>
         <entry key="logging">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/logging-0.11.3+2/lib" />
+              <option value="$PROJECT_DIR$/../../../../admin/.pub-cache/hosted/pub.dartlang.org/logging-0.11.3+2/lib" />
             </list>
           </value>
         </entry>
         <entry key="mime">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/mime-0.9.6+3/lib" />
+              <option value="$PROJECT_DIR$/../../../../admin/.pub-cache/hosted/pub.dartlang.org/mime-0.9.6+3/lib" />
             </list>
           </value>
         </entry>
         <entry key="path">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/path-1.6.4/lib" />
+              <option value="$PROJECT_DIR$/../../../../admin/.pub-cache/hosted/pub.dartlang.org/path-1.6.4/lib" />
             </list>
           </value>
         </entry>
       </option>
     </properties>
     <CLASSES>
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/http_server-0.9.8+3/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/logging-0.11.3+2/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/mime-0.9.6+3/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/path-1.6.4/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../admin/.pub-cache/hosted/pub.dartlang.org/http_server-0.9.8+3/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../admin/.pub-cache/hosted/pub.dartlang.org/logging-0.11.3+2/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../admin/.pub-cache/hosted/pub.dartlang.org/mime-0.9.6+3/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../admin/.pub-cache/hosted/pub.dartlang.org/path-1.6.4/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

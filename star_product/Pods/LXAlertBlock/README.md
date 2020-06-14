@@ -1,2 +1,0 @@
-# LXAlertBlock
-alert

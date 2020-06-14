@@ -1,6 +1,0 @@
-framework module LXAlertBlock {
-  umbrella header "LXAlertBlock-umbrella.h"
-
-  export *
-  module * { export * }
-}

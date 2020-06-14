@@ -1,6 +1,0 @@
-framework module LXRouter {
-  umbrella header "LXRouter-umbrella.h"
-
-  export *
-  module * { export * }
-}

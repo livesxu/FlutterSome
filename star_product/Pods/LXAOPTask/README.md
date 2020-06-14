@@ -1,2 +1,0 @@
-# LXAOPTask
-LXAOPTask
