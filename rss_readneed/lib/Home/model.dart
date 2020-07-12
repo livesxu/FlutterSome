@@ -89,25 +89,25 @@ class ArticleModel {
       };
 }
 
-//各网站feed页面链接 - RSS 订阅站点推荐
+//各网站feed页面链接 - RSS 订阅站点推荐 icon存放：https://imgchr.com
 const FeedGroupInfoLinks = [
-    {'name':'人民网','link':'http://rss.people.com.cn/'},//
-    {'name':'环球网','link':'http://rss.huanqiu.com'},//
-    {'name':'科学网','link':'http://www.sciencenet.cn/RSS.aspx'},//
-    {'name':'新浪','link':'http://rss.sina.com.cn'},//
-    {'name':'搜狐','link':'http://rss.news.sohu.com'},//
-    {'name':'和讯网','link':'http://news.hexun.com/rss/'},//
-    {'name':'中国新闻网','link':'http://www.chinanews.com/rss/'},//
-    {'name':'中关村','link':'http://rss.zol.com.cn'} ,//
-    {'name':'天极网','link':'http://rss.yesky.com'} ,//
-    {'name':'东南网','link':'http://www.fjsen.com/rss/rss.htm'} ,//
-    {'name':'财新网','link':'http://other.caixin.com/rss/'},//
-    {'name':'国家统计局','link':'http://www.stats.gov.cn/wzgl/rss/'} ,//
-    {'name':'科技pc841','link':'http://www.pc841.com/rss/'} ,//
-    {'name':'亿邦动力网','link':'http://www.ebrun.com/rss/'},//
-    {'name':'时光网','link':'http://www.mtime.com/rss/'} ,//
-    {'name':'美文阅读','link':'https://www.meiwen.com.cn/rssmap.html'} ,//
-    {'name':'车讯网','link':'http://www.chexun.com/about/rss.html'} ,//
+    {'name':'人民网','link':'http://rss.people.com.cn/','image':"http://rss.people.com.cn/img/2014peoplelogo/rss_logo.gif"},//
+    {'name':'环球网','link':'http://rss.huanqiu.com','image':"https://rs2.huanqiucdn.cn/huanqiu/image/www/index/new_logo.png"},//
+    {'name':'科学网','link':'http://www.sciencenet.cn/RSS.aspx','image':'https://s1.ax1x.com/2020/07/12/U8OvTI.jpg'},//
+    {'name':'新浪','link':'http://rss.sina.com.cn','image':'https://s1.ax1x.com/2020/07/12/U8j0P0.gif'},//
+    {'name':'搜狐','link':'http://rss.news.sohu.com','image':'http://images.sohu.com/uiue/sohu_logo/2005/sohu_logo2.gif'},//
+    {'name':'和讯网','link':'http://news.hexun.com/rss/','image':'http://img.hexun.com/2010/cphead/cplogo.gif'},//
+    {'name':'中国新闻网','link':'http://www.chinanews.com/rss/','image':'http://i5.chinanews.com/logo.gif'},//
+    {'name':'中关村','link':'http://rss.zol.com.cn','image':'https://icon.zol-img.com.cn/favicon/180.png'} ,//
+    {'name':'天极网','link':'http://rss.yesky.com','image':'http://www.yesky.com/TLimages2009/yesky/images/index/faviconie9.ico'} ,//
+    {'name':'东南网','link':'http://www.fjsen.com/rss/rss.htm','image':'http://www.fjsen.com/js/ipa/logo2.png'} ,//
+    {'name':'财新网','link':'http://other.caixin.com/rss/','image':'http://file.caixin.com/webchannel/all/img/logo.png'},//
+    {'name':'国家统计局','link':'http://www.stats.gov.cn/wzgl/rss/','image':'https://s1.ax1x.com/2020/07/12/U8vLXF.png'} ,//
+    {'name':'科技pc841','link':'http://www.pc841.com/rss/','image':'https://www.pc841.com/statics/images/v9/logo.jpg'} ,//
+    {'name':'亿邦动力网','link':'http://www.ebrun.com/rss/','image':'https://s1.ax1x.com/2020/07/12/U8OrF0.png'},//
+    {'name':'时光网','link':'http://www.mtime.com/rss/','image':'http://static1.mtime.cn/favicon.ico'} ,//
+    {'name':'美文阅读','link':'https://www.meiwen.com.cn/rssmap.html','image':'https://s1.ax1x.com/2020/07/12/U8L7rj.png'} ,//
+    {'name':'车讯网','link':'http://www.chexun.com/about/rss.html','image':'https://s1.ax1x.com/2020/07/12/U8OKLd.jpg'} ,//
 //    {'name':'大图网','link':'http://www.daimg.com/rssmap.html'} ,// 局限性高 - 隐藏
 //    {'name':'懒人图库','link':'http://www.lanrentuku.com/about/rssmap.html'} ,// 局限性高 - 隐藏
 ];
@@ -358,25 +358,6 @@ const someFeedInfos = [
     "imageExpStart": "<img([^>*?])src=\"",
     "imageExpEnd": "\"",
     "linkExpStart": "<link>",
-    "linkExpEnd": "</link>"
-  },
-  {
-    "infoId": 24,
-    "infoName": "南风窗",
-    "infoUrl": "https://www.nfcmag.com/rss/lastest.xml",
-    "abInfoUrl": "http://www.nfcmag.com",
-    "infoIntroduce": "南风窗最新文章",
-    "infoImage": "/images/logo-banner.png",
-    "infoState": "1",
-    "infoUpdateTime": "2020-04-18T16:25:31.157341Z",
-    "topExp": "<item>(.*?)</item>",
-    "titleExpStart": "<title([^<]*?)>",
-    "titleExpEnd": "</title>",
-    "contentExpStart": "<description([^<]*?)>",
-    "contentExpEnd": "</description>",
-    "imageExpStart": "<img([^>]*?)src=\"",
-    "imageExpEnd": "\"",
-    "linkExpStart": "<link([^<]*?)>",
     "linkExpEnd": "</link>"
   },
   {
