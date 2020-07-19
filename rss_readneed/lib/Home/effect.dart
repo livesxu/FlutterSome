@@ -16,7 +16,7 @@ void _initState(Action action, Context<homeState> ctx) async {
 
 //  _requestTodays(ctx);
 
-  _requestInfos(ctx);
+//  _requestInfos(ctx);
 }
 
 void _requestTodays (Context<homeState> ctx) async {

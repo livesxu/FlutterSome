@@ -1,71 +1,66 @@
 {
   "images" : [
     {
-      "extent" : "full-screen",
       "idiom" : "iphone",
-      "subtype" : "2436h",
-      "filename" : "1125x2436@3x.png",
-      "minimum-system-version" : "11.0",
-      "orientation" : "portrait",
-      "scale" : "3x"
-    },
-    {
-      "extent" : "full-screen",
-      "idiom" : "iphone",
-      "subtype" : "736h",
-      "filename" : "1242x2208@3x.png",
-      "minimum-system-version" : "8.0",
-      "orientation" : "portrait",
-      "scale" : "3x"
-    },
-    {
-      "extent" : "full-screen",
-      "idiom" : "iphone",
-      "subtype" : "667h",
-      "filename" : "750x1334@2x.png",
-      "minimum-system-version" : "8.0",
-      "orientation" : "portrait",
-      "scale" : "2x"
-    },
-    {
-      "orientation" : "portrait",
-      "idiom" : "iphone",
-      "filename" : "640x960@2x.png",
-      "extent" : "full-screen",
-      "minimum-system-version" : "7.0",
-      "scale" : "2x"
-    },
-    {
-      "extent" : "full-screen",
-      "idiom" : "iphone",
-      "subtype" : "retina4",
-      "filename" : "640x1136@2x.png",
-      "minimum-system-version" : "7.0",
-      "orientation" : "portrait",
-      "scale" : "2x"
-    },
-    {
-      "orientation" : "portrait",
-      "idiom" : "iphone",
-      "extent" : "full-screen",
       "scale" : "1x"
     },
     {
-      "orientation" : "portrait",
       "idiom" : "iphone",
-      "extent" : "full-screen",
       "scale" : "2x"
     },
     {
-      "orientation" : "portrait",
       "idiom" : "iphone",
-      "extent" : "full-screen",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "1x",
+      "subtype" : "retina4"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "2x",
+      "subtype" : "retina4"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "subtype" : "retina4"
+    },
+    {
+      "filename" : "1242x2208@3x.png",
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "subtype" : "736h"
+    },
+    {
+      "filename" : "750x1334@2x.png",
+      "idiom" : "iphone",
+      "scale" : "2x",
+      "subtype" : "667h"
+    },
+    {
+      "filename" : "1125x2436@3x.png",
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "subtype" : "2436h"
+    },
+    {
+      "filename" : "640x960@2x.png",
+      "idiom" : "iphone",
+      "scale" : "2x",
+      "unassigned" : true
+    },
+    {
+      "filename" : "640x1136@2x.png",
+      "idiom" : "iphone",
+      "scale" : "2x",
       "subtype" : "retina4",
-      "scale" : "2x"
+      "unassigned" : true
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

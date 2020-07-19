@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_boost/flutter_boost.dart';
+//import 'package:flutter_boost/flutter_boost.dart';
 import 'package:rss_readneed/GitHub/github.dart';
 
 import '../rss_recommend/rss_recommend.dart' as rss_recommend;
@@ -46,16 +46,16 @@ class AppNavigator {
   };
 
 
-  static flutterMixRouterConfig () {
-
-    //混合支持 - flutter_boost
-    FlutterBoost.singleton.registerPageBuilders({
-
-      'imageShow': (pageName, params, _) => AppNavigator.routePage("imageShow"),
-    });
-    //todo:?
+//  static flutterMixRouterConfig () {
+//
+//    //混合支持 - flutter_boost
+//    FlutterBoost.singleton.registerPageBuilders({
+//
+//      'imageShow': (pageName, params, _) => AppNavigator.routePage("imageShow"),
+//    });
+//    //todo:?
 //    FlutterBoost.handleOnStartPage();
-  }
+//  }
 
   //获取route对应的页面
   static Widget routePage (String route) {

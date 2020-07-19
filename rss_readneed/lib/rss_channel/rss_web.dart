@@ -179,16 +179,40 @@ class _CommonWebViewState extends State<CommonWebView> {
 
         LoadingCommon.dismiss();
         print(url);
-        judgeRssFeed(url);
+        LinkJudgeFeed.judgeRssFeed(url);
       }
     });
   }
 
-  void judgeRssFeed (String url) async {
+  @override
+  void dispose() {
+    super.dispose();
 
+    _subject.close();
+  }
+
+  @override
+  void didUpdateWidget(CommonWebView oldWidget) {
+    // TODO: implement didUpdateWidget
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+  }
+}
+
+class LinkJudgeFeed {
+
+  static void judgeRssFeed (String url) async {
+
+    LoadingCommon.show(Consts.tabBar, true);
     //1.获取内容
     http.Response response = await http.get(url,
         headers: {'User-Agent':RequestCommon.randomUserAgent()});
+    LoadingCommon.dismiss();
 
     //转码判断编码类型gbk or utf8
     String body_judge = response.body;
@@ -212,26 +236,7 @@ class _CommonWebViewState extends State<CommonWebView> {
       body = body.replaceAll("\n", "");//将换行符清除
       body = body.replaceAll(RegExp(r'>(\s*?)<'), '><');//将标签之间的空格清除
 
-      JudgeFeed.judgeRssFeed(url, body, context,'checkFeedInWeb');
+      JudgeFeed.judgeRssFeed(url, body, Consts.tabBar,'checkFeedInWeb');
     }
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-
-    _subject.close();
-  }
-
-  @override
-  void didUpdateWidget(CommonWebView oldWidget) {
-    // TODO: implement didUpdateWidget
-    super.didUpdateWidget(oldWidget);
-  }
-
-  @override
-  void didChangeDependencies() {
-    // TODO: implement didChangeDependencies
-    super.didChangeDependencies();
   }
 }
