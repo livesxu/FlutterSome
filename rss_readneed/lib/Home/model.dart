@@ -69,14 +69,16 @@ class ArticleModel {
   String articleUrl;
   String articleImage;
 
+  String webContent;//添加web - html的展示方式
+
   ArticleModel.fromJson(Map json)
     :   articleId = json['articleId'],
         articleTitle = json['articleTitle'],
         articleContent = json['articleContent'],
         articleTime = json['articleTime'],
         articleUrl = json['articleUrl'],
-        articleImage = json['articleImage'];
-
+        articleImage = json['articleImage'],
+        webContent = json['webContent'];
 
   Map toJson() =>
       {
@@ -86,6 +88,7 @@ class ArticleModel {
         'articleTime':articleTime,
         'articleUrl':articleUrl,
         'articleImage':articleImage,
+        'webContent':webContent,
       };
 }
 
@@ -144,8 +147,8 @@ const someFeedInfos = [
     "topExp": "<item>(.*?)</item>",
     "titleExpStart": "<title>",
     "titleExpEnd": "</title>",
-    "contentExpStart": "<description><!\\[CDATA\\[",
-    "contentExpEnd": "\\]\\]></description>",
+    "contentExpStart": "<content:encoded><!\\[CDATA\\[",
+    "contentExpEnd": "\\]\\]></content:encoded>",
     "imageExpStart": "img src=\"",
     "imageExpEnd": "\"",
     "linkExpStart": "<link>",
@@ -163,8 +166,8 @@ const someFeedInfos = [
     "topExp": "<item>(.*?)</item>",
     "titleExpStart": "title><!\\[CDATA\\[",
     "titleExpEnd": "\\]\\]></title",
-    "contentExpStart": "<description><!\\[CDATA\\[",
-    "contentExpEnd": "\\]\\]></description>",
+    "contentExpStart": "<content:encoded><!\\[CDATA\\[",
+    "contentExpEnd": "\\]\\]></content:encoded>",
     "imageExpStart": "<focus_pic><!\\[CDATA\\[",
     "imageExpEnd": "\\]\\]></focus_pic>",
     "linkExpStart": "<link><!\\[CDATA\\[",
@@ -182,8 +185,8 @@ const someFeedInfos = [
     "topExp": "<item>(.*?)</item>",
     "titleExpStart": "<title([^<]*?)>",
     "titleExpEnd": "</title>",
-    "contentExpStart": "<description([^<]*?)><!\\[CDATA\\[",
-    "contentExpEnd": "\\]\\]></description>",
+    "contentExpStart": "<content:encoded([^<]*?)><!\\[CDATA\\[",
+    "contentExpEnd": "\\]\\]></content:encoded>",
     "imageExpStart": "<img([^>]*?)src=\"",
     "imageExpEnd": "\"",
     "linkExpStart": "<link([^<]*?)>",
@@ -203,7 +206,7 @@ const someFeedInfos = [
     "titleExpEnd": "</title>",
     "contentExpStart": "<description([^<]*?)>",
     "contentExpEnd": "</description>",
-    "imageExpStart": "<img([^>]*?)src=\"",
+    "imageExpStart": "img([^>]*?)src=\"",
     "imageExpEnd": "\"",
     "linkExpStart": "<link([^<]*?)>",
     "linkExpEnd": "</link>"
@@ -239,8 +242,8 @@ const someFeedInfos = [
     "topExp": "<item>(.*?)</item>",
     "titleExpStart": "title>",
     "titleExpEnd": "</title",
-    "contentExpStart": "<description><!\\[CDATA\\[",
-    "contentExpEnd": "\\]\\]></description>",
+    "contentExpStart": "<content:encoded><!\\[CDATA\\[",
+    "contentExpEnd": "\\]\\]></content:encoded>",
     "imageExpStart": "img src=\"",
     "imageExpEnd": "\"",
     "linkExpStart": "link>",
@@ -266,25 +269,6 @@ const someFeedInfos = [
     "linkExpEnd": "\\]\\]></link>"
   },
   {
-    "infoId": 1007,
-    "infoName": "科学松鼠会",
-    "infoUrl": "http://songshuhui.net/feed",
-    "abInfoUrl": "https://songshuhui.net",
-    "infoIntroduce": "剥开科学的坚果，让科学流行起来",
-    "infoImage": "https://songshuhui.net/wp-content/uploads/cropped-songshuhui-32x32.jpg",
-    "infoState": "1",
-    "infoUpdateTime": "2020-04-09T23:03:37.000Z",
-    "topExp": "<item>(.*?)</item>",
-    "titleExpStart": "title>",
-    "titleExpEnd": "</title",
-    "contentExpStart": "<description><!\\[CDATA\\[",
-    "contentExpEnd": "\\]\\]></description>",
-    "imageExpStart": "img src=\"",
-    "imageExpEnd": "\"",
-    "linkExpStart": "link>",
-    "linkExpEnd": "</link"
-  },
-  {
     "infoId": 1009,
     "infoName": "PanSci 泛科學",
     "infoUrl": "https://pansci.asia/feed",
@@ -296,8 +280,8 @@ const someFeedInfos = [
     "topExp": "<item>(.*?)</item>",
     "titleExpStart": "title>",
     "titleExpEnd": "</title",
-    "contentExpStart": "<description><!\\[CDATA\\[",
-    "contentExpEnd": "\\]\\]></description>",
+    "contentExpStart": "<content:encoded><!\\[CDATA\\[",
+    "contentExpEnd": "\\]\\]></content:encoded>",
     "imageExpStart": "img src=\"",
     "imageExpEnd": "\"",
     "linkExpStart": "link>",
@@ -305,7 +289,7 @@ const someFeedInfos = [
   },
   {
     "infoId": 1002,
-    "infoName": "cnBeta.COM RSS订阅",
+    "infoName": "cnBeta.COM",
     "infoUrl": "http://www.cnbeta.com/backend.php",
     "abInfoUrl": "https://www.cnbeta.com",
     "infoIntroduce": "简明IT新闻,网友媒体与言论平台",

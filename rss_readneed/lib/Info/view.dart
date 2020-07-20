@@ -22,10 +22,10 @@ Widget buildView(infoState state, Dispatch dispatch, ViewService viewService) {
     if (model.articleImage != null && model.articleImage.length > 0) {
 
       children.insert(0,
-        AspectRatio(aspectRatio: 16.0/9.0, child: ClipRRect(
-          borderRadius: BorderRadius.only(topLeft: Radius.circular(4),topRight: Radius.circular(4)),
-          child: Image.network(model.articleImage,fit: BoxFit.cover,),
-        ),),
+          ClipRRect(
+            borderRadius: BorderRadius.only(topLeft: Radius.circular(4),topRight: Radius.circular(4)),
+            child: Image.network(model.articleImage,fit: BoxFit.cover,),
+          )
       );
     }
 

@@ -315,10 +315,26 @@ class JudgeFeed {
       //获取内容exp
       String itemDescExp = '<description([^<]*?)>(.*?)</description>';
       Iterable<Match> itemDescMatches = RegExp(itemDescExp).allMatches(exampleItem);
+      String itemDesc = "";
       if (itemDescMatches.length > 0) {
 
-        String itemDesc = itemDescMatches.first.group(0);
+        itemDesc = itemDescMatches.first.group(0);
         itemDescExp = expCDATA(itemDesc,itemDescExp);
+      }
+
+      //获取备选内容标签 content:encoded
+      String itemDescExp2 = '<content:encoded([^<]*?)>(.*?)</content:encoded>';
+      Iterable<Match> itemDescMatches2 = RegExp(itemDescExp2).allMatches(exampleItem);
+      String itemDesc2 = "";
+      if (itemDescMatches2.length > 0) {
+
+        itemDesc2 = itemDescMatches2.first.group(0);
+        itemDescExp2 = expCDATA(itemDesc2,itemDescExp2);
+      }
+      //如果备选里面的内容更多那就选备选内容
+      if (itemDesc2.length > itemDesc.length) {
+
+        itemDescExp = itemDescExp2;
       }
 
       //获取链接exp
@@ -346,7 +362,7 @@ class JudgeFeed {
         itemImgExp = expCDATA(itemImg,itemImgExp);
       } else {
 
-        itemImgExp = '<img([^>]*?)src="(.*?)"';//此为通用匹配格式，大概率会拿到内容中的img，优先匹配标签中包含的图片资源
+        itemImgExp = 'img([^>]*?)src="(.*?)"';//此为通用匹配格式，大概率会拿到内容中的img，优先匹配标签中包含的图片资源 - 修改于2020.7.20 原值：<img([^>]*?)src="(.*?)"
       }
 
       //创建info
