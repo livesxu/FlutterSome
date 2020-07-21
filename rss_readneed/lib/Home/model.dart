@@ -97,7 +97,6 @@ const FeedGroupInfoLinks = [
     {'name':'人民网','link':'http://rss.people.com.cn/','image':"http://rss.people.com.cn/img/2014peoplelogo/rss_logo.gif"},//
     {'name':'环球网','link':'http://rss.huanqiu.com','image':"https://rs2.huanqiucdn.cn/huanqiu/image/www/index/new_logo.png"},//
     {'name':'科学网','link':'http://www.sciencenet.cn/RSS.aspx','image':'https://s1.ax1x.com/2020/07/12/U8OvTI.jpg'},//
-    {'name':'新浪','link':'http://rss.sina.com.cn','image':'https://s1.ax1x.com/2020/07/12/U8j0P0.gif'},//
     {'name':'搜狐','link':'http://rss.news.sohu.com','image':'http://images.sohu.com/uiue/sohu_logo/2005/sohu_logo2.gif'},//
     {'name':'和讯网','link':'http://news.hexun.com/rss/','image':'http://img.hexun.com/2010/cphead/cplogo.gif'},//
     {'name':'中国新闻网','link':'http://www.chinanews.com/rss/','image':'http://i5.chinanews.com/logo.gif'},//
@@ -248,25 +247,6 @@ const someFeedInfos = [
     "imageExpEnd": "\"",
     "linkExpStart": "link>",
     "linkExpEnd": "</link"
-  },
-  {
-    "infoId": 23,
-    "infoName": "中英文双语新闻 热词翻译- 中国日报21世纪英文报",
-    "infoUrl": "http://www.i21st.cn/rss/story.xml",
-    "abInfoUrl": "http://www.i21st.cn/",
-    "infoIntroduce": "中英文双语热点新闻，配以地道音频及词汇解析, 经典美剧赏析, 热门词汇翻译，分享最地道的英语表达, 国内外新鲜英语趣闻及时事热点- 21英语",
-    "infoImage": "http://www.i21st.cn/images/home/logo.png",
-    "infoState": "1",
-    "infoUpdateTime": "2020-04-12T22:04:53.064852Z",
-    "topExp": "<item>(.*?)</item>",
-    "titleExpStart": "<title([^<]*?)><!\\[CDATA\\[",
-    "titleExpEnd": "\\]\\]></title>",
-    "contentExpStart": "<description([^<]*?)><!\\[CDATA\\[",
-    "contentExpEnd": "\\]\\]></description>",
-    "imageExpStart": "<img([^>]*?)src=\"",
-    "imageExpEnd": "\"",
-    "linkExpStart": "<link([^<]*?)><!\\[CDATA\\[",
-    "linkExpEnd": "\\]\\]></link>"
   },
   {
     "infoId": 1009,
