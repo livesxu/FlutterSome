@@ -12,7 +12,12 @@ import './mainAppFlutterRedux/reducer.dart';
 
 import 'package:flutter/services.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  //收集异步错误
+  ErrorHandle.asyncError((){
+    runApp(MyApp());
+  });
+}
 
 class MyApp extends StatefulWidget {
 

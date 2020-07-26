@@ -33,6 +33,8 @@ def parse_KV_file(file, separator='=')
 end
 
 target 'Runner' do
+  
+  pod 'Bugly', '~> 2.5.5'
   # Flutter Pod
 
   copied_flutter_dir = File.join(__dir__, 'Flutter')

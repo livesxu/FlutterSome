@@ -20,7 +20,7 @@ class ImageCommon {
 
             if (url != null && url != '') {
 
-              ReportHandle.handle('url_image_error', 1, error.toString());
+              ReportHandle.handle('url_image_error', ReportLevel.ReportLevelDebug, error.toString(),"");
             }
 
             if (placeholder != null && placeholder.length > 0) {

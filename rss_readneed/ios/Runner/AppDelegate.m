@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "GeneratedPluginRegistrant.h"
+#import <Bugly/Bugly.h>
 
 @interface AppDelegate ()<FlutterStreamHandler>
 
@@ -18,6 +19,21 @@
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [GeneratedPluginRegistrant registerWithRegistry:self];
+    //bug注册
+    [Bugly startWithAppId:@"b90f003c9f"];
+    
+    FlutterViewController *flutterVC = (FlutterViewController *)self.window.rootViewController;
+    
+    self.methodChannel = [FlutterMethodChannel methodChannelWithName:@"channel" binaryMessenger:flutterVC.engine.binaryMessenger];
+    [self.methodChannel setMethodCallHandler:^(FlutterMethodCall * _Nonnull call, FlutterResult  _Nonnull result) {
+        
+        if ([call.method isEqual:@"_bug_"]) {//报错
+            NSDictionary *dic = call.arguments;
+            [Bugly reportExceptionWithCategory:3 name:dic[@"name"] reason:dic[@"obj"] callStack:dic[@"stack"] extraInfo:@{} terminateApp:NO];
+        }
+        
+    }];
+    
     
 //    FlutterViewController *flutterVC = (FlutterViewController *)self.window.rootViewController;
 //    self.eventChannel = [FlutterEventChannel eventChannelWithName:@"scheme_open_url" binaryMessenger:flutterVC.engine.binaryMessenger];

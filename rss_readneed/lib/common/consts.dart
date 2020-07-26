@@ -1,6 +1,6 @@
 import 'package:flutter/src/widgets/framework.dart';
 
-const bool Environment_debug = true;//debug
+const bool Environment_debug = false;//debug
 const bool Environment_publish = false;//是否发布
 const String Version = '1.0.0';
 

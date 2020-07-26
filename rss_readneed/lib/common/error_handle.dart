@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import './consts.dart';
 import 'dart:async';
 
+enum ReportLevel {
+  ReportLevelError,//错误报告
+  ReportLevelDebug,//debug报告
+  ReportLevelNotes,//记录报告
+}
+
 class ErrorHandle {
+
+  static MethodChannel methodChannel = MethodChannel("channel");
 
   static systemError () {
 
@@ -13,7 +22,7 @@ class ErrorHandle {
         FlutterError.dumpErrorToConsole(dedails);
       } else {
 
-        ReportHandle.handle('Error_system', 0, dedails.exceptionAsString() + '\n' + dedails.stack.toString());
+        ReportHandle.handle('Error_system', ReportLevel.ReportLevelError, dedails.exceptionAsString(), dedails.stack.toString());
       }
     };
   }
@@ -28,7 +37,7 @@ class ErrorHandle {
     }
     catch (e, stack){
 
-      ReportHandle.handle('Error_sync', 0, e.toString() + '\n' + stack.toString());
+      ReportHandle.handle('Error_sync', ReportLevel.ReportLevelError, e.toString(), stack.toString());
       catchThen();
     }
   }
@@ -40,12 +49,12 @@ class ErrorHandle {
       doAction,
       zoneSpecification: ZoneSpecification(
         print: (Zone self, ZoneDelegate parent, Zone zone, String line) {
-          print(line); //手机日志
+//          print(line); //手机日志
         },
       ),
       onError: (Object obj, StackTrace stack) {
 
-        ReportHandle.handle('Error_async', 0, obj.toString() + '\n' + stack.toString());
+        ReportHandle.handle('Error_async', ReportLevel.ReportLevelError, obj.toString(), stack.toString());
       },
     );
   }
@@ -54,13 +63,19 @@ class ErrorHandle {
 
 class ReportHandle {
 
-  static handle (String reportName,int reportLevel, String report){
+  static handle (String reportName,ReportLevel reportLevel,String error, String stack){
 
     if (Environment_debug) {
 
-      print(Version + reportName + reportLevel.toString() + '\n' + report);
+      print(Version +  " " + reportName + "  " + reportLevel.toString() + '\n' + stack);
     } else {
       //上报接口 todo
+
+      if (reportLevel == ReportLevel.ReportLevelError) {
+
+        //错误回传native,上报bugly
+        ErrorHandle.methodChannel.invokeMethod("_bug_",{"name":Version + " " + reportName,"obj":error,"stack":stack});
+      }
 
     }
   }
