@@ -66,6 +66,9 @@ dependencies:
 #  也是路由的一种配置，有空看看 todo:
 #  fluro:
 
+#  定位功能 https://pub.dev/packages/location:
+  location: ^3.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
